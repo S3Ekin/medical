@@ -1,0 +1,30 @@
+{
+		    title : {
+		        text: '不良事件例数',
+		        x:'left',
+		      	textStyle:{color:'#008ACD',fontWeight:'normal'}
+		    },
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c} ({d}%)"
+		    },
+		    legend: {
+		        left: 'right',
+		        data: ['超级事件','超级治疗','超级沟通','超级问题']
+		    },
+		    series : [
+		        {
+		            name: '所占总例数百分比',
+		            type: 'pie',
+		            radius : '60%',
+		            center: ['50%', '60%'],
+		            data:[
+		                {value:'55', name:'超级事件',itemStyle:{normal:{color:'rgb(17, 152, 235)'}}},
+		                {value:'35', name:'超级治疗',itemStyle:{normal:{color:'rgb(98, 142, 227)'}}},
+		                {value:'32', name:'超级沟通',itemStyle:{normal:{color:'rgb(43, 195, 181)'}}},
+		                {value:'43', name:'超级问题',itemStyle:{normal:{color:'rgb(146, 208, 80)'}}}
+		                
+		            ]
+		        }
+		    ]
+		}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表达式</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .center{  position: absolute; top: 50%; left: 50%; margin: -140px 0 0 -250px; width: 500px; height: 180px; }
+        .preView{margin-top:10px;width:500px; height: 80px;border:1px solid #A9A9A9;padding:5px}
+        .express{box-sizing: content-box;padding:5px;margin-top:10px;width:500px; height:100px;border:1px solid #A9A9A9;font-size: 18px;}
+    </style>
+</head>
+<body>
+    <div class="center">
+        <label for="express">请输入表达式:</label><br>
+        <textarea name="express" id="express"  class="express"></textarea>
+        <p>预览:</p>
+        <div id="preView" class="preView"></div>
+    </div>
+    <script src="../../resources/jQuery/jquery.min.js"></script>
+    <script>
+        var data={"currYear":"2017","nextYear":"2018","currentMonth":"7","curentSeason":"二"};
+        var express=document.getElementById("express");
+        var pre=document.getElementById("preView");
+        express.onblur=function () {
+            pre.innerHTML=null;
+            var val=express.value;
+           var df=val.split("+");
+           console.log(df,val);
+            for (var i = 0; i < df.length; i++) {
+                var obj = df[i];
+                if(data[obj]){
+                    pre.innerHTML+=(data[obj]+"&nbsp;")
+                }else{
+                    pre.innerHTML+="不存在&nbsp;";
+                }
+
+
+            }
+        }
+    </script>
+</body>
+</html>

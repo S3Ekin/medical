@@ -1,0 +1,86 @@
+{
+	data: [
+		{
+			clause: '5.1.1.1',
+			claResult: 'B',
+			lines: [
+				{
+					id: 1,
+					content: '。。。',
+					office: '医务科',
+					isAssign: 0,
+					status: 1
+				},
+				{
+					id: 2,
+					content: '。。。',
+					office: '医务科',
+					isAssign: 0,
+					status: 1
+				},
+				{
+					id: 3,
+					content: '。。。',
+					office: '医务科',
+					isAssign: 1,
+					status: 0
+				},
+				{
+					id: 4,
+					content: '。。。',
+					office: '医务科',
+					isAssign: 0,
+					status: 1
+				},
+				{
+					id: 5,
+					content: '。。。',
+					office: '医务科',
+					isAssign: 0,
+					status: 0
+				}												
+			]
+		},
+		{
+			clause: '5.1.2.2',
+			claResult: 'C',
+			lines: [
+				{
+					id: 6,
+					content: '。。。',
+					office: '院办',
+					isAssign: 0,
+					status: 1
+				},
+				{
+					id: 7,
+					content: '。。。',
+					office: '医务科',
+					isAssign: 0,
+					status: 1
+				},
+				{
+					id: 8,
+					content: '。。。',
+					office: '院办',
+					isAssign: 1,
+					status: 0
+				},
+				{
+					id: 9,
+					content: '。。。',
+					office: '院办',
+					isAssign: 0,
+					status: 1
+				},
+				{
+					id: 10,
+					content: '。。。',
+					office: '院办',
+					isAssign: 0,
+					status: 0
+				}												
+			]
+		}				
+	]
+}

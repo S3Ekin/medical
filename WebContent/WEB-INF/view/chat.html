@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../resources/css/normalize.css">
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+    <style>
+        div.layout {padding: 5px;width:690px;}
+        div.layout > div { float: left; height: 330px; }
+        div.layout:after { content: ""; display: block; clear: both; }
+        div.layout-right { width:480px; border: 1px solid #A9A9A9;border-left:none;overflow: hidden }
+        div.layout-left { width: 187px; border:1px solid #A9A9A9; overflow-x:hidden}
+        dl { margin-top: 0; margin-bottom: 0; }
+        span.tree-title{width:115px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden}
+    </style>
+</head>
+<body>
+<div class="layout">
+    <div class="layout-left">
+        <ul id="menu_tree" >
+
+        </ul>
+    </div>
+    <div class="layout-right">
+        <div id="chats" style="width: 100%;height: 300px;padding: 10px"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/echarts/echarts.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script>
+    /*文档树生成*/
+    $("#menu_tree").tree({
+        url:"../ajax/tree5.json",
+        method:"get",
+        animate:true,
+        onLoadSuccess:function () {
+            var $title=$("span.tree-title");
+            $title.prop("data-toggle","tooltip");
+            var olength= $title.length;
+            for (var i = 0; i < olength; i++) {
+                var tip= $title[i].innerHTML;
+                $title.eq(i).prop("title",tip);
+            }
+
+            /*$("span.tree-title").tooltip({
+                animation:true,
+                placement:"left",
+                title:"我是谁"
+            }); */
+            $title.tooltip();
+        },
+        onClick:function (node) {
+            if(node.children){
+             /*   return;*/
+            }else{
+//                alert("node")
+            }
+        }
+    });
+    function CreatChat() {
+        var $chat=$("#chats")[0];
+        this.myChart = echarts.init($chat);
+        this.myChart.setOption(pieoption);
+    }
+
+</script>
+<script>
+    var pieoption = {
+        title : {
+            text: '各科室10月的支出饼状图',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['院办公室','信息科','财务科','总务科','医务科']
+        },
+        series : [
+            {
+                name: '科室',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:335, name:'院办公室'},
+                    {value:310, name:'信息科'},
+                    {value:234, name:'财务科'},
+                    {value:135, name:'总务科'},
+                    {value:1548, name:'医务科'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    var $chat=$("#chats")[0];
+    var myChart = echarts.init($chat);
+    myChart.setOption(pieoption);
+</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>目录样式</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../resources/lib/awe/awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
+    <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
+    <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
+	
+	<style>
+		#table1 tr th{padding: 8px 5px;}
+		.catalogueStyle { line-height: 25px }
+		.catalogueStyle dt{ margin-left:50px; }
+	</style>
+	
+</head>
+<body>
+<!--<div class="loading">
+		<div class="sk-circle">
+		  <div class="sk-circle1 sk-child"></div>
+		  <div class="sk-circle2 sk-child"></div>
+		  <div class="sk-circle3 sk-child"></div>
+		  <div class="sk-circle4 sk-child"></div>
+		  <div class="sk-circle5 sk-child"></div>
+		  <div class="sk-circle6 sk-child"></div>
+		  <div class="sk-circle7 sk-child"></div>
+		  <div class="sk-circle8 sk-child"></div>
+		  <div class="sk-circle9 sk-child"></div>
+		  <div class="sk-circle10 sk-child"></div>
+		  <div class="sk-circle11 sk-child"></div>
+		  <div class="sk-circle12 sk-child"></div>
+		</div>
+	</div>-->
+<div class="mr15">
+    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
+       	<span class="tab_title">目录样式</span>
+		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
+    </div>
+		<!--<div style="margin:50px 10% 10px 0;" class="fr">
+			<button  class="btn btn-green">新建</button>
+		</div>-->
+    <div style="margin-left:50px" id="table">
+		<table cellspacing="0" cellpadding="0" class="list1" style="margin: 30px auto;">
+			<tr style="width:500px ">
+				<th style="width:5%;text-align:center;">序号</th>
+				<th style="width:30%;text-align:center;">名称</th>
+				<th style="text-align:center;">样式效果</th>
+			</tr>
+			<tbody id="table1">
+			<tr>
+				<td style="text-align:center;">1</td>
+				<td style="text-align:center;">目录样式1</td>
+				<td >
+					<dl class="catalogueStyle">
+						<dt>标题</dt>
+						<dd>第一章</dd>
+						<dd>第一节</dd>
+						<dd>1.1.1</dd>
+					</dl>
+				</td>
+			</tr>
+			<tr>
+				<td style="text-align:center;">2</td>
+				<td style="text-align:center;">目录样式2</td>
+				<td >
+					<dl class="catalogueStyle">
+						<dt>标题</dt>
+						<dd>一、</dd>
+						<dd>1.1</dd>
+						<dd>1.1.1</dd>
+					</dl>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>
+<!-- alert共用模态框 -->
+<!--<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
+		<div class="modal-content">
+			<div class="modal-header" id="modal_title">			
+				<button type="button" class="close" data-dismiss="modal">
+					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+				</button>
+				
+			</div>
+			<div class="modal-body">
+				<div style="height:65px;" id="txt_insert">
+				</div>
+			</div>
+			<div class="modal-footer" style="text-align:center;">
+				<button type="button" class="btn btn-primary is_true" data-dismiss="modal">确定</button>
+			</div>
+		</div>
+	</div>
+</div>-->
+<!--<script id="tpl11" type="text/template">
+    <table cellspacing="0" cellpadding="0" class="list1" style="width:90%;">
+         <tr>
+			<th style="width: 3%; text-align: center;">序号</th>
+			<th style="width: 10%; text-align: center;">工号</th>
+			<th style="width: 10%; text-align: center;">姓名</th>
+			<th style="width: 10%; text-align: center;">部门</th>
+			<th style="width: 10%; text-align: center;">手机号码</th>
+			<th style="width: 10%; text-align: center;">邮箱</th>
+        </tr>
+        [%	var j=1;
+			for(var i in data){%]
+		
+        <tr>
+			<td style="text-align:center;">[%=j%]</td>
+			<td style="text-align:center;">[%if(data[i].worknumber==""){%][%='&#45;&#45;'%][%}else{%][%=data[i].worknumber%][%}%]</td>
+			<td style="text-align:center;">[%if(data[i].true_name==""){%][%='&#45;&#45;'%][%}else{%][%=data[i].true_name%][%}%]</td>
+			<td style="text-align:center;">[%if(data[i].org_name2==""){%][%='&#45;&#45;'%][%}else{%][%=data[i].org_name2%][%}%]</td>
+			<td style="text-align:center;">[%if(data[i].telphone==""){%][%='&#45;&#45;'%][%}else{%][%=data[i].telphone%][%}%]</td>
+			<td style="text-align:center;">[%if(data[i].email==""){%][%='&#45;&#45;'%][%}else{%][%=data[i].email%][%}%]</td>
+        </tr>
+        [%j++;}%]
+    </table>  
+</script>-->
+<script type="text/javascript" src="../../resources/lib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="../../resources/lib/echarts/macarons.js"></script>
+<script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
+<script type="text/javascript" src="../../resources/js/mchart.js"></script>
+
+<!--<script type="text/javascript">
+	var data;
+	T.getJson('../../main/getAddressList.do?', function(res) {	
+		data=res.data;
+		_get('table1').innerHTML = baidu.template('tpl11', res);
+		$('.loading').hide();
+	});
+	
+	T('#search').on('click',function(){
+		var search_text=$("#search_text").val().trim();
+		if(search_text=="工号/姓名/部门"||search_text==""){
+			$("#txt_insert p").remove();
+			$("#txt_insert").append("<p>搜索条件不能为空！</p>");
+			$("#modal_alert").modal("toggle");
+			
+			T.getJson('../../main/getAddressList.do?', function(res) {	
+				data=res.data;
+				_get('table1').innerHTML = baidu.template('tpl11', res);
+			});
+		}else {
+			T.getJson('../../main/getAddressList.do?flag=search&search_text='+search_text, function(res) {	
+				data=res.data;
+				if(data.length==0){
+					$("#txt_insert p").remove();
+					$("#txt_insert").append("<p>未搜索到相关内容！</p>");
+					$("#modal_alert").modal("toggle");
+					
+					T.getJson('../../main/getAddressList.do?', function(res) {	
+						data=res.data;
+						_get('table1').innerHTML = baidu.template('tpl11', res);
+					});
+				}else{
+					_get('table1').innerHTML = baidu.template('tpl11', res);
+				}
+			});
+		}
+	});
+	
+	document.onkeydown=function(e) {
+		if(e.keyCode==13) {
+			T('#search').click();
+		}
+	}
+		
+</script>-->
+<div class="clr"></div>
+</body>
+</html>

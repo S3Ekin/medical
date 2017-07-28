@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="echarts/echarts.js"></script>
+	<title>line_chart</title>
+	</head>
+</head>
+<body>
+	<div id="p7_div_chart" style="width:100%;height: 250px"></div>
+	<script type="text/javascript">
+	$('#p7_div_chart').width($('#p7_div_chart').parent().width());
+	lineoption = {
+		    title: {
+		        text: '同病种按科室分开统计总表'
+		    },
+		    tooltip : {
+		        trigger: 'axis',
+		        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+		            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+		        },
+		        formatter: function (params) {
+		            var tar = params[1];
+		            return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+		        }
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    xAxis: {
+		        type : 'category',
+		        splitLine: {show:false},
+		        data : ['总例数','死亡例数','当天再住院例数','31日内再住院例数','平均住院费用','住院日中位数']
+		    },
+		    yAxis: {
+		        type : 'value'
+		    },
+		    legend:{
+                top:'bottom',
+		        data:['辅助','人数']
+			},
+		    series: [
+		        {
+		            name: '辅助',
+		            type: 'bar',
+		            stack:  '总量',
+		            itemStyle: {
+		                normal: {
+		                    barBorderColor: 'rgba(0.5,0,0,1)',
+		                    color: 'rgba(0,0.4,0,1)'
+		                },
+		                emphasis: {
+		                    barBorderColor: 'rgba(0,0.5,0,1)',
+		                    color: 'rgba(0,0.4,0,1)'
+		                }
+		            },
+		            data: [0, 1700, 1400, 1200, 300, 0]
+		        },
+		        {
+		            name: '人数',
+		            type: 'bar',
+		            stack: '总量',
+		            label: {
+		                normal: {
+		                    show: true,
+		                    position: 'inside'
+		                }
+		            },
+		            data:[2900, 1200, 300, 200, 900, 300]
+		        }
+		    ]
+		};
+		var myChart = echarts.init($('#p7_div_chart').get(0));
+		myChart.setOption(lineoption);
+		window.onresize = myChart.resize;//窗口自适应
+	</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>line</title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="echarts/echarts.js"></script>
+	<title>line_chart</title>
+	</head>
+</head>
+<body>
+	<div id="p17_div_chart" style="width:580px;height: 250px"></div>
+	<script type="text/javascript">
+	$('#p17_div_chart').width($('#p17_div_chart').parent().width());
+	
+		var lineoption = {
+				title: {
+		            text: '并发症发生率'
+		        },
+		        tooltip: {
+		            trigger: 'axis'
+		        },
+		        xAxis: {
+		            data: ['并发症发生率','栓塞发生率','静脉血栓发生率','败血症发生率','血肿发生率','伤口裂开发生率','猝死发生率','呼吸衰竭发生率','代谢紊乱发生率']
+		        },
+		        yAxis: {
+		            splitLine: {
+		                show: false
+		            }
+		        },
+		        toolbox: {
+		            left: 'center',
+		            feature: {
+		                dataZoom: {
+		                    yAxisIndex: 'none'
+		                },
+		                restore: {},
+		                saveAsImage: {}
+		            }
+		        },
+		        dataZoom: [{
+		            startValue: ''
+		        }, {
+		            type: 'inside'
+		        }],
+		        visualMap: {
+		            top: 10,
+		            right: 10,
+		            pieces: [{
+		                gt: 0,
+		                lte: 4,
+		                color: '#096'
+		            }, {
+		                gt: 4,
+		                lte: 8,
+		                color: '#ffde33'
+		            }, {
+		                gt: 8,
+		                lte: 12,
+		                color: '#ff9933'
+		            }, {
+		                gt: 12,
+		                lte: 16,
+		                color: '#cc0033'
+		            }, {
+		                gt: 16,
+		                lte: 20,
+		                color: '#660099'
+		            }, {
+		                gt: 20,
+		                color: '#7e0023'
+		            }],
+		            outOfRange: {
+		                color: '#999'
+		            }
+		        },
+		        series: {
+		            name: '并发症发生率',
+		            type: 'line',
+		            data: [12,23,14,10,3,18,21,25,11],
+		            markLine: {
+		                silent: true,
+		                data: [{
+		                    yAxis: 4
+		                }, {
+		                    yAxis: 8
+		                }, {
+		                    yAxis: 12
+		                }, {
+		                    yAxis: 16
+		                }, {
+		                    yAxis: 20
+		                }]
+		            }
+		        }
+			};
+		var myChart = echarts.init($('#p17_div_chart').get(0));
+		myChart.setOption(lineoption);
+		window.onresize = myChart.resize;//窗口自适应
+	</script>
+</body>
+</html>

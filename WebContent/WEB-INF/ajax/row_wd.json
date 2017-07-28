@@ -1,0 +1,8 @@
+﻿[
+  {"id":15,"text":"每门诊人次收入","children":[]},
+  {"id":16,"text":"每门诊人次支出","children":[]},
+  {"id":17,"text":"门诊收入成本率","children":[]},
+  {"id":18,"text":"每住院人次收入","children":[]},
+  {"id":19,"text":"每住院人次支出","children":[]},
+  {"id":20,"text":"住院收入成本率","children":[]}
+]

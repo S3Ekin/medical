@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../resources/echarts/echarts.js"></script>
+	<title>line_chart</title>
+</head>
+<body>
+	<div id="p9_div_chart" style="width:100%;height: 250px"></div>
+	<script type="text/javascript">
+//	$('#p9_div_chart').width($('#p9_div_chart').parent().width());
+	
+		var lineoption = {
+				tooltip: {
+			        trigger: 'axis',
+			        position: function (pt) {
+			            return [pt[0], '10%'];
+			        }
+			    },
+			    title: {
+			        left: 'center',
+			        text: '重点手术季度/年度统计总表'
+			    },
+			    legend: {
+			        top: 'bottom',
+			        data:['总例数']
+			    },
+			    toolbox: {
+			        feature: {
+			            dataZoom: {
+			                yAxisIndex: 'none'
+			            },
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis: {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['201601','201602','201603','201604','201605','201606','201607','201608','201609','201610','201611','201612']
+			    },
+			    yAxis: {
+			        type: 'value',
+			        boundaryGap: [0, '100%']
+			    },
+			    dataZoom: [{
+			        type: 'inside',
+			    }, {
+			        handleSize: '80%',
+			        handleStyle: {
+			            color: '#fff',
+			            shadowBlur: 3,
+			            shadowColor: 'rgba(0, 0, 0, 0.6)',
+			            shadowOffsetX: 2,
+			            shadowOffsetY: 2
+			        }
+			    }],
+			    series: [
+			        {
+			            name:'总例数',
+			            type:'line',
+			            smooth:true,
+			            symbol: 'none',
+			            sampling: 'average',
+			            itemStyle: {
+			                normal: {
+			                    color: 'rgb(255, 70, 131)'
+			                }
+			            },
+			            areaStyle: {
+			                normal: {
+			                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+			                        offset: 0,
+			                        color: 'rgb(255, 158, 68)'
+			                    }, {
+			                        offset: 1,
+			                        color: 'rgb(255, 70, 131)'
+			                    }])
+			                }
+			            },
+			            data: ['1223','2143','2316','1221','2429','1531','1242','4432','1232','2314','2356','2342']
+			        }
+			    ]
+			};
+		var myChart = echarts.init($('#p9_div_chart').get(0));
+		myChart.setOption(lineoption);
+		window.onresize = myChart.resize;//窗口自适应
+	</script>
+</body>
+</html>

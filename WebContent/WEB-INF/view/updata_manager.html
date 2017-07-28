@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>上传数据管理</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../resources/lib/awe/awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+	<style>
+		.table tr th{padding: 8px 5px;text-align:center;}
+		.table tr td{padding: 8px 5px;text-align:center;}
+		.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
+		/*.optBtn a{padding:0 8px;height:26px;margin-right:10px;}*/
+		form{width:100%;}
+		.bv-form .help-block{margin-bottom:0}
+		.bv-form .tooltip-inner{text-align:left}
+		.nav-tabs li.bv-tab-success>a{color:#3c763d}
+		.nav-tabs li.bv-tab-error>a{color:#a94442}
+		#search_text{height: 30px; border-radius:6px;}
+		.tabField{width:570px;margin-left: 145px}
+		.tabField tr th{padding:5px;text-align: center}
+		.edit-content input{width: 100%}
+		.addField{float: right; margin-right: 85px;padding: 2px 10px}
+		span.tree-title{font-size: 12px}
+	</style>
+	
+</head>
+<body>
+<div class="loading">
+		<div class="sk-circle">
+		  <div class="sk-circle1 sk-child"></div>
+		  <div class="sk-circle2 sk-child"></div>
+		  <div class="sk-circle3 sk-child"></div>
+		  <div class="sk-circle4 sk-child"></div>
+		  <div class="sk-circle5 sk-child"></div>
+		  <div class="sk-circle6 sk-child"></div>
+		  <div class="sk-circle7 sk-child"></div>
+		  <div class="sk-circle8 sk-child"></div>
+		  <div class="sk-circle9 sk-child"></div>
+		  <div class="sk-circle10 sk-child"></div>
+		  <div class="sk-circle11 sk-child"></div>
+		  <div class="sk-circle12 sk-child"></div>
+		</div>
+</div>
+<div class="mr15">
+    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
+       	<span class="tab_title">上传数据管理</span>
+		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
+    </div>
+		<div style="margin:50px 10px 10px 0;" class="fr">
+			<input type="text" id="search_text"  value="" />
+			<button id="search" class="btn btn-secondary">查询</button>
+			<button  class="btn btn-green" id="upload" style="margin-left: 50px"><i class="fa fa-plus"></i>上传</button>
+		</div>
+    <div style="margin-left:50px" id="table">
+		<table cellspacing="0" cellpadding="0" class="list1" style="width:100%;">
+			<tr>
+				<th style="width:4%;text-align:center;">序号</th>
+				<th style="width:18%;text-align:center;">名称</th>
+				<th style="width:18%;text-align:center;">描述</th>
+				<th style="width:7%;text-align:center;">图表引用次数</th>
+				<th style="width:5%;text-align:center;">字段数量</th>
+				<th style="width:5%;text-align:center;">记录数量</th>
+				<th style="width:5%;text-align:center;">上传时间</th>
+				<th style="width:7%;text-align:center;">上传人</th>
+				<th style="width:auto;text-align:center;">操作</th>
+			</tr>
+			<tbody id="table1" class="table"></tbody>
+		</table>
+
+	</div>
+</div>
+<div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+	<div class="modal-dialog" style="width:800px;margin:10px auto;" >
+		<div class="modal-content">
+			<div class="modal-header">
+				<span style="font-size: 20px">上传</span>
+				<button type="button" class="close" data-dismiss="modal">
+					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+				</button>
+			</div>
+			<div class="modal-body" style="padding-bottom: 0">
+				<div style="height:auto;text-align: center;font-size: 18px" >
+					<form id="defaultForm" method="post" class="form-horizontal" action="">
+						<div class="form-group">
+							<label class="col-xs-2 control-label" for="names">名称</label>
+							<div class="col-xs-9">
+								<input type="text" class="form-control" name="names" id="names"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-xs-2 control-label" for="des">描述</label>
+							<div class="col-xs-9">
+								<input type="text" class="form-control" name="des" id="des"/>
+							</div>
+						</div>
+
+						<div class="form-group">
+								<p style="text-align: left;padding-left: 80px;font-weight: 700">
+									数据字段:
+									<a class="btn btn-primary  addField">添加</a>
+								</p>
+								<table border="1" cellspacing="0" width="100%" class="tabField" >
+									<tr>
+										<th width="10%">顺序</th>
+										<th width="40%">名称</th>
+										<th width="20%">类型</th>
+										<th width="30%">操作</th>
+									</tr>
+									<tbody class="table" id="field-content">
+										<tr>
+											<td>1</td>
+											<td class="edit-content">xxx</td>
+											<td class="edit-content">数字</td>
+											<td class="optBtn panelBtn">
+												<a class="btn btn-primary ">编辑</a>
+												<a class="btn btn-red ">删除</a>
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td class="edit-content">xxx</td>
+											<td class="edit-content">字符串</td>
+											<td class="optBtn panelBtn">
+												<a class="btn btn-primary ">编辑</a>
+												<a class="btn btn-red ">删除</a>
+											</td>
+										</tr>
+									</tbody>
+								</table >
+							</div>
+
+						<div class="form-group " >
+							<p style="text-align: left;padding-left: 80px;font-weight: 700">数据上传:</p>
+							<div>
+								<div style="display:inline-block;margin-left: -110px;border: 1px solid #3c763d"><input type="file" id="files" style="opacity: 0;"></div>
+								<p style="display: inline-block;position: relative;top: -2px;">
+									<button type="button" class="btn btn-primary ">上传</button>
+								</p>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+			<div class="modal-footer" style="padding-right: 100px;">
+				<a type="button" class="btn btn-primary "   id="is_add">确定</a>
+				<button type="button" class="btn btn-primary " data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- alert_Del共用模态框 -->
+<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
+		<div class="modal-content">
+			<div class="modal-header" id="modal_title">
+				<button type="button" class="close" data-dismiss="modal">
+					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+				</button>
+
+			</div>
+			<div class="modal-body">
+				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
+					<span >确定删除吗?</span>
+				</div>
+			</div>
+			<div class="modal-footer" style="text-align:center;">
+				<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
+<script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
+<script type="text/javascript" src="../../resources/lib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="../../resources/lib/echarts/macarons.js"></script>
+<script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
+<script type="text/javascript" src="../../resources/js/mchart.js"></script>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
+<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script id="tpl12" type="text/template">
+		[%	var j=1;
+		for(var i in list){%]
+		<tr>
+			<td>[%=j%]</td>
+			<td >[%=list[i].name%]</td>
+			<td >[%=list[i].des%]</td>
+			<td >[%=list[i].chatTimes%]</td>
+			<td>[%=list[i].fieldCounts%]</td>
+			<td>[%=list[i].recorderCounts%]</td>
+			<td>[%=list[i].uploadTimes%]</td>
+			<td>[%=list[i].uploadPerson%]</td>
+			<td class="optBtn ">
+				<button class="btn btn-primary edit"   data-echo="[%=list[i].id%]">预览</button>
+				<button class="btn btn-red delModel">删除</button>
+				<button class="btn btn-primary">重传</button>
+				<button class="btn btn-primary">追加</button>
+			</td>
+		</tr>
+		[%j++;}%]
+</script>
+
+<script>
+    var $name=$("#names"),
+		$table1=$("#table1"),
+        $des=$("#des"),
+        $alertAdd=$("#modal_add"),
+        $alertModal=$("#modal_alert"),
+    	$upload=$("#upload");
+    var selecte=document.getElementsByName("des");
+		/*加载数据*/
+		$.ajax({
+			url:"../ajax/tree6.json",
+			success:function (data) {
+			    $(".loading").hide();
+				$("#table1").html(baidu.template("tpl12",data));
+			}
+		});
+	var state=0;
+	/*上传*/
+    $upload.click(function (event) {
+        state=0;
+        $name.val(null);
+        $des.val(null);
+        $alertAdd.modal("toggle");
+    });
+    $("#is_add").click(function () {
+        /*if(1==1){
+
+            return;
+		}*/
+        if(!state){
+        var length=$table1.children().length+1,
+			docName= $name.val(),
+			docDes= $des.val(),
+			time=new  Date(),
+			vMon = time.getMonth() + 1,
+			vDay = time.getDate(),
+			saveTime= time.getFullYear() +"-"+ (vMon < 10 ? "0" + vMon : vMon) +"-"+ (vDay < 10 ? "0" + vDay : vDay),
+			creatTime=saveTime;
+//			creatPerson=$("#val").val();
+        var _add='<tr> <td>'+length+'</td> <td >'+docName+'</td> <td >'+docDes+'</td> <td >4</td> <td>2</td> <td>3</td> <td>'+creatTime+'</td> <td>财务部</td> <td class="optBtn "> <button class="btn btn-primary edit"  >预览</button> <button class="btn btn-red delModel">删除</button> <button class="btn btn-primary">重传</button> <button class="btn btn-primary">追加</button> </td> </tr>';
+        $table1.append(_add);
+        }else {
+           return;
+		}
+        $alertAdd.modal("toggle");
+    });
+</script>
+<!--<script type="text/javascript">
+	var data;
+	T.getJson('../../main/getAddressList.do?', function(res) {	
+		data=res.data;
+		_get('table1').innerHTML = baidu.template('tpl11', res);
+		$('.loading').hide();
+	});
+	
+	T('#search').on('click',function(){
+		var search_text=$("#search_text").val().trim();
+		if(search_text=="工号/姓名/部门"||search_text==""){
+			$("#txt_insert p").remove();
+			$("#txt_insert").append("<p>搜索条件不能为空！</p>");
+			$("#modal_alert").modal("toggle");
+			
+			T.getJson('../../main/getAddressList.do?', function(res) {	
+				data=res.data;
+				_get('table1').innerHTML = baidu.template('tpl11', res);
+			});
+		}else {
+			T.getJson('../../main/getAddressList.do?flag=search&search_text='+search_text, function(res) {	
+				data=res.data;
+				if(data.length==0){
+					$("#txt_insert p").remove();
+					$("#txt_insert").append("<p>未搜索到相关内容！</p>");
+					$("#modal_alert").modal("toggle");
+					
+					T.getJson('../../main/getAddressList.do?', function(res) {	
+						data=res.data;
+						_get('table1').innerHTML = baidu.template('tpl11', res);
+					});
+				}else{
+					_get('table1').innerHTML = baidu.template('tpl11', res);
+				}
+			});
+		}
+	});
+	
+	document.onkeydown=function(e) {
+		if(e.keyCode==13) {
+			T('#search').click();
+		}
+	}
+		
+</script>-->
+<script>
+	/*报告操作*/
+	$("#table1").on("click","button",function () {
+        var id=this.getAttribute("data-echo");
+	    switch (this.innerHTML){
+			case "预览":
+//			    window.parent.frames[0].location.href="iframe2.html?id="+id;
+			    break;
+            case "删除":
+                var self=$(this);
+                $alertModal.modal("toggle");
+                $("#is_true").click(function () {
+                    self.parent().parent().remove();
+                });
+                break;
+            case "重传":
+                state=1;
+                $(".panelBtn").children("a").removeAttr("disabled");
+                $name.removeAttr("disabled");
+                $des.removeAttr("disabled");
+                var nameVal=$(this).parent().siblings("td").eq(1).html();
+                var desVal=$(this).parent().siblings("td").eq(2).html();
+                $name.val(nameVal);
+                $des.val(desVal);
+                $alertAdd.modal("toggle");
+                break;
+            case "追加":
+                state=2;
+                $(".panelBtn").children("a").attr({"disabled":"disabled"});
+                $name.attr({"disabled":"disabled"});
+                $des.attr({"disabled":"disabled"});
+                var nameVal=$(this).parent().siblings("td").eq(1).html();
+                var desVal=$(this).parent().siblings("td").eq(2).html();
+                $name.val(nameVal);
+                $des.val(desVal);
+                $alertAdd.modal("toggle");
+                break;
+		}
+    });
+	/*字段编辑*/
+	$("#field-content").on("click","a",function () {
+        var self=$(this);
+        var editContent=$(this).parent().siblings(".edit-content");
+	    switch (this.innerHTML){
+            case "编辑":
+                var filed_name=editContent[0].innerHTML;
+                var filed_type=editContent[1].innerHTML;
+                editContent[0].innerHTML="<input type='text' value='"+filed_name+"'>";
+                editContent[1].innerHTML="<input type='text' value='"+filed_type+"'>";
+                editContent[1].innerHTML='<div class="typeTree"></div>';
+                $(".typeTree").combotree({
+                    url:"../ajax/type.json",
+                    method:"get",
+                    editable:true,
+                    width:80,
+                    height:30,
+                    panelWidth:80,
+                    panelHeight:70,
+                    value:"数字"
+                });
+                self.html("完成");
+                break;
+            case "删除":
+                    self.parent().parent().remove();
+                break;
+            case "完成":
+                var fieldVal=$(editContent[0]).children("input").val();
+                console.log(editContent[1]);
+                var fieldType="数子";
+                editContent[0].innerHTML=fieldVal;
+                editContent[1].innerHTML=fieldType;
+                self.html("编辑");
+                break;
+		}
+
+    });
+	/*添加*/
+	$(".addField").click(function () {
+	    var str='<tr> <td>3</td> <td class="edit-content">xxx</td> <td class="edit-content">数字</td> <td class="optBtn panelBtn"> <a class="btn btn-primary ">编辑</a> <a class="btn btn-red ">删除</a> </td> </tr>';
+	    $("#field-content").append(str);
+	})
+</script>
+<div class="clr"></div>
+</body>
+</html>

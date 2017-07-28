@@ -1,0 +1,12 @@
+{
+	data:[
+		{kpi_id: 0, branch_id:1, name:'住院部', status_id:1, status:'已分配'},
+		{kpi_id: 0, branch_id:2, name:'门诊部', status_id:2, status:'已处理'},
+		{kpi_id: 0, branch_id:3, name:'护理部', status_id:3, status:'已反馈'},
+		{kpi_id: 0, branch_id:4, name:'麻醉科', status_id:1, status:'已分配'},
+		{kpi_id: 0, branch_id:5, name:'aa部', status_id:1, status:'已分配'},
+		{kpi_id: 0, branch_id:6, name:'bb部', status_id:2, status:'已处理'},
+		{kpi_id: 0, branch_id:7, name:'cc部', status_id:3, status:'已反馈'},
+		{kpi_id: 0, branch_id:8, name:'dd科', status_id:1, status:'已分配'}
+	]
+}

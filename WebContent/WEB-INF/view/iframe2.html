@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../resources/lib/awe/awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/images/font/iconfont.css?v=2"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css?v=2"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/image/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+    <style>
+        html,body{height:100%;overflow-y: hidden}
+        div.layout { padding:10px 0 0 225px; height:100% ;z-index: 3}
+        div.layout > div { float: left;height: 100%;background: white;border-radius: 20px}
+        div.layout:after { content:"."; display: block; height: 0; clear: both;}
+        div.layout-right { width: 99%;min-width: 600px;overflow-y: auto}
+        div.layout-right::-webkit-scrollbar{width:0 }
+        div.layout-left { margin-left: -210px; width:200px;border-right: 3px solid grey}
+        #menuTree{padding: 10px}
+        .reportTitle{padding-bottom:5px;width:100%;border-bottom: 3px solid #0081c2}
+        .reportTitle>ul{float:left;padding-left: 10px; margin-top: 10px;}
+        .reportTitle ul li {float:left;height:20px;padding:0 5px;border-right:3px solid #0090E5 ;line-height: 20px;font-size: 18px}
+        .reportTitle ul li:last-child {border-right:none}
+        .reportTitle>div{float:right;padding-top:5px;margin-right: 30px}
+        div.box{padding:10px 30px ;position: relative;min-width: 600px}
+        .editBtn>div{float:left}
+        .des th{text-align: center;width: 90px; height:30px; }
+
+    </style>
+
+</head>
+<body style="background: #E3E3E3">
+<div class="layout">
+    <div class="layout-left">
+        <ul id="menuTree"></ul>
+    </div>
+    <div class="layout-right">
+        <div class="reportTitle clearfix" >
+            <ul id="theme">
+                <li>第一章</li>
+                <li>第一节</li>
+                <li>1.1.1</li>
+            </ul>
+            <div>
+                <button type="submit" class="btn btn-primary" style="font-size: 18px" id="edit">编 辑</button>
+            </div>
+        </div>
+        <iframe id="editTools" frameborder="0" style="padding:0 25px;width:100%;height:600px;display:none"></iframe>
+        <div class="box"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
+<script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common.js"></script>
+<script src="../../resources/echarts/echarts.js"></script>
+<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script src="../../resources/js/modal.js"></script>
+<script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
+<script id="tem" type="text/template">
+    <h3 style="padding: 0; margin: 10px 0 17px 0; text-align: center">[%=list.currYear+"年"+list.curentSeason+"季度医院医疗质量管理"%]</h3>
+    <p style="white-space:pre-wrap; font-size: 18px; line-height: 30px;text-indent: 2rem">[%="根据上级卫生主管部门的布置及有关文件精神，结合卫生部今年关于“进一步深入开展医院管理年活动”及活动方案，我院加强业务建设和质控管理，注重安全医疗，认真贯彻执行相关卫生法律法规，强化医务人员质量意识，为病人创造了一个安全、有效、合理的诊疗环境，我院"+list.currentMonth+"月份报表："%]
+    </p>
+    <iframe src=[%="../chat/demo"+list.id+".html"%] frameborder="0" style="margin:40px 0;width:100%;height:300px" >
+    </iframe>
+</script>
+<!--编辑器-->
+<script>
+    var $edit=$("#edit");
+    var $box=$(".box");
+    var editID=parseInt((location.search).split("=")[1])-1;
+    var is_edit=location.search.indexOf("edit");
+    console.log(is_edit);
+    if(is_edit>=0){
+        $edit.show();
+    }else{
+        $edit.hide();
+    }
+    $.ajax({
+        url:"../ajax/tree4.json",
+        success:function (data) {
+            $box.html(baidu.template("tem",data[editID]));
+        }
+    });
+    /*文档树*/
+    var $menuTree=$("#menuTree"),
+     $theme=$("#theme"),
+     $editTools=$("#editTools");
+     $menuTree.tree({
+         url:"../ajax/tree2.json",
+         method:"get",
+         animate:true,
+         dnd:true,
+         onClick:function (node) {
+             if(node.children){
+                 return;
+             }else{
+             $editTools.hide();
+             $box.show();
+             $edit.html("编辑");
+             var arr=[];
+             var children=$(node.target).children(".tree-title");
+             while (true){
+                 var str="<li>"+children.html()+"</li>";
+                 arr.push(str);
+                 children=children.parent().parent().parent().siblings("div").children(".tree-title");
+                if (children.html()=="质控报告"){
+                    break;
+                }
+             }
+             $theme.html(arr.reverse());
+            $.ajax({
+                url:"../ajax/tree4.json",
+                id:node.id,
+                success:function (data) {
+                    var index=parseInt(this.id)-1;
+                   $(".box").html(baidu.template("tem",data[index]));
+                }
+            })
+             }
+         },
+         onDragEnter:function (e,source) {
+                var node =$menuTree.tree("getNode",e);
+         if(node.children.length==0){
+                return false;
+         }
+     }
+     });
+     /*编辑器*/
+    $edit.click(function () {
+         var self=$(this);
+         if($(this)[0].innerText=="取消"){
+             $editTools.hide();
+             $box.show();
+             self[0].innerText="编辑";
+         }else{
+         $editTools[0].src="complete.html";
+         $editTools.load(function () {
+             $(this).show();
+             $box.hide();
+             self[0].innerText="取消";
+         })
+         }
+     })
+</script>
+<div class="clr"></div>
+</body>
+</html>

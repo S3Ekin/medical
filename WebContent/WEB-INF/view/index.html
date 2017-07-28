@@ -1,0 +1,575 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>医疗质控报告</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../resources/lib/awe/awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/images/font/iconfont.css?v=2"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css?v=2"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/icon.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/image/style.css"/>
+    <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
+    <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
+    <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/uaredirect.js"></script>
+    <script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/common.js"></script>
+</head>
+<body style="overflow-x: hidden;overflow-y: hidden;">
+<ul id="header" class="nosel" style="width:100%;background:#24BAFF url('../../resources/image/LOGO_RT.png') no-repeat">
+    <li class="logo fl"><img src="../../resources/image/LOGO2.png"/></li>
+    <li class="fl LOGO_TXT">
+        <span id="logo_title">医疗质控报告</span>
+    </li>
+    <li class="fl LOGO_subhead">
+        <span id="version" style="color:#fff;position:relative;top:10px;font-size:16px;"></span>
+    </li>
+    <li id="fr_a" style="text-align:right;padding-right:10px;">
+        <div class="info">
+            <div style="display:inline-block;margin-right:25px;">
+                <div class="start_panel">
+                    <div class="panel_btn ">
+                        <a class="txt_blue" id="_name" title="点击我"><i class="fa fa-user"></i> demo</a>
+                    </div>
+                    <div id="_name_panel" class="panel_div" style="width:95px;left:-12px;">
+                        <i class="ico_up"></i>
+                        <div class="menu_a">
+                            <a onclick="mine()" title="修改密码">修改密码</a>
+                            <a href="#" onclick="" title="退出系统">退出系统</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="start_panel" id="system_settings">
+                    <div class="panel_btn">
+                        <a class="txt_blue" id="_system" title="点击我"><i class="icon-xinxiguanli"></i> 系统设置</a>
+                    </div>
+                    <div id="_system_panel" class="panel_div" style="width:125px;left:-12px;">
+                        <i class="ico_up"></i>
+                        <div>
+                            <a class="menu_btn"><span>系统管理</span><i class="ico_arrows"></i></a>
+                            <ul class="menu_ul menu_a">
+                                <li><a class="base" id="1001">基本设置</a></li>
+                                <li><a class="base" id="1002">公告管理</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a class="menu_btn"><span>权限管理</span><i class="ico_arrows"></i></a>
+                            <ul class="menu_ul menu_a">
+                                <li><a class="base" id="1004">用户管理</a></li>
+                                <li><a class="base" id="1005">部门管理</a></li>
+                                <li><a class="base" id="1006">角色管理</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+
+</ul>
+<table id="menuBar" cellpadding="0" cellspacing="0" style="width:100%;">
+    <tr>
+        <td id="leftmenu" style="width:250px;height:700px;max-width: 250px;background: #eef1f8" valign="top">
+            <ul id="menu_UL">
+                <li>
+                    <div class="div_m focus_div" id="dul1100">
+                        <a class="a_m" ><i class="icon-jiance6"></i> <span>医疗质控报告</span></a><b onclick="nav(this)"><i class="fa fa-chevron-up"></i></b>
+                    </div>
+                    <ul id="ul1100" class="ul_m">
+                        <li id="li1110" class="li_m review focus_li"><a id="link_1110" onclick="navto(this, event, 'list.html')"><i class="fa fa-circle"></i><span>质控报告清单</span><b><i class="fa fa-chevron-right"></i></b></a>
+                        </li>
+                        <li id="li1120" class="li_m review">
+                            <a id="link_1120" onclick="navto(this, event, 'catalogue.html')"><i class="fa fa-circle"></i><span>目录样式</span><b><i class="fa fa-chevron-right"></i></b></a>
+                        </li>
+                        <li id="li1121" class="li_m review">
+                            <a id="link_1121"  onclick="navto(this, event,'model.html')"><i class="fa fa-circle"></i><span>模版变量设置</span><b><i class="fa fa-chevron-right"></i></b></a>
+                        </li>
+                        <li id="li1122" class="li_m review">
+                            <a id="link_1122"  onclick="navto(this, event,'updata_manager.html')"><i class="fa fa-circle"></i><span>上传数据管理</span><b><i class="fa fa-chevron-right"></i></b></a>
+                        </li>
+                        <li id="li1123" class="li_m review">
+                            <a id="link_1123"  onclick="navto(this, event,'table_edit.html')"><i class="fa fa-circle"></i><span>表格创建编辑</span><b><i class="fa fa-chevron-right"></i></b></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+        <td id="rightcnt" valign="top">
+            <!-- 点击隐藏显示按钮 -->
+            <div id="lf_show_div">
+                <b id="lf_show" class="nav42" title="点击隐藏左侧菜单栏"></b>
+            </div>
+            <!-- 公告通知栏 -->
+            <div class="public" id="scrollDiv" style="width: 100%">
+                <i class="icon-tongzhi"></i>
+                <ul id="ul_li">
+
+                </ul>
+            </div>
+            <!-- 内联框架 -->
+            <iframe id="mainframe" name="mainframe" frameborder="false" scrolling="auto"
+                    style="overflow-x:hidden;border:none;width:100%;z-index: 3000;" allowtransparency="true"></iframe>
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    window.onload=function () {
+        window.frames[0].location.href ="list.html";
+    };
+    var o_id = '';	//给iframe 内联框架传id的全局变量
+
+    /* 左边菜单栏隐藏显示 */
+    $("#lf_show").click(function () {
+        $('#leftmenu').toggle();
+    });
+    $("#lf_show_div").mouseover(function () {
+        var is_tog = $("#leftmenu").is(":hidden")
+        if (is_tog == false) {
+            $("#lf_show").mouseover(function () {
+                $("#lf_show").removeClass().addClass('nav52').attr('title', '点击隐藏左侧菜单栏');
+            });
+            $("#lf_show").mouseleave(function () {
+                $("#lf_show").removeClass().addClass('nav42').attr('title', '点击隐藏左侧菜单栏');
+            });
+        }
+        if (is_tog == true) {
+            //$("#lf_show").removeClass().addClass('nav41');
+            $("#lf_show").mouseover(function () {
+                $("#lf_show").removeClass().addClass('nav51').attr('title', '点击展开左侧菜单栏');
+            });
+            $("#lf_show").mouseleave(function () {
+                $("#lf_show").removeClass().addClass('nav41').attr('title', '点击展开左侧菜单栏');
+            });
+        }
+    });
+
+    /* 文档树生成 */
+    //	esaytree
+    /*var $menuTree=$("#menu_UL"),
+     $iframe=$("#mainframe"),
+     $rightMenu=$("#rightMenu");
+     $menuTree.tree({
+     url:"../ajax/tree.json",
+     method:"get",
+     animate:true,
+     dnd:true,
+     onClick:function (node) {
+     console.log(node);
+     $iframe[0].src="iframe2.html";
+     },
+     onContextMenu:function (e,node) {
+     e.preventDefault();
+     $(this).tree("select",node.target);
+     $rightMenu.show();
+     $rightMenu.css({"top":e.clientY,"left":e.clientX+30});
+     },
+     onDragLeave:function (target, source){
+     var node=$(this).tree("getNode",target);
+     console.log(node,"node");
+     console.log(target,"leavel离开");
+     console.log(source,"leaveSource");
+     },
+     onDragEnter:function (e,source) {
+     console.log(e,"被拖");
+     console.log(source,"被拖");
+     var node =$menuTree.tree("getNode",e);
+     console.log(node,"node");
+     console.log(node.children,"nodechildren");
+     if(node.children.length==0){
+     console.log("没children");
+     return false;
+     }else{
+     console.log("有children");
+     }
+     }
+     });
+     /!*右击菜单*!/
+     var rightMenu={
+     node:function () {
+     return $menuTree.tree('getSelected').target;
+     },
+     rename:function () {
+     $menuTree.tree("beginEdit",this.node());
+     },
+     del:function () {
+     $menuTree.tree("remove",this.node());
+     },
+     append:function () {
+     var child=$(this.node()).siblings("ul")[0];
+     var parent=$(this.node()).parent().parent().siblings("div")[0];
+     $menuTree.tree("append",{
+     parent:child?this.node():parent,
+     data: [{text: '新建文件'}]
+     });
+     $menuTree.tree("expand",this.node());
+     },
+     appendFloder:function () {
+     var child=$(this.node()).siblings("ul")[0];
+     var parent=$(this.node()).parent().parent().siblings("div")[0];
+     /!* if (!child){
+     var parentNode=$menuTree.tree("getParent",this.node());
+     console.log(parentNode,"父");
+     var str='<li><div  class="tree-node droppable" style=""><span class="tree-indent"></span><span class="tree-indent"></span><span class="tree-hit tree-expanded"></span><span class="tree-icon tree-folder tree-folder-open "></span><span class="tree-title">新建文件夹123</span></div><ul></ul></li>';
+     $(parentNode.target).siblings().append(str)
+     //                $menuTree.tree("insert",{
+     //                    after:this.node(),
+     //					data:[{text:"ekin"}]
+     //				})
+     }*!/
+
+     $menuTree.tree("append",{
+     //                parent:child?this.node():parent,
+     parent:this.node(),
+     data: [{text:'新建文件夹'}]
+     });
+     var currentNodes=$menuTree.tree("getNode",this.node());
+     console.log(this.node());
+     console.log(currentNodes.children[currentNodes.children.length-1]);
+     var nodeId=currentNodes.children[currentNodes.children.length-1].domId;
+     console.log($("#"+nodeId)[0]);
+     $menuTree.tree("select",$("#"+nodeId)[0]);
+     var selectNode=$menuTree.tree("getSelected");
+     console.log(selectNode,"selecter");
+     $menuTree.tree("insert",{
+     parent:selectNode.target,
+     date:[{text:"新建文件34"}]
+     });
+     //			var index=node.domId.match(/\d+/)[0];
+     //            $menuTree.tree("append",{
+     //                parent:$("#"+node.domId)[0],
+     //				date:[{text:"新建文件34"+index}]
+     //			});
+     //            console.log(node.domId,index,"append");
+     }
+
+     };
+     $(document).click(function () {
+     $rightMenu.hide();
+     });
+     $menuTree.click(function () {
+     $rightMenu.hide();
+     });*/
+    //	自己封装
+    /*var datas=[{
+     t:'第一章',s:[
+     {t:'第一节',s:[{t:'20xx上半年医院医疗报告',id:"1"}]},
+     {t:'第二节',s:[{t:'第一段',id:"2"},{t:'第二段',id:"3"},{t:'第三段',id:"4"},{t:'第四段',id:"5"},{t:'第五段',id:"6"},{t:'第六段',id:"7"}]},
+     {t:'第三节',s:[{t:'第一段',s:[{t:'第一组',id:"8"}]},{t:'第二段',s:[{t:'第二组',id:"9"}]}]}
+     ]
+     },
+     {t:'第二章',s:[{t:'第一节',id:"10"}]},
+     {t:'第三章',s:[{t:'第一节',s:[{t:'第一段',s:[{t:"第一组",id:"11"}]}]},{t:'第二节',id:"12"}]},
+     {t:'第四章',s:[{t:'第一节',id:"13"}]}
+     ];*/
+    /*$.ajax({
+     url:"../ajax/tree.json",
+     success:function (data) {
+     var length=data.length;
+     for (var i = 0; i < length; i++) {
+     var obj =data[i]["content"];
+     var li=document.createElement("li");
+     var title=document.createElement("p");
+     var odiv=document.createElement("div");
+     $(title).addClass("title ");
+     title.innerHTML="<i class='icon-jiance6 icon-left'></i><span>"+data[i].title+"</span><b><i class='fa fa-chevron-down'></i></b>";
+     li.appendChild(title);
+     li.appendChild(odiv);
+     new Tree(obj,odiv);
+     //				str+="<" + li.tagName + ">" + li.innerHTML + "</" + li.tagName + ">";
+     $("#menu_UL").append(li);
+
+     }
+     $("p.title").on("click","b",function () {
+     if($(this).children().prop("className")=="fa fa-chevron-up"){
+     $(this).children().prop("className","fa fa-chevron-down")
+     }else{
+     $(this).children().prop("className","fa fa-chevron-up")
+     }
+     $(this).parent().siblings("div").slideToggle()
+     })
+     }
+     });
+     function getStyle(obj,attr){
+     if(obj.currentStyle){
+     return obj.currentStyle[attr];
+     }
+     else{
+     return document.defaultView.getComputedStyle(obj,null)[attr];
+     }
+     }
+     function Tree(data, el) {
+     /!*添加元素*!/
+     this.app=function(par,tag){
+     return par.appendChild(document.createElement(tag))
+     };
+     /!*获取元素*!/
+     //        this.create(document.getElementById(el),data);
+     this.create(el,data);
+     }
+     Tree.fn = Tree.prototype = {
+     create: function (par,group){
+     var host=this, length = group.length;
+     console.log(group,"group");
+     for (var i = 0; i < length; i++) {
+     var dl =this.app(par,'DL'), dt = this.app(dl,'DT'),dd = this.app(dl,'DD');
+     if ($(dl).parent()[0].tagName=="DIV"){
+     $(dl).addClass("first-lev");
+     }
+     console.log(group[i]['s'],"item");
+     if (!group[i]['s']){
+     var _id=group[i]["id"];
+     dt.innerHTML='<a class="last-lev"  href="#!/content/'+_id+'"><span class="glyphicon glyphicon-pushpin icon-left"></span><em>'+group[i]['t']+'</em><i class="fa fa-chevron-right later-lev"></i></a>';
+     $(dt).on("click",function (event) {
+     $(".last-lev").removeClass("foucs");
+     $(this).children('a').addClass("foucs");
+     window.frames[0].location.href="iframe2.html?id="+_id;
+     $(".tree dl >dt").removeClass("lev-one");
+     $(this).parents(".first-lev").children("dt").addClass("lev-one");
+     var sd=$(this).parent();
+     var count=0;
+     var arr=[];
+     arr.push($(this).children('a')[0].innerText);
+     while (true){
+     count++;
+     sd=sd.parent().parent();
+     var textNode=sd.children("dt").children("a")[0].innerText;
+     arr.push(textNode);
+     if (sd[0].className=="first-lev"){
+     var article=$(sd).parent().siblings("p").children("span").html();
+     arr.push(article);
+
+     localStorage.setItem("_theme",JSON.stringify(arr));
+     break;
+     }
+     }
+     });
+     continue;
+     }
+     dt.innerHTML='<a href="javascript:void(0)" ><span class="fa fa-circle icon-left"></span><em>'+group[i]['t']+'</em><b><i class="fa fa-chevron-up"></i></b></a>';
+     dt.group=group[i]['s'];
+     $(dt).children().children("b").on("click",function (){
+     var dd= $(this).parent().parent().siblings()[0];
+     if($(this).children().prop("className")=="fa fa-chevron-up"){
+     $(this).children().prop("className","fa fa-chevron-down")
+     }else{
+     $(this).children().prop("className","fa fa-chevron-up")
+     }
+     if (!dd.hasChildNodes()){
+     host.create(dd,$(this).parent().parent()[0].group);
+     $(dd).css("display","none");
+     $(dd).slideDown(500);
+     var $son= $(this).parent().parent().siblings().children().children().children("a");
+     var padding=getStyle($(this).parent()[0],"paddingLeft");
+     padding=parseInt(padding);
+     $son.css("paddingLeft",padding+20);
+     }else {
+     $(this).parent().parent().siblings("DD").slideToggle(500);
+     }
+     })
+     }
+     }
+     };
+     $(".tree dl >dt").on("click",function () {
+     $(".tree dl >dt").removeClass("lev-one");
+     $(this).addClass("lev-one");
+     });*/
+    /*右击菜单*/
+    /*var $menuTree=$("#menu_UL"),
+     $menu1=$("#menu1"),
+     $menu2=$("#menu2");
+     $menu1.menu({
+     onClick:function (item) {
+     alert("menu");
+     var optItem=$(".lev-one");
+     switch (item.name){
+     case "newDoc" :
+     var str="<dl class='newDoc'><dt><a href='javascript:;' class='last-lev' ><span class='glyphicon glyphicon-pushpin icon-left '></span><em>新建文件</em><i class='fa  fa-chevron-right later-lev'></i></a></dt><dd></dd></dl>";
+     optItem.siblings("dd").append(str);
+     var padding=getStyle(optItem.children("a")[0],"paddingLeft");
+     padding=parseInt(padding);
+     optItem.siblings("dd").children().children("dt").children("a:last").css("paddingLeft",padding+20);
+     break;
+     case "newfloder":
+     var padding=getStyle(optItem.children("a")[0],"paddingLeft");
+     padding=parseInt(padding);
+     var str="<dl class='newfloder'><dt><a href='javascript:;' style='padding-left:"+(padding+20)+"px'><span class='fa fa-circle icon-left'></span><em>新建文件夹</em><b><i class='fa  fa-chevron-down'></i></b></a></dt><dd><dl><dt><a href='javascript:;' class='last-lev' style='padding-left: "+(padding+40)+"px'><span class='glyphicon glyphicon-pushpin icon-left '></span><em>新建文件</em><i class='fa  fa-chevron-right later-lev'></i></a></dt><dd></dd></dl></dd></dl>";
+     optItem.siblings("dd").append(str);
+     optItem.siblings("dd").children().children("dt").children("a").on("click","b",function () {
+     $(this).parent().parent().siblings("dd").slideToggle();
+     });
+
+     break;
+     case "del" :
+     optItem.parent().remove();
+     break;
+     case "rename" :
+     var editItem=optItem.children().children("em");
+     editItem.html("<input type='text' style='font-size: 18px'>");
+     editItem.children("input").on("blur",function () {
+     var val=$(this)[0].value;
+     if(!val){
+     alert("不能为空！")
+     }else{
+     editItem.html(val);
+
+     }
+
+     });
+     break;
+     default:
+     break;
+     }
+     }
+     });*/
+    /* $menu2.menu({
+     /!* onClick:function (item) {
+     var optItem=$(".lev-one");
+     $(this).removeClass("lev-one");
+     console.log(optItem,"selected");
+     switch (item.name){
+     case "newDoc" :
+     var str="<dl class='newDoc '><dt><a href='javascript:;' class='last-lev' ><span class='glyphicon glyphicon-pushpin icon-left '></span><em>新建章节</em><i class='fa  fa-chevron-right later-lev'></i></a></dt><dd></dd></dl>";
+     optItem.siblings("dd").append(str);
+     var padding=getStyle(optItem.children("a")[0],"paddingLeft");
+     padding=parseInt(padding);
+     optItem.siblings("dd").children().children("dt").children("a:last").css("paddingLeft",padding+20);
+
+     break;
+     case "newfloder":
+     var padding=getStyle(optItem.children("a")[0],"paddingLeft");
+     padding=parseInt(padding);
+     var str="<dl class='newfloder first-lev'><dt><a href='javascript:;' style='padding-left:"+(padding+20)+"px'><span class='fa fa-circle icon-left'></span><em>新建章节</em><b><i class='fa  fa-chevron-down'></i></b></a></dt><dd><dl><dt><a href='javascript:;' class='last-lev' style='padding-left: "+(padding+40)+"px'><span class='glyphicon glyphicon-pushpin icon-left '></span><em>新建文件</em><i class='fa  fa-chevron-right later-lev'></i></a></dt><dd></dd></dl></dd></dl>";
+     optItem.siblings("div").append(str);
+     optItem.siblings("div").children().children("dt").children("a").on("click","b",function () {
+     $(this).parent().parent().siblings("dd").slideToggle();
+     });
+
+     break;
+     case "del" :
+     optItem.parent().remove();
+     break;
+     case "rename" :
+     var editItem=optItem.children().children("em");
+     editItem.html("<input type='text' style='font-size: 18px'>");
+     editItem.children("input").on("blur",function () {
+     var val=$(this)[0].value;
+     if(!val){
+     alert("不能为空！")
+     }else{
+     editItem.html(val);
+
+     }
+
+     });
+     break;
+     default:
+     break;
+     }
+     }*!/
+     });*/
+    /*$menuTree.on("contextmenu","dt",function (e) {
+     e.preventDefault();
+     var self=$(this);
+     $(".tree dl >dt").removeClass("lev-one");
+     $(this).addClass("lev-one");
+     var is_last=$(this).children("a")[0].className.indexOf("last-lev");
+     if(is_last==0){
+     $menu2.menu("show",{
+     left:e.pageX,
+     top:e.pageY
+     });
+     }else{
+     $menu1.menu("show",{
+     left:e.pageX,
+     top:e.pageY
+     });
+     }
+
+     });
+     $menuTree.on("contextmenu","p",function (e) {
+     e.preventDefault();
+     var self=$(this);
+     $(".tree p").removeClass("lev-one");
+     $(this).addClass("lev-one");
+     $menu1.menu("show",{
+     left:e.pageX,
+     top:e.pageY
+     });
+     });*/
+
+    /*左侧菜单栏 箭头和文字点击事件分开 */
+    //一级 文字点击事件
+    function navopen(o, e, t){
+        T(o).closest('#menu_UL').find('li .div_m').removeClass('focus_div');//closest最终指定父级
+        T(o).parent().addClass('focus_div'); //为点击的行加背景图片
+        window.frames[0].location.href =t;
+        e.preventDefault();
+    }
+    //二级 文字点击事件
+    function navto(o, e, t) {
+        T(o).closest('#menu_UL').find('.li_m').removeClass('focus_li');
+        T(o).parent().addClass("focus_li"); //为点击的行加背景色
+        T(o).closest('#menu_UL').find('.div_m').removeClass('focus_div');
+        T(o).parent().parent().parent().find('.div_m').addClass('focus_div');//为点击的行的一级加背景图片
+        if(t){ window.frames[0].location.href = t;}
+        o_id=o.id;//为全局变量o_id赋值;
+        e.preventDefault();
+    }
+    //伸缩 箭头点击事件
+    function nav(o){
+        $(o).parent().parent().parent().find('li .div_m').removeClass('focus_div');
+        $(o).parent().addClass('focus_div'); //为点击的行加背景图片
+        $(o).find('i').toggleClass('fa-chevron-down'); //切换向上向下箭头
+        var ul_m=$(o).parent().parent().find('ul.ul_m');
+        ul_m.slideToggle(); //动画伸缩
+    }
+
+
+
+    /* 设置内联框架的高度 */
+    function winresize() {
+        var h = T(window).height();
+        T('#mainframe').height(h - 110);
+    }
+    winresize();
+    //页头 弹出框使用
+    $("#_name").click(function (e) {
+        popPanel('#_name_panel', e)
+    });
+    $("#_system").click(function (e) {
+        popPanel('#_system_panel', e)
+    });
+    //下拉菜单使用
+    menu_dropDown(".menu_btn");
+    //下拉菜单中点击可跳转的行时
+    var menu_a = $(".menu_a").find('a');
+    menu_a.each(function () {
+        $(this).click(function () {
+            $(this).parents(".panel_div").slideUp();//点击跳转的a链接后，面板隐藏
+
+        })
+    });
+    //切换角色下拉框内的背景色切换
+    function switchrole(e) {
+        var role_id = e.id;
+        var Srole_id = "#" + role_id;
+        $(Srole_id).parent().find('a').removeClass('bg_gray');
+        $(Srole_id).addClass("bg_gray");
+//        getleftmenu(role_id);
+    }
+
+    /* 修改密码框 */
+    var leftmenu = T('#leftmenu');
+    var screenWidth = document.body.clientWidth;//获取当前可用屏幕宽度
+    function mine(url) {
+
+    }
+</script>
+<div class="clr"></div>
+</body>
+</html>

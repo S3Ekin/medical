@@ -1,0 +1,62 @@
+{
+    "data1": [
+        {
+            "type": "C",
+            "data": [
+                {
+                    "kpi_name": "医院符合卫生",
+                    "kpi_status": "未处理",
+                    "kpi_id": 123123,
+                    "id": 1231231233
+                },
+                {
+                    "kpi_name": "医院符合卫生",
+                    "kpi_status": "未处理",
+                    "kpi_id": 123123,
+                    "id": 1231231233
+                },
+                {
+                    "kpi_name": "医院符合卫生",
+                    "kpi_status": "未处理",
+                    "kpi_id": 123123,
+                    "id": 1231231233
+                }
+            ],
+            "array": [
+                {
+                    "level_name": "查阅资料",
+                    "description": "时限为一个年度",
+                    "value": "1.卫生部门2.在岗"
+                },
+                {
+                    "level_name": "查阅资w",
+                    "description": "时限为一个年度",
+                    "value": "1.卫生部门2.在岗"
+                },
+                {
+                    "level_name": "查阅资a料",
+                    "description": "时限为hrthrth年度",
+                    "value": "1.卫生rthtrh.在岗"
+                }
+            ]
+        },
+        {
+            "type": "B",
+            "data": [
+                {
+                    "kpi_name": "医fsfdsfsdf卫生",
+                    "kpi_status": "未处理",
+                    "kpi_id": 123123,
+                    "id": 1231231233
+                }
+            ],
+            "array": [
+                {
+                    "level_name": "查阅资料1",
+                    "description": "时限为一个年度1",
+                    "value": "1.卫生部门ee2.在岗ee"
+                }
+            ]
+        }
+    ]
+}

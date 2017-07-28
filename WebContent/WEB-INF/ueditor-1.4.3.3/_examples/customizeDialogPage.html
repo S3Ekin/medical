@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+<div class="content">
+    <h1>测试页面</h1>
+    <ul>
+        <li>还蛤</li>
+        <li>撒旦法</li>
+        <li>阿飞</li>
+        <li>遣返台湾</li>
+    </ul>
+</div>
+<!--页面中一定要引入internal.js为了能直接使用当前打开dialog的实例变量-->
+<!--internal.js默认是放到dialogs目录下的-->
+<script type="text/javascript" src="../dialogs/internal.js"></script>
+<script>
+    //可以直接使用以下全局变量
+    //当前打开dialog的实例变量
+    console.log('editor: '+editor);
+    //一些常用工具
+    console.log('domUtils: '+domUtils);
+    console.log('utils: '+utils);
+    console.log('browser: '+browser);
+
+</script>
+</body>
+</html>

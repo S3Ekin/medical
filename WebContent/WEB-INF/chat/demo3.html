@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>pie_chart</title>
+	<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../resources/echarts/echarts.js"></script>
+</head>
+<body>
+	<div id="p3_div_chart" style="width:100%;height: 250px"></div>
+	<script type="text/javascript">
+//	$('#p3_div_chart').width($('#p3_div_chart').parent().width());
+	var areaoption = {
+		    title: {
+		        text: '一线城市的医疗指数'
+		    },
+		    tooltip : {
+		        trigger: 'axis'
+		    },
+		    legend: {
+		        data:['上海','广州','深圳','北京'],
+                top:'top',
+				right:'30'
+		    },
+		    toolbox: {
+		        feature: {
+		            saveAsImage: {}
+		        }
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    xAxis : [
+		        {
+		            type : 'category',
+		            boundaryGap : false,
+		            data : ['2010','2011','2012','2013','2014','2015','2016']
+		        }
+		    ],
+		    yAxis : [
+		        {
+		            type : 'value'
+		        }
+		    ],
+		    series : [
+		        {
+		            name:'上海',
+		            type:'line',
+		            stack: '总量',
+		            areaStyle: {normal: {}},
+		            data:[220, 182, 191, 234, 290, 330, 310]
+		        },
+		        {
+		            name:'广州',
+		            type:'line',
+		            stack: '总量',
+		            areaStyle: {normal: {}},
+		            data:[150, 232, 201, 154, 190, 330, 410]
+		        },
+		        {
+		            name:'深圳',
+		            type:'line',
+		            stack: '总量',
+		            areaStyle: {normal: {}},
+		            data:[320, 332, 301, 334, 390, 330, 320]
+		        },
+		        {
+		            name:'北京',
+		            type:'line',
+		            stack: '总量',
+		            label: {
+		                normal: {
+		                    show: true,
+		                    position: 'top'
+		                }
+		            },
+		            areaStyle: {normal: {}},
+		            data:[820, 932, 901, 934, 1290, 1330, 1320]
+		        }
+		    ]
+		};
+		var myChart = echarts.init($('#p3_div_chart').get(0));
+		myChart.setOption(areaoption);
+		window.onresize = myChart.resize;//窗口自适应
+	</script>
+</body>
+</html>

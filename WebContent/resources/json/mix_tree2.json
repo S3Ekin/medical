@@ -1,0 +1,26 @@
+{
+	data:
+	{
+	"progress":10,
+	"id":"1",
+	"title":"医院",
+	"sub":[
+		{"id":"2","title":"院办公室","progress":60.0,"sub":[]},
+		{"id":"3","title":"信息科","progress":60.0,"sub":[]},
+		{"id":"4","title":"财务科","progress":60.0,"sub":[
+			       {"id":"9","title":"挂号处","progress":60.0,"sub":[]},
+				   {"id":"10","title":"收费处","progress":60.0,"sub":[]},
+				   {"id":"11","title":"出入院结算处","progress":60.0,"sub":[]},
+				   {"id":"12","title":"社保结算处","progress":60.0,"sub":[]}]},
+		{"id":"5","title":"总务科","progress":60.0,"sub":[
+			       {"id":"13","title":"餐厅","progress":60.0,"sub":[]},
+			       {"id":"14","title":"洗浆房","progress":60.0,"sub":[]},
+			       {"id":"15","title":"污水处理站","progress":60.0,"sub":[]}]},
+		{"id":"6","title":"医务科","progress":60.0,"sub":[
+			       {"id":"16","title":"急诊科","progress":60.0,"sub":[]},
+			       {"id":"17","title":"住院部","progress":60.0,"sub":[]},
+			       {"id":"19","title":"药械科","progress":60.0,"sub":[]},
+			       {"id":"20","title":"放射科","progress":60.0,"sub":[]}]}
+		  ]	
+	}
+}

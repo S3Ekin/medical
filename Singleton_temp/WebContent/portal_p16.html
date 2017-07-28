@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>pie</title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="echarts/echarts.js"></script>
+	<title>relative_chart</title>
+	</head>
+</head>
+<body>
+	<div id="p16_div_chart" style="width:580px;height: 250px"></div>
+	<script type="text/javascript">
+	$('#p16_div_chart').width($('#p16_div_chart').parent().width());
+	
+	var axisData = ['ＡＳＡ-Ⅰ级例数','ＡＳＡ-Ⅱ级例数','ＡＳＡ-Ⅲ级例数','ＡＳＡ-Ⅳ级例数','ＡＳＡ-Ⅴ级例数'];
+	var data = axisData.map(function (item, i) {
+	    return Math.round(Math.random() * 1000 * (i + 1));
+	});
+	var links = data.map(function (item, i) {
+	    return {
+	        source: i,
+	        target: i + 1
+	    };
+	});
+	links.pop();
+	
+		var relativeoption = {
+				title: {
+			        text: '麻醉分级（ＡＳＡ病情分级）管理例数'
+			    },
+			    
+			    toolbox: {
+			        feature: {
+			            dataView: {readOnly: false},
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    
+			    legend: {
+			        orient: 'vertical',
+			        left: 'left',
+			        data: ['ＡＳＡ-Ⅰ级例数','ＡＳＡ-Ⅱ级例数','ＡＳＡ-Ⅲ级例数','ＡＳＡ-Ⅳ级例数','ＡＳＡ-Ⅴ级例数'],
+			        textStyle: {
+			            color: '#ccc'
+			        }
+			    },
+			    
+			    tooltip: {},
+			    xAxis: {
+			        type : 'category',
+			        boundaryGap : false,
+			        data : axisData
+			    },
+			    yAxis: {
+			        type : 'value'
+			    },
+			    series: [
+			        {
+			            type: 'graph',
+			            layout: 'none',
+			            coordinateSystem: 'cartesian2d',
+			            symbolSize: 100,
+			            label: {
+			                normal: {
+			                    show: true
+			                }
+			            },
+			            edgeSymbol: ['circle', 'arrow'],
+			            edgeSymbolSize: [4, 10],
+			            data: data,
+			            links: links,
+			            lineStyle: {
+			                normal: {
+			                    color: '#2f4554'
+			                }
+			            },
+				        textStyle: {
+				            color: '#ccc'
+				        }
+			        }
+			    ]
+			};
+		var myChart = echarts.init($('#p16_div_chart').get(0));
+		myChart.setOption(relativeoption);
+		window.onresize = myChart.resize;//窗口自适应
+	</script>
+</body>
+</html>
