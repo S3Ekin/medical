@@ -335,6 +335,8 @@
                 	str ="",
 					state = is_zb ? "getChecked":"getSelected";
 				var nodes=$("#sourceTree").tree(state);
+				console.log(nodes);
+
 				if(is_zb){
 				    if(nodes.length){
                 for (var i = 0,length=nodes.length; i <length; i++) {
@@ -342,7 +344,7 @@
 					if (!obj.children.length==0){
 					    continue;
 					}else{
-                    str +='<div class="row"><div class = "col-xs-2 zb-name" >'+obj.text+":"+'</div><div class = "col-xs-5" ><div class="col-xs-4">横轴维度:</div><div class ="col-xs-8" ><div class ="row_wd"></div> </div></div ><div class ="col-xs-5" ><div class = "col-xs-4"> 纵轴维度 :</div><div class ="col-xs-8" ><div class = "col_wd"></div></div></div></div>';
+                    str +='<div class="row"><div class = "col-xs-2 zb-name" >'+obj.text+":"+'</div><div class = "col-xs-5" ><div class="col-xs-4">地区:</div><div class ="col-xs-8" ><div class ="row_wd"></div> </div></div ><div class ="col-xs-5" ><div class = "col-xs-4"> 品牌 :</div><div class ="col-xs-8" ><div class = "col_wd"></div></div></div></div>';
                     }
                 }
 				$newAdd.append(str);
@@ -393,10 +395,7 @@
                         $zbName.html(htm);
 					}
 				}
-
-//                $preBtn.removeAttr("disabled");
 				$table.show();
-//                $zbName.html(htm);
 			    break;
 			default:
 			    break;
