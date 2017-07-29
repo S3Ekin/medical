@@ -81,13 +81,13 @@
 			<div class="row">
 				<div class="col-xs-2">横轴维度:</div>
 				<div class="col-xs-3">
-					<div id="row_wd"></div>
+					<div class="wd-combo"></div>
 				 </div>
 			</div>
 			<div class="row">
 				<div class="col-xs-2">纵轴维度:</div>
 				<div class="col-xs-4">
-					<div id="col_wd"></div>
+					<div class="wd-combo"></div>
 				</div>
 			</div>
 		</div>
@@ -99,21 +99,16 @@
 			<div class="row">
 				<div class="col-xs-2">横轴字段:</div>
 				<div class="col-xs-4">
-					<div id="row_field"></div>
+					<div class="field-combo"></div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-2">纵轴字段:</div>
 				<div class="col-xs-4">
-					<div id="col_field"></div>
+					<div class="field-combo"></div>
 				</div>
 			</div>
 		</div>
-		<!--<div class="row">
-				<div class="col-xs-2">
-					<button class="btn btn-primary preBtn" disabled>预 览</button>
-				</div>
-		</div>-->
 		<div class="row table">
 			<div class="col-xs-2">预 览:</div>
 			<div class="col-xs-10 pre">
@@ -193,23 +188,8 @@
         $org=$("#organization"),
         $upload=$(".upload"),
         $table=$(".table"),
-//        $preBtn =$(".preBtn"),
         $sourceSelected=$("#sourceSelected"),
 		$sourceBtn=$(".sourceBtn");
-    /*横轴维度*/
-   /* $('#row_wd').combo({
-		width:100,
-		height:30,
-        panelWidth:100,
-        panelHeight:70,
-        value:"时间"
-     });
-    $('#sp').appendTo($('#row_wd').combo('panel'));
-    $('#sp input').click(function(){
-        var v = $(this).val();
-        var s = $(this).next('span').text();
-        $('#row_wd').combo('setValue', v).combo('setText', s).combo('hidePanel');
-    });*/
     /*机构树加载*/
     $org.combotree({
 		url:"../ajax/org.json",
@@ -221,8 +201,10 @@
         panelHeight:300,
         value:"信息科"
 	});
-	/*横轴树加载*/
-    $("#row_wd").combotree({
+	/*维度框加载*/
+    $(".wd-combo").combobox({
+		valueField:"id",
+		textField:"text",
         url:"../ajax/row_wd.json",
         method:"get",
         editable:true,
@@ -230,10 +212,18 @@
         height:30,
         panelWidth:180,
         panelHeight:100,
-        value:"信息科"
+        onLoadSuccess:function(data){
+			var loadData=$(this).combobox("getData");
+			$(this).combobox("setValue",loadData[3].text);
+		},
+		formatter:function (row) {
+            return "<span class='glyphicon glyphicon-pushpin'>&nbsp;"+row.text+"</span>"
+        }
     });
-	/*纵轴树加载*/
-    $("#col_wd").combotree({
+	/*字段框加载*/
+    $(".field-combo").combobox({
+        valueField:"id",
+        textField:"text",
         url:"../ajax/row_wd.json",
         method:"get",
         editable:true,
@@ -241,31 +231,15 @@
         height:30,
         panelWidth:180,
         panelHeight:100,
-        value:"信息科"
+        onLoadSuccess:function(data){
+            var loadData=$(this).combobox("getData");
+            $(this).combobox("setValue",loadData[3].text);
+        },
+        formatter:function (row) {
+            return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+        }
     });
-	/*横轴字段树加载*/
-    $("#row_field").combotree({
-        url:"../ajax/row_wd.json",
-        method:"get",
-        editable:true,
-        width:180,
-        height:30,
-        panelWidth:180,
-        panelHeight:100,
-        value:"信息科"
-    });
-	/*纵轴字段树加载*/
-    $("#col_field").combotree({
-        url:"../ajax/row_wd.json",
-        method:"get",
-        editable:true,
-        width:180,
-        height:30,
-        panelWidth:180,
-        panelHeight:100,
-        value:"信息科"
-    });
-
+	/*单选按钮事件*/
     $radio.on("click",function () {
         $zbName.html(null);
         $table.hide();
@@ -281,7 +255,6 @@
     });
 	/*数据源选择按钮*/
     $sourceBtn.on("click",function () {
-        $newAdd.html(null);
         $sourceSelected.window("open");
     });
 	/*数据源窗口加载*/
@@ -316,9 +289,7 @@
 						url:urls,
 						method:"get",
 						animate:true,
-						checkbox:is_checked,
-						onClick:function (node) {
-                        }
+						checkbox:is_checked
 					});
                 },
                 error : function() {
@@ -328,65 +299,60 @@
         }
     });
 	/*添加资源*/
+	var show_combo;
+	$.ajax({
+        url:"../ajax/show_type.json",
+		success:function (data) {
+            show_combo=data;
+        }
+	});
     $(".footer").on("click","button",function(){
         switch ($(this).html()){
 			case "确定":
                 var htm ="",
                 	str ="",
 					state = is_zb ? "getChecked":"getSelected";
+                $newAdd.html(null);
 				var nodes=$("#sourceTree").tree(state);
-				console.log(nodes);
-
 				if(is_zb){
 				    if(nodes.length){
                 for (var i = 0,length=nodes.length; i <length; i++) {
                     var obj = nodes[i];
-					if (!obj.children.length==0){
+					if (obj.children.length!=0){
 					    continue;
 					}else{
-                    str +='<div class="row"><div class = "col-xs-2 zb-name" >'+obj.text+":"+'</div><div class = "col-xs-5" ><div class="col-xs-4">地区:</div><div class ="col-xs-8" ><div class ="row_wd"></div> </div></div ><div class ="col-xs-5" ><div class = "col-xs-4"> 品牌 :</div><div class ="col-xs-8" ><div class = "col_wd"></div></div></div></div>';
+                        var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
+                        str ='<div class="row"><div class = "col-xs-2 zb-name" >'+obj.text+":"+'</div><div class = "col-xs-10" ><div class="col-xs-1">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9" ><div id="show_type_'+i+'"></div></div></div >';
+                        $newAdd.append(str);
+                        $("#show_type_"+i).combobox({
+                            valueField:"id",
+                            textField:"text",
+                            data:show_combo[_showId].combo,
+                            editable:true,
+                            width:180,
+                            height:30,
+                            panelWidth:180,
+                            panelHeight:100,
+                            onLoadSuccess:function(){
+                                var loadData=$(this).combobox("getData");
+                                $(this).combobox("setValue",loadData[1].text);
+                            },
+                            formatter:function (row) {
+                                return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                            }
+                        });
                     }
                 }
-				$newAdd.append(str);
+
 				$zb.show();
 				$upload.hide();
-						/*横轴树加载*/
-                        $(".row_wd").combotree({
-                            url:"../ajax/row_wd.json",
-                            method:"get",
-                            editable:true,
-                            width:180,
-                            height:30,
-                            panelWidth:180,
-                            panelHeight:100,
-                            value:"信息科"
-                        });
-						/*纵轴树加载*/
-                        $(".col_wd").combotree({
-                            url:"../ajax/row_wd.json",
-                            method:"get",
-                            editable:true,
-                            width:180,
-                            height:30,
-                            panelWidth:180,
-                            panelHeight:100,
-                            value:"信息科"
-                        });
-				    }else{
-//                        $table.hide();
-//                        $zb.hide();
-//                        $upload.hide();
+                    }else{
                         alert("没有选择文件！");
-//                        $preBtn.attr({"disabled":"disabled"});
                         return ;
                     }
                 }else{
 				    if(!nodes||nodes.children.length){
-//                        $zb.hide();
-//                        $upload.hide();
-//                        $table.hide();
 				        alert("请选择文件！");
-//                        $preBtn.attr({"disabled":"disabled"});
 				        return ;
 					}else{
 				        $zb.hide();

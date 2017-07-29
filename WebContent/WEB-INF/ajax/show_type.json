@@ -1,11 +1,11 @@
 ﻿[
 {"id":"1","type":"地区",
-  "combo":[{"children":[{"id":201,"text":"广东","children":[]},{"id":202,"text":"北京","children":[]},{"id":203,"text":"上海","children":[]},{"id":204,"text":"广州","children":[]},{"id":205,"text":"深圳","children":[]}],"id":200,"text":"中国"}]
+  "combo":[{"id":201,"text":"广东"},{"id":202,"text":"北京"},{"id":203,"text":"上海"},{"id":204,"text":"广州"},{"id":205,"text":"深圳"},{"id":200,"text":"全国"}]
 },
 {"id":"2","type":"品牌",
-"combo":[{"text":"所有品牌","value":300},{"text":"神州行","value":301},{"text":"全球通","value":302},{"text":"动感地带","value":303}]
+"combo":[{"text":"所有品牌","id":300},{"text":"神州行","id":301},{"text":"全球通","id":302},{"text":"动感地带","id":303}]
 },
 {"id":"3","type":"季节",
-  "combo":[{"text":"全年","value":300},{"text":"第一季度","value":301},{"text":"第二季度","value":302},{"text":"第三季度","value":303},{"text":"第四季度","value":302}]
+  "combo":[{"text":"全年","id":300},{"text":"第一季度","id":301},{"text":"第二季度","id":302},{"text":"第三季度","id":303},{"text":"第四季度","id":302}]
 }
 ]
