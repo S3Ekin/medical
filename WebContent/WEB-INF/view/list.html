@@ -53,16 +53,16 @@
 			<button  class="btn btn-green" id="addModel"><i class="fa fa-plus"></i> 新建</button>
 		</div>
     <div style="margin-left:50px" id="table">
-		<table cellspacing="0" cellpadding="0" class="list1" style="width:95%;">
+		<table cellspacing="0" cellpadding="0" class="list1" style="width:96%;min-width: 775px">
 			<tr>
 				<th style="width:6%;text-align:center;">序号</th>
 				<th style="width:8%;text-align:center;">保存时间</th>
 				<th style="width:15%;text-align:center;">报告类型</th>
-				<th style="width:18%;text-align:center;">报告名称</th>
+				<th style="width:auto;text-align:center;">报告名称</th>
 				<th style="width:15%;text-align:center;">目录样式</th>
 				<th style="width:8%;text-align:center;">创建时间</th>
 				<th style="width:7%;text-align:center;">创建人</th>
-				<th style="width:250px;text-align:center;">操作</th>
+				<th style="width:280px;text-align:center;">操作</th>
 			</tr>
 			<tbody id="table1"></tbody>
 		</table>
@@ -179,8 +179,8 @@
 			<td class="optBtn">[%if(list[i].type=="0"){%]
 				<button class="btn btn-primary edit"   data-echo="[%=list[i].id%]">编辑</button>
 				<button class="btn btn-red delModel" >删除</button>
-				<button class="btn btn-primary" >另存</button><br>
-				<button class="btn btn-primary"  style="margin-top:5px;padding:0 8px;height:26px;">保存为报告</button>
+				<button class="btn btn-primary" >另存</button><!--<br>-->
+				<button class="btn btn-primary"  <!--style="margin-top:5px;padding:0 8px;height:26px;"-->>保存为报告</button>
 				[%}else{%]
 				<button class="btn btn-primary browserRe"   data-echo="[%=list[i].id%]">浏览</button>
 				<button class="btn btn-red delRe"  >删除</button>

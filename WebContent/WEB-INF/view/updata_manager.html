@@ -27,6 +27,8 @@
 		.edit-content input{width: 100%}
 		.addField{float: right; margin-right: 85px;padding: 2px 10px}
 		span.tree-title{font-size: 12px}
+		#is_modified{display: none}
+		/*#field-content{height:200px;overflow: hidden}*/
 	</style>
 	
 </head>
@@ -58,17 +60,17 @@
 			<button  class="btn btn-green" id="upload" style="margin-left: 50px"><i class="fa fa-plus"></i>上传</button>
 		</div>
     <div style="margin-left:50px" id="table">
-		<table cellspacing="0" cellpadding="0" class="list1" style="width:100%;">
+		<table cellspacing="0" cellpadding="0" class="list1" style="width:100%;min-width: 730px">
 			<tr>
 				<th style="width:4%;text-align:center;">序号</th>
 				<th style="width:18%;text-align:center;">名称</th>
-				<th style="width:18%;text-align:center;">描述</th>
+				<th style="width:auto;text-align:center;">描述</th>
 				<th style="width:7%;text-align:center;">图表引用次数</th>
 				<th style="width:5%;text-align:center;">字段数量</th>
 				<th style="width:5%;text-align:center;">记录数量</th>
 				<th style="width:5%;text-align:center;">上传时间</th>
 				<th style="width:7%;text-align:center;">上传人</th>
-				<th style="width:auto;text-align:center;">操作</th>
+				<th style="width:240px;text-align:center;">操作</th>
 			</tr>
 			<tbody id="table1" class="table"></tbody>
 		</table>
@@ -126,7 +128,7 @@
 										<tr>
 											<td>2</td>
 											<td class="edit-content">xxx</td>
-											<td class="edit-content">字符串</td>
+											<td class="edit-content">字符</td>
 											<td class="optBtn panelBtn">
 												<a class="btn btn-primary ">编辑</a>
 												<a class="btn btn-red ">删除</a>
@@ -151,7 +153,8 @@
 			</div>
 			<div class="modal-footer" style="padding-right: 100px;">
 				<a type="button" class="btn btn-primary "   id="is_add">确定</a>
-				<button type="button" class="btn btn-primary " data-dismiss="modal">取消</button>
+				<a type="button" class="btn btn-primary "   id="is_modified">确定</a>
+				<button type="button" class="btn btn-primary "  data-dismiss="modal">取消</button>
 			</div>
 		</div>
 	</div>
@@ -199,7 +202,7 @@
 			<td>[%=list[i].recorderCounts%]</td>
 			<td>[%=list[i].uploadTimes%]</td>
 			<td>[%=list[i].uploadPerson%]</td>
-			<td class="optBtn ">
+			<td class="optBtn">
 				<button class="btn btn-primary edit"   data-echo="[%=list[i].id%]">预览</button>
 				<button class="btn btn-red delModel">删除</button>
 				<button class="btn btn-primary">重传</button>
@@ -225,141 +228,124 @@
 				$("#table1").html(baidu.template("tpl12",data));
 			}
 		});
-	var state=0;
 	/*上传*/
-    $upload.click(function (event) {
-        state=0;
+    $upload.click(function () {
+        $("#is_add").show();
+        $("#is_modified").hide();
+        $(".panelBtn").children("a").removeAttr("disabled");
+        $name.removeAttr("disabled");
+        $des.removeAttr("disabled");
         $name.val(null);
         $des.val(null);
         $alertAdd.modal("toggle");
     });
-    $("#is_add").click(function () {
-        /*if(1==1){
+	/*默认事件*/
+    $(".modal-footer").children().click(function () {
+        var $is_edit=$(".is_edit");
+        if($is_edit.length){
+            finishEdit($(".is_edit"));
+        }
 
-            return;
-		}*/
-        if(!state){
-        var length=$table1.children().length+1,
-			docName= $name.val(),
-			docDes= $des.val(),
-			time=new  Date(),
-			vMon = time.getMonth() + 1,
-			vDay = time.getDate(),
-			saveTime= time.getFullYear() +"-"+ (vMon < 10 ? "0" + vMon : vMon) +"-"+ (vDay < 10 ? "0" + vDay : vDay),
-			creatTime=saveTime;
-//			creatPerson=$("#val").val();
-        var _add='<tr> <td>'+length+'</td> <td >'+docName+'</td> <td >'+docDes+'</td> <td >4</td> <td>2</td> <td>3</td> <td>'+creatTime+'</td> <td>财务部</td> <td class="optBtn "> <button class="btn btn-primary edit"  >预览</button> <button class="btn btn-red delModel">删除</button> <button class="btn btn-primary">重传</button> <button class="btn btn-primary">追加</button> </td> </tr>';
-        $table1.append(_add);
-        }else {
-           return;
-		}
-        $alertAdd.modal("toggle");
+    });
+	/*弹出框确认按钮*/
+    $("#is_add").click(function () {
+	   var length=$table1.children().length+1,
+		   docName= $name.val(),
+		   docDes= $des.val(),
+		   time=new  Date(),
+		   vMon = time.getMonth() + 1,
+		   vDay = time.getDate(),
+		   saveTime= time.getFullYear() +"-"+ (vMon < 10 ? "0" + vMon : vMon) +"-"+ (vDay < 10 ? "0" + vDay : vDay);
+	   if(!docName){
+		   alert("填写名称!");
+		   return ;
+	   }
+	   var _add='<tr> <td>'+length+'</td> <td >'+docName+'</td> <td >'+docDes+'</td> <td >4</td> <td>2</td> <td>3</td> <td>'+saveTime+'</td> <td>财务部</td> <td class="optBtn "> <button class="btn btn-primary edit"  >预览</button> <button class="btn btn-red delModel">删除</button> <button class="btn btn-primary">重传</button> <button class="btn btn-primary">追加</button> </td> </tr>';
+	   $table1.append(_add);
+	   $alertAdd.modal("hide");
     });
 </script>
-<!--<script type="text/javascript">
-	var data;
-	T.getJson('../../main/getAddressList.do?', function(res) {	
-		data=res.data;
-		_get('table1').innerHTML = baidu.template('tpl11', res);
-		$('.loading').hide();
-	});
-	
-	T('#search').on('click',function(){
-		var search_text=$("#search_text").val().trim();
-		if(search_text=="工号/姓名/部门"||search_text==""){
-			$("#txt_insert p").remove();
-			$("#txt_insert").append("<p>搜索条件不能为空！</p>");
-			$("#modal_alert").modal("toggle");
-			
-			T.getJson('../../main/getAddressList.do?', function(res) {	
-				data=res.data;
-				_get('table1').innerHTML = baidu.template('tpl11', res);
-			});
-		}else {
-			T.getJson('../../main/getAddressList.do?flag=search&search_text='+search_text, function(res) {	
-				data=res.data;
-				if(data.length==0){
-					$("#txt_insert p").remove();
-					$("#txt_insert").append("<p>未搜索到相关内容！</p>");
-					$("#modal_alert").modal("toggle");
-					
-					T.getJson('../../main/getAddressList.do?', function(res) {	
-						data=res.data;
-						_get('table1').innerHTML = baidu.template('tpl11', res);
-					});
-				}else{
-					_get('table1').innerHTML = baidu.template('tpl11', res);
-				}
-			});
-		}
-	});
-	
-	document.onkeydown=function(e) {
-		if(e.keyCode==13) {
-			T('#search').click();
-		}
-	}
-		
-</script>-->
 <script>
 	/*报告操作*/
 	$("#table1").on("click","button",function () {
+		$("#is_add").hide();
+	    $("#is_modified").show();
+	    var self=$(this);
         var id=this.getAttribute("data-echo");
+        var nameVal=$(this).parent().siblings("td").eq(1).html();
+        var desVal=$(this).parent().siblings("td").eq(2).html();
 	    switch (this.innerHTML){
 			case "预览":
-//			    window.parent.frames[0].location.href="iframe2.html?id="+id;
 			    break;
             case "删除":
-                var self=$(this);
                 $alertModal.modal("toggle");
                 $("#is_true").click(function () {
                     self.parent().parent().remove();
                 });
                 break;
             case "重传":
-                state=1;
                 $(".panelBtn").children("a").removeAttr("disabled");
                 $name.removeAttr("disabled");
                 $des.removeAttr("disabled");
-                var nameVal=$(this).parent().siblings("td").eq(1).html();
-                var desVal=$(this).parent().siblings("td").eq(2).html();
                 $name.val(nameVal);
                 $des.val(desVal);
                 $alertAdd.modal("toggle");
                 break;
             case "追加":
-                state=2;
                 $(".panelBtn").children("a").attr({"disabled":"disabled"});
                 $name.attr({"disabled":"disabled"});
                 $des.attr({"disabled":"disabled"});
-                var nameVal=$(this).parent().siblings("td").eq(1).html();
-                var desVal=$(this).parent().siblings("td").eq(2).html();
                 $name.val(nameVal);
                 $des.val(desVal);
                 $alertAdd.modal("toggle");
                 break;
 		}
+		$("#is_modified").click(function () {
+		    self.parent().siblings().eq(1).html($name.val());
+		    self.parent().siblings().eq(2).html($des.val());
+            $alertAdd.modal("hide");
+        });
     });
+	/*完成编辑*/
+    function finishEdit(btn) {
+        var editContent=btn.parent().siblings(".edit-content");
+        var fieldVal=$(editContent[0]).children("input").val();
+        var fieldType=$(".typeTree").combobox("getText");
+        editContent[0].innerHTML=fieldVal;
+        editContent[1].innerHTML=fieldType;
+        btn.html("编辑");
+        btn.removeClass("is_edit");
+    }
 	/*字段编辑*/
 	$("#field-content").on("click","a",function () {
+	    var $is_edit=$(".is_edit");
         var self=$(this);
         var editContent=$(this).parent().siblings(".edit-content");
 	    switch (this.innerHTML){
-            case "编辑":
+			case "编辑":
+			    if($is_edit.length){
+                    finishEdit($is_edit);
+				}
+			    self.addClass("is_edit");
                 var filed_name=editContent[0].innerHTML;
                 var filed_type=editContent[1].innerHTML;
                 editContent[0].innerHTML="<input type='text' value='"+filed_name+"'>";
-                editContent[1].innerHTML="<input type='text' value='"+filed_type+"'>";
                 editContent[1].innerHTML='<div class="typeTree"></div>';
-                $(".typeTree").combotree({
+                $(".typeTree").combobox({
+                    valueField:"id",
+                    textField:"text",
                     url:"../ajax/type.json",
                     method:"get",
                     editable:true,
                     width:80,
                     height:30,
                     panelWidth:80,
-                    panelHeight:70,
-                    value:"数字"
+                    panelHeight:50,
+                    value:filed_type,
+					formatter:function (row) {
+                        return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>";
+
+                    }
                 });
                 self.html("完成");
                 break;
@@ -367,12 +353,12 @@
                     self.parent().parent().remove();
                 break;
             case "完成":
-                var fieldVal=$(editContent[0]).children("input").val();
-                console.log(editContent[1]);
+                finishEdit(self);
+               /* var fieldVal=$(editContent[0]).children("input").val();
                 var fieldType="数子";
                 editContent[0].innerHTML=fieldVal;
                 editContent[1].innerHTML=fieldType;
-                self.html("编辑");
+                self.html("编辑");*/
                 break;
 		}
 
