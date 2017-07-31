@@ -101,20 +101,14 @@
                             <a id="link_1126"  onclick="navto(this, event,'table_edit.html')"><i class="fa fa-circle"></i><span>表格创建编辑</span><b><i class="fa fa-chevron-right"></i></b></a>
                         </li>
                         <li id="li1127" class="li_m review chats">
-                            <a id="link_1127"  onclick="navto(this, event,'../chat/demo1.html')"><i class="fa fa-circle"></i><span>饼状图</span><b><i class="fa fa-chevron-right"></i></b></a>
+                            <a id="link_1127"  onclick="navto(this, event,'../charts_edit/pie_edit.html')"><i class="fa fa-circle"></i><span>饼状图</span><b><i class="fa fa-chevron-right"></i></b></a>
                         </li>
                         <li id="li1128" class="li_m review chats">
-                            <a id="link_1128"  onclick="navto(this, event,'../chat/demo2.html')"><i class="fa fa-circle"></i><span>折线图</span><b><i class="fa fa-chevron-right"></i></b></a>
+                            <a id="link_1128"  onclick="navto(this, event,'../charts_edit/table_edit.html')"><i class="fa fa-circle"></i><span>折线图</span><b><i class="fa fa-chevron-right"></i></b></a>
                         </li>
                     </ul>
                 </li>
             </ul>
-            <!-- 图表右键菜单 -->
-            <div id="chat_menu" class="easyui-menu" style="width:120px;display: none">
-                <div  data-options="iconCls:'icon-save'" >编辑图形</div>
-                <div  >重命名</div>
-                <div  data-options="iconCls:'icon-print'" >删除</div>
-            </div>
         </td>
         <td id="rightcnt" valign="top">
             <!-- 点击隐藏显示按钮 -->
@@ -171,52 +165,6 @@
             });
         }
     });
-    /*右击菜单*/
-    var $chats=$(".chats");
-    var $chatMenu=$("#chat_menu");
-     $chatMenu.menu({
-     onClick:function (item) {
-     var optItem=$(".menu-item");
-     switch (item.text){
-     case "编辑图形":
-         console.log(optItem);
-         if(optItem[0].id=='li1128'){
-             window.frames[0].location.href ="../charts_edit/table_edit.html";
-         }else{
-         window.frames[0].location.href ="../charts_edit/pie_edit.html";}
-     break;
-     case "删除" :
-     optItem.remove();
-     break;
-     case "重命名" :
-     var editItem=optItem.children().children("span");
-     var val=editItem.html();
-     editItem.html("<input type='text' style='font-size: 18px' value='"+val+"'>");
-     editItem.children("input").on("blur",function () {
-         var val=$(this).val();
-         if(!val){
-             alert("不能为空！")
-         }else{
-             editItem.html(val);
-         }
-     });
-        break;
-     default:
-        break;
-     }
-     }
-     });
-    $chats.on("contextmenu",function (e) {
-     e.preventDefault();
-     var self=$(this);
-        $chats.removeClass("menu-item");
-        self.addClass("menu-item");
-         $chatMenu.menu("show",{
-         left:e.pageX,
-         top:e.pageY
-         });
-     });
-
     /*左侧菜单栏 箭头和文字点击事件分开 */
     //一级 文字点击事件
     function navopen(o, e, t){
