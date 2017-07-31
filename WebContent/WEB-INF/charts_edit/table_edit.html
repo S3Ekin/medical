@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>表格创建编辑</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+	<style>
+		#table1 tr th{padding: 8px 5px;text-align:center;}
+		#table1 tr td{padding: 8px 5px;text-align:center;}
+		.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
+		form{width:100%;}
+		.bv-form .help-block{margin-bottom:0}
+		.bv-form .tooltip-inner{text-align:left}
+		.nav-tabs li.bv-tab-success>a{color:#3c763d}
+		.nav-tabs li.bv-tab-error>a{color:#a94442}
+		div.row { height:40px;line-height: 40px}
+		div.col-xs-2 { text-align: right; font-size: 16px; font-weight: 700; }
+		div.col-xs-1 { text-align: right;}
+		div.col-xs-3 { height:30px;}
+		.sourceBtn {padding:0 8px;height:26px;}
+		div.content{padding:10px 5px;
+			height:320px;overflow-y: scroll}
+		div.footer button{padding: 5px 10px ;height: 30px;margin-right: 10px}
+		div.footer{text-align: right;padding:5px 50px 5px 0;border-top: 2px solid #95B8E7;}
+		.zb-name {color:#2081BB;white-space: nowrap;}
+		.upload{display: none}
+		.table{display: none}
+		.zb{display: none}
+		.pre{padding:20px; border: 1px solid #95B8E7; margin-top:35px;}
+		#organization{height: 30px}
+		 span.tree-title{font-size: 14px}
+	</style>
+	
+</head>
+<body>
+<div class="mr15">
+    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
+       	<span class="tab_title">表格创建编辑</span>
+		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
+    </div>
+	<div class="container-fluid" style="width:90%;min-width:900px;padding: 20px 0 0 0" >
+		<div class="row">
+			<div  class="col-xs-2">名称:</div>
+			<div class="col-xs-9">
+				<input type="text" class="clo-xs-9" id="name" style="width:100%;max-width: 400px ;height:30px">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">数据源类型:</div>
+			<div class="col-xs-4">
+				<input type="radio" name="dataType" value="1" checked="checked"><span>指标数据</span>
+				<input type="radio" name="dataType" value="0"  style="margin-left: 20px"><span>上传数据</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">数据源:</div>
+			<div class="col-xs-1" style="padding:0;width:100px">
+				<button class="btn btn-primary sourceBtn">选择(<span>多选</span>)</button>
+			</div>
+			<div class="col-xs-7 theme">
+
+			</div>
+		</div>
+		<div class="zb">
+			<div class="row">
+				<div class="col-xs-2" style="padding-left: 0">指标公共维度:</div>
+				<div class="col-xs-1">时间:</div>
+				<div class="col-xs-3">
+					<input class="easyui-datebox" data-options="sharedCalendar:'#cc',width:200,height:30,panelWidth:200,currentText:'Today',value:'Today'" >
+					<div id="cc" class="easyui-calendar"></div>
+				</div>
+				<div class="col-xs-1">机构:</div>
+				<div class="col-xs-3">
+					<div id="organization"></div>
+				</div>
+			</div>
+			<div class="newAdd"></div>
+			<div class="row">
+				<div class="col-xs-2">横轴维度:</div>
+				<div class="col-xs-3">
+					<div class="wd-combo"></div>
+				 </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2">纵轴维度:</div>
+				<div class="col-xs-4">
+					<div class="wd-combo"></div>
+				</div>
+			</div>
+		</div>
+		<div class="upload">
+			<div class="row">
+				<div class="col-xs-2">数据名称:</div>
+				<div class="col-xs-10 zb-name"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2">横轴字段:</div>
+				<div class="col-xs-4">
+					<div class="field-combo"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2">纵轴字段:</div>
+				<div class="col-xs-4">
+					<div class="field-combo"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row table">
+			<div class="col-xs-2">预 览:</div>
+			<div class="col-xs-10 pre">
+				<table cellspacing="0" cellpadding="0" class="list1" style="width:100%;margin:auto">
+					<tr>
+						<th style="width:6%;text-align:center;">课题</th>
+						<th style="width:6%;text-align:center;">ISSN论文</th>
+						<th style="width:8%;text-align:center;">SCI论文</th>
+						<th style="width:15%;text-align:center;">报告类型</th>
+						<th style="width:18%;text-align:center;">被引用次数</th>
+						<th style="width:15%;text-align:center;">完成国家级课题数</th>
+						<th style="width:8%;text-align:center;">完成省级课题数</th>
+					</tr>
+					<tbody id="table1">
+					<tr>
+						<th>次数</th>
+						<td>52</td>
+						<td>34</td>
+						<td>39</td>
+						<td>33</td>
+						<td>22</td>
+						<td>32</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+
+<!-- 数据源 -->
+<div id="sourceSelected">
+	<div class="content" >
+		<ul id="sourceTree">
+		</ul>
+	</div>
+	<div class="footer">
+		<button type="button" class="btn btn-primary "   id="select">确定</button>
+				<button type="button" class="btn btn-primary" id="cancel">取消</button>
+	</div>
+</div>
+<!-- alert共用模态框 -->
+<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
+		<div class="modal-content">
+			<div class="modal-header" id="modal_title">
+				<button type="button" class="close" data-dismiss="modal">
+					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+				</button>
+
+			</div>
+			<div class="modal-body">
+				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
+					<span >确定删除吗?</span>
+				</div>
+			</div>
+			<div class="modal-footer" style="text-align:center;">
+				<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
+<script src="../../resources/echarts/echarts.js"></script>
+<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script>
+    var $radio = $("input[name=dataType]"),
+        $sourceSlect=$(".sourceBtn span"),
+        $zbName=$(".zb-name"),
+        is_zb=true,
+        $zb=$(".zb"),
+        $newAdd=$(".newAdd"),
+        $org=$("#organization"),
+        $upload=$(".upload"),
+        $table=$(".table"),
+        $sourceSelected=$("#sourceSelected"),
+		$sourceBtn=$(".sourceBtn");
+    /*机构树加载*/
+    $org.combotree({
+		url:"../ajax/org.json",
+		method:"get",
+        editable:true,
+		width:180,
+		height:30,
+        panelWidth:180,
+        panelHeight:300,
+        value:"信息科"
+	});
+	/*维度框加载*/
+    $(".wd-combo").combobox({
+		valueField:"id",
+		textField:"text",
+        url:"../ajax/row_wd.json",
+        method:"get",
+        editable:true,
+        width:180,
+        height:30,
+        panelWidth:180,
+        panelHeight:100,
+        onLoadSuccess:function(data){
+			var loadData=$(this).combobox("getData");
+			$(this).combobox("setValue",loadData[3].text);
+		},
+		formatter:function (row) {
+            return "<span class='glyphicon glyphicon-pushpin'>&nbsp;"+row.text+"</span>"
+        }
+    });
+	/*字段框加载*/
+    $(".field-combo").combobox({
+        valueField:"id",
+        textField:"text",
+        url:"../ajax/row_wd.json",
+        method:"get",
+        editable:true,
+        width:180,
+        height:30,
+        panelWidth:180,
+        panelHeight:100,
+        onLoadSuccess:function(data){
+            var loadData=$(this).combobox("getData");
+            $(this).combobox("setValue",loadData[3].text);
+        },
+        formatter:function (row) {
+            return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+        }
+    });
+	/*单选按钮事件*/
+    $radio.on("click",function () {
+        $zbName.html(null);
+        $table.hide();
+        $zb.hide();
+        $upload.hide();
+		if($(this).val()==1){
+            $sourceSlect.html("多选");
+            is_zb=true;
+		}else{
+            $sourceSlect.html("单选");
+            is_zb=false;
+		}
+    });
+	/*数据源选择按钮*/
+    $sourceBtn.on("click",function () {
+        $sourceSelected.window("open");
+    });
+	/*数据源窗口加载*/
+    $sourceSelected.window({
+        title : '数据源选择',
+        modal : true,
+        shadow : true,
+        closed : true,
+        width : 300,
+        height : 400,
+        padding : 10,
+        minimizable : false,
+        maximizable : false,
+        collapsible : false,
+        top : ($(window).height() - 500) * 0.5,
+        left : ($(window).width() - 400) * 0.5,
+        onOpen : function(){
+            var urls,is_checked;
+            if(is_zb){
+                 urls="../ajax/SelectKpi.json";
+					is_checked=true;
+			}else{
+                 urls="../ajax/upload.json";
+                is_checked=false;
+			}
+		// 加载窗口树
+            $.ajax({
+                url : urls,
+                dataType : "json",
+                success : function(data) {
+                    $('#sourceTree').tree({
+						url:urls,
+						method:"get",
+						animate:true,
+						checkbox:is_checked
+					});
+                },
+                error : function() {
+                    alert("树有问题");
+                }
+            });
+        }
+    });
+	/*添加资源*/
+	var show_combo;
+	$.ajax({
+        url:"../ajax/show_type.json",
+		success:function (data) {
+            show_combo=data;
+        }
+	});
+    $(".footer").on("click","button",function(){
+        switch ($(this).html()){
+			case "确定":
+                var htm ="",
+                	str ="",
+					state = is_zb ? "getChecked":"getSelected";
+                $newAdd.html(null);
+				var nodes=$("#sourceTree").tree(state);
+				if(is_zb){
+				    if(nodes.length){
+                for (var i = 0,length=nodes.length; i <length; i++) {
+                    var obj = nodes[i];
+					if (obj.children.length!=0){
+					    continue;
+					}else{
+                        var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
+                        str ='<div class="row"><div class = "col-xs-2 zb-name" >'+obj.text+":"+'</div><div class = "col-xs-10" ><div class="col-xs-1">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9" ><div id="show_type_'+i+'"></div></div></div >';
+                        $newAdd.append(str);
+                        $("#show_type_"+i).combobox({
+                            valueField:"id",
+                            textField:"text",
+                            data:show_combo[_showId].combo,
+                            editable:true,
+                            width:180,
+                            height:30,
+                            panelWidth:180,
+                            panelHeight:100,
+                            onLoadSuccess:function(){
+                                var loadData=$(this).combobox("getData");
+                                $(this).combobox("setValue",loadData[1].text);
+                            },
+                            formatter:function (row) {
+                                return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                            }
+                        });
+                    }
+                }
+
+				$zb.show();
+				$upload.hide();
+                    }else{
+                        alert("没有选择文件！");
+                        return ;
+                    }
+                }else{
+				    if(!nodes||nodes.children.length){
+				        alert("请选择文件！");
+				        return ;
+					}else{
+				        $zb.hide();
+				        $upload.show();
+                        htm="<span >"+nodes.text+"</span>";
+                        $zbName.html(htm);
+					}
+				}
+				$table.show();
+			    break;
+			default:
+			    break;
+		}
+        $sourceSelected.window("close");
+    });
+	/*tables加载*/
+
+</script>
+<div class="clr"></div>
+</body>
+</html>

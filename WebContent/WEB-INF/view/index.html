@@ -13,12 +13,10 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/css/icon.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/image/style.css"/>
-    <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
-    <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
-    <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
-    <script type="text/javascript" src="../../resources/js/uaredirect.js"></script>
-    <script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../resources/js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css">
+    <style>
+        .li_m span input{width:140px;height:30px }
+    </style>
 </head>
 <body style="overflow-x: hidden;overflow-y: hidden;">
 <ul id="header" class="nosel" style="width:100%;background:#24BAFF url('../../resources/image/LOGO_RT.png') no-repeat">
@@ -89,15 +87,34 @@
                         <li id="li1121" class="li_m review">
                             <a id="link_1121"  onclick="navto(this, event,'model.html')"><i class="fa fa-circle"></i><span>模版变量设置</span><b><i class="fa fa-chevron-right"></i></b></a>
                         </li>
-                        <li id="li1122" class="li_m review">
-                            <a id="link_1122"  onclick="navto(this, event,'updata_manager.html')"><i class="fa fa-circle"></i><span>上传数据管理</span><b><i class="fa fa-chevron-right"></i></b></a>
+                    </ul>
+                </li>
+                <li>
+                    <div class="div_m focus_div" id="dul1101">
+                        <a class="a_m" ><i class="icon-jiance6"></i> <span>图形编辑</span></a><b onclick="nav(this)"><i class="fa fa-chevron-up"></i></b>
+                    </div>
+                    <ul id="ul1101" class="ul_m">
+                        <li id="li1125" class="li_m review">
+                            <a id="link_1125"  onclick="navto(this, event,'updata_manager.html')"><i class="fa fa-circle"></i><span>上传数据管理</span><b><i class="fa fa-chevron-right"></i></b></a>
                         </li>
-                        <li id="li1123" class="li_m review">
-                            <a id="link_1123"  onclick="navto(this, event,'table_edit.html')"><i class="fa fa-circle"></i><span>表格创建编辑</span><b><i class="fa fa-chevron-right"></i></b></a>
+                        <li id="li1126" class="li_m review">
+                            <a id="link_1126"  onclick="navto(this, event,'table_edit.html')"><i class="fa fa-circle"></i><span>表格创建编辑</span><b><i class="fa fa-chevron-right"></i></b></a>
+                        </li>
+                        <li id="li1127" class="li_m review chats">
+                            <a id="link_1127"  onclick="navto(this, event,'../chat/demo1.html')"><i class="fa fa-circle"></i><span>饼状图</span><b><i class="fa fa-chevron-right"></i></b></a>
+                        </li>
+                        <li id="li1128" class="li_m review chats">
+                            <a id="link_1128"  onclick="navto(this, event,'../chat/demo2.html')"><i class="fa fa-circle"></i><span>折线图</span><b><i class="fa fa-chevron-right"></i></b></a>
                         </li>
                     </ul>
                 </li>
             </ul>
+            <!-- 图表右键菜单 -->
+            <div id="chat_menu" class="easyui-menu" style="width:120px;display: none">
+                <div  data-options="iconCls:'icon-save'" >编辑图形</div>
+                <div  >重命名</div>
+                <div  data-options="iconCls:'icon-print'" >删除</div>
+            </div>
         </td>
         <td id="rightcnt" valign="top">
             <!-- 点击隐藏显示按钮 -->
@@ -117,6 +134,13 @@
         </td>
     </tr>
 </table>
+<script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
+<script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/uaredirect.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common.js"></script>
+<script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script type="text/javascript">
     window.onload=function () {
         window.frames[0].location.href ="list.html";
@@ -147,360 +171,51 @@
             });
         }
     });
-
-    /* 文档树生成 */
-    //	esaytree
-    /*var $menuTree=$("#menu_UL"),
-     $iframe=$("#mainframe"),
-     $rightMenu=$("#rightMenu");
-     $menuTree.tree({
-     url:"../ajax/tree.json",
-     method:"get",
-     animate:true,
-     dnd:true,
-     onClick:function (node) {
-     console.log(node);
-     $iframe[0].src="iframe2.html";
-     },
-     onContextMenu:function (e,node) {
-     e.preventDefault();
-     $(this).tree("select",node.target);
-     $rightMenu.show();
-     $rightMenu.css({"top":e.clientY,"left":e.clientX+30});
-     },
-     onDragLeave:function (target, source){
-     var node=$(this).tree("getNode",target);
-     console.log(node,"node");
-     console.log(target,"leavel离开");
-     console.log(source,"leaveSource");
-     },
-     onDragEnter:function (e,source) {
-     console.log(e,"被拖");
-     console.log(source,"被拖");
-     var node =$menuTree.tree("getNode",e);
-     console.log(node,"node");
-     console.log(node.children,"nodechildren");
-     if(node.children.length==0){
-     console.log("没children");
-     return false;
-     }else{
-     console.log("有children");
-     }
-     }
-     });
-     /!*右击菜单*!/
-     var rightMenu={
-     node:function () {
-     return $menuTree.tree('getSelected').target;
-     },
-     rename:function () {
-     $menuTree.tree("beginEdit",this.node());
-     },
-     del:function () {
-     $menuTree.tree("remove",this.node());
-     },
-     append:function () {
-     var child=$(this.node()).siblings("ul")[0];
-     var parent=$(this.node()).parent().parent().siblings("div")[0];
-     $menuTree.tree("append",{
-     parent:child?this.node():parent,
-     data: [{text: '新建文件'}]
-     });
-     $menuTree.tree("expand",this.node());
-     },
-     appendFloder:function () {
-     var child=$(this.node()).siblings("ul")[0];
-     var parent=$(this.node()).parent().parent().siblings("div")[0];
-     /!* if (!child){
-     var parentNode=$menuTree.tree("getParent",this.node());
-     console.log(parentNode,"父");
-     var str='<li><div  class="tree-node droppable" style=""><span class="tree-indent"></span><span class="tree-indent"></span><span class="tree-hit tree-expanded"></span><span class="tree-icon tree-folder tree-folder-open "></span><span class="tree-title">新建文件夹123</span></div><ul></ul></li>';
-     $(parentNode.target).siblings().append(str)
-     //                $menuTree.tree("insert",{
-     //                    after:this.node(),
-     //					data:[{text:"ekin"}]
-     //				})
-     }*!/
-
-     $menuTree.tree("append",{
-     //                parent:child?this.node():parent,
-     parent:this.node(),
-     data: [{text:'新建文件夹'}]
-     });
-     var currentNodes=$menuTree.tree("getNode",this.node());
-     console.log(this.node());
-     console.log(currentNodes.children[currentNodes.children.length-1]);
-     var nodeId=currentNodes.children[currentNodes.children.length-1].domId;
-     console.log($("#"+nodeId)[0]);
-     $menuTree.tree("select",$("#"+nodeId)[0]);
-     var selectNode=$menuTree.tree("getSelected");
-     console.log(selectNode,"selecter");
-     $menuTree.tree("insert",{
-     parent:selectNode.target,
-     date:[{text:"新建文件34"}]
-     });
-     //			var index=node.domId.match(/\d+/)[0];
-     //            $menuTree.tree("append",{
-     //                parent:$("#"+node.domId)[0],
-     //				date:[{text:"新建文件34"+index}]
-     //			});
-     //            console.log(node.domId,index,"append");
-     }
-
-     };
-     $(document).click(function () {
-     $rightMenu.hide();
-     });
-     $menuTree.click(function () {
-     $rightMenu.hide();
-     });*/
-    //	自己封装
-    /*var datas=[{
-     t:'第一章',s:[
-     {t:'第一节',s:[{t:'20xx上半年医院医疗报告',id:"1"}]},
-     {t:'第二节',s:[{t:'第一段',id:"2"},{t:'第二段',id:"3"},{t:'第三段',id:"4"},{t:'第四段',id:"5"},{t:'第五段',id:"6"},{t:'第六段',id:"7"}]},
-     {t:'第三节',s:[{t:'第一段',s:[{t:'第一组',id:"8"}]},{t:'第二段',s:[{t:'第二组',id:"9"}]}]}
-     ]
-     },
-     {t:'第二章',s:[{t:'第一节',id:"10"}]},
-     {t:'第三章',s:[{t:'第一节',s:[{t:'第一段',s:[{t:"第一组",id:"11"}]}]},{t:'第二节',id:"12"}]},
-     {t:'第四章',s:[{t:'第一节',id:"13"}]}
-     ];*/
-    /*$.ajax({
-     url:"../ajax/tree.json",
-     success:function (data) {
-     var length=data.length;
-     for (var i = 0; i < length; i++) {
-     var obj =data[i]["content"];
-     var li=document.createElement("li");
-     var title=document.createElement("p");
-     var odiv=document.createElement("div");
-     $(title).addClass("title ");
-     title.innerHTML="<i class='icon-jiance6 icon-left'></i><span>"+data[i].title+"</span><b><i class='fa fa-chevron-down'></i></b>";
-     li.appendChild(title);
-     li.appendChild(odiv);
-     new Tree(obj,odiv);
-     //				str+="<" + li.tagName + ">" + li.innerHTML + "</" + li.tagName + ">";
-     $("#menu_UL").append(li);
-
-     }
-     $("p.title").on("click","b",function () {
-     if($(this).children().prop("className")=="fa fa-chevron-up"){
-     $(this).children().prop("className","fa fa-chevron-down")
-     }else{
-     $(this).children().prop("className","fa fa-chevron-up")
-     }
-     $(this).parent().siblings("div").slideToggle()
-     })
-     }
-     });
-     function getStyle(obj,attr){
-     if(obj.currentStyle){
-     return obj.currentStyle[attr];
-     }
-     else{
-     return document.defaultView.getComputedStyle(obj,null)[attr];
-     }
-     }
-     function Tree(data, el) {
-     /!*添加元素*!/
-     this.app=function(par,tag){
-     return par.appendChild(document.createElement(tag))
-     };
-     /!*获取元素*!/
-     //        this.create(document.getElementById(el),data);
-     this.create(el,data);
-     }
-     Tree.fn = Tree.prototype = {
-     create: function (par,group){
-     var host=this, length = group.length;
-     console.log(group,"group");
-     for (var i = 0; i < length; i++) {
-     var dl =this.app(par,'DL'), dt = this.app(dl,'DT'),dd = this.app(dl,'DD');
-     if ($(dl).parent()[0].tagName=="DIV"){
-     $(dl).addClass("first-lev");
-     }
-     console.log(group[i]['s'],"item");
-     if (!group[i]['s']){
-     var _id=group[i]["id"];
-     dt.innerHTML='<a class="last-lev"  href="#!/content/'+_id+'"><span class="glyphicon glyphicon-pushpin icon-left"></span><em>'+group[i]['t']+'</em><i class="fa fa-chevron-right later-lev"></i></a>';
-     $(dt).on("click",function (event) {
-     $(".last-lev").removeClass("foucs");
-     $(this).children('a').addClass("foucs");
-     window.frames[0].location.href="iframe2.html?id="+_id;
-     $(".tree dl >dt").removeClass("lev-one");
-     $(this).parents(".first-lev").children("dt").addClass("lev-one");
-     var sd=$(this).parent();
-     var count=0;
-     var arr=[];
-     arr.push($(this).children('a')[0].innerText);
-     while (true){
-     count++;
-     sd=sd.parent().parent();
-     var textNode=sd.children("dt").children("a")[0].innerText;
-     arr.push(textNode);
-     if (sd[0].className=="first-lev"){
-     var article=$(sd).parent().siblings("p").children("span").html();
-     arr.push(article);
-
-     localStorage.setItem("_theme",JSON.stringify(arr));
-     break;
-     }
-     }
-     });
-     continue;
-     }
-     dt.innerHTML='<a href="javascript:void(0)" ><span class="fa fa-circle icon-left"></span><em>'+group[i]['t']+'</em><b><i class="fa fa-chevron-up"></i></b></a>';
-     dt.group=group[i]['s'];
-     $(dt).children().children("b").on("click",function (){
-     var dd= $(this).parent().parent().siblings()[0];
-     if($(this).children().prop("className")=="fa fa-chevron-up"){
-     $(this).children().prop("className","fa fa-chevron-down")
-     }else{
-     $(this).children().prop("className","fa fa-chevron-up")
-     }
-     if (!dd.hasChildNodes()){
-     host.create(dd,$(this).parent().parent()[0].group);
-     $(dd).css("display","none");
-     $(dd).slideDown(500);
-     var $son= $(this).parent().parent().siblings().children().children().children("a");
-     var padding=getStyle($(this).parent()[0],"paddingLeft");
-     padding=parseInt(padding);
-     $son.css("paddingLeft",padding+20);
-     }else {
-     $(this).parent().parent().siblings("DD").slideToggle(500);
-     }
-     })
-     }
-     }
-     };
-     $(".tree dl >dt").on("click",function () {
-     $(".tree dl >dt").removeClass("lev-one");
-     $(this).addClass("lev-one");
-     });*/
     /*右击菜单*/
-    /*var $menuTree=$("#menu_UL"),
-     $menu1=$("#menu1"),
-     $menu2=$("#menu2");
-     $menu1.menu({
+    var $chats=$(".chats");
+    var $chatMenu=$("#chat_menu");
+     $chatMenu.menu({
      onClick:function (item) {
-     alert("menu");
-     var optItem=$(".lev-one");
-     switch (item.name){
-     case "newDoc" :
-     var str="<dl class='newDoc'><dt><a href='javascript:;' class='last-lev' ><span class='glyphicon glyphicon-pushpin icon-left '></span><em>新建文件</em><i class='fa  fa-chevron-right later-lev'></i></a></dt><dd></dd></dl>";
-     optItem.siblings("dd").append(str);
-     var padding=getStyle(optItem.children("a")[0],"paddingLeft");
-     padding=parseInt(padding);
-     optItem.siblings("dd").children().children("dt").children("a:last").css("paddingLeft",padding+20);
+     var optItem=$(".menu-item");
+     switch (item.text){
+     case "编辑图形":
+         console.log(optItem);
+         if(optItem[0].id=='li1128'){
+             window.frames[0].location.href ="../charts_edit/table_edit.html";
+         }else{
+         window.frames[0].location.href ="../charts_edit/pie_edit.html";}
      break;
-     case "newfloder":
-     var padding=getStyle(optItem.children("a")[0],"paddingLeft");
-     padding=parseInt(padding);
-     var str="<dl class='newfloder'><dt><a href='javascript:;' style='padding-left:"+(padding+20)+"px'><span class='fa fa-circle icon-left'></span><em>新建文件夹</em><b><i class='fa  fa-chevron-down'></i></b></a></dt><dd><dl><dt><a href='javascript:;' class='last-lev' style='padding-left: "+(padding+40)+"px'><span class='glyphicon glyphicon-pushpin icon-left '></span><em>新建文件</em><i class='fa  fa-chevron-right later-lev'></i></a></dt><dd></dd></dl></dd></dl>";
-     optItem.siblings("dd").append(str);
-     optItem.siblings("dd").children().children("dt").children("a").on("click","b",function () {
-     $(this).parent().parent().siblings("dd").slideToggle();
-     });
-
+     case "删除" :
+     optItem.remove();
      break;
-     case "del" :
-     optItem.parent().remove();
-     break;
-     case "rename" :
-     var editItem=optItem.children().children("em");
-     editItem.html("<input type='text' style='font-size: 18px'>");
+     case "重命名" :
+     var editItem=optItem.children().children("span");
+     var val=editItem.html();
+     editItem.html("<input type='text' style='font-size: 18px' value='"+val+"'>");
      editItem.children("input").on("blur",function () {
-     var val=$(this)[0].value;
-     if(!val){
-     alert("不能为空！")
-     }else{
-     editItem.html(val);
-
-     }
-
+         var val=$(this).val();
+         if(!val){
+             alert("不能为空！")
+         }else{
+             editItem.html(val);
+         }
      });
-     break;
+        break;
      default:
-     break;
+        break;
      }
      }
-     });*/
-    /* $menu2.menu({
-     /!* onClick:function (item) {
-     var optItem=$(".lev-one");
-     $(this).removeClass("lev-one");
-     console.log(optItem,"selected");
-     switch (item.name){
-     case "newDoc" :
-     var str="<dl class='newDoc '><dt><a href='javascript:;' class='last-lev' ><span class='glyphicon glyphicon-pushpin icon-left '></span><em>新建章节</em><i class='fa  fa-chevron-right later-lev'></i></a></dt><dd></dd></dl>";
-     optItem.siblings("dd").append(str);
-     var padding=getStyle(optItem.children("a")[0],"paddingLeft");
-     padding=parseInt(padding);
-     optItem.siblings("dd").children().children("dt").children("a:last").css("paddingLeft",padding+20);
-
-     break;
-     case "newfloder":
-     var padding=getStyle(optItem.children("a")[0],"paddingLeft");
-     padding=parseInt(padding);
-     var str="<dl class='newfloder first-lev'><dt><a href='javascript:;' style='padding-left:"+(padding+20)+"px'><span class='fa fa-circle icon-left'></span><em>新建章节</em><b><i class='fa  fa-chevron-down'></i></b></a></dt><dd><dl><dt><a href='javascript:;' class='last-lev' style='padding-left: "+(padding+40)+"px'><span class='glyphicon glyphicon-pushpin icon-left '></span><em>新建文件</em><i class='fa  fa-chevron-right later-lev'></i></a></dt><dd></dd></dl></dd></dl>";
-     optItem.siblings("div").append(str);
-     optItem.siblings("div").children().children("dt").children("a").on("click","b",function () {
-     $(this).parent().parent().siblings("dd").slideToggle();
      });
-
-     break;
-     case "del" :
-     optItem.parent().remove();
-     break;
-     case "rename" :
-     var editItem=optItem.children().children("em");
-     editItem.html("<input type='text' style='font-size: 18px'>");
-     editItem.children("input").on("blur",function () {
-     var val=$(this)[0].value;
-     if(!val){
-     alert("不能为空！")
-     }else{
-     editItem.html(val);
-
-     }
-
-     });
-     break;
-     default:
-     break;
-     }
-     }*!/
-     });*/
-    /*$menuTree.on("contextmenu","dt",function (e) {
+    $chats.on("contextmenu",function (e) {
      e.preventDefault();
      var self=$(this);
-     $(".tree dl >dt").removeClass("lev-one");
-     $(this).addClass("lev-one");
-     var is_last=$(this).children("a")[0].className.indexOf("last-lev");
-     if(is_last==0){
-     $menu2.menu("show",{
-     left:e.pageX,
-     top:e.pageY
+        $chats.removeClass("menu-item");
+        self.addClass("menu-item");
+         $chatMenu.menu("show",{
+         left:e.pageX,
+         top:e.pageY
+         });
      });
-     }else{
-     $menu1.menu("show",{
-     left:e.pageX,
-     top:e.pageY
-     });
-     }
-
-     });
-     $menuTree.on("contextmenu","p",function (e) {
-     e.preventDefault();
-     var self=$(this);
-     $(".tree p").removeClass("lev-one");
-     $(this).addClass("lev-one");
-     $menu1.menu("show",{
-     left:e.pageX,
-     top:e.pageY
-     });
-     });*/
 
     /*左侧菜单栏 箭头和文字点击事件分开 */
     //一级 文字点击事件
