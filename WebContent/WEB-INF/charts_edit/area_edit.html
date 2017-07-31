@@ -1,155 +1,591 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="../css/easyui.css">
-	<link rel="stylesheet" type="text/css" href="../css/icon.css">
-	<link rel="stylesheet" type="text/css" href="../css/demo.css">
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>表格创建编辑</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+	<style>
+		#table1 tr th{padding: 8px 5px;text-align:center;}
+		#table1 tr td{padding: 8px 5px;text-align:center;}
+		.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
+		form{width:100%;}
+		.bv-form .help-block{margin-bottom:0}
+		.bv-form .tooltip-inner{text-align:left}
+		.nav-tabs li.bv-tab-success>a{color:#3c763d}
+		.nav-tabs li.bv-tab-error>a{color:#a94442}
+		div.row { height:40px;line-height: 40px}
+		.sourceBtn {padding:0 8px;height:26px;}
+		div.content{padding:10px 5px;
+			height:320px;overflow-y: scroll}
+		div.footer button{padding: 5px 10px ;height: 30px;margin-right: 10px}
+		div.footer{text-align: right;padding:5px 50px 5px 0;border-top: 2px solid #95B8E7;}
+		.zb-name {color:#2081BB;white-space: nowrap;}
+		.upload{display: none}
+		.table{display: none}
+		.zb{display: none}
+		.pre{padding:20px; border: 1px solid #95B8E7; margin-top:35px;display: none}
+		#organization{height: 30px}
+		 span.tree-title{font-size: 14px}
+		.no-padding{padding: 0}
+		div.topic { text-align: right; font-size: 16px; font-weight: 700; }
+	</style>
 	
-	<script type="text/javascript" src="../js/jquery.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="../echarts/echarts.js"></script>
-	<script type="text/javascript" src="../echarts/areachart.js"></script>
-	<script type="text/javascript" src="area_edit.js"></script>
-	<title>lineChart</title>
-	</head>
+</head>
 <body>
+<div class="mr15">
+    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
+       	<span class="tab_title">表格创建编辑</span>
+		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
+    </div>
+	<div class="container-fluid" style="width:90%;min-width:900px;padding: 20px 0 0 0" >
+		<div class="row">
+			<div  class="col-xs-2 topic">名称:</div>
+			<div class="col-xs-9">
+				<input type="text" class="clo-xs-9" id="name" value="折线图" style="width:100%;max-width: 400px ;height:30px">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2 topic">数据源类型:</div>
+			<div class="col-xs-4">
+				<input type="radio" name="dataType" value="1" checked="checked"><span>指标数据</span>
+				<input type="radio" name="dataType" value="0"  style="margin-left: 20px"><span>上传数据</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2 topic">数据源:</div>
+			<div class="col-xs-1" >
+				<button class="btn btn-primary sourceBtn">选择(<span>多选</span>)</button>
+			</div>
+		</div>
+		<div class="zb">
+			<div class="row">
+				<div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
+				<div class="col-xs-1" style="width:65px">频率:</div>
+				<div class="col-xs-1 no-padding">
+					<div id="rotate"></div>
+				</div>
+				<div class="col-xs-1 " style="width:85px">时间段:</div>
+				<div class="col-xs-3 no-padding">
+					<div>
+						<div class="data-combo"></div>
+					</div>
+					<div style="display: none">
+						<div class="calendar-combo" ></div>
+					</div>
+				</div>
+				<div class="col-xs-1 " style="width:65px">机构:</div>
+				<div class="col-xs-3 no-padding">
+					<div id="organization"></div>
+				</div>
+			</div>
+			<div class="newAdd"></div>
+			<div class="row">
+				<div class="col-xs-2 topic">横轴维度:</div>
+				<div class="col-xs-3 ">
+					<div class="wd-combo"></div>
+				 </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 topic">纵轴维度:</div>
+				<div class="col-xs-4">
+					<div class="wd-combo"></div>
+				</div>
+			</div>
+		</div>
+		<div class="upload">
+			<div class="row">
+				<div class="col-xs-2 topic">数据名称:</div>
+				<div class="col-xs-10 zb-name"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 topic">横轴字段:</div>
+				<div class="col-xs-4">
+					<div class="field-combo"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 topic">纵轴字段:</div>
+				<div class="col-xs-4">
+					<div class="field-combo"></div>
+				</div>
+			</div>
+		</div>
+		<div class="table">
+			<div class="row">
+				<div class="col-xs-2 topic">图形标题:</div>
+				<div class="col-xs-4">
+					<input type="text" style="height: 30px;width: 100%" value="2016年护理部各指标" id="title">
+				</div>
+			</div>
+			<div class="row ">
+				<div class="col-xs-2 topic">
+					<button type="button" class="btn btn-primary " id="preChat">预览</button>
+				</div>
+				<div class="col-xs-10 pre">
+					<div id="chat" style="width:100%;height:350px"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-	<!--布局div-->
-	<div class="easyui-layout" data-options="border:false,fit:true" style="width:100%;height:100%">
-		<div data-options="region:'west'" style="width:40%;height:100%">
-		
-			<!-- 嵌套布局div -->
-			<div class="easyui-layout" style="width:100%;height:100%;">
-			
-				<!--左上选择指标维度div-->
-				<div data-options="region:'north'" style="width:50%;height:40%">
-				
-					<!-- Kpi标签页 -->
-					<div id="radar_tabs" class="easyui-tabs" data-options="border:false,fit:true,tools:'#radar_tab_tools'">
-						<div title="各指标公共维度" style="padding:10px">
-							<div id="radar_div_1" style="padding:20px">
-								频率:<select id="radar_rate" class="easyui-combobox" style="width:70px"></select>
-								日期:<input id="radar_time_date" class="easyui-datebox" style="width:120px" value="08/19/2016"/>
-							</div>
-							<div id="radar_div_2" style="padding:20px">
-								部门:<select id="radar_2" class="easyui-combotree" style="width:150px"></select>
-							</div>
-						</div>
-						<div title="预算管理指标" style="padding:10px">
-							<div id="radar_div_1_3" style="padding:20px">
-								地区:<select id="radar_1_3" class="easyui-combotree" style="width:150px"></select>
-							</div>
-							<div id="radar_div_1_charttype" style="padding:20px">
-								展示类型:<select id="radar_1_charttype" class="easyui-combobox" style="width:70px"></select>
-							</div>
-						</div>
-						<div title="预算执行率" style="padding:10px">
-							<div id="radar_div_2_4" style="padding:20px">
-								品牌:<select id="radar_2_4" class="easyui-combobox" style="width:150px"></select>
-							</div>
-							<div id="radar_div_2_charttype" style="padding:20px">
-								展示类型:<select id="radar_2_charttype" class="easyui-combobox" style="width:70px"></select>
-							</div>
-						</div>
-						<div title="预算收入执行率" style="padding:10px">
-							<div id="radar_div_3_charttype" style="padding:20px">
-								展示类型:<select id="radar_3_charttype" class="easyui-combobox" style="width:70px"></select>
-							</div>
-						</div>
-					</div>
-					
-					<!-- 标签页工具栏  -->
-					<div id="radar_tab_tools">
-						<a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true" onclick="$('#radar_window_kpi').window('open')">添加Kpi</a>
-					</div>
-				</div>
-				
-				<!-- 左中选择变量生成折线图div -->
-				<div data-options="region:'center'" style="width:50%;height:30%">
-					<div id="radar_div_var_dim" style="padding:20px">
-						选择做横轴的维度：
-						<select id="radar_var_dim" class="easyui-combobox" style="width:100px"></select>
-					</div>
-					<div id="radar_div_var_custom" style="padding:20px">
-						起始时间：
-						<div id="radar_div_time_ym_s" style="padding:20px">
-							<select id="radar_time_ym_s" class="easyui-combobox" style="width:100px"></select>
-							<input id="radar_time_date_s" class="easyui-datebox" style="width:110px" />
-						</div>
-					</div>
-					<div style="padding:0px 20px">
-						<button id="radar_button_makechart" class="easyui-linkbutton">生成图形</button>
-					</div>
-				</div>
-				
-				<!-- 左下图形参数设置div -->
-				<div data-options="region:'south'" style="width:50%;height:30%">
-					<div id="radar_div_chart_var" style="padding:20px">
-						折线图标题：
-						<input id="radar_text_title" class="easyui-textbox" data-options="prompt:'请输入标题'" style="width:50%;height:32px" />
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- 右边显示饼状图div -->
-		<div id="radar_div_chart" data-options="region:'center'" style="width:60%;height:100%;padding:0px">
-			
-		</div>
+<!-- 数据源 -->
+<div id="sourceSelected">
+	<div class="content" >
+		<ul id="sourceTree">
+		</ul>
 	</div>
-	
-	<!-- 选择kpi窗口 -->
-	<div id="radar_window_kpi" class="easyui-window">
-		<div class="easyui-layout" data-options="fit:true">
-			<div data-options="region:'center',border:false" style="padding:10px;">
-				<div id="radar_tab_kpi" class="easyui-tabs" data-options="fit:true">
-					<div title="全部" style="padding:10px">
-						<ul id="radar_tree_kpi" class="easyui-tree"></ul>
-					</div>
-					<div title="搜索" style="padding:10px">
-						<table id="radar_dg_kpi"class="easyui-datagrid" data-options="toolbar:'#search_kpi'">
-							<thead>
-								<tr>
-									<th data-options="field:'ck',checkbox:true"></th>
-									<th data-options="field:'value',width:80,hidden:true">ID</th>
-									<th data-options="field:'text',width:180">名称</th>
-								</tr>
-							</thead>
-						</table>
-					</div>
+	<div class="footer">
+		<button type="button" class="btn btn-primary "   id="select">确定</button>
+				<button type="button" class="btn btn-primary" id="cancel">取消</button>
+	</div>
+</div>
+<!-- alert共用模态框 -->
+<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
+		<div class="modal-content">
+			<div class="modal-header" id="modal_title">
+				<button type="button" class="close" data-dismiss="modal">
+					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+				</button>
+
+			</div>
+			<div class="modal-body">
+				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
+					<span >确定删除吗?</span>
 				</div>
 			</div>
-			<div id="radar_win_tool" data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">
-				<a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" style="width:80px">选择</a>
-				<a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" style="width:80px">关闭</a>
+			<div class="modal-footer" style="text-align:center;">
+				<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
 			</div>
 		</div>
 	</div>
-	<div id="search_kpi" style="padding:2px 5px;">
-		<input class="easyui-searchbox" data-options="prompt:'请输入要查找的指标',searcher:doSearch,fit:true" style="width:200px"></input>
-	</div>
-	<script type="text/javascript">
-	function doSearch(value) {
-		$.ajax({
-			url : "SearchKpiServlet?variable="+value,
-			dataType : "json",
-			success : function(data) {
-				$('#radar_dg_kpi').datagrid('loadData', data);
-			},
-			error : function() {
-				alert("查不到输入的指标");
-			}
-		})
-	}
-	
-	function removePanel(){
-		var tab = $('#radar_tabs').tabs('getSelected');
-		if (tab){
-			var index = $('#radar_tabs').tabs('getTabIndex', tab);
-			$('#radar_tabs').tabs('close', index);
+</div>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
+<script src="../../resources/echarts/echarts.js"></script>
+<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script>
+    var $radio = $("input[name=dataType]"),
+        $sourceSlect=$(".sourceBtn span"),
+        $zbName=$(".zb-name"),
+        is_zb=true,
+        $zb=$(".zb"),
+        $newAdd=$(".newAdd"),
+        $org=$("#organization"),
+        $dataCombo=$(".data-combo"),
+        $calendar=$(".calendar-combo"),
+        $upload=$(".upload"),
+        $table=$(".table"),
+        $sourceSelected=$("#sourceSelected"),
+		$sourceBtn=$(".sourceBtn");
+    /*日期下拉框加载*/
+	/*日期选择*/
+    $.ajax({
+        url:"../ajax/data.json",
+        dataType:"json",
+        success:function (data) {
+            var dataArray=data;
+			/*月期框加载*/
+            $dataCombo.combobox({
+                valueField:"id",
+                textField:"text",
+                data:dataArray.month,
+                editable:true,
+                width:80,
+                height:30,
+                panelWidth:80,
+                panelHeight:100,
+                formatter:function (row) {
+                    return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+                }
+            });
+			/*频率框加载*/
+            $("#rotate").combobox({
+                valueField:"id",
+                textField:"text",
+                data:dataArray.rotate,
+                editable:true,
+                width:70,
+                height:30,
+                panelWidth:70,
+                panelHeight:100,
+                onLoadSuccess:function(){
+                    var loadData=$(this).combobox("getData");
+                    $(this).combobox("setValue",loadData[2].text);
+                },
+                formatter:function (row) {
+                    return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+                },
+                onSelect:function (recoder) {
+                    var item=recoder.value;
+                    if(recoder.id==4){
+                        $dataCombo.parent().hide();
+                        $calendar.parent().show();
+                        $calendar.datebox({
+                            width:180,
+                            height:30,
+                            panelWidth:180,
+                            panelHeight:200,
+                            value:"Today"
+                        });
+                    }else{
+                        $calendar.parent().hide();
+                        $dataCombo.parent().show();
+                        $dataCombo.combobox("loadData",dataArray[item]);
+                    }
+                }
+            });
+        }
+    });
+    /*机构树加载*/
+    $org.combotree({
+		url:"../ajax/org.json",
+		method:"get",
+        editable:true,
+		width:180,
+		height:30,
+        panelWidth:180,
+        panelHeight:300,
+        value:"信息科"
+	});
+	/*维度框加载*/
+    $(".wd-combo").combobox({
+		valueField:"id",
+		textField:"text",
+        url:"../ajax/row_wd.json",
+        method:"get",
+        editable:true,
+        width:180,
+        height:30,
+        panelWidth:180,
+        panelHeight:100,
+        onLoadSuccess:function(data){
+			var loadData=$(this).combobox("getData");
+			$(this).combobox("setValue",loadData[3].text);
+		},
+		formatter:function (row) {
+            return "<span class='glyphicon glyphicon-pushpin'>&nbsp;"+row.text+"</span>"
+        }
+    });
+	/*字段框加载*/
+    $(".field-combo").combobox({
+        valueField:"id",
+        textField:"text",
+        url:"../ajax/row_wd.json",
+        method:"get",
+        editable:true,
+        width:180,
+        height:30,
+        panelWidth:180,
+        panelHeight:100,
+        onLoadSuccess:function(data){
+            var loadData=$(this).combobox("getData");
+            $(this).combobox("setValue",loadData[3].text);
+        },
+        formatter:function (row) {
+            return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+        }
+    });
+	/*单选按钮事件*/
+    $radio.on("click",function () {
+        $zbName.html(null);
+        $table.hide();
+        $(".pre").hide();
+        $zb.hide();
+        $upload.hide();
+		if($(this).val()==1){
+            $sourceSlect.html("多选");
+            is_zb=true;
+		}else{
+            $sourceSlect.html("单选");
+            is_zb=false;
 		}
-	}
-	</script>
+    });
+	/*数据源选择按钮*/
+    $sourceBtn.on("click",function () {
+        $sourceSelected.window("open");
+    });
+	/*数据源窗口加载*/
+    $sourceSelected.window({
+        title : '数据源选择',
+        modal : true,
+        shadow : true,
+        closed : true,
+        width : 300,
+        height : 400,
+        padding : 10,
+        minimizable : false,
+        maximizable : false,
+        collapsible : false,
+        top : ($(window).height() - 500) * 0.5,
+        left : ($(window).width() - 400) * 0.5,
+        onOpen : function(){
+            var urls,is_checked;
+            if(is_zb){
+                 urls="../ajax/SelectKpi.json";
+					is_checked=true;
+			}else{
+                 urls="../ajax/upload.json";
+                is_checked=false;
+			}
+		// 加载窗口树文件
+            $('#sourceTree').tree({
+                url:urls,
+                method:"get",
+                animate:true,
+                checkbox:is_checked
+            });
+        }
+    });
+	/*添加资源*/
+	var show_combo;
+	$.ajax({
+        url:"../ajax/show_type.json",
+		success:function (data) {
+            show_combo=data;
+        }
+	});
+    $(".footer").on("click","button",function(){
+        switch ($(this).html()){
+			case "确定":
+                var htm ="",
+                	str ="",
+					state = is_zb ? "getChecked":"getSelected";
+                $newAdd.html(null);
+				var nodes=$("#sourceTree").tree(state);
+				if(is_zb){
+				    if(nodes.length){
+                for (var i = 0,length=nodes.length; i <length; i++) {
+                    var obj = nodes[i];
+					if (obj.children.length!=0){
+					    continue;
+					}else{
+                        var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
+                        str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';
+                        $newAdd.append(str);
+                        $("#show_type_"+i).combobox({
+                            valueField:"id",
+                            textField:"text",
+                            data:show_combo[_showId].combo,
+                            editable:true,
+                            width:180,
+                            height:30,
+                            panelWidth:180,
+                            panelHeight:100,
+                            onLoadSuccess:function(){
+                                var loadData=$(this).combobox("getData");
+                                $(this).combobox("setValue",loadData[1].text);
+                            },
+                            formatter:function (row) {
+                                return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                            }
+                        });
+                    }
+                }
+
+				$zb.show();
+				$upload.hide();
+                    }else{
+                        alert("没有选择文件！");
+                        return ;
+                    }
+                }else{
+				    if(!nodes||nodes.children.length){
+				        alert("请选择文件！");
+				        return ;
+					}else{
+				        $zb.hide();
+				        $upload.show();
+                        htm="<span >"+nodes.text+"</span>";
+                        $zbName.html(htm);
+					}
+				}
+				$table.show();
+			    break;
+			default:
+			    break;
+		}
+        $sourceSelected.window("close");
+    });
+	/*chats加载*/
+
+	/*chats加载*/
+    $("#preChat").click(function () {
+        if(is_zb){
+        }else{
+        }
+        var title=$("#title").val();
+        $(".pre").show();
+        var myChart = echarts.init($('#chat').get(0));
+        var pieoption = {
+            //标题
+            title: {
+                //主标题
+                text: '2016年护理部各指标',
+                //副标题
+                subtext: '数据来自GWN'
+            },
+            //提示框
+            tooltip: {
+                //折线图提示框
+                trigger: 'axis'
+            },
+            //图例
+            legend: {
+                top:'bottom',
+                //数据
+                data:['预算管理指标','预算执行率','预算收入执行率']
+            },
+            //工具箱
+            toolbox: {
+                //是否显示
+                show: true,
+                //工具箱配置
+                feature: {
+                    //数据区域缩放 直角坐标系支持
+                    dataZoom: {
+                        //缩放时控制的Y轴，为空则不控制所有Y轴，为false则控制Y轴
+                        yAxisIndex: false
+                    },
+                    //是否数据不可编辑，false表示可编辑
+                    dataView: {readOnly: false},
+                    //显示模式 line折线，bar柱状，stack堆叠，tiled平铺
+                    magicType: {type: ['line', 'bar']},
+                    //还原
+                    restore: {},
+                    //下载为图片
+                    saveAsImage: {}
+                }
+            },
+            //横坐标
+            xAxis:  {
+                type: 'category',
+                boundaryGap: false,
+                data:['201601','201602','201603','201604','201605','201606','201607','201608'],
+//			//坐标轴类型，value数据，category类型，time时间，
+//			type: 'category',
+//			//起点和重点数据是否定格，是否留白
+//			boundaryGap: false,
+//			//数据
+//			data: ['周一','周二','周三','周四','周五','周六','周日','周一','周二','周三','周四','周五','周六','周日']
+            },
+            //纵坐标
+            yAxis: {
+
+                type: 'value',
+                axisLabel: {
+                    formatter: '{value} 万'
+                }
+
+
+//			type: 'value',
+//			//纵坐标显示标签
+//			axisLabel: {
+//				formatter: '{value} °C'
+//			}
+            },
+            series:
+                [
+                    //准备添加的数据
+                    {
+                        name:'预算管理指标',
+                        //折线图
+                        type:'line',
+                        //数据
+                        data:[53,67,74,88,91,106,119,127],
+                    },
+                    {
+                        name:'预算执行率',
+                        //折线图
+                        type:'line',
+                        //数据
+                        data:[41,56,79,83,105,114,131,149],
+                    },
+                    {
+                        name:'预算收入执行率',
+                        //折线图
+                        type:'line',
+                        //数据
+                        data:[81,82,93,94,105,106,117,118],
+                    }
+                    //最高气温表
+//			{
+//				name:'最高气温',
+//				//折线图
+//				type:'line',
+//				//数据
+//				data:[11, 11, 15, 13, 12, 13, 10, 11, 11, 14, 13, 12, 13, 11],
+//				//图表标注
+//				markPoint: {
+//					data: [
+//						//最大最小值
+//						{type: 'max', name: '最大值'},
+//						{type: 'min', name: '最小值'}
+//					]
+//				},
+//				//图表标线
+//				markLine: {
+//					data: [
+//						//平均值
+//						{type: 'average', name: '平均值'}
+//					]
+//				}
+//			},
+                //最低气温表
+//			{
+//				name:'最低气温',
+//				type:'line',
+//				data:[1, -2, 2, 5, 3, 2, 0, 1, -1, 2, 4, 3, 2, 0],
+//				markPoint: {
+//					data: [
+//						{name: '周最低', value: -2, xAxis: 1, yAxis: -2},
+//						{name: '周最高', value: 5, xAxis: 3, yAxis: 5}
+//					]
+//				},
+//				markLine: {
+//					data: [
+//						{type: 'average', name: '平均值'},
+//						//自定义样式
+//						[
+//						//起始点
+//						{
+//							//起始点样式
+//							symbol: 'circle',
+//							//起始点x坐标位置
+//							x: '90%',
+//							//起始点Y坐标位置
+//							yAxis: 'max'
+//						},
+//						//终点
+//						{
+//							//终点样式
+//							symbol: 'circle',
+//							//标签样式
+//							label: {
+//								normal: {
+//									//标签出现位置
+//									position: 'start',
+//									//标签格式
+//									formatter: '最大值'
+//								}
+//							},
+//							type: 'max',
+//							name: '最高点'
+//						}]
+//					]
+//				}
+//			}
+            ]
+        };
+        myChart.setOption(pieoption);
+    })
+
+</script>
+<div class="clr"></div>
 </body>
 </html>
