@@ -17,9 +17,9 @@
 		.nav-tabs li.bv-tab-success>a{color:#3c763d}
 		.nav-tabs li.bv-tab-error>a{color:#a94442}
 		div.row { height:40px;line-height: 40px}
-		div.col-xs-2 { text-align: right; font-size: 16px; font-weight: 700; }
+		/*div.col-xs-2 { text-align: right; font-size: 16px; font-weight: 700; }
 		div.col-xs-1 { text-align: right;}
-		div.col-xs-3 { height:30px;}
+		div.col-xs-3 { height:30px;}*/
 		.sourceBtn {padding:0 8px;height:26px;}
 		div.content{padding:10px 5px;
 			height:320px;overflow-y: scroll}
@@ -32,6 +32,8 @@
 		.pre{padding:20px; border: 1px solid #95B8E7; margin-top:35px;display: none}
 		#organization{height: 30px}
 		 span.tree-title{font-size: 14px}
+		.no-padding{padding: 0}
+		div.topic { text-align: right; font-size: 16px; font-weight: 700; }
 	</style>
 	
 </head>
@@ -43,54 +45,54 @@
     </div>
 	<div class="container-fluid" style="width:90%;min-width:900px;padding: 20px 0 0 0" >
 		<div class="row">
-			<div  class="col-xs-2">名称:</div>
+			<div  class="col-xs-2 topic">名称:</div>
 			<div class="col-xs-9">
 				<input type="text" class="clo-xs-9" id="name" value="各科室10月的支出饼状图" style="width:100%;max-width: 400px ;height:30px">
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-2">数据源类型:</div>
+			<div class="col-xs-2 topic">数据源类型:</div>
 			<div class="col-xs-4">
 				<input type="radio" name="dataType" value="1" checked="checked"><span>指标数据</span>
 				<input type="radio" name="dataType" value="0"  style="margin-left: 20px"><span>上传数据</span>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-2">数据源:</div>
-			<div class="col-xs-1" style="padding:0;width:100px">
+			<div class="col-xs-2 topic">数据源:</div>
+			<div class="col-xs-1" >
 				<button class="btn btn-primary sourceBtn">选择(<span>多选</span>)</button>
 			</div>
 		</div>
 		<div class="zb">
 			<div class="row">
-				<div class="col-xs-2" style="padding-left: 0">指标公共维度:</div>
-				<div class="col-xs-1">频率:</div>
-				<div class="col-xs-1">
+				<div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
+				<div class="col-xs-1" style="width:65px">频率:</div>
+				<div class="col-xs-1 no-padding">
 					<select  class="easyui-combobox" name="state" style="width: 65px;height: 30px" data-options="panelWidth:65, panelHeight:80,valueField:'id', textField:'text',currentText:'年份',value:'年份'" >
 						<option value="1">年份</option>
 						<option value="2">月份</option>
 						<option value="3">日份</option>
 					</select>
 				</div>
-				<div class="col-xs-1">日期:</div>
-				<div class="col-xs-3">
+				<div class="col-xs-1 " style="width:65px">日期:</div>
+				<div class="col-xs-3 no-padding">
 					<input class="easyui-datebox" data-options="sharedCalendar:'#cc',width:200,height:30,panelWidth:200,currentText:'Today',value:'Today'" >
 					<div id="cc" class="easyui-calendar"></div>
 				</div>
-				<div class="col-xs-1">机构:</div>
-				<div class="col-xs-3">
+				<div class="col-xs-1 " style="width:65px">机构:</div>
+				<div class="col-xs-3 no-padding">
 					<div id="organization"></div>
 				</div>
 			</div>
 			<div class="newAdd"></div>
 			<div class="row">
-				<div class="col-xs-2">横轴维度:</div>
-				<div class="col-xs-3">
+				<div class="col-xs-2 topic">横轴维度:</div>
+				<div class="col-xs-3 ">
 					<div class="wd-combo"></div>
 				 </div>
 			</div>
 			<div class="row">
-				<div class="col-xs-2">纵轴维度:</div>
+				<div class="col-xs-2 topic">纵轴维度:</div>
 				<div class="col-xs-4">
 					<div class="wd-combo"></div>
 				</div>
@@ -102,13 +104,13 @@
 				<div class="col-xs-10 zb-name"></div>
 			</div>
 			<div class="row">
-				<div class="col-xs-2">横轴字段:</div>
+				<div class="col-xs-2 topic">横轴字段:</div>
 				<div class="col-xs-4">
 					<div class="field-combo"></div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-2">纵轴字段:</div>
+				<div class="col-xs-2 topic">纵轴字段:</div>
 				<div class="col-xs-4">
 					<div class="field-combo"></div>
 				</div>
@@ -123,8 +125,6 @@
 			</div>
 		</div>
 	</div>
-
-
 </div>
 
 <!-- 数据源 -->
@@ -309,7 +309,7 @@
 					    continue;
 					}else{
                         var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
-                        str ='<div class="row"><div class = "col-xs-2 zb-name" >'+obj.text+":"+'</div><div class = "col-xs-10" ><div class="col-xs-1">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9" ><div id="show_type_'+i+'"></div></div></div >';
+                        str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';
                         $newAdd.append(str);
                         $("#show_type_"+i).combobox({
                             valueField:"id",
