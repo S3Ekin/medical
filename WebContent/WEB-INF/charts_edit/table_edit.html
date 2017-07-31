@@ -68,16 +68,16 @@
 				<div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
 				<div class="col-xs-1" style="width:65px">频率:</div>
 				<div class="col-xs-1 no-padding">
-					<select  class="easyui-combobox" name="state" style="width: 65px;height: 30px" data-options="panelWidth:65, panelHeight:80,valueField:'id', textField:'text',currentText:'年份',value:'年份'" >
-						<option value="1">年份</option>
-						<option value="2">月份</option>
-						<option value="3">日份</option>
-					</select>
+					<div id="rotate"></div>
 				</div>
-				<div class="col-xs-1 " style="width:65px">日期:</div>
+				<div class="col-xs-1 " style="width:85px">时间段:</div>
 				<div class="col-xs-3 no-padding">
-					<input class="easyui-datebox" data-options="sharedCalendar:'#cc',width:200,height:30,panelWidth:200,currentText:'Today',value:'Today'" >
-					<div id="cc" class="easyui-calendar"></div>
+					<div>
+						<div class="data-combo"></div>
+					</div>
+					<div style="display: none">
+						<div class="calendar-combo" ></div>
+					</div>
 				</div>
 				<div class="col-xs-1 " style="width:65px">机构:</div>
 				<div class="col-xs-3 no-padding">
@@ -100,7 +100,7 @@
 		</div>
 		<div class="upload">
 			<div class="row">
-				<div class="col-xs-2">数据名称:</div>
+				<div class="col-xs-2 topic">数据名称:</div>
 				<div class="col-xs-10 zb-name"></div>
 			</div>
 			<div class="row">
@@ -117,7 +117,7 @@
 			</div>
 		</div>
 		<div class="row table">
-			<div class="col-xs-2">
+			<div class="col-xs-2 topic">
 				<button type="button" class="btn btn-primary " id="preChat">预览</button>
 			</div>
 			<div class="col-xs-10 pre">
@@ -172,10 +172,71 @@
         $zb=$(".zb"),
         $newAdd=$(".newAdd"),
         $org=$("#organization"),
+        $dataCombo=$(".data-combo"),
+        $calendar=$(".calendar-combo"),
         $upload=$(".upload"),
         $table=$(".table"),
         $sourceSelected=$("#sourceSelected"),
 		$sourceBtn=$(".sourceBtn");
+    /*日期下拉框加载*/
+	/*日期选择*/
+    $.ajax({
+        url:"../ajax/data.json",
+        dataType:"json",
+        success:function (data) {
+            var dataArray=data;
+			/*月期框加载*/
+            $dataCombo.combobox({
+                valueField:"id",
+                textField:"text",
+                data:dataArray.month,
+                editable:true,
+                width:80,
+                height:30,
+                panelWidth:80,
+                panelHeight:100,
+                formatter:function (row) {
+                    return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+                }
+            });
+			/*频率框加载*/
+            $("#rotate").combobox({
+                valueField:"id",
+                textField:"text",
+                data:dataArray.rotate,
+                editable:true,
+                width:70,
+                height:30,
+                panelWidth:70,
+                panelHeight:100,
+                onLoadSuccess:function(){
+                    var loadData=$(this).combobox("getData");
+                    $(this).combobox("setValue",loadData[2].text);
+                },
+                formatter:function (row) {
+                    return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+                },
+                onSelect:function (recoder) {
+                    var item=recoder.value;
+                    if(recoder.id==4){
+                        $dataCombo.parent().hide();
+                        $calendar.parent().show();
+                        $calendar.datebox({
+                            width:180,
+                            height:30,
+                            panelWidth:180,
+                            panelHeight:200,
+                            value:"Today"
+                        });
+                    }else{
+                        $calendar.parent().hide();
+                        $dataCombo.parent().show();
+                        $dataCombo.combobox("loadData",dataArray[item]);
+                    }
+                }
+            });
+        }
+    });
     /*机构树加载*/
     $org.combotree({
 		url:"../ajax/org.json",
@@ -267,21 +328,12 @@
                  urls="../ajax/upload.json";
                 is_checked=false;
 			}
-		// 加载窗口树
-            $.ajax({
-                url : urls,
-                dataType : "json",
-                success : function(data) {
-                    $('#sourceTree').tree({
-						url:urls,
-						method:"get",
-						animate:true,
-						checkbox:is_checked
-					});
-                },
-                error : function() {
-                    alert("树有问题");
-                }
+		// 加载窗口树文件
+            $('#sourceTree').tree({
+                url:urls,
+                method:"get",
+                animate:true,
+                checkbox:is_checked
             });
         }
     });
