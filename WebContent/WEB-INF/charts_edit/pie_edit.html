@@ -1,256 +1,387 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css">
-	<link rel="stylesheet" type="text/css" href="../../resources/css/icon.css">
-	<link rel="stylesheet" type="text/css" href="../../resources/css/demo.css">
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>表格创建编辑</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+	<style>
+		#table1 tr th{padding: 8px 5px;text-align:center;}
+		#table1 tr td{padding: 8px 5px;text-align:center;}
+		.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
+		form{width:100%;}
+		.bv-form .help-block{margin-bottom:0}
+		.bv-form .tooltip-inner{text-align:left}
+		.nav-tabs li.bv-tab-success>a{color:#3c763d}
+		.nav-tabs li.bv-tab-error>a{color:#a94442}
+		div.row { height:40px;line-height: 40px}
+		div.col-xs-2 { text-align: right; font-size: 16px; font-weight: 700; }
+		div.col-xs-1 { text-align: right;}
+		div.col-xs-3 { height:30px;}
+		.sourceBtn {padding:0 8px;height:26px;}
+		div.content{padding:10px 5px;
+			height:320px;overflow-y: scroll}
+		div.footer button{padding: 5px 10px ;height: 30px;margin-right: 10px}
+		div.footer{text-align: right;padding:5px 50px 5px 0;border-top: 2px solid #95B8E7;}
+		.zb-name {color:#2081BB;white-space: nowrap;}
+		.upload{display: none}
+		.table{display: none}
+		.zb{display: none}
+		.pre{padding:20px; border: 1px solid #95B8E7; margin-top:35px;display: none}
+		#organization{height: 30px}
+		 span.tree-title{font-size: 14px}
+	</style>
 	
-	<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
-	<script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="../../resources/echarts/echarts.js"></script>
-	<script type="text/javascript" src="../../resources/echarts/piecharts.js"></script>
-	<script type="text/javascript" src="pie_edit.js"></script>
-		<style>
-			span.tree-title{font-size: 14px}
-		</style>
-<title>pie_chart</title>
 </head>
 <body>
-	<!--布局div-->
-	<div class="easyui-layout" data-options="border:false,fit:true" style="width:100%;height:100%">
-		<div data-options="region:'west'" style="width:40%;height:100%">
-			<!-- 嵌套布局div -->
-			<div class="easyui-layout" style="width:100%;height:100%;">
-				<!--左上选择指标维度div-->
-				<div data-options="region:'north'" style="width:80%;height:40%;padding:20px">
-					数据选择：
-					<div id="pie_div_kpi" style="width:80%;height:15%;padding:20px">
-						<select id="pie_sel_charttype" name="pie_sel_rate" class="easyui-combobox" style="width:100px"></select>
-						Kpi：
-						<button id="pie_button_kpi" class="easyui-linkbutton" onclick="$('#window_kpi').window('open')">预算管理指标</button>
-						<!--button id="ccc" class="easyui-linkbutton">check</button-->
-					</div>
-					<!-- 时间维度div -->
-					<div id="pie_div_dim1" style="width:80%;height:15%;padding:20px">
-						频率：
-						<select id="pie_sel_rate" name="pie_sel_rate" class="easyui-combobox" style="width:70px"></select>
-						时间：
-						<input id="pie_sel_time_date" name="pie_sel_time_date" class="easyui-datebox" style="width:110px" />
-						<select id="pie_sel_time_ym" name="pie_sel_time_ym" class="easyui-combobox" style="width:100px"></select>
-					</div>
-					<!-- 科室维度div -->
-					<div id="pie_div_dim2" style="width:80%;height:15%;padding:20px">
-						部门：
-						<select id="pie_sel_area" name="pie_sel_area" class="easyui-combotree" style="width:150px;"></select>
-					</div>
+<div class="mr15">
+    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
+       	<span class="tab_title">表格创建编辑</span>
+		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
+    </div>
+	<div class="container-fluid" style="width:90%;min-width:900px;padding: 20px 0 0 0" >
+		<div class="row">
+			<div  class="col-xs-2">名称:</div>
+			<div class="col-xs-9">
+				<input type="text" class="clo-xs-9" id="name" value="各科室10月的支出饼状图" style="width:100%;max-width: 400px ;height:30px">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">数据源类型:</div>
+			<div class="col-xs-4">
+				<input type="radio" name="dataType" value="1" checked="checked"><span>指标数据</span>
+				<input type="radio" name="dataType" value="0"  style="margin-left: 20px"><span>上传数据</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2">数据源:</div>
+			<div class="col-xs-1" style="padding:0;width:100px">
+				<button class="btn btn-primary sourceBtn">选择(单选)</button>
+			</div>
+		</div>
+		<div class="zb">
+			<div class="row">
+				<div class="col-xs-2" style="padding-left: 0">指标公共维度:</div>
+				<div class="col-xs-1">频率:</div>
+				<div class="col-xs-1">
+					<select  class="easyui-combobox" name="state" style="width: 65px;height: 30px" data-options="panelWidth:65, panelHeight:80,valueField:'id', textField:'text',currentText:'年份',value:'年份'" >
+						<option value="1">年份</option>
+						<option value="2">月份</option>
+						<option value="3">日份</option>
+					</select>
 				</div>
-				<!-- 左中选择变量生成饼状图div -->
-				<div data-options="region:'center'" style="width:50%;height:30% ;padding:20px">
-					<div id="pie_div_chart_dims" style="width:50%;height:15% ;padding:20px">
-						<p id="pie_p_var">选择占比的维度</p>
-						<select id="pie_sel_dim_chart" name="pie_sel_time_ym" class="easyui-combobox" style="width:100px"></select>
-					</div>
-					<div id="pie_div_chart_dim1" style="height:15% ;padding:20px">
-						起始时间：
-						<div id="pie_div_ym">
-							<select id="pie_sel_time_ym_f" name="pie_sel_time_ym_f" class="easyui-combobox" style="width:100px"></select>
-						</div>
-						<div id="pie_div_date">
-							<input id="pie_sel_time_date_f" name="pie_sel_time_date_f" class="easyui-datebox" style="width:110px" />
-						</div>
-					</div>
-					<div id="pie_div_chart_dim2">
-					</div>
-					<div style="height:15% ;padding:20px">
-						<button id="button_makechart" class="easyui-linkbutton">生成图形</button>
-					</div>
+				<div class="col-xs-1">日期:</div>
+				<div class="col-xs-3">
+					<input class="easyui-datebox" data-options="sharedCalendar:'#cc',width:200,height:30,panelWidth:200,currentText:'Today',value:'Today'" >
+					<div id="cc" class="easyui-calendar"></div>
 				</div>
-				<!-- 左下图形参数设置div -->
-				<div data-options="region:'south'" style="width:50%;height:30%;padding:20px">
-					图形参数选择：
-					<div id="pie_div_3">
-						<div id="pie_div_var" style="padding:20px">
-							<p id="pie_p_title">饼状图标题：</p>
-							<input id="pie_text_title" class="easyui-textbox" data-options="prompt:'输入标题'" style="width:50%;height:32px" />
-						</div>
-						<!-- 玫瑰图的div -->
-						<div id="pie_div_isrose" style="width:50%;height:15%;padding:20px">
-							是否为玫瑰图：
-							<input type="radio" name="isrose" value="false" />否
-							<input type="radio" name="isrose" value="true"/>是
-						</div>
-						<!-- 半径的div -->
-						<div id="pie_div_radius1" style="width:100%;height:15%;padding:20px">
-							选择内半径：
-							<select id="pie_sel_inner_radius" name="pie_sel_inner_radius" class="easyui-combobox" style="width:70px"></select>
-							选择外半径：
-							<select id="pie_sel_outer_radius" name="pie_sel_outer_radius" class="easyui-combobox" style="width:70px"></select>
-						</div>
-					</div>
+				<div class="col-xs-1">机构:</div>
+				<div class="col-xs-3">
+					<div id="organization"></div>
+				</div>
+			</div>
+			<div class="newAdd"></div>
+			<div class="row">
+				<div class="col-xs-2">横轴维度:</div>
+				<div class="col-xs-3">
+					<div class="wd-combo"></div>
+				 </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2">纵轴维度:</div>
+				<div class="col-xs-4">
+					<div class="wd-combo"></div>
 				</div>
 			</div>
 		</div>
-		<!-- 右边显示饼状图div -->
-		<div id="pie_div_chart" data-options="region:'center'" style="width:60%;height:100%;padding:0px">
-			
+		<div class="upload">
+			<div class="row">
+				<div class="col-xs-2">数据名称:</div>
+				<div class="col-xs-10 zb-name"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2">横轴字段:</div>
+				<div class="col-xs-4">
+					<div class="field-combo"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2">纵轴字段:</div>
+				<div class="col-xs-4">
+					<div class="field-combo"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row table">
+			<div class="col-xs-2">
+				<button type="button" class="btn btn-primary " id="preChat">预览</button>
+			</div>
+			<div class="col-xs-10 pre">
+				<div id="chat" style="width:100%;height:350px"></div>
+			</div>
 		</div>
 	</div>
-			<!-- 选择kpi窗口 -->
-			<div id="window_kpi" class="easyui-window">
-				<div class="easyui-layout" data-options="fit:true">
-					<div data-options="region:'center',border:false" style="padding:10px;">
-						<div id="tab_kpi" class="easyui-tabs" data-options="fit:true">
-							<div title="全部" style="padding:10px">
-								<ul id="tree_kpi" class="easyui-tree" data-></ul>
-							</div>
-							<div title="搜索" style="padding:10px">
-								<table id="db_kpi"class="easyui-datagrid" style="width:700px;height:99%" data-options="border:false,fit:true,rownumbers:true,singleSelect:true,method:'get',toolbar:'#search_kpi'">
-									<thead>
-										<tr>
-											<th data-options="field:'value',width:80,hidden:true">ID</th>
-											<th data-options="field:'text',width:180">名称</th>
-										</tr>
-									</thead>
-								</table>
-							</div>
-						</div>
-					</div>
-					<div data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">
-						<a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="choose()" style="width:80px">选择</a>
-						<a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="$('#window_kpi').window('close')" style="width:80px">关闭</a>
-					</div>
+
+
+</div>
+
+<!-- 数据源 -->
+<div id="sourceSelected">
+	<div class="content" >
+		<ul id="sourceTree">
+		</ul>
+	</div>
+	<div class="footer">
+		<button type="button" class="btn btn-primary "   id="select">确定</button>
+				<button type="button" class="btn btn-primary" id="cancel">取消</button>
+	</div>
+</div>
+<!-- alert共用模态框 -->
+<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
+		<div class="modal-content">
+			<div class="modal-header" id="modal_title">
+				<button type="button" class="close" data-dismiss="modal">
+					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+				</button>
+
+			</div>
+			<div class="modal-body">
+				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
+					<span >确定删除吗?</span>
 				</div>
 			</div>
-			<div id="search_kpi" style="padding:2px 5px;">
-				<input class="easyui-searchbox" data-options="prompt:'请输入要查找的指标',searcher:doSearch,fit:true" style="width:200px"></input>
+			<div class="modal-footer" style="text-align:center;">
+				<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
 			</div>
-	<script type="text/javascript">
-		function doSearch(value) {
-			$.ajax({
-				url : "SearchKpiServlet?variable="+value,
-				dataType : "json",
-				success : function(data) {
-					$('#db_kpi').datagrid('loadData', data);
-				},
-				error : function() {
-					alert("查不到输入的指标");
-				}
-			})
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
+<script src="../../resources/echarts/echarts.js"></script>
+<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script>
+    var $radio = $("input[name=dataType]"),
+        $sourceSlect=$(".sourceBtn span"),
+        $zbName=$(".zb-name"),
+        is_zb=true,
+        $zb=$(".zb"),
+        $newAdd=$(".newAdd"),
+        $org=$("#organization"),
+        $upload=$(".upload"),
+        $table=$(".table"),
+        $sourceSelected=$("#sourceSelected"),
+		$sourceBtn=$(".sourceBtn");
+    /*机构树加载*/
+    $org.combotree({
+		url:"../ajax/org.json",
+		method:"get",
+        editable:true,
+		width:180,
+		height:30,
+        panelWidth:180,
+        panelHeight:300,
+        value:"信息科"
+	});
+	/*字段框加载*/
+    $(".field-combo").combobox({
+        valueField:"id",
+        textField:"text",
+        url:"../ajax/row_wd.json",
+        method:"get",
+        editable:true,
+        width:180,
+        height:30,
+        panelWidth:180,
+        panelHeight:100,
+        onLoadSuccess:function(data){
+            var loadData=$(this).combobox("getData");
+            $(this).combobox("setValue",loadData[3].text);
+        },
+        formatter:function (row) {
+            return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+        }
+    });
+	/*单选按钮事件*/
+    $radio.on("click",function () {
+        $zbName.html(null);
+        $table.hide();
+        $(".pre").hide();
+        $zb.hide();
+        $upload.hide();
+		if($(this).val()==1){
+            $sourceSlect.html("多选");
+            is_zb=true;
+		}else{
+            $sourceSlect.html("单选");
+            is_zb=false;
 		}
-		
-		var kpi_id = "";
-		
-		function choose(){
-			//alert($('.tabs-selected').text());
-			if ($('.tabs-selected').text() == "全部") {
-				//alert($('#tree_kpi').tree('getSelected').id);
-				kpi_id = $('#tree_kpi').tree('getSelected').id;
-				var kpi_text =$('#tree_kpi').tree('getSelected').text;
-				$('#pie_div_chart_dims').show();
-				$.ajax({
-					url : "ajax/GetDimValue.txt",
-					dataType : "text",
-					success : function(data) {
-						var temp = data.split('@');
-						data = temp[0];
-						var dims = data.split(",");
-						for(var i=0; i<dims.length; i++){
-							//说明该指标包含时间维度
-							if(dims[i] == "1"){
-								$('#pie_div_dim1').show();
-							}
-							else if(dims[i] == "2"){
-								$('#pie_div_dim2').show();
-							}
-						}
-						$('#pie_button_kpi').html(kpi_text);
-					},
-					error : function(){
-						alert("111");
-					}
-				})
-				$.ajax({
-					url : "ajax/GetDimValue.txt",
-					dataType : "text",
-					success : function(data1) {
-						var temp = data1.split('@');
-						data1 = temp[1];
-						data = JSON.parse(data1); 
-						$('#pie_sel_dim_chart').combobox('loadData', data);
-						//有时间变量
-						if($('#pie_sel_dim_chart').combobox('getValue') == "1"){
-							$('#pie_div_chart_dim1').show();
-							if($('#pie_sel_rate').combobox('getValue') != "date"){
-								$('#pie_div_ym').show();
-								$('#pie_div_date').hide();
-							}else{
-								$('#pie_div_date').show();
-								$('#pie_div_ym').hide();
-							}
-						}
-					},
-					error : function(){
-						alert("222");
-					}
-				})
-			} else {
-				//alert($('#db_kpi').datagrid('getSelected').value);
-				kpi_id = $('#db_kpi').datagrid('getSelected').value;
-				var kpi_text=$('#db_kpi').datagrid('getSelected').text;
-				$('#pie_div_chart_dims').show();
-				$.ajax({
-					url : "ajax/GetDimValue.txt",
-					dataType : "text",
-					success : function(data) {
-						var temp = data.split('@');
-						data = temp[0];
-						var dims = data.split(",");
-						for(var i=0; i<dims.length; i++){
-							//说明该指标包含时间维度
-							if(dims[i] == "1"){
-								$('#pie_div_dim1').show();
-							}
-							else if(dims[i] == "2"){
-								$('#pie_div_dim2').show();
-							}
-						}
-						$('#pie_button_kpi').html(kpi_text);
-					},
-					error : function(){
-						alert("333");
-					}
-				})
-				$.ajax({
-					url : "ajax/GetDimValue.txt",
-					dataType : "text",
-					success : function(data1) {
-						var temp = data1.split('@');
-						data1 = temp[1];
-						data = JSON.parse(data1); 
-						$('#pie_sel_dim_chart').combobox('loadData', data);
-						//有时间变量
-						if($('#pie_sel_dim_chart').combobox('getValue') == "1"){
-							$('#pie_div_chart_dim1').show();
-							if($('#pie_sel_rate').combobox('getValue') != "date"){
-								$('#pie_div_ym').show();
-								$('#pie_div_date').hide();
-							}else{
-								$('#pie_div_date').show();
-								$('#pie_div_ym').hide();
-							}
-						}
-					},
-					error : function(){
-						alert("444");
-					}
-				})
+    });
+	/*数据源选择按钮*/
+    $sourceBtn.on("click",function () {
+        $sourceSelected.window("open");
+    });
+	/*数据源窗口加载*/
+    $sourceSelected.window({
+        title : '数据源选择',
+        modal : true,
+        shadow : true,
+        closed : true,
+        width : 300,
+        height : 400,
+        padding : 10,
+        minimizable : false,
+        maximizable : false,
+        collapsible : false,
+        top : ($(window).height() - 500) * 0.5,
+        left : ($(window).width() - 400) * 0.5,
+        onOpen : function(){
+            var urls,is_checked;
+            if(is_zb){
+                 urls="../ajax/SelectKpi.json";
+					is_checked=true;
+			}else{
+                 urls="../ajax/upload.json";
+                is_checked=false;
 			}
-			//$('#pie_div_var').show();
-			//$('#pie_div_isrose').show();
-			//$('#pie_div_radius').show();
-			$('#window_kpi').window('close');
+		// 加载窗口树
+            $.ajax({
+                url : urls,
+                dataType : "json",
+                success : function(data) {
+                    $('#sourceTree').tree({
+						url:urls,
+						method:"get",
+						animate:true,
+						checkbox:is_checked
+					});
+                },
+                error : function() {
+                    alert("树有问题");
+                }
+            });
+        }
+    });
+	/*添加资源*/
+	var show_combo;
+	$.ajax({
+        url:"../ajax/show_type.json",
+		success:function (data) {
+            show_combo=data;
+        }
+	});
+    $(".footer").on("click","button",function(){
+        switch ($(this).html()){
+			case "确定":
+                var htm ="",
+                	str ="",
+					state = is_zb ? "getChecked":"getSelected";
+                $newAdd.html(null);
+				var nodes=$("#sourceTree").tree(state);
+				if(is_zb){
+				    if(nodes.length){
+                for (var i = 0,length=nodes.length; i <length; i++) {
+                    var obj = nodes[i];
+					if (obj.children.length!=0){
+					    continue;
+					}else{
+                        var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
+                        str ='<div class="row"><div class = "col-xs-2 zb-name" >'+obj.text+":"+'</div><div class = "col-xs-10" ><div class="col-xs-1">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9" ><div id="show_type_'+i+'"></div></div></div >';
+                        $newAdd.append(str);
+                        $("#show_type_"+i).combobox({
+                            valueField:"id",
+                            textField:"text",
+                            data:show_combo[_showId].combo,
+                            editable:true,
+                            width:180,
+                            height:30,
+                            panelWidth:180,
+                            panelHeight:100,
+                            onLoadSuccess:function(){
+                                var loadData=$(this).combobox("getData");
+                                $(this).combobox("setValue",loadData[1].text);
+                            },
+                            formatter:function (row) {
+                                return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                            }
+                        });
+                    }
+                }
+
+				$zb.show();
+				$upload.hide();
+                    }else{
+                        alert("没有选择文件！");
+                        return ;
+                    }
+                }else{
+				    if(!nodes||nodes.children.length){
+				        alert("请选择文件！");
+				        return ;
+					}else{
+				        $zb.hide();
+				        $upload.show();
+                        htm="<span >"+nodes.text+"</span>";
+                        $zbName.html(htm);
+					}
+				}
+				$table.show();
+			    break;
+			default:
+			    break;
 		}
-	</script>
+        $sourceSelected.window("close");
+    });
+	/*chats加载*/
+
+	$("#preChat").click(function () {
+	    $(".pre").show();
+        var myChart = echarts.init($('#chat').get(0));
+        var pieoption = {
+            title : {
+                text: '各科室10月的支出饼状图',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['院办公室','信息科','财务科','总务科','医务科']
+            },
+            series : [
+                {
+                    name: '科室',
+                    type: 'pie',
+                    radius : '55%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:335, name:'院办公室'},
+                        {value:310, name:'信息科'},
+                        {value:234, name:'财务科'},
+                        {value:135, name:'总务科'},
+                        {value:1548, name:'医务科'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        myChart.setOption(pieoption);
+    })
+
+</script>
+<div class="clr"></div>
 </body>
 </html>
