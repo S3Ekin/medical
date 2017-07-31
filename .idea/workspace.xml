@@ -2,28 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4f60df0-64b0-4be8-bb87-72e70867aa4e" name="Default" comment="1.7">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel-edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/lines_edit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multip_edit.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel_edit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel_edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/line_edit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/line_edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multiline_edit.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multiline_edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/radar_edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/scatter_edit.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/pie_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/pie_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel-edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel-edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/lines_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/lines_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multip_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multip_edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/radar_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/radar_edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/scatter_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/scatter_edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/table_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/table_edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo4.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,147 +25,72 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="115" column="90" lean-forward="true" selection-start-line="115" selection-start-column="90" selection-end-line="115" selection-end-column="90" />
-              <folding>
-                <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#0;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#li#0;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#0;n#ul#0;n#li#0;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#1;n#ul#0;n#li#0;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#2;n#ul#0;n#li#0;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#0;n#ul#0;n#li#1;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#4;n#ul#0;n#li#1;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#9;n#ul#0;n#li#1;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#li#7;n#ul#0;n#li#1;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#9812#9872#0" expanded="false" />
-                <element signature="e#9973#10013#0" expanded="false" />
-                <element signature="e#10060#10885#0" expanded="false" />
-                <element signature="e#10960#11188#0" expanded="false" />
-                <element signature="e#11233#11648#0" expanded="false" />
-                <element signature="e#11684#11991#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="funnelchart.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Singleton_temp/WebContent/echarts/funnelchart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="107" column="1" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="107" selection-end-column="1" />
-              <folding>
-                <element signature="n#!!block;n#funneloption#0;n#!!top" expanded="false" />
-                <element signature="n#!!block;n#title#0;n#!!block;n#funneloption#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scatter_edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/scatter_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="120" column="22" lean-forward="true" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
-              <folding>
-                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1501509611687" expanded="true" signature="7002:7008" ph=" " />
-                <marker date="1501509611687" expanded="true" signature="7667:7673" ph=" " />
-                <marker date="1501509611687" expanded="true" signature="9179:9185" ph=" " />
-                <marker date="1501509611687" expanded="true" signature="9743:9749" ph=" " />
-                <marker date="1501509611687" expanded="true" signature="11948:11960" ph="..." />
-                <marker date="1501509611687" expanded="true" signature="12916:12922" ph=" " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bar_edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="119" column="90" lean-forward="false" selection-start-line="119" selection-start-column="90" selection-end-line="119" selection-end-column="90" />
-              <folding>
-                <marker date="1501508898362" expanded="true" signature="7006:7012" ph=" " />
-                <marker date="1501508898362" expanded="true" signature="7671:7677" ph=" " />
-                <marker date="1501508898362" expanded="true" signature="9183:9189" ph=" " />
-                <marker date="1501508898362" expanded="true" signature="9747:9753" ph=" " />
-                <marker date="1501508898362" expanded="true" signature="11952:11964" ph="..." />
-                <marker date="1501508898362" expanded="true" signature="12920:12926" ph=" " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="area_edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="120" column="22" lean-forward="true" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
-              <folding>
-                <element signature="e#10270#11064#0" expanded="false" />
-                <element signature="e#11102#11211#0" expanded="false" />
-                <marker date="1501509200997" expanded="true" signature="7006:7012" ph=" " />
-                <marker date="1501509200997" expanded="true" signature="7671:7677" ph=" " />
-                <marker date="1501509200997" expanded="true" signature="9183:9189" ph=" " />
-                <marker date="1501509200997" expanded="true" signature="9747:9753" ph=" " />
-                <marker date="1501509200997" expanded="true" signature="11952:11964" ph="..." />
-                <marker date="1501509200997" expanded="true" signature="12920:12926" ph=" " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="radar_edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/radar_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="116" column="29" lean-forward="true" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
+            <state relative-caret-position="326">
+              <caret line="426" column="27" lean-forward="false" selection-start-line="426" selection-start-column="27" selection-end-line="426" selection-end-column="27" />
               <folding>
-                <marker date="1501509319158" expanded="true" signature="7005:7011" ph=" " />
-                <marker date="1501509319158" expanded="true" signature="7670:7676" ph=" " />
-                <marker date="1501509319158" expanded="true" signature="9182:9188" ph=" " />
-                <marker date="1501509319158" expanded="true" signature="9746:9752" ph=" " />
-                <marker date="1501509319158" expanded="true" signature="11951:11963" ph="..." />
-                <marker date="1501509319158" expanded="true" signature="12919:12925" ph=" " />
+                <marker date="1501510747137" expanded="true" signature="7005:7011" ph=" " />
+                <marker date="1501510747137" expanded="true" signature="7670:7676" ph=" " />
+                <marker date="1501510747137" expanded="true" signature="9182:9188" ph=" " />
+                <marker date="1501510747137" expanded="true" signature="9746:9752" ph=" " />
+                <marker date="1501510747137" expanded="true" signature="11951:11963" ph="..." />
+                <marker date="1501510747137" expanded="true" signature="12919:12925" ph=" " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="radarchart.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Singleton_temp/WebContent/echarts/radarchart.js">
+      <file leaf-file-name="pie_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/pie_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="39" column="1" lean-forward="true" selection-start-line="0" selection-start-column="18" selection-end-line="39" selection-end-column="1" />
+            <state relative-caret-position="1184">
+              <caret line="424" column="0" lean-forward="false" selection-start-line="424" selection-start-column="0" selection-end-line="424" selection-end-column="0" />
               <folding>
-                <element signature="n#!!block;n#radaroption#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bar_chart.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Singleton_temp/WebContent/charts/bar_chart.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1265">
-              <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="barchart.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Singleton_temp/WebContent/echarts/barchart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="159" column="5" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="159" selection-end-column="5" />
-              <folding>
-                <element signature="n#!!block;n#baroption#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#6;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#3;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#7708#7872#0" expanded="false" />
+                <element signature="e#7913#8432#0" expanded="false" />
+                <element signature="e#8477#8996#0" expanded="false" />
+                <element signature="e#9017#10983#0" expanded="false" />
+                <element signature="e#9170#9594#0" expanded="false" />
+                <element signature="e#9466#9580#0" expanded="false" />
+                <element signature="e#9940#10088#0" expanded="false" />
+                <element signature="e#10131#10245#0" expanded="false" />
+                <element signature="e#10362#10733#0" expanded="false" />
+                <element signature="e#11259#11306#0" expanded="false" />
+                <element signature="e#11349#11965#0" expanded="false" />
+                <element signature="e#11766#11948#0" expanded="false" />
+                <element signature="e#12003#12112#0" expanded="false" />
+                <element signature="e#12162#12828#0" expanded="false" />
+                <element signature="e#12333#12391#0" expanded="false" />
+                <element signature="e#12418#12511#0" expanded="false" />
+                <element signature="e#12515#12608#0" expanded="false" />
+                <element signature="e#13269#13372#0" expanded="false" />
+                <element signature="e#13394#13530#0" expanded="false" />
+                <element signature="e#14090#14327#0" expanded="false" />
+                <marker date="1501501034259" expanded="false" signature="2824:2848" ph="..." />
+                <marker date="1501501034259" expanded="true" signature="8390:8396" ph=" " />
+                <marker date="1501501034259" expanded="true" signature="8954:8960" ph=" " />
+                <marker date="1501501034259" expanded="true" signature="9536:9542" ph=" " />
+                <marker date="1501501034259" expanded="true" signature="10201:10207" ph=" " />
               </folding>
             </state>
           </provider>
@@ -187,18 +99,88 @@
       <file leaf-file-name="funnel-edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel-edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="426" column="10" lean-forward="false" selection-start-line="426" selection-start-column="10" selection-end-line="426" selection-end-column="10" />
+            <state relative-caret-position="330">
+              <caret line="437" column="27" lean-forward="false" selection-start-line="437" selection-start-column="27" selection-end-line="437" selection-end-column="27" />
               <folding>
                 <element signature="e#13823#15284#0" expanded="false" />
-                <element signature="e#15366#18490#0" expanded="false" />
                 <element signature="e#15448#15523#0" expanded="false" />
-                <marker date="1501507344149" expanded="true" signature="7020:7026" ph=" " />
-                <marker date="1501507344149" expanded="true" signature="7685:7691" ph=" " />
-                <marker date="1501507344149" expanded="true" signature="9197:9203" ph=" " />
-                <marker date="1501507344149" expanded="true" signature="9761:9767" ph=" " />
-                <marker date="1501507344149" expanded="true" signature="11966:11978" ph="..." />
-                <marker date="1501507344149" expanded="true" signature="12934:12940" ph=" " />
+                <marker date="1501510747198" expanded="true" signature="7020:7026" ph=" " />
+                <marker date="1501510747198" expanded="true" signature="7685:7691" ph=" " />
+                <marker date="1501510747198" expanded="true" signature="9197:9203" ph=" " />
+                <marker date="1501510747198" expanded="true" signature="9761:9767" ph=" " />
+                <marker date="1501510747198" expanded="true" signature="11966:11978" ph="..." />
+                <marker date="1501510747198" expanded="true" signature="12934:12940" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bar_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="428" column="27" lean-forward="false" selection-start-line="428" selection-start-column="27" selection-end-line="428" selection-end-column="27" />
+              <folding>
+                <marker date="1501510747421" expanded="true" signature="7006:7012" ph=" " />
+                <marker date="1501510747421" expanded="true" signature="7671:7677" ph=" " />
+                <marker date="1501510747421" expanded="true" signature="9183:9189" ph=" " />
+                <marker date="1501510747421" expanded="true" signature="9747:9753" ph=" " />
+                <marker date="1501510747421" expanded="true" signature="11952:11964" ph="..." />
+                <marker date="1501510747421" expanded="true" signature="12920:12926" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="area_edit.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="426" column="20" lean-forward="true" selection-start-line="426" selection-start-column="20" selection-end-line="426" selection-end-column="20" />
+              <folding>
+                <element signature="e#10270#11064#0" expanded="false" />
+                <element signature="e#11102#11211#0" expanded="false" />
+                <marker date="1501510768191" expanded="true" signature="7006:7012" ph=" " />
+                <marker date="1501510768191" expanded="true" signature="7671:7677" ph=" " />
+                <marker date="1501510768191" expanded="true" signature="9183:9189" ph=" " />
+                <marker date="1501510768191" expanded="true" signature="9747:9753" ph=" " />
+                <marker date="1501510768191" expanded="true" signature="11952:11964" ph="..." />
+                <marker date="1501510768191" expanded="true" signature="12920:12926" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="multip_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multip_edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="426" column="27" lean-forward="false" selection-start-line="426" selection-start-column="27" selection-end-line="426" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1501510747298" expanded="true" signature="7006:7012" ph=" " />
+                <marker date="1501510747298" expanded="true" signature="7671:7677" ph=" " />
+                <marker date="1501510747298" expanded="true" signature="9183:9189" ph=" " />
+                <marker date="1501510747298" expanded="true" signature="9747:9753" ph=" " />
+                <marker date="1501510747298" expanded="true" signature="11952:11964" ph="..." />
+                <marker date="1501510747298" expanded="true" signature="12920:12926" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lines_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/lines_edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="426" column="27" lean-forward="false" selection-start-line="426" selection-start-column="27" selection-end-line="426" selection-end-column="27" />
+              <folding>
+                <marker date="1501510747356" expanded="true" signature="7004:7010" ph=" " />
+                <marker date="1501510747356" expanded="true" signature="7669:7675" ph=" " />
+                <marker date="1501510747356" expanded="true" signature="9181:9187" ph=" " />
+                <marker date="1501510747356" expanded="true" signature="9745:9751" ph=" " />
+                <marker date="1501510747356" expanded="true" signature="11950:11962" ph="..." />
+                <marker date="1501510747356" expanded="true" signature="12918:12924" ph=" " />
               </folding>
             </state>
           </provider>
@@ -254,16 +236,16 @@
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/data.json" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/pie_edit.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/table_edit.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo4.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel-edit.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multip_edit.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/lines_edit.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/radar_edit.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/scatter_edit.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/table_edit.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/scatter_edit.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/radar_edit.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multip_edit.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/lines_edit.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel-edit.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html" />
       </list>
     </option>
   </component>
@@ -559,7 +541,7 @@
       <workItem from="1501424406426" duration="5206000" />
       <workItem from="1501460680379" duration="14009000" />
       <workItem from="1501480664967" duration="21038000" />
-      <workItem from="1501505455115" duration="4125000" />
+      <workItem from="1501505455115" duration="5176000" />
     </task>
     <task id="LOCAL-00001" summary="ueditor 弹出框消失问题">
       <created>1501238799302</created>
@@ -607,7 +589,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64734000" />
+    <option name="totallyTimeSpent" value="65785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
@@ -863,73 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/pie_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10626">
-          <caret line="443" column="6" lean-forward="false" selection-start-line="394" selection-start-column="4" selection-end-line="443" selection-end-column="6" />
-          <folding>
-            <element signature="n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#5;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#3;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#1;n#div#1;n#div#1;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#4;n#div#1;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#7708#7872#0" expanded="false" />
-            <element signature="e#7913#8432#0" expanded="false" />
-            <element signature="e#8477#8996#0" expanded="false" />
-            <element signature="e#9017#10983#0" expanded="false" />
-            <element signature="e#9170#9594#0" expanded="false" />
-            <element signature="e#9466#9580#0" expanded="false" />
-            <element signature="e#9940#10088#0" expanded="false" />
-            <element signature="e#10131#10245#0" expanded="false" />
-            <element signature="e#10362#10733#0" expanded="false" />
-            <element signature="e#11259#11306#0" expanded="false" />
-            <element signature="e#11349#11965#0" expanded="false" />
-            <element signature="e#11766#11948#0" expanded="false" />
-            <element signature="e#12003#12112#0" expanded="false" />
-            <element signature="e#12162#12828#0" expanded="false" />
-            <element signature="e#12333#12391#0" expanded="false" />
-            <element signature="e#12418#12511#0" expanded="false" />
-            <element signature="e#12515#12608#0" expanded="false" />
-            <element signature="e#12877#14414#0" expanded="false" />
-            <element signature="e#13269#13372#0" expanded="false" />
-            <element signature="e#13394#13530#0" expanded="false" />
-            <element signature="e#13707#13976#0" expanded="false" />
-            <element signature="e#14090#14327#0" expanded="false" />
-            <marker date="1501501034259" expanded="false" signature="2824:2848" ph="..." />
-            <marker date="1501501034259" expanded="true" signature="8390:8396" ph=" " />
-            <marker date="1501501034259" expanded="true" signature="8954:8960" ph=" " />
-            <marker date="1501501034259" expanded="true" signature="9536:9542" ph=" " />
-            <marker date="1501501034259" expanded="true" signature="10201:10207" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/chat/demo2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1254">
@@ -953,57 +868,6 @@
           <caret line="5" column="107" lean-forward="false" selection-start-line="5" selection-start-column="107" selection-end-line="5" selection-end-column="107" />
           <folding>
             <element signature="e#2#176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/table_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-586">
-          <caret line="428" column="23" lean-forward="true" selection-start-line="428" selection-start-column="23" selection-end-line="428" selection-end-column="23" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#5;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#2;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#6638#7062#0" expanded="false" />
-            <element signature="e#6934#7048#0" expanded="false" />
-            <element signature="e#7112#8484#0" expanded="false" />
-            <element signature="e#7408#7556#0" expanded="false" />
-            <element signature="e#7599#7713#0" expanded="false" />
-            <element signature="e#7842#8249#0" expanded="false" />
-            <element signature="e#8538#8702#0" expanded="false" />
-            <element signature="e#8744#9223#0" expanded="false" />
-            <element signature="e#9268#9787#0" expanded="false" />
-            <element signature="e#9836#10124#0" expanded="false" />
-            <element signature="e#9981#10047#0" expanded="false" />
-            <element signature="e#10051#10118#0" expanded="false" />
-            <element signature="e#10178#10225#0" expanded="false" />
-            <element signature="e#10268#11062#0" expanded="false" />
-            <element signature="e#10907#11044#0" expanded="false" />
-            <element signature="e#11100#11209#0" expanded="false" />
-            <element signature="e#11259#13613#0" expanded="false" />
-            <marker date="1501501351357" expanded="true" signature="7004:7010" ph=" " />
-            <marker date="1501501351357" expanded="true" signature="7669:7675" ph=" " />
-            <marker date="1501501351357" expanded="true" signature="9181:9187" ph=" " />
-            <marker date="1501501351357" expanded="true" signature="9745:9751" ph=" " />
-            <marker date="1501501351357" expanded="true" signature="11950:11962" ph="..." />
-            <marker date="1501501351357" expanded="true" signature="12918:12924" ph=" " />
           </folding>
         </state>
       </provider>
@@ -1034,23 +898,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multip_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="46" column="72" lean-forward="false" selection-start-line="46" selection-start-column="69" selection-end-line="46" selection-end-column="72" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#13869#15981#0" expanded="false" />
-            <marker date="1501508046032" expanded="true" signature="7006:7012" ph=" " />
-            <marker date="1501508046032" expanded="true" signature="7671:7677" ph=" " />
-            <marker date="1501508046032" expanded="true" signature="9183:9189" ph=" " />
-            <marker date="1501508046032" expanded="true" signature="9747:9753" ph=" " />
-            <marker date="1501508046032" expanded="true" signature="11952:11964" ph="..." />
-            <marker date="1501508046032" expanded="true" signature="12920:12926" ph=" " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1107,71 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel-edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="426" column="10" lean-forward="false" selection-start-line="426" selection-start-column="10" selection-end-line="426" selection-end-column="10" />
-          <folding>
-            <element signature="e#13823#15284#0" expanded="false" />
-            <element signature="e#15366#18490#0" expanded="false" />
-            <element signature="e#15448#15523#0" expanded="false" />
-            <marker date="1501507344149" expanded="true" signature="7020:7026" ph=" " />
-            <marker date="1501507344149" expanded="true" signature="7685:7691" ph=" " />
-            <marker date="1501507344149" expanded="true" signature="9197:9203" ph=" " />
-            <marker date="1501507344149" expanded="true" signature="9761:9767" ph=" " />
-            <marker date="1501507344149" expanded="true" signature="11966:11978" ph="..." />
-            <marker date="1501507344149" expanded="true" signature="12934:12940" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="119" column="90" lean-forward="false" selection-start-line="119" selection-start-column="90" selection-end-line="119" selection-end-column="90" />
-          <folding>
-            <marker date="1501508898362" expanded="true" signature="7006:7012" ph=" " />
-            <marker date="1501508898362" expanded="true" signature="7671:7677" ph=" " />
-            <marker date="1501508898362" expanded="true" signature="9183:9189" ph=" " />
-            <marker date="1501508898362" expanded="true" signature="9747:9753" ph=" " />
-            <marker date="1501508898362" expanded="true" signature="11952:11964" ph="..." />
-            <marker date="1501508898362" expanded="true" signature="12920:12926" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/lines_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="46" column="79" lean-forward="false" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="79" />
-          <folding>
-            <marker date="1501509050843" expanded="true" signature="7004:7010" ph=" " />
-            <marker date="1501509050843" expanded="true" signature="7669:7675" ph=" " />
-            <marker date="1501509050843" expanded="true" signature="9181:9187" ph=" " />
-            <marker date="1501509050843" expanded="true" signature="9745:9751" ph=" " />
-            <marker date="1501509050843" expanded="true" signature="11950:11962" ph="..." />
-            <marker date="1501509050843" expanded="true" signature="12918:12924" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="120" column="22" lean-forward="true" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
-          <folding>
-            <element signature="e#10270#11064#0" expanded="false" />
-            <element signature="e#11102#11211#0" expanded="false" />
-            <marker date="1501509200997" expanded="true" signature="7006:7012" ph=" " />
-            <marker date="1501509200997" expanded="true" signature="7671:7677" ph=" " />
-            <marker date="1501509200997" expanded="true" signature="9183:9189" ph=" " />
-            <marker date="1501509200997" expanded="true" signature="9747:9753" ph=" " />
-            <marker date="1501509200997" expanded="true" signature="11952:11964" ph="..." />
-            <marker date="1501509200997" expanded="true" signature="12920:12926" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Singleton_temp/WebContent/echarts/linechart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -1192,52 +974,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/radar_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="116" column="29" lean-forward="true" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
-          <folding>
-            <marker date="1501509319158" expanded="true" signature="7005:7011" ph=" " />
-            <marker date="1501509319158" expanded="true" signature="7670:7676" ph=" " />
-            <marker date="1501509319158" expanded="true" signature="9182:9188" ph=" " />
-            <marker date="1501509319158" expanded="true" signature="9746:9752" ph=" " />
-            <marker date="1501509319158" expanded="true" signature="11951:11963" ph="..." />
-            <marker date="1501509319158" expanded="true" signature="12919:12925" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Singleton_temp/WebContent/echarts/funnelchart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="107" column="1" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="107" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#funneloption#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#title#0;n#!!block;n#funneloption#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/scatter_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="120" column="22" lean-forward="true" selection-start-line="120" selection-start-column="22" selection-end-line="120" selection-end-column="22" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1501509611687" expanded="true" signature="7002:7008" ph=" " />
-            <marker date="1501509611687" expanded="true" signature="7667:7673" ph=" " />
-            <marker date="1501509611687" expanded="true" signature="9179:9185" ph=" " />
-            <marker date="1501509611687" expanded="true" signature="9743:9749" ph=" " />
-            <marker date="1501509611687" expanded="true" signature="11948:11960" ph="..." />
-            <marker date="1501509611687" expanded="true" signature="12916:12922" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="115" column="90" lean-forward="true" selection-start-line="115" selection-start-column="90" selection-end-line="115" selection-end-column="90" />
+        <state relative-caret-position="-5940">
+          <caret line="111" column="12" lean-forward="false" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
           <folding>
             <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#li#0;n#ul#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1256,6 +996,231 @@
             <element signature="e#10960#11188#0" expanded="false" />
             <element signature="e#11233#11648#0" expanded="false" />
             <element signature="e#11684#11991#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Singleton_temp/WebContent/echarts/funnelchart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="107" column="1" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="107" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!block;n#funneloption#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#title#0;n#!!block;n#funneloption#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/table_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="426" column="27" lean-forward="false" selection-start-line="426" selection-start-column="27" selection-end-line="426" selection-end-column="27" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#5;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#2;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#6638#7062#0" expanded="false" />
+            <element signature="e#6934#7048#0" expanded="false" />
+            <element signature="e#7112#8484#0" expanded="false" />
+            <element signature="e#7408#7556#0" expanded="false" />
+            <element signature="e#7599#7713#0" expanded="false" />
+            <element signature="e#7842#8249#0" expanded="false" />
+            <element signature="e#8538#8702#0" expanded="false" />
+            <element signature="e#8744#9223#0" expanded="false" />
+            <element signature="e#9268#9787#0" expanded="false" />
+            <element signature="e#9836#10124#0" expanded="false" />
+            <element signature="e#9981#10047#0" expanded="false" />
+            <element signature="e#10051#10118#0" expanded="false" />
+            <element signature="e#10178#10225#0" expanded="false" />
+            <element signature="e#10268#11062#0" expanded="false" />
+            <element signature="e#10907#11044#0" expanded="false" />
+            <element signature="e#11100#11209#0" expanded="false" />
+            <element signature="e#11259#13613#0" expanded="false" />
+            <marker date="1501510747487" expanded="true" signature="7004:7010" ph=" " />
+            <marker date="1501510747487" expanded="true" signature="7669:7675" ph=" " />
+            <marker date="1501510747487" expanded="true" signature="9181:9187" ph=" " />
+            <marker date="1501510747487" expanded="true" signature="9745:9751" ph=" " />
+            <marker date="1501510747487" expanded="true" signature="11950:11962" ph="..." />
+            <marker date="1501510747487" expanded="true" signature="12918:12924" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/scatter_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="426" column="28" lean-forward="true" selection-start-line="426" selection-start-column="28" selection-end-line="426" selection-end-column="28" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1501510747248" expanded="true" signature="7002:7008" ph=" " />
+            <marker date="1501510747248" expanded="true" signature="7667:7673" ph=" " />
+            <marker date="1501510747248" expanded="true" signature="9179:9185" ph=" " />
+            <marker date="1501510747248" expanded="true" signature="9743:9749" ph=" " />
+            <marker date="1501510747248" expanded="true" signature="11948:11960" ph="..." />
+            <marker date="1501510747248" expanded="true" signature="12916:12922" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/radar_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="426" column="27" lean-forward="false" selection-start-line="426" selection-start-column="27" selection-end-line="426" selection-end-column="27" />
+          <folding>
+            <marker date="1501510747137" expanded="true" signature="7005:7011" ph=" " />
+            <marker date="1501510747137" expanded="true" signature="7670:7676" ph=" " />
+            <marker date="1501510747137" expanded="true" signature="9182:9188" ph=" " />
+            <marker date="1501510747137" expanded="true" signature="9746:9752" ph=" " />
+            <marker date="1501510747137" expanded="true" signature="11951:11963" ph="..." />
+            <marker date="1501510747137" expanded="true" signature="12919:12925" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/pie_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1184">
+          <caret line="424" column="0" lean-forward="false" selection-start-line="424" selection-start-column="0" selection-end-line="424" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#6;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#3;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#2;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#7708#7872#0" expanded="false" />
+            <element signature="e#7913#8432#0" expanded="false" />
+            <element signature="e#8477#8996#0" expanded="false" />
+            <element signature="e#9017#10983#0" expanded="false" />
+            <element signature="e#9170#9594#0" expanded="false" />
+            <element signature="e#9466#9580#0" expanded="false" />
+            <element signature="e#9940#10088#0" expanded="false" />
+            <element signature="e#10131#10245#0" expanded="false" />
+            <element signature="e#10362#10733#0" expanded="false" />
+            <element signature="e#11259#11306#0" expanded="false" />
+            <element signature="e#11349#11965#0" expanded="false" />
+            <element signature="e#11766#11948#0" expanded="false" />
+            <element signature="e#12003#12112#0" expanded="false" />
+            <element signature="e#12162#12828#0" expanded="false" />
+            <element signature="e#12333#12391#0" expanded="false" />
+            <element signature="e#12418#12511#0" expanded="false" />
+            <element signature="e#12515#12608#0" expanded="false" />
+            <element signature="e#13269#13372#0" expanded="false" />
+            <element signature="e#13394#13530#0" expanded="false" />
+            <element signature="e#14090#14327#0" expanded="false" />
+            <marker date="1501501034259" expanded="false" signature="2824:2848" ph="..." />
+            <marker date="1501501034259" expanded="true" signature="8390:8396" ph=" " />
+            <marker date="1501501034259" expanded="true" signature="8954:8960" ph=" " />
+            <marker date="1501501034259" expanded="true" signature="9536:9542" ph=" " />
+            <marker date="1501501034259" expanded="true" signature="10201:10207" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multip_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="426" column="27" lean-forward="false" selection-start-line="426" selection-start-column="27" selection-end-line="426" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1501510747298" expanded="true" signature="7006:7012" ph=" " />
+            <marker date="1501510747298" expanded="true" signature="7671:7677" ph=" " />
+            <marker date="1501510747298" expanded="true" signature="9183:9189" ph=" " />
+            <marker date="1501510747298" expanded="true" signature="9747:9753" ph=" " />
+            <marker date="1501510747298" expanded="true" signature="11952:11964" ph="..." />
+            <marker date="1501510747298" expanded="true" signature="12920:12926" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/lines_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="426" column="27" lean-forward="false" selection-start-line="426" selection-start-column="27" selection-end-line="426" selection-end-column="27" />
+          <folding>
+            <marker date="1501510747356" expanded="true" signature="7004:7010" ph=" " />
+            <marker date="1501510747356" expanded="true" signature="7669:7675" ph=" " />
+            <marker date="1501510747356" expanded="true" signature="9181:9187" ph=" " />
+            <marker date="1501510747356" expanded="true" signature="9745:9751" ph=" " />
+            <marker date="1501510747356" expanded="true" signature="11950:11962" ph="..." />
+            <marker date="1501510747356" expanded="true" signature="12918:12924" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel-edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="437" column="27" lean-forward="false" selection-start-line="437" selection-start-column="27" selection-end-line="437" selection-end-column="27" />
+          <folding>
+            <element signature="e#13823#15284#0" expanded="false" />
+            <element signature="e#15448#15523#0" expanded="false" />
+            <marker date="1501510747198" expanded="true" signature="7020:7026" ph=" " />
+            <marker date="1501510747198" expanded="true" signature="7685:7691" ph=" " />
+            <marker date="1501510747198" expanded="true" signature="9197:9203" ph=" " />
+            <marker date="1501510747198" expanded="true" signature="9761:9767" ph=" " />
+            <marker date="1501510747198" expanded="true" signature="11966:11978" ph="..." />
+            <marker date="1501510747198" expanded="true" signature="12934:12940" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="428" column="27" lean-forward="false" selection-start-line="428" selection-start-column="27" selection-end-line="428" selection-end-column="27" />
+          <folding>
+            <marker date="1501510747421" expanded="true" signature="7006:7012" ph=" " />
+            <marker date="1501510747421" expanded="true" signature="7671:7677" ph=" " />
+            <marker date="1501510747421" expanded="true" signature="9183:9189" ph=" " />
+            <marker date="1501510747421" expanded="true" signature="9747:9753" ph=" " />
+            <marker date="1501510747421" expanded="true" signature="11952:11964" ph="..." />
+            <marker date="1501510747421" expanded="true" signature="12920:12926" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="426" column="20" lean-forward="true" selection-start-line="426" selection-start-column="20" selection-end-line="426" selection-end-column="20" />
+          <folding>
+            <element signature="e#10270#11064#0" expanded="false" />
+            <element signature="e#11102#11211#0" expanded="false" />
+            <marker date="1501510768191" expanded="true" signature="7006:7012" ph=" " />
+            <marker date="1501510768191" expanded="true" signature="7671:7677" ph=" " />
+            <marker date="1501510768191" expanded="true" signature="9183:9189" ph=" " />
+            <marker date="1501510768191" expanded="true" signature="9747:9753" ph=" " />
+            <marker date="1501510768191" expanded="true" signature="11952:11964" ph="..." />
+            <marker date="1501510768191" expanded="true" signature="12920:12926" ph=" " />
           </folding>
         </state>
       </provider>
