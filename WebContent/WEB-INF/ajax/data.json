@@ -1,0 +1,27 @@
+﻿{
+  "month":[
+  {"id":1,"text":"6月"},
+  {"id":2,"text":"7月"},
+  {"id":3,"text":"8月"},
+  {"id":4,"text":"9月","selected":true},
+  {"id":5,"text":"10月"},
+  {"id":6,"text":"11月"}
+],
+  "year":[
+    {"id":1,"text":"2015年"},
+    {"id":2,"text":"2016年","selected":true},
+    {"id":3,"text":"2017年"}
+  ],
+  "season":[
+    {"id":1,"text":"一季度","selected":true},
+    {"id":2,"text":"二季度"},
+    {"id":2,"text":"三季度"},
+    {"id":3,"text":"四季度"}
+  ],
+  "rotate":[
+    {"id":1,"text":"年份","value":"year"},
+    {"id":2,"text":"季度","value":"season"},
+    {"id":3,"text":"月份","value":"month","selected":true},
+    {"id":4,"text":"日期","value":"data"}
+  ]
+}

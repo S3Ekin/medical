@@ -281,20 +281,11 @@
                 is_checked=false;
 			}
 		// 加载窗口树
-            $.ajax({
-                url : urls,
-                dataType : "json",
-                success : function(data) {
-                    $('#sourceTree').tree({
-						url:urls,
-						method:"get",
-						animate:true,
-						checkbox:is_checked
-					});
-                },
-                error : function() {
-                    alert("树有问题");
-                }
+            $('#sourceTree').tree({
+                url:urls,
+                method:"get",
+                animate:true,
+                checkbox:is_checked
             });
         }
     });
