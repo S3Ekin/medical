@@ -47,12 +47,12 @@
        	<span class="tab_title">质控报告清单</span>
 		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
     </div>
-		<div style="margin:50px 10% 10px 0;" class="fr">
-			<input type="text" id="search_text"  value="" />
-			<button id="search" class="btn btn-secondary">搜索</button>
-			<button  class="btn btn-green" id="addModel"><i class="fa fa-plus"></i> 新建</button>
-		</div>
-    <div style="margin-left:50px" id="table">
+	<div style="margin:50px 4% 10px 0;" class="fr">
+		<input type="text" id="search_text"  value="" />
+		<button id="search" class="btn btn-secondary"><i class="ico-search fa fa-search"></i> 搜索</button>
+		<button  class="btn btn-green" id="addModel" style="margin-left: 50px;"><i class="fa fa-plus" ></i> 新建</button>
+	</div>
+	<div style="margin-left:50px" id="table">
 		<table cellspacing="0" cellpadding="0" class="list1" style="width:96%;min-width: 775px">
 			<tr>
 				<th style="width:6%;text-align:center;">序号</th>
@@ -218,7 +218,7 @@
         $alertAdd.modal("toggle");
     });
     $("#is_add").click(function () {
-        var modelBtnArr='<td class="modelOptBtn"> <button class="btn btn-primary "  style="padding:0 8px;height:26px;margin-right:10px;">编辑</button><button class="btn btn-red delModel"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary"  style="padding:0 8px;height:26px;">另存</button><br> <button class="btn btn-primary"  style="margin-top:5px;padding:0 8px;height:26px;">保存为报告</button> </td> ';
+        var modelBtnArr='<td class="modelOptBtn"> <button class="btn btn-primary "  style="padding:0 8px;height:26px;margin-right:10px;">编辑</button><button class="btn btn-red delModel"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary"  style="padding:0 8px;height:26px;">另存</button><button class="btn btn-primary"  style="margin-left:5px;padding:0 8px;height:26px;">保存为报告</button> </td> ';
         var  reportBtnArr='<td style="text-align:center;width: 300px" class="optBtn"> <button class="btn btn-primary browserRe"  style="padding:0 8px;height:26px;margin-right:10px;">浏览</button> <button class="btn btn-red delRe"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary exportRe"  style="padding:0 8px;height:26px;">导出</button> </td>';
         var length=$table1.children().length+1,
 			docName= $name.val(),
