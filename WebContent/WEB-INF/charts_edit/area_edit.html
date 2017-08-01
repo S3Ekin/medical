@@ -31,6 +31,7 @@
 		 span.tree-title{font-size: 14px}
 		.no-padding{padding: 0}
 		div.topic { text-align: right; font-size: 16px; font-weight: 700; }
+		.add-field{color:#2081BB;}
 	</style>
 	
 </head>
@@ -107,10 +108,16 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-2 topic">纵轴字段:</div>
+				<div class="col-xs-2 topic">纵轴字段1:</div>
 				<div class="col-xs-4">
 					<div class="field-combo"></div>
 				</div>
+				<div class="col-xs-2" >
+					<button type="button" class="btn btn-primary " id="field-btn">添加</button>
+				</div>
+			</div>
+			<div class="add-col-field">
+
 			</div>
 		</div>
 		<div class="table">
@@ -133,7 +140,7 @@
 </div>
 
 <!-- 数据源 -->
-<div id="sourceSelected">
+<div id="sourceSelected" style="display: none">
 	<div class="content" >
 		<ul id="sourceTree">
 		</ul>
@@ -291,9 +298,39 @@
             return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
         }
     });
+    /*添加纵轴字段*/
+    var count=1;
+    $("#field-btn").click(function () {
+        count++;
+        var str='<div class="row"><div class="col-xs-2 topic add-field">纵轴字段<span>'+count+'</span>:</div><div class="col-xs-4"><div class="field-combo"></div></div><div class="col-xs-2" > <button type="button" class="btn btn-primary field-del" >删除</button> </div></div>';
+        $(".add-col-field").append(str);
+        $(".field-combo").combobox({
+            valueField:"id",
+            textField:"text",
+            url:"../ajax/row_wd.json",
+            method:"get",
+            editable:true,
+            width:180,
+            height:30,
+            panelWidth:180,
+            panelHeight:100,
+            onLoadSuccess:function(data){
+                var loadData=$(this).combobox("getData");
+                $(this).combobox("setValue",loadData[3].text);
+            },
+            formatter:function (row) {
+                return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+            }
+        });
+    });
+	/*删除纵轴字段*/
+    $(".add-col-field").on("click",".field-del",function () {
+        $(this).parent().parent().remove();
+    });
 	/*单选按钮事件*/
     $radio.on("click",function () {
         $zbName.html(null);
+        $(".add-col-field").html(null);
         $table.hide();
         $(".pre").hide();
         $zb.hide();
@@ -366,7 +403,7 @@
 					    continue;
 					}else{
                         var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
-                        str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';
+                        str ='<div class="row"><div class ="col-xs-2 zb-name topic">'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-4 no-padding" ><div id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div class ="col-xs-4 no-padding" ><div class="chat-type"></div></div></div >';
                         $newAdd.append(str);
                         $("#show_type_"+i).combobox({
                             valueField:"id",
@@ -380,6 +417,23 @@
                             onLoadSuccess:function(){
                                 var loadData=$(this).combobox("getData");
                                 $(this).combobox("setValue",loadData[1].text);
+                            },
+                            formatter:function (row) {
+                                return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                            }
+                        });
+                        $(".chat-type").combobox({
+                            valueField:"id",
+                            textField:"text",
+                            data:show_combo[3].combo,
+                            editable:true,
+                            width:140,
+                            height:30,
+                            panelWidth:140,
+                            panelHeight:100,
+                            onLoadSuccess:function(){
+                               /* var loadData=$(this).combobox("getData");
+								 $(this).combobox("setValue",loadData[1].text);*/
                             },
                             formatter:function (row) {
                                 return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
@@ -412,7 +466,6 @@
 		}
         $sourceSelected.window("close");
     });
-	/*chats加载*/
 
 	/*chats加载*/
     $("#preChat").click(function () {
