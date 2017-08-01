@@ -1,7 +1,3 @@
-/**
- *
- * Created by Administrator on 2017/8/1.
- */
 var $radio = $("input[name=dataType]"),
     $sourceSlect=$(".sourceBtn span"),
     $zbName=$(".zb-name"),
@@ -16,7 +12,6 @@ var $radio = $("input[name=dataType]"),
     $sourceSelected=$("#sourceSelected"),
     $sourceBtn=$(".sourceBtn");
 /*日期下拉框加载*/
-/*日期选择*/
 $.ajax({
     url:"../ajax/data.json",
     dataType:"json",
@@ -123,9 +118,50 @@ $(".field-combo").combobox({
         return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
     }
 });
+/*添加纵轴字段*/
+var count=1;
+$("#field-btn").click(function () {
+    count++;
+    var str='<div class="row"><div class="col-xs-2 topic add-field">纵轴字段<span>'+count+'</span>:</div><div class="col-xs-4"><div class="new-field"></div></div><div class="col-xs-2" > <button type="button" class="btn btn-red field-del" >删除</button> </div></div>';
+    $(".add-col-field").append(str);
+    $(".new-field").combobox({
+        valueField:"id",
+        textField:"text",
+        url:"../ajax/row_wd.json",
+        method:"get",
+        editable:true,
+        width:180,
+        height:30,
+        panelWidth:180,
+        panelHeight:100,
+        onLoadSuccess:function(data){
+            var loadData=$(this).combobox("getData");
+            $(this).combobox("setValue",loadData[3].text);
+        },
+        formatter:function (row) {
+            return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+        }
+    });
+});
+/*删除纵轴字段*/
+var $addColField=$(".add-col-field");
+$addColField.on("click",".field-del",function () {
+    var self=$(this);
+    $("#modal_alert").modal("show");
+    $("#is_true").click(function () {
+        self.parent().parent().remove();
+    });
+});
+/*删除纵轴字段按钮hover事件*/
+$addColField.on("mouseover",".field-del",function () {
+    $(this).parent().siblings().eq(0).css("color","red");
+}).on("mouseout",".field-del",function () {
+    $(this).parent().siblings().eq(0).css("color","#2081BB");
+});
 /*单选按钮事件*/
 $radio.on("click",function () {
     $zbName.html(null);
+    $(".add-col-field").html(null);
     $table.hide();
     $(".pre").hide();
     $zb.hide();
@@ -198,7 +234,7 @@ $(".footer").on("click","button",function(){
                             continue;
                         }else{
                             var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
-                            str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';
+                            str ='<div class="row"><div class ="col-xs-2 zb-name topic">'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-4 no-padding" ><div id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div class ="col-xs-4 no-padding" ><div class="chat-type"></div></div></div >';
                             $newAdd.append(str);
                             $("#show_type_"+i).combobox({
                                 valueField:"id",
@@ -212,6 +248,23 @@ $(".footer").on("click","button",function(){
                                 onLoadSuccess:function(){
                                     var loadData=$(this).combobox("getData");
                                     $(this).combobox("setValue",loadData[1].text);
+                                },
+                                formatter:function (row) {
+                                    return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                                }
+                            });
+                            $(".chat-type").combobox({
+                                valueField:"id",
+                                textField:"text",
+                                data:show_combo[3].combo,
+                                editable:true,
+                                width:140,
+                                height:30,
+                                panelWidth:140,
+                                panelHeight:100,
+                                onLoadSuccess:function(){
+                                    /* var loadData=$(this).combobox("getData");
+                                     $(this).combobox("setValue",loadData[1].text);*/
                                 },
                                 formatter:function (row) {
                                     return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
@@ -244,4 +297,3 @@ $(".footer").on("click","button",function(){
     }
     $sourceSelected.window("close");
 });
-

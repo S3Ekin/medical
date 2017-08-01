@@ -1,0 +1,25 @@
+#table1 tr th{padding: 8px 5px;text-align:center;}
+#table1 tr td{padding: 8px 5px;text-align:center;}
+.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
+form{width:100%;}
+.bv-form .help-block{margin-bottom:0}
+.bv-form .tooltip-inner{text-align:left}
+.nav-tabs li.bv-tab-success>a{color:#3c763d}
+.nav-tabs li.bv-tab-error>a{color:#a94442}
+div.row { height:40px;line-height: 40px}
+.sourceBtn {padding:0 8px;height:26px;}
+div.content{padding:10px 5px;
+    height:320px;overflow-y: scroll}
+div.footer button{padding: 5px 10px ;height: 30px;margin-right: 10px}
+div.footer{text-align: right;padding:5px 50px 5px 0;border-top: 2px solid #95B8E7;}
+.zb-name {color:#2081BB;white-space: nowrap;}
+.upload{display: none}
+.table{display: none}
+.zb{display: none}
+.pre{padding:20px; border: 1px solid #95B8E7; margin-top:35px;display: none}
+#organization{height: 30px}
+span.tree-title{font-size: 14px}
+.no-padding{padding: 0}
+div.topic { text-align: right; font-size: 16px; font-weight: 700; }
+.add-field{color:#2081BB;}
+#sourceSelected{display: none}

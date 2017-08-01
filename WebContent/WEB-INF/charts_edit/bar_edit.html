@@ -7,31 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
 	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
-	<style>
-		#table1 tr th{padding: 8px 5px;text-align:center;}
-		#table1 tr td{padding: 8px 5px;text-align:center;}
-		.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
-		form{width:100%;}
-		.bv-form .help-block{margin-bottom:0}
-		.bv-form .tooltip-inner{text-align:left}
-		.nav-tabs li.bv-tab-success>a{color:#3c763d}
-		.nav-tabs li.bv-tab-error>a{color:#a94442}
-		div.row { height:40px;line-height: 40px}
-		.sourceBtn {padding:0 8px;height:26px;}
-		div.content{padding:10px 5px;
-			height:320px;overflow-y: scroll}
-		div.footer button{padding: 5px 10px ;height: 30px;margin-right: 10px}
-		div.footer{text-align: right;padding:5px 50px 5px 0;border-top: 2px solid #95B8E7;}
-		.zb-name {color:#2081BB;white-space: nowrap;}
-		.upload{display: none}
-		.table{display: none}
-		.zb{display: none}
-		.pre{padding:20px; border: 1px solid #95B8E7; margin-top:35px;display: none}
-		#organization{height: 30px}
-		 span.tree-title{font-size: 14px}
-		.no-padding{padding: 0}
-		div.topic { text-align: right; font-size: 16px; font-weight: 700; }
-	</style>
+	<link rel="stylesheet" href="chat_edit.css">
 	
 </head>
 <body>
@@ -107,11 +83,15 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-2 topic">纵轴字段:</div>
+				<div class="col-xs-2 topic">纵轴字段1:</div>
 				<div class="col-xs-4">
 					<div class="field-combo"></div>
 				</div>
+				<div class="col-xs-2" >
+					<button type="button" class="btn btn-primary " id="field-btn">添加</button>
+				</div>
 			</div>
+			<div class="add-col-field"></div>
 		</div>
 		<div class="table">
 			<div class="row">
@@ -169,7 +149,7 @@
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
 <script src="../../resources/echarts/echarts.js"></script>
 <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
-<script>
+<!--<script>
     var $radio = $("input[name=dataType]"),
         $sourceSlect=$(".sourceBtn span"),
         $zbName=$(".zb-name"),
@@ -412,8 +392,11 @@
 		}
         $sourceSelected.window("close");
     });
-	/*chats加载*/
 
+
+</script>-->
+<script src="chat_edit.js"></script>
+<script >
 	/*chats加载*/
     $("#preChat").click(function () {
         if(is_zb){
@@ -584,7 +567,6 @@
         };
         myChart.setOption(pieoption);
     })
-
 </script>
 <div class="clr"></div>
 </body>

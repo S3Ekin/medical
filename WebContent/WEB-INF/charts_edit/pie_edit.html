@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
 	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+	<script src="../../resources/echarts/echarts.js"></script>
 	<style>
 		#table1 tr th{padding: 8px 5px;text-align:center;}
 		#table1 tr td{padding: 8px 5px;text-align:center;}
@@ -18,7 +19,6 @@
 		.nav-tabs li.bv-tab-error>a{color:#a94442}
 		div.row { height:40px;line-height: 40px}
 		div.topic { text-align: right; font-size: 16px; font-weight: 700; }
-		/*div.col-xs-1 {text-align:right;}*/
 		.no-padding {padding:0;}
 		.sourceBtn {padding:0 8px;height:26px;}
 		div.content{padding:10px 5px;
@@ -32,8 +32,8 @@
 		.pre{padding:20px; border: 1px solid #95B8E7; margin-top:35px;display: none}
 		#organization{height: 30px}
 		 span.tree-title{font-size: 14px}
+		.add-field{color:#2081BB;}
 	</style>
-	
 </head>
 <body>
 <div class="mr15">
@@ -67,11 +67,6 @@
 				<div class="col-xs-1" style="width: 65px">频率:</div>
 				<div class="col-xs-1 no-padding" >
 					<div id="rotate"></div>
-					<!--<select  class="easyui-combobox" name="state" style="width: 65px;height: 30px" data-options="panelWidth:65, panelHeight:80,valueField:'id', textField:'text',currentText:'年份',value:'年份'" >
-						<option value="1">年份</option>
-						<option value="2">月份</option>
-						<option value="3">日份</option>
-					</select>-->
 				</div>
 				<div class="col-xs-1" style="width: 65px">日期:</div>
 				<div class="col-xs-3 no-padding">
@@ -119,11 +114,15 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-2 topic">纵轴字段:</div>
+				<div class="col-xs-2 topic">纵轴字段1:</div>
 				<div class="col-xs-4">
 					<div class="field-combo"></div>
 				</div>
+				<div class="col-xs-2" >
+					<button type="button" class="btn btn-primary " id="field-btn">添加</button>
+				</div>
 			</div>
+			<div class="add-col-field"></div>
 		</div>
 		<div class="table">
 			<div class="row">
@@ -154,7 +153,7 @@
 					<button type="button" class="btn btn-primary " id="preChat">预览</button>
 				</div>
 				<div class="col-xs-10 pre">
-					<div id="chat" style="width:100%;height:350px"></div>
+					<div id="chat-create" style="width:100%;height:350px;border: 1px solid red;"></div>
 				</div>
 			</div>
 		</div>
@@ -165,7 +164,7 @@
 </div>
 
 <!-- 数据源 -->
-<div id="sourceSelected">
+<div id="sourceSelected" style="display: none">
 	<div class="content" >
 		<ul id="sourceTree">
 		</ul>
@@ -199,7 +198,6 @@
 </div>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
-<script src="../../resources/echarts/echarts.js"></script>
 <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script>
     var $radio = $("input[name=dataType]"),
@@ -263,6 +261,46 @@
             return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
         }
     });
+	/*添加纵轴字段*/
+    var count=1;
+    $("#field-btn").click(function () {
+        count++;
+        var str='<div class="row"><div class="col-xs-2 topic add-field">纵轴字段<span>'+count+'</span>:</div><div class="col-xs-4"><div class="new-field"></div></div><div class="col-xs-2" > <button type="button" class="btn btn-red field-del" >删除</button> </div></div>';
+        $(".add-col-field").append(str);
+        $(".new-field").combobox({
+            valueField:"id",
+            textField:"text",
+            url:"../ajax/row_wd.json",
+            method:"get",
+            editable:true,
+            width:180,
+            height:30,
+            panelWidth:180,
+            panelHeight:100,
+            onLoadSuccess:function(data){
+                var loadData=$(this).combobox("getData");
+                $(this).combobox("setValue",loadData[3].text);
+            },
+            formatter:function (row) {
+                return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+            }
+        });
+    });
+	/*删除纵轴字段*/
+	var $addColField=$(".add-col-field");
+    $addColField.on("click",".field-del",function () {
+        var self=$(this);
+        $("#modal_alert").modal("show");
+        $("#is_true").click(function () {
+            self.parent().parent().remove();
+        });
+    });
+	/*删除纵轴字段按钮hover事件*/
+    $addColField.on("mouseover",".field-del",function () {
+        $(this).parent().siblings().eq(0).css("color","red");
+    }).on("mouseout",".field-del",function () {
+        $(this).parent().siblings().eq(0).css("color","#2081BB");
+    });
 	/*日期选择*/
 	$.ajax({
 		url:"../ajax/data.json",
@@ -324,6 +362,7 @@
 	/*单选按钮事件*/
     $radio.on("click",function () {
         $zbName.html(null);
+        $(".add-col-field").html(null);
         $table.hide();
         $(".pre").hide();
         $zb.hide();
@@ -392,16 +431,19 @@
 		}
         $sourceSelected.window("close");
     });
+
+
+</script>
+<script>
 	/*chats加载*/
-	$("#preChat").click(function () {
-	    if(is_zb){
-		}else{
-		}
+    $("#preChat").click(function () {
+        if(is_zb){
+        }else{
+        }
         var title=$("#title").val();
         var roseType=$("input[name='roseType']:checked").val();
         roseType=roseType==1?true:false;
-	    $(".pre").show();
-        var myChart = echarts.init($('#chat').get(0));
+        $(".pre").show();
         var pieoption = {
             title : {
                 text: title,
@@ -440,9 +482,9 @@
                 }
             ]
         };
+        var myChart = echarts.init($('#chat-create')[0]);
         myChart.setOption(pieoption);
     })
-
 </script>
 <div class="clr"></div>
 </body>
