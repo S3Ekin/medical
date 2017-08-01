@@ -1,5 +1,5 @@
 /*可以在这里添加你自己的css*/
-iframe{ width: 100% ;min-width:600px;}
+iframe{ width:80% ;min-width:550px;margin: auto}
 /*iframe:hover{
     border: 1px solid red;
 }*/
