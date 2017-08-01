@@ -192,6 +192,8 @@ $sourceSelected.window({
     collapsible : false,
     top : ($(window).height() - 500) * 0.5,
     left : ($(window).width() - 400) * 0.5,
+    resizable:false,
+    inline:false,
     onOpen : function(){
         var urls,is_checked;
         if(is_zb){
@@ -253,6 +255,7 @@ $(".footer").on("click","button",function(){
                                     return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
                                 }
                             });
+                            console.log(show_combo[3].combo,"jkk");
                             $(".chat-type").combobox({
                                 valueField:"id",
                                 textField:"text",
