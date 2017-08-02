@@ -20,7 +20,7 @@ UE.registerUI('dialog',function(editor,uiName){
                 className:'edui-okbutton',
                 label:'确定',
                 onclick:function () {
-                              editor.execCommand("insertHtml","<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px 6.5%;width:85%;height:350px'></iframe>");
+                              editor.execCommand("insertHtml","<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px auto;width:80%;height:350px;border: 1px solid red;'></iframe>");
                     dialog.close(true);
                 }
             },
@@ -49,8 +49,6 @@ UE.registerUI('dialog',function(editor,uiName){
 }/*index 指定添加到工具栏上的那个位置，默认时追加到最后,editorId 指定这个UI是那个编辑器实例上的，默认是页面上所有的编辑器都会添加这个按钮*/);
 UE.registerUI('express',function(editor,uiName){
     var me=this;
-
-
     var express = new UE.ui.Dialog({
         iframeUrl:'express.html',
         editor:editor,
@@ -95,6 +93,7 @@ UE.registerUI('express',function(editor,uiName){
             express.open();
             var iframe=document.getElementById("edui173_iframe");
             iframe.onload=function () {
+
                 var express=iframe.contentDocument.getElementById("express");
                 var val=range.endContainer.data.match(/^<%(\w+)%>$/);
                 express.value=val?val[1]:null;
