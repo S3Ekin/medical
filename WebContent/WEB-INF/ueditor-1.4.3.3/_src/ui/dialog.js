@@ -258,11 +258,13 @@
                 }
             }
             domUtils.on(window, 'resize', function (){
-                setTimeout(function (){
+                console.log(me);
+            /*因为窗口变化，弹出框会出来，所以注释了*/
+            /*    setTimeout(function (){
                     if (!me.isHidden()) {
                         me.safeSetOffset(uiUtils.getClientRect(me.getDom()));
                     }
-                });
+                });*/
             });
 
             // hold住scroll事件，防止dialog的滚动影响页面
@@ -343,9 +345,9 @@
             this.fireEvent('dialogafterreset');
         },
         _show: function (){
+            console.log(this.getDom(),"dom");
             if (this._hidden) {
                 this.getDom().style.display = '';
-
                 //要高过编辑器的zindxe
                 this.editor.container.style.zIndex && (this.getDom().style.zIndex = this.editor.container.style.zIndex * 1 + 10);
                 this._hidden = false;

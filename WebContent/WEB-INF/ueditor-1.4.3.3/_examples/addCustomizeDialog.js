@@ -20,7 +20,7 @@ UE.registerUI('dialog',function(editor,uiName){
                 className:'edui-okbutton',
                 label:'确定',
                 onclick:function () {
-                              editor.execCommand("insertHtml","<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px auto;width:80%;height:350px;border: 1px solid red;'></iframe>");
+                              editor.execCommand("insertHtml","<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px 7.5%;width:85%;height:350px;'></iframe>");
                     dialog.close(true);
                 }
             },
