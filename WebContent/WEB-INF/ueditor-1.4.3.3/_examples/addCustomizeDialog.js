@@ -62,7 +62,6 @@ UE.registerUI('express',function(editor,uiName){
                 onclick:function () {
                     var str=document.getElementById("edui173_iframe").contentDocument.getElementById("express").value;
                     str=str.split("+");
-                    console.log(str);
                     var items="";
                     for (var i = 0; i < str.length; i++) {
                         if (!str[i]){
@@ -71,7 +70,8 @@ UE.registerUI('express',function(editor,uiName){
                             items += "<b style='color: red;'>&lt;%"+str[i]+"%&gt;</b>";
                         }
                     }
-                              editor.execCommand("insertHtml",items);
+
+                    editor.execCommand("insertHtml",items);
                     express.close(true);
                 }
             },
@@ -93,7 +93,6 @@ UE.registerUI('express',function(editor,uiName){
             express.open();
             var iframe=document.getElementById("edui173_iframe");
             iframe.onload=function () {
-
                 var express=iframe.contentDocument.getElementById("express");
                 var val=range.endContainer.data.match(/^<%(\w+)%>$/);
                 express.value=val?val[1]:null;
@@ -103,3 +102,5 @@ UE.registerUI('express',function(editor,uiName){
     });
     return btn;
 });
+
+

@@ -25,8 +25,7 @@
         express.onblur=function () {
             pre.innerHTML=null;
             var val=express.value;
-           var df=val.split("+");
-           console.log(df,val);
+            var df=val.split("+");
             for (var i = 0; i < df.length; i++) {
                 var obj = df[i];
                 if(data[obj]){
@@ -34,8 +33,6 @@
                 }else{
                     pre.innerHTML+="不存在&nbsp;";
                 }
-
-
             }
         }
     </script>

@@ -83,7 +83,6 @@
             var me = this;
 
             domUtils.on( window, "resize", function () {
-               console.log( me.getDom(),"dom");
                 if ( me._hidden || me._hidden === undefined ) {
                     return;
                 }
@@ -101,8 +100,6 @@
                         wrapRect = UE.ui.uiUtils.getClientRect( dialogWrapNode ),
                         contentRect = UE.ui.uiUtils.getClientRect( contentNode ),
                         vpRect = uiUtils.getViewportRect();
-                    console.log(dialogWrapNode,"hj");
-                    console.log(contentRect,"hj");
 
                     contentNode.style.width = ( vpRect.width - wrapRect.width + contentRect.width ) + "px";
                     contentNode.style.height = ( vpRect.height - wrapRect.height + contentRect.height ) + "px";
@@ -258,7 +255,6 @@
                 }
             }
             domUtils.on(window, 'resize', function (){
-                console.log(me);
             /*因为窗口变化，弹出框会出来，所以注释了*/
             /*    setTimeout(function (){
                     if (!me.isHidden()) {
@@ -345,7 +341,6 @@
             this.fireEvent('dialogafterreset');
         },
         _show: function (){
-            console.log(this.getDom(),"dom");
             if (this._hidden) {
                 this.getDom().style.display = '';
                 //要高过编辑器的zindxe
