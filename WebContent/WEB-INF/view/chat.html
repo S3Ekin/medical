@@ -10,10 +10,14 @@
         div.layout {padding: 5px;width:690px;}
         div.layout > div { float: left; height: 330px; }
         div.layout:after { content: ""; display: block; clear: both; }
-        div.layout-right { width:480px; border: 1px solid #A9A9A9;border-left:none;overflow: hidden }
+        div.layout-right { width:480px; border: 1px solid #A9A9A9;border-left:none;overflow: hidden ;padding: 10px}
         div.layout-left { width: 187px; border:1px solid #A9A9A9; overflow-x:hidden}
         dl { margin-top: 0; margin-bottom: 0; }
         span.tree-title{width:115px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden}
+        table{margin:70px auto;border: 1px solid black ;border-collapse:collapse;width: 100%;}
+        tr{border: 1px solid black }
+        tr:hover{background:yellowgreen }
+        td{padding:5px;border: 1px solid black;text-align: center }
     </style>
 </head>
 <body>
@@ -24,7 +28,7 @@
         </ul>
     </div>
     <div class="layout-right">
-        <div id="chats" style="width: 100%;height: 300px;padding: 10px"></div>
+
     </div>
 </div>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
@@ -32,6 +36,8 @@
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script>
+    var $layoutRight=$(".layout-right");
+    var is_chat=-1;
     /*文档树生成*/
     $("#menu_tree").tree({
         url:"../ajax/tree5.json",
@@ -55,9 +61,99 @@
         },
         onClick:function (node) {
             if(node.children){
-             /*   return;*/
+                return;
             }else{
-//                alert("node")
+                 is_chat=node.id.indexOf("#");
+               switch (is_chat){
+                   case -1:
+                       var str='<table> <tr> <td rowspan="2">月份/科室</td> <td colspan="2">C T室</td> <td colspan="2">放 射 科</td> <td colspan="2">B 超 室</td> <td colspan="2">输 血 科</td> </tr> <tr> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>输血数</td> <td>适应症%</td> </tr> <tr> <td>1</td> <td>1195</td> <td>77.4</td> <td>1426</td> <td>39.1</td> <td>1972</td> <td>79.3</td> <td>115</td> <td>100</td> </tr> <tr> <td>2</td> <td>1071</td> <td>79.4</td> <td>1137</td> <td>58.5</td> <td>1416</td> <td>72.3</td> <td>95</td> <td>100</td> </tr> <tr> <td>3</td> <td>1326</td> <td>78.3</td> <td>1802</td> <td>57.9</td> <td>2105</td> <td>73.68</td> <td>160</td> <td>100</td> </tr> </table>';
+                       $layoutRight.html(str);
+                       break;
+                   default:
+                       $layoutRight.html("<div id='chat' style='width: 100%;height: 100%;'></div>");
+                       var baroption = {
+                           //标题
+                           title: {
+                               text: '科室督查结果'
+                           },
+                           grid:{left:'15%'},
+                           tooltip: {
+                               trigger: 'axis'
+                           },
+                           legend: {
+                               top:'bottom',
+                               //数据
+                               data:['1月','2月','3月']
+                           },
+                           //工具箱
+                           toolbox: {
+                               show: true,
+                               feature: {
+                                   dataZoom: {
+                                       yAxisIndex: false
+                                   },
+                                   dataView: {readOnly: false},
+                                   magicType: {type: ['line', 'bar']},
+                                   restore: {},
+                                   saveAsImage: {}
+                               }
+                           },
+                           //横坐标
+                           xAxis:  {
+                               type: 'category',
+                               boundaryGap: true,
+                               data:['C T室','放 射 科','B 超 室','输 血 科']
+//			//坐标轴类型，value数据，category类型，time时间，
+//			type: 'category',
+//			//起点和重点数据是否定格，是否留白
+//			boundaryGap: true,
+//			//数据
+//			data: ['周一','周二','周三','周四','周五','周六','周日','周一','周二','周三','周四','周五','周六','周日']
+                           },
+                           //纵坐标
+                           yAxis: {
+
+                               type: 'value',
+                               axisLabel: {
+                                   formatter: '{value}次'
+                               }
+
+
+//			type: 'value',
+//			//纵坐标显示标签
+//			axisLabel: {
+//				formatter: '{value} °C'
+//			}
+                           },
+                           series:[
+                                   //准备添加的数据
+                                   {
+                                       name:'1月',
+                                       //折线图
+                                       type:'bar',
+                                       //数据
+                                       data:[1195,1426,1972,115]
+                                   },
+                                   {
+                                       name:'2月',
+                                       type:'bar',
+                                       //数据
+                                       data:[1071,1137,1416,95]
+                                   },
+                                   {
+                                       name:'3月',
+                                       type:'bar',
+                                       data:[1362,1802,2105,160]
+                                   }
+                           ]
+                       };
+                       var $chat=$("#chat")[0];
+                       console.log($chat);
+                       var myChart = echarts.init($chat);
+                       myChart.setOption(baroption);
+                       break;
+               }
+
             }
         }
     });
@@ -66,10 +162,13 @@
         this.myChart = echarts.init($chat);
         this.myChart.setOption(pieoption);
     }
+    function creatView() {
+
+    }
 
 </script>
 <script>
-    var pieoption = {
+   /* var pieoption = {
         title : {
             text: '各科室10月的支出饼状图',
             x:'center'
@@ -108,7 +207,7 @@
     };
     var $chat=$("#chats")[0];
     var myChart = echarts.init($chat);
-    myChart.setOption(pieoption);
+    myChart.setOption(pieoption);*/
 </script>
 </body>
 </html>

@@ -18,8 +18,6 @@
 		.nav-tabs li.bv-tab-error>a{color:#a94442}
 		div.row { height:40px;line-height: 40px}
 		div.topic { text-align: right; font-size: 16px; font-weight: 700; }
-		/*div.col-xs-1 { text-align: right;}*/
-		/*div.col-xs-3 { height:30px;}*/
 		.sourceBtn {padding:0 8px;height:26px;}
 		div.content{padding:10px 5px;
 			height:320px;overflow-y: scroll}
@@ -34,7 +32,7 @@
 		 span.tree-title{font-size: 14px}
 		.no-padding{padding:0}
 	</style>
-	
+
 </head>
 <body>
 <div class="mr15">
@@ -46,7 +44,7 @@
 		<div class="row">
 			<div  class="col-xs-2 topic">名称:</div>
 			<div class="col-xs-9">
-				<input type="text" class="clo-xs-9" id="name" style="width:100%;max-width: 400px ;height:30px">
+				<input type="text" class="clo-xs-9" id="name" style="width:100%;max-width: 400px ;height:30px" value="表格创建编辑">
 			</div>
 		</div>
 		<div class="row">
@@ -65,7 +63,7 @@
 
 			</div>
 		</div>
-		<div class="zb">
+		<!--<div class="zb">
 			<div class="row">
 				<div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
 				<div class="col-xs-1" style="width: 65px">时间:</div>
@@ -84,6 +82,50 @@
 				<div class="col-xs-3">
 					<div class="wd-combo"></div>
 				 </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 topic">纵轴维度:</div>
+				<div class="col-xs-4">
+					<div class="wd-combo"></div>
+				</div>
+			</div>
+		</div>-->
+		<div class="zb">
+			<div class="row">
+				<div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
+				<div class="col-xs-1" style="width: 65px">频率:</div>
+				<div class="col-xs-1 no-padding "  style="width:80px;">
+					<div id="rotate"></div>
+				</div>
+				<!--<div class="col-xs-1" style="width: 65px">日期:</div>-->
+				<div class="col-xs-2 no-padding" style="width:100px;text-align: right">
+					<div>
+						<div class="data-combo"></div>
+					</div>
+					<div style="display: none">
+						<div class="calendar-combo" ></div>
+					</div>
+				</div>
+				<div class="col-xs-1" style="width:45px;color: #2081BB;text-align: center;padding: 0">——</div>
+				<div class="col-xs-2 no-padding" style="width:100px">
+					<div>
+						<div class="data-combo"></div>
+					</div>
+					<div style="display: none">
+						<div class="calendar-combo" ></div>
+					</div>
+				</div>
+				<div class="col-xs-1" style="width: 65px">机构:</div>
+				<div class="col-xs-3 no-padding">
+					<div id="organization"></div>
+				</div>
+			</div>
+			<div class="newAdd"></div>
+			<div class="row">
+				<div class="col-xs-2 topic">横轴维度:</div>
+				<div class="col-xs-3">
+					<div class="wd-combo"></div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-2 topic">纵轴维度:</div>
@@ -117,24 +159,33 @@
 			<div class="col-xs-10 pre">
 				<table cellspacing="0" cellpadding="0" class="list1" style="width:100%;margin:auto">
 					<tr>
-						<th style="width:6%;text-align:center;">课题</th>
-						<th style="width:6%;text-align:center;">ISSN论文</th>
+						<th style="width:6%;text-align:center;">指标</th>
+						<!--<th style="width:6%;text-align:center;">ISSN论文</th>
 						<th style="width:8%;text-align:center;">SCI论文</th>
 						<th style="width:15%;text-align:center;">报告类型</th>
 						<th style="width:18%;text-align:center;">被引用次数</th>
 						<th style="width:15%;text-align:center;">完成国家级课题数</th>
-						<th style="width:8%;text-align:center;">完成省级课题数</th>
+						<th style="width:8%;text-align:center;">完成省级课题数</th>-->
+						<th style="width:6%;text-align:center;">2016</th>
+						<th style="width:8%;text-align:center;">2017</th>
 					</tr>
 					<tbody id="table1">
-					<tr>
-						<th>次数</th>
-						<td>52</td>
-						<td>34</td>
-						<td>39</td>
-						<td>33</td>
-						<td>22</td>
-						<td>32</td>
-					</tr>
+						<tr>
+							<th>实际开放床位</th>
+							<td>4532</td>
+							<td>1244</td>
+							<!--<td>52</td>
+							<td>34</td>
+							<td>39</td>
+							<td>33</td>
+							<td>22</td>
+							<td>32</td>-->
+						</tr>
+						<tr>
+							<th>重症医学科床位数</th>
+							<td>232</td>
+							<td>144</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
@@ -143,7 +194,6 @@
 
 
 </div>
-
 <!-- 数据源 -->
 <div id="sourceSelected" style="display: none">
 	<div class="content" >
@@ -181,6 +231,7 @@
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
 <script src="../../resources/echarts/echarts.js"></script>
 <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script src="../../resources/jQuery/easyui-lang-zh_CN.js"></script>
 <script>
     var $radio = $("input[name=dataType]"),
         $sourceSlect=$(".sourceBtn span"),
@@ -191,8 +242,71 @@
         $org=$("#organization"),
         $upload=$(".upload"),
         $table=$(".table"),
+        $dataCombo=$(".data-combo"),
+        $calendar=$(".calendar-combo"),
         $sourceSelected=$("#sourceSelected"),
 		$sourceBtn=$(".sourceBtn");
+
+    var temArr={"list":[]};
+
+	/*日期选择*/
+    $.ajax({
+        url:"../ajax/data.json",
+        dataType:"json",
+        success:function (data) {
+            var dataArray=data;
+			/*月期框加载*/
+            $dataCombo.combobox({
+                valueField:"id",
+                textField:"text",
+                data:dataArray.month,
+                editable:true,
+                width:80,
+                height:30,
+                panelWidth:80,
+                panelHeight:100,
+                formatter:function (row) {
+                    return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+                }
+            });
+			/*频率框加载*/
+            $("#rotate").combobox({
+                valueField:"id",
+                textField:"text",
+                data:dataArray.rotate,
+                editable:true,
+                width:70,
+                height:30,
+                panelWidth:70,
+                panelHeight:100,
+                onLoadSuccess:function(){
+                    var loadData=$(this).combobox("getData");
+                    $(this).combobox("setValue",loadData[2].text);
+                },
+                formatter:function (row) {
+                    return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+                },
+                onSelect:function (recoder) {
+                    var item=recoder.value;
+                    if(recoder.id==4){
+                        $dataCombo.parent().hide();
+                        $calendar.parent().show();
+                        $calendar.datebox({
+                            width:100,
+                            height:30,
+                            panelWidth:180,
+                            panelHeight:200,
+                            value:"Today"
+                        });
+                    }else{
+                        $calendar.parent().hide();
+                        $dataCombo.parent().show();
+                        $dataCombo.combobox("loadData",dataArray[item]);
+                    }
+                }
+            });
+        }
+    });
     /*机构树加载*/
     $org.combotree({
 		url:"../ajax/org.json",
@@ -261,6 +375,7 @@
     $sourceBtn.on("click",function () {
         $sourceSelected.window("open");
     });
+//	todo：数据源选择
 	/*数据源窗口加载*/
     $sourceSelected.window({
         title : '数据源选择',
@@ -270,6 +385,7 @@
         width : 300,
         height : 400,
         padding : 10,
+        resizable:false,
         minimizable : false,
         maximizable : false,
         collapsible : false,
@@ -278,7 +394,7 @@
         onOpen : function(){
             var urls,is_checked;
             if(is_zb){
-                 urls="../ajax/SelectKpi.json";
+                 urls="../ajax/a.json";
 					is_checked=true;
 			}else{
                  urls="../ajax/upload.json";
@@ -309,14 +425,44 @@
 					state = is_zb ? "getChecked":"getSelected";
                 $newAdd.html(null);
 				var nodes=$("#sourceTree").tree(state);
+				console.log(nodes,"nodes");
 				if(is_zb){
 				    if(nodes.length){
                 for (var i = 0,length=nodes.length; i <length; i++) {
                     var obj = nodes[i];
-					if (obj.children.length!=0){
+					if (obj.children){
 					    continue;
 					}else{
-                        var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
+					    !function (item,i) {
+                            $.ajax({
+                                url:"../ajax/a_type.json",
+                                success:function (data) {
+                                    console.log(item);
+                                    var _data= data[item.id];
+                                    str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+item.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-1" style="width: auto;">'+_data.selectText+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';
+                                    $newAdd.append(str);
+                                    $("#show_type_"+i).combobox({
+                                        valueField:"id",
+                                        textField:"text",
+                                        data:_data.children,
+                                        editable:true,
+                                        width:200,
+                                        height:30,
+                                        panelWidth:210,
+                                        panelHeight:100,
+                                        onLoadSuccess:function(){
+                                            var loadData=$(this).combobox("getData");
+                                            $(this).combobox("setValue",loadData[1].text);
+                                        },
+                                        formatter:function (row) {
+                                            return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                                        }
+                                    });
+                                }
+                            });
+                        }(obj,i);
+
+                        /*var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
                         str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-1">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';
                         $newAdd.append(str);
                         $("#show_type_"+i).combobox({
@@ -335,7 +481,7 @@
                             formatter:function (row) {
                                 return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
                             }
-                        });
+                        });*/
                     }
                 }
 
@@ -364,9 +510,28 @@
         $sourceSelected.window("close");
     });
 </script>
+<script id="tpl12" type="text/template">
+	<tr>
+		<th>指标</th>
+		<th>2016</th>
+		<th>2017</th>
+	</tr>
+	<tbody>
+		[% for(var i in list){%]
+		<tr>
+			<td>list.zb</td>
+			<td>34</td>
+			<td>25</td>
+		</tr>
+		[%}%]
+	</tbody>
+</script>
 <script>
 	/*tables加载*/
+	
     $("#preChat").click(function () {
+        var getVal=$dataCombo.combobox("getValue");
+        alert(getVal);
         if(is_zb){
         }else{
         }

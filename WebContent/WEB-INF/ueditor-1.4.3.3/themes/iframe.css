@@ -3,3 +3,11 @@ iframe{ width:80% ;min-width:550px;margin: auto}
 /*iframe:hover{
     border: 1px solid red;
 }*/
+.temp-variate{color:red;font-weight: bold}
+ul{list-style: none;padding: 0}
+
+table{margin:15px auto;border: 1px solid black ;border-collapse:collapse;width: 100%;min-width:600px }
+tr{border: 1px solid black }
+tr:hover{background:yellowgreen }
+td{padding:5px;border: 1px solid black;text-align: center }
+.indent{text-indent:3rem }

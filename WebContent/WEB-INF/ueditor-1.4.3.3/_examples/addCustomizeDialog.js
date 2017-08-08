@@ -20,7 +20,18 @@ UE.registerUI('dialog',function(editor,uiName){
                 className:'edui-okbutton',
                 label:'确定',
                 onclick:function () {
-                              editor.execCommand("insertHtml","<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px 7.5%;width:85%;height:350px;'></iframe>");
+                    /*"insertHtml","<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px 7.5%;width:85%;height:350px;'></iframe>"*/
+                    var sonWindow=document.getElementById("edui168_iframe"),str;
+                    var is_chat=sonWindow.contentWindow.is_chat;
+                    alert(is_chat);
+                    if(is_chat>=0){
+                        alert("iframe");
+                        str="<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px 7.5%;width:85%;height:350px;'></iframe>"
+                    }else{
+                        alert("table");
+                        str=sonWindow.contentDocument.getElementsByClassName("layout-right")[0].innerHTML;
+                    }
+                    editor.execCommand("insertHtml",str);
                     dialog.close(true);
                 }
             },
@@ -49,6 +60,7 @@ UE.registerUI('dialog',function(editor,uiName){
 }/*index 指定添加到工具栏上的那个位置，默认时追加到最后,editorId 指定这个UI是那个编辑器实例上的，默认是页面上所有的编辑器都会添加这个按钮*/);
 UE.registerUI('express',function(editor,uiName){
     var me=this;
+    var status=true;
     var express = new UE.ui.Dialog({
         iframeUrl:'express.html',
         editor:editor,
@@ -60,18 +72,28 @@ UE.registerUI('express',function(editor,uiName){
                 className:'edui-okbutton',
                 label:'确定',
                 onclick:function () {
+                    var range = me.selection.getRange();
+                    var val=range.endContainer.parentNode;
+
+
+                    // var val=range.endContainer.data.match(/^\[%(\w+)%]$/);
                     var str=document.getElementById("edui173_iframe").contentDocument.getElementById("express").value;
+
                     str=str.split("+");
                     var items="";
                     for (var i = 0; i < str.length; i++) {
                         if (!str[i]){
                             continue;
                         }else{
-                            items += "<b style='color: red;'>&lt;%"+str[i]+"%&gt;</b>";
+                            items += "<span class='temp-variate'>[%"+str[i]+"%]</span>";
                         }
                     }
+                   if(status){
+                       val.innerHTML=items;
+                   }else{
+                       editor.execCommand("insertHtml",items);
+                   }
 
-                    editor.execCommand("insertHtml",items);
                     express.close(true);
                 }
             },
@@ -94,7 +116,8 @@ UE.registerUI('express',function(editor,uiName){
             var iframe=document.getElementById("edui173_iframe");
             iframe.onload=function () {
                 var express=iframe.contentDocument.getElementById("express");
-                var val=range.endContainer.data.match(/^<%(\w+)%>$/);
+                var val=range.endContainer.data.match(/^\[%(\w+)%]$/);
+                status=val?true:false;
                 express.value=val?val[1]:null;
             };
 
