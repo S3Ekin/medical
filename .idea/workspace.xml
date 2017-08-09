@@ -1,25 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" description="&lt;/div&gt;" line="39" />
+    <bookmark url="file://$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" description="&lt;/div&gt;" line="40" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4f60df0-64b0-4be8-bb87-72e70867aa4e" name="Default" comment="1.7">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/field_wd.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/resources/websql/websql.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/a_type.json" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/a_type.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/data.json" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/data.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/org.json" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/org.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree3.json" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree3.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/upload.json" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/upload.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo6.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/iframe1.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/iframe1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/iframe2.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/iframe2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/list.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/resources/websql/websql.js" afterPath="$PROJECT_DIR$/WebContent/resources/websql/websql.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,36 +26,75 @@
       <file leaf-file-name="chat.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4092">
-              <caret line="152" column="29" lean-forward="false" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
+            <state relative-caret-position="55">
+              <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
               <folding>
-                <element signature="e#2519#3010#0" expanded="false" />
-                <element signature="e#4184#7119#0" expanded="false" />
-                <element signature="e#4252#4328#0" expanded="false" />
-                <element signature="e#4412#4489#0" expanded="false" />
-                <element signature="e#4526#4690#0" expanded="false" />
-                <element signature="e#4761#5285#0" expanded="false" />
-                <element signature="e#5355#5757#0" expanded="false" />
-                <element signature="e#5525#5564#0" expanded="false" />
-                <element signature="e#5826#6129#0" expanded="false" />
-                <element signature="e#6165#7094#0" expanded="false" />
-                <element signature="e#7385#7513#0" expanded="false" />
-                <marker date="1502201404522" expanded="true" signature="4108:4133" ph="..." />
-                <marker date="1502201404522" expanded="false" signature="7590:8627" ph="{...}" />
+                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#2519#2804#0" expanded="false" />
+                <element signature="e#3168#3707#0" expanded="false" />
+                <element signature="e#4591#4694#0" expanded="false" />
+                <element signature="e#6690#9854#0" expanded="false" />
+                <element signature="e#6768#6854#0" expanded="false" />
+                <element signature="e#6948#7035#0" expanded="false" />
+                <element signature="e#7077#7261#0" expanded="false" />
+                <element signature="e#7342#7921#0" expanded="false" />
+                <element signature="e#8001#8423#0" expanded="false" />
+                <element signature="e#8186#8225#0" expanded="false" />
+                <element signature="e#8502#8830#0" expanded="false" />
+                <element signature="e#8871#9824#0" expanded="false" />
+                <element signature="e#10165#10293#0" expanded="false" />
+                <marker date="1502258400834" expanded="true" signature="6609:6634" ph="..." />
+                <marker date="1502258400834" expanded="false" signature="10370:11407" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="websql.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3102">
+              <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+              <folding>
+                <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#li#3;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#1;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#iframe#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#9753#9828#0" expanded="false" />
+                <element signature="e#9925#9985#0" expanded="false" />
+                <element signature="e#10086#10126#0" expanded="false" />
+                <element signature="e#10173#10998#0" expanded="false" />
+                <element signature="e#11073#11301#0" expanded="false" />
+                <element signature="e#11346#11761#0" expanded="false" />
+                <element signature="e#11797#12104#0" expanded="false" />
+                <marker date="1502257626852" expanded="true" signature="9140:9715" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="websql.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/resources/websql/websql.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            <state relative-caret-position="203">
+              <caret line="14" column="93" lean-forward="true" selection-start-line="14" selection-start-column="93" selection-end-line="14" selection-end-column="93" />
               <folding>
-                <element signature="e#583#629#0" expanded="false" />
-                <element signature="e#663#814#0" expanded="false" />
-                <element signature="e#851#981#0" expanded="false" />
+                <element signature="e#158#193#0" expanded="false" />
+                <element signature="e#245#284#0" expanded="false" />
+                <element signature="e#941#1111#0" expanded="false" />
+                <element signature="e#1152#1635#0" expanded="false" />
+                <element signature="e#1165#1310#0" expanded="false" />
+                <element signature="e#1677#2522#0" expanded="false" />
+                <element signature="e#2330#2513#0" expanded="false" />
+                <element signature="e#2570#3438#0" expanded="false" />
+                <element signature="e#3470#3631#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -75,8 +103,8 @@
       <file leaf-file-name="table_edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            <state relative-caret-position="356">
+              <caret line="631" column="115" lean-forward="true" selection-start-line="631" selection-start-column="115" selection-end-line="631" selection-end-column="115" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -93,33 +121,37 @@
                 <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#tr#2;n#tbody#0;n#table#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#6440#7001#0" expanded="false" />
-                <element signature="e#7007#7360#0" expanded="false" />
+                <element signature="e#6452#7013#0" expanded="false" />
+                <element signature="e#7019#7372#0" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#9518#11553#0" expanded="false" />
-                <element signature="e#11589#11781#0" expanded="false" />
-                <element signature="e#11823#12302#0" expanded="false" />
-                <element signature="e#12347#12871#0" expanded="false" />
-                <element signature="e#13426#14235#0" expanded="false" />
-                <element signature="e#14273#14382#0" expanded="false" />
-                <element signature="e#14432#18599#0" expanded="false" />
-                <element signature="e#14838#14865#0" expanded="false" />
-                <element signature="e#14951#16701#0" expanded="false" />
-                <element signature="e#16735#17992#0" expanded="false" />
-                <element signature="e#18095#18193#0" expanded="false" />
-                <element signature="n#script#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#20423#20532#0" expanded="false" />
-                <marker date="1502192613942" expanded="false" signature="6466:6493" ph="..." />
-                <marker date="1502192613942" expanded="false" signature="6521:6864" ph="..." />
-                <marker date="1502192613942" expanded="false" signature="6893:6920" ph="..." />
-                <marker date="1502192613942" expanded="false" signature="6949:6976" ph="..." />
-                <marker date="1502192613942" expanded="true" signature="10055:10061" ph=" " />
-                <marker date="1502192613942" expanded="true" signature="10720:10726" ph=" " />
-                <marker date="1502192613942" expanded="true" signature="12260:12266" ph=" " />
-                <marker date="1502192613942" expanded="true" signature="12829:12835" ph=" " />
-                <marker date="1502192613942" expanded="true" signature="15356:15368" ph="..." />
-                <marker date="1502192613942" expanded="true" signature="16497:16503" ph=" " />
+                <element signature="e#9587#11622#0" expanded="false" />
+                <element signature="e#11658#11850#0" expanded="false" />
+                <element signature="e#11892#12371#0" expanded="false" />
+                <element signature="e#12416#12940#0" expanded="false" />
+                <element signature="e#13495#14304#0" expanded="false" />
+                <element signature="e#14342#14451#0" expanded="false" />
+                <element signature="e#14747#18280#0" expanded="false" />
+                <element signature="e#14907#14934#0" expanded="false" />
+                <element signature="e#15020#16770#0" expanded="false" />
+                <element signature="e#16804#18061#0" expanded="false" />
+                <element signature="e#18164#18262#0" expanded="false" />
+                <element signature="n#script#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#20184#20289#0" expanded="false" />
+                <element signature="e#20293#20398#0" expanded="false" />
+                <element signature="e#20788#20897#0" expanded="false" />
+                <element signature="e#21609#21938#0" expanded="false" />
+                <marker date="1502258537222" expanded="false" signature="6478:6505" ph="..." />
+                <marker date="1502258537222" expanded="false" signature="6533:6876" ph="..." />
+                <marker date="1502258537222" expanded="false" signature="6905:6932" ph="..." />
+                <marker date="1502258537222" expanded="false" signature="6961:6988" ph="..." />
+                <marker date="1502258537222" expanded="true" signature="10124:10130" ph=" " />
+                <marker date="1502258537222" expanded="true" signature="10789:10795" ph=" " />
+                <marker date="1502258537222" expanded="true" signature="12329:12335" ph=" " />
+                <marker date="1502258537222" expanded="true" signature="12898:12904" ph=" " />
+                <marker date="1502258537222" expanded="true" signature="15425:15437" ph="..." />
+                <marker date="1502258537222" expanded="true" signature="16566:16572" ph=" " />
+                <marker date="1502258537222" expanded="true" signature="21980:22022" ph="..." />
               </folding>
             </state>
           </provider>
@@ -138,7 +170,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$sourceSelected</find>
       <find>preChat</find>
       <find>pre</find>
       <find>full</find>
@@ -168,6 +199,7 @@
       <find>name=&quot;#C</find>
       <find>layout</find>
       <find>rowspan</find>
+      <find>sd</find>
     </findStrings>
     <replaceStrings>
       <replace>$chatMenu</replace>
@@ -182,6 +214,7 @@
       <replace>text</replace>
       <replace>th</replace>
       <replace>name=&quot;C</replace>
+      <replace>openDB</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -223,7 +256,6 @@
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/complete.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeButton.js" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/index-1.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree2.json" />
         <option value="$PROJECT_DIR$/全屏.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/iframe1.html" />
@@ -237,10 +269,11 @@
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/org.json" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/upload.json" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/field_wd.json" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/data.json" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html" />
         <option value="$PROJECT_DIR$/WebContent/resources/websql/websql.js" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html" />
       </list>
     </option>
   </component>
@@ -301,6 +334,50 @@
               <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebContent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebContent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ajax" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -349,7 +426,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/course/WebSQL" />
+    <property name="last_opened_file_path" value="E:/course/secretry/server/secretary/www/js/controllers.js" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -489,7 +566,7 @@
       <workItem from="1502153214879" duration="36585000" />
       <workItem from="1502197864581" duration="3460000" />
       <workItem from="1502238462313" duration="184000" />
-      <workItem from="1502238664222" duration="356000" />
+      <workItem from="1502238664222" duration="18109000" />
     </task>
     <task id="LOCAL-00001" summary="ueditor 弹出框消失问题">
       <created>1501238799302</created>
@@ -537,13 +614,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256006000" />
+    <option name="totallyTimeSpent" value="273759000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1320" height="784" extended-state="0" />
+    <frame x="-8" y="-8" width="1320" height="784" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18642746" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1848674" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -614,47 +691,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree4.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeButton.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="24" column="66" lean-forward="true" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/ueditor.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20394">
-          <caret line="312" column="18" lean-forward="false" selection-start-line="312" selection-start-column="18" selection-end-line="312" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/editor.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/uiutils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/uibase.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -793,13 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree5.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree2副本.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -891,32 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2904">
-          <caret line="190" column="15" lean-forward="false" selection-start-line="190" selection-start-column="15" selection-end-line="190" selection-end-column="15" />
-          <folding>
-            <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#li#3;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#iframe#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#9694#9754#0" expanded="false" />
-            <element signature="e#9855#9895#0" expanded="false" />
-            <element signature="e#9942#10767#0" expanded="false" />
-            <element signature="e#10842#11070#0" expanded="false" />
-            <element signature="e#11115#11530#0" expanded="false" />
-            <element signature="e#11566#11873#0" expanded="false" />
-            <marker date="1502161665313" expanded="false" signature="9056:9631" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ajax/upload.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -951,28 +959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11022">
           <caret line="0" column="124" lean-forward="true" selection-start-line="0" selection-start-column="124" selection-end-line="0" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4092">
-          <caret line="152" column="29" lean-forward="false" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
-          <folding>
-            <element signature="e#2519#3010#0" expanded="false" />
-            <element signature="e#4184#7119#0" expanded="false" />
-            <element signature="e#4252#4328#0" expanded="false" />
-            <element signature="e#4412#4489#0" expanded="false" />
-            <element signature="e#4526#4690#0" expanded="false" />
-            <element signature="e#4761#5285#0" expanded="false" />
-            <element signature="e#5355#5757#0" expanded="false" />
-            <element signature="e#5525#5564#0" expanded="false" />
-            <element signature="e#5826#6129#0" expanded="false" />
-            <element signature="e#6165#7094#0" expanded="false" />
-            <element signature="e#7385#7513#0" expanded="false" />
-            <marker date="1502201404522" expanded="true" signature="4108:4133" ph="..." />
-            <marker date="1502201404522" expanded="false" signature="7590:8627" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1029,10 +1015,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html">
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ajax/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
-          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/course/secretry/client/onClassServer/tools/DBManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3203">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/course/secretry/server/secretary/www/js/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-198">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#96#177#0" expanded="false" />
+            <element signature="e#227#528#0" expanded="false" />
+            <element signature="e#585#905#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/course/secretry/server/secretary/www/js/HTTPServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1452">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/course/secretry/server/secretary/www/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="62" column="6" lean-forward="true" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+          <folding>
+            <element signature="e#1928#2361#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/course/secretry/server/secretary/www/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="319" column="9" lean-forward="true" selection-start-line="319" selection-start-column="9" selection-end-line="319" selection-end-column="9" />
+          <folding>
+            <element signature="e#137#1155#0" expanded="false" />
+            <element signature="e#1347#10511#0" expanded="false" />
+            <element signature="e#11265#12421#0" expanded="false" />
+            <element signature="e#12662#12928#0" expanded="false" />
+            <element signature="e#12953#13104#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree5.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding>
+            <element signature="e#13#311#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/resources/websql/websql.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="14" column="93" lean-forward="true" selection-start-line="14" selection-start-column="93" selection-end-line="14" selection-end-column="93" />
+          <folding>
+            <element signature="e#158#193#0" expanded="false" />
+            <element signature="e#245#284#0" expanded="false" />
+            <element signature="e#941#1111#0" expanded="false" />
+            <element signature="e#1152#1635#0" expanded="false" />
+            <element signature="e#1165#1310#0" expanded="false" />
+            <element signature="e#1677#2522#0" expanded="false" />
+            <element signature="e#2330#2513#0" expanded="false" />
+            <element signature="e#2570#3438#0" expanded="false" />
+            <element signature="e#3470#3631#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#2519#2804#0" expanded="false" />
+            <element signature="e#3168#3707#0" expanded="false" />
+            <element signature="e#4591#4694#0" expanded="false" />
+            <element signature="e#6690#9854#0" expanded="false" />
+            <element signature="e#6768#6854#0" expanded="false" />
+            <element signature="e#6948#7035#0" expanded="false" />
+            <element signature="e#7077#7261#0" expanded="false" />
+            <element signature="e#7342#7921#0" expanded="false" />
+            <element signature="e#8001#8423#0" expanded="false" />
+            <element signature="e#8186#8225#0" expanded="false" />
+            <element signature="e#8502#8830#0" expanded="false" />
+            <element signature="e#8871#9824#0" expanded="false" />
+            <element signature="e#10165#10293#0" expanded="false" />
+            <marker date="1502258400834" expanded="true" signature="6609:6634" ph="..." />
+            <marker date="1502258400834" expanded="false" signature="10370:11407" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="631" column="115" lean-forward="true" selection-start-line="631" selection-start-column="115" selection-end-line="631" selection-end-column="115" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1049,53 +1148,65 @@
             <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#tr#2;n#tbody#0;n#table#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#6440#7001#0" expanded="false" />
-            <element signature="e#7007#7360#0" expanded="false" />
+            <element signature="e#6452#7013#0" expanded="false" />
+            <element signature="e#7019#7372#0" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#9518#11553#0" expanded="false" />
-            <element signature="e#11589#11781#0" expanded="false" />
-            <element signature="e#11823#12302#0" expanded="false" />
-            <element signature="e#12347#12871#0" expanded="false" />
-            <element signature="e#13426#14235#0" expanded="false" />
-            <element signature="e#14273#14382#0" expanded="false" />
-            <element signature="e#14432#18599#0" expanded="false" />
-            <element signature="e#14838#14865#0" expanded="false" />
-            <element signature="e#14951#16701#0" expanded="false" />
-            <element signature="e#16735#17992#0" expanded="false" />
-            <element signature="e#18095#18193#0" expanded="false" />
-            <element signature="n#script#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#20423#20532#0" expanded="false" />
-            <marker date="1502192613942" expanded="false" signature="6466:6493" ph="..." />
-            <marker date="1502192613942" expanded="false" signature="6521:6864" ph="..." />
-            <marker date="1502192613942" expanded="false" signature="6893:6920" ph="..." />
-            <marker date="1502192613942" expanded="false" signature="6949:6976" ph="..." />
-            <marker date="1502192613942" expanded="true" signature="10055:10061" ph=" " />
-            <marker date="1502192613942" expanded="true" signature="10720:10726" ph=" " />
-            <marker date="1502192613942" expanded="true" signature="12260:12266" ph=" " />
-            <marker date="1502192613942" expanded="true" signature="12829:12835" ph=" " />
-            <marker date="1502192613942" expanded="true" signature="15356:15368" ph="..." />
-            <marker date="1502192613942" expanded="true" signature="16497:16503" ph=" " />
+            <element signature="e#9587#11622#0" expanded="false" />
+            <element signature="e#11658#11850#0" expanded="false" />
+            <element signature="e#11892#12371#0" expanded="false" />
+            <element signature="e#12416#12940#0" expanded="false" />
+            <element signature="e#13495#14304#0" expanded="false" />
+            <element signature="e#14342#14451#0" expanded="false" />
+            <element signature="e#14747#18280#0" expanded="false" />
+            <element signature="e#14907#14934#0" expanded="false" />
+            <element signature="e#15020#16770#0" expanded="false" />
+            <element signature="e#16804#18061#0" expanded="false" />
+            <element signature="e#18164#18262#0" expanded="false" />
+            <element signature="n#script#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#20184#20289#0" expanded="false" />
+            <element signature="e#20293#20398#0" expanded="false" />
+            <element signature="e#20788#20897#0" expanded="false" />
+            <element signature="e#21609#21938#0" expanded="false" />
+            <marker date="1502258537222" expanded="false" signature="6478:6505" ph="..." />
+            <marker date="1502258537222" expanded="false" signature="6533:6876" ph="..." />
+            <marker date="1502258537222" expanded="false" signature="6905:6932" ph="..." />
+            <marker date="1502258537222" expanded="false" signature="6961:6988" ph="..." />
+            <marker date="1502258537222" expanded="true" signature="10124:10130" ph=" " />
+            <marker date="1502258537222" expanded="true" signature="10789:10795" ph=" " />
+            <marker date="1502258537222" expanded="true" signature="12329:12335" ph=" " />
+            <marker date="1502258537222" expanded="true" signature="12898:12904" ph=" " />
+            <marker date="1502258537222" expanded="true" signature="15425:15437" ph="..." />
+            <marker date="1502258537222" expanded="true" signature="16566:16572" ph=" " />
+            <marker date="1502258537222" expanded="true" signature="21980:22022" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ajax/data.json">
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/resources/websql/websql.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        <state relative-caret-position="-3102">
+          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding>
-            <element signature="e#583#629#0" expanded="false" />
-            <element signature="e#663#814#0" expanded="false" />
-            <element signature="e#851#981#0" expanded="false" />
+            <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#3;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#iframe#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#9753#9828#0" expanded="false" />
+            <element signature="e#9925#9985#0" expanded="false" />
+            <element signature="e#10086#10126#0" expanded="false" />
+            <element signature="e#10173#10998#0" expanded="false" />
+            <element signature="e#11073#11301#0" expanded="false" />
+            <element signature="e#11346#11761#0" expanded="false" />
+            <element signature="e#11797#12104#0" expanded="false" />
+            <marker date="1502257626852" expanded="true" signature="9140:9715" ph="..." />
           </folding>
         </state>
       </provider>

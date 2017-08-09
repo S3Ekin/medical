@@ -112,7 +112,7 @@
 		<div class="upload">
 			<div class="row">
 				<div class="col-xs-2 topic">数据名称:</div>
-				<div class="col-xs-10 zb-name"></div>
+				<div class="col-xs-10 zb-name update-name"></div>
 			</div>
 			<div class="row">
 				<div class="col-xs-2 topic ">横轴字段:</div>
@@ -278,6 +278,7 @@
 <script src="../../resources/echarts/echarts.js"></script>
 <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script src="../../resources/jQuery/easyui-lang-zh_CN.js"></script>
+<script src="../../resources/websql/websql.js"></script>
 <script>
     var $radio = $("input[name=dataType]"),
         $sourceSlect=$(".sourceBtn span"),
@@ -544,7 +545,7 @@
 				        $zb.hide();
 				        $upload.show();
                         htm="<span >"+nodes.text+"</span>";
-                        $zbName.html(htm);
+                        $(".update-name").html(htm);
 					}
 				}
 				$table.show();
@@ -573,14 +574,16 @@
 </script>
 <script>
 	/*tables加载*/
-	
     $("#preChat").click(function () {
+        var tableArrs={"zb":[],"data":[]};
+        tableArrs.text=$("#name").val();
         switch (is_zb){
 			case false:
 			    /*表头合并*/
 			    var str='<tr class="norowspan"> <td >月份/科室</td> <td >C T室</td> <td >C T室</td> <td >放 射 科</td> <td >放 射 科</td> <td >B 超 室</td> <td >B 超 室</td> <td >输 血 科</td> <td >输 血 科</td> </tr> <tr class="rowspan"> <td rowspan="2">月份/科室</td> <td colspan="2">C T室</td> <td colspan="2">放 射 科</td> <td colspan="2">B 超 室</td> <td colspan="2">输 血 科</td> </tr><tr><td class="norowspan"></td><td> 检查数</td><td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>输血数</td> <td>适应症%</td></tr><tr><td>1</td><td>1195</td><td>77.4</td><td>1426</td> <td>39.1</td><td>1972</td><td>79.3</td><td>115</td><td>100</td></tr> <tr> <td>2</td> <td>1071</td> <td>79.4</td> <td>1137</td> <td>58.5</td> <td>1416</td> <td>72.3</td> <td>95</td> <td>100</td> </tr> <tr> <td>3</td> <td>1326</td> <td>78.3</td> <td>1802</td> <td>57.9</td> <td>2105</td> <td>73.68</td> <td>160</td> <td>100</td> </tr>';
 			    $("#create-table").html(str);
 			    var val = $("input[name='rowspan']:checked").val();
+                tableArrs.text=$(".update-name").children().html();
 			    if (val == 1) {
                     $(".rowspan").show();
                     $(".norowspan").hide();
@@ -588,23 +591,32 @@
                     $(".rowspan").hide();
                     $(".norowspan").show();
                 }
+                tableArrs.data[0]=$("#create-table").html();
+			    tableArrs.zb=["检查数","阳性率%","输血数","适应症%"];
+			    tableArrs.x_wd="月份";
+			    tableArrs.y_wd="科室";
+			    tableArrs.type=0;
 			    break;
 			default:
 			    /*生成表格*/
-//                    $calendar=,
 				var comboData=$(".textbox-text");
-               console.log(comboData) ;
                var tableArr=[];
-                for (var i = 0,leg=comboData.length; i <leg ; i++) {
+               var leg=comboData.length;
+                for (var i = 0; i<leg ; i++) {
                     var obj = comboData[i];
                     tableArr.push(obj.value);
                 }
-                console.log(tableArr);
-                var _data=parseInt(tableArr[2])-parseInt(tableArr[1]);
+                tableArrs.zb=tableArr.slice(4,(leg-4));
+                var _data=parseInt(tableArr[2])-parseInt(tableArr[1])+1;
+                tableArrs.x_wd=tableArr[0];
+                tableArrs.y_wd=tableArr[3];
+                tableArrs.type=1;
+                tableArrs.data.push(_data);
+                tableArrs.data.push(parseInt(tableArr[1]));
                 var _zb="",_time="";
                 var tabHead="";
 				/*表头*/
-                for (var i = 4; i < (tableArr.length-8+4); i++) {
+                for (var i = 4; i <(leg-4); i++) {
                     tabHead+="<td>" +tableArr[i]+"</td>";
                 }
                 tabHead="<tr><td>"+tableArr[0]+"/指标</td>"+tabHead+"</tr>";
@@ -617,11 +629,11 @@
                     }
                     _time+="<tr><td>"+obj+"</td>"+_zb+"</tr>";
                 }
-                var cap="<caption>科室:"+tableArr[3]+"</caption>";
+                var cap="<caption style='padding:0;height: 30px;font-weight: bolder'>科室:"+tableArr[3]+"</caption>";
                $("#create-table").html(cap+tabHead+_time);
                 break;
 		}
-
+        webSql.add(tableArrs,"tables");
         $(".pre").show();
     })
 </script>
