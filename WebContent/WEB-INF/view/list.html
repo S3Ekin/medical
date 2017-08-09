@@ -234,51 +234,6 @@
         $table1.append(str);
     });
 </script>
-<!--<script type="text/javascript">
-	var data;
-	T.getJson('../../main/getAddressList.do?', function(res) {	
-		data=res.data;
-		_get('table1').innerHTML = baidu.template('tpl11', res);
-		$('.loading').hide();
-	});
-	
-	T('#search').on('click',function(){
-		var search_text=$("#search_text").val().trim();
-		if(search_text=="工号/姓名/部门"||search_text==""){
-			$("#txt_insert p").remove();
-			$("#txt_insert").append("<p>搜索条件不能为空！</p>");
-			$("#modal_alert").modal("toggle");
-			
-			T.getJson('../../main/getAddressList.do?', function(res) {	
-				data=res.data;
-				_get('table1').innerHTML = baidu.template('tpl11', res);
-			});
-		}else {
-			T.getJson('../../main/getAddressList.do?flag=search&search_text='+search_text, function(res) {	
-				data=res.data;
-				if(data.length==0){
-					$("#txt_insert p").remove();
-					$("#txt_insert").append("<p>未搜索到相关内容！</p>");
-					$("#modal_alert").modal("toggle");
-					
-					T.getJson('../../main/getAddressList.do?', function(res) {	
-						data=res.data;
-						_get('table1').innerHTML = baidu.template('tpl11', res);
-					});
-				}else{
-					_get('table1').innerHTML = baidu.template('tpl11', res);
-				}
-			});
-		}
-	});
-	
-	document.onkeydown=function(e) {
-		if(e.keyCode==13) {
-			T('#search').click();
-		}
-	}
-		
-</script>-->
 <script>
 	/*报告操作*/
 	$("#table1").on("click","button",function () {

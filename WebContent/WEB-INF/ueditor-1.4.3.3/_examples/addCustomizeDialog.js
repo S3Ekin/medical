@@ -13,22 +13,17 @@ UE.registerUI('dialog',function(editor,uiName){
         title:"请选择",
         //指定dialog的外围样式
         cssRules:"width:700px;height:350px",
-
-        //如果给出了buttons就代表dialog有确定和取消
         buttons:[
             {
                 className:'edui-okbutton',
                 label:'确定',
                 onclick:function () {
-                    /*"insertHtml","<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px 7.5%;width:85%;height:350px;'></iframe>"*/
                     var sonWindow=document.getElementById("edui168_iframe"),str;
                     var is_chat=sonWindow.contentWindow.is_chat;
                     alert(is_chat);
                     if(is_chat>=0){
-                        alert("iframe");
-                        str="<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px 7.5%;width:85%;height:350px;'></iframe>"
+                        str="<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px 7.5%;width:85%;height:350px;border:1px solid red'></iframe>"
                     }else{
-                        alert("table");
                         str=sonWindow.contentDocument.getElementsByClassName("layout-right")[0].innerHTML;
                     }
                     editor.execCommand("insertHtml",str);
@@ -74,11 +69,7 @@ UE.registerUI('express',function(editor,uiName){
                 onclick:function () {
                     var range = me.selection.getRange();
                     var val=range.endContainer.parentNode;
-
-
-                    // var val=range.endContainer.data.match(/^\[%(\w+)%]$/);
                     var str=document.getElementById("edui173_iframe").contentDocument.getElementById("express").value;
-
                     str=str.split("+");
                     var items="";
                     for (var i = 0; i < str.length; i++) {
