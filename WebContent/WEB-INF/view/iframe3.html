@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../resources/lib/awe/awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/images/font/iconfont.css?v=2"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css?v=2"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/image/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+    <style>
+        html,body{height:100%;}
+        div.layouts { padding:1% 0 0 225px; height:99% ;z-index: 3;overflow: hidden}
+        div.layouts > div { float: left;height: 100%;background: white;border-radius: 20px;}
+        div.layouts:after { content:"."; display: block; height: 0; clear: both;overflow: hidden}
+        div.layout-right { width: 100%;min-width: 600px;overflow: hidden}
+        div.layout-left { margin-left: -210px; width:200px;border-right: 3px solid grey;overflow-y: auto}
+        #menuTree{padding: 10px}
+        .reportTitle{padding-bottom:5px;width:100%;border-bottom: 3px solid #0081c2}
+        .reportTitle>ul{float:left;padding-left: 10px; margin-top: 10px;}
+        .reportTitle ul li {float:left;height:20px;padding:0 5px;border-right:3px solid #0090E5 ;line-height: 20px;font-size: 18px}
+        .reportTitle ul li:last-child {border-right:none}
+        .reportTitle>div{float:right;padding-top:5px;margin-right: 30px}
+        div.box{padding:10px 30px ;position: relative;min-width: 600px;height:90%;overflow-y:scroll;overflow-x: hidden}
+        .editBtn>div{float:left}
+        .des th{text-align: center;width: 90px; height:30px; }
+        .box ul{line-height: 30px;padding-left: 3rem}
+        .box dt{line-height: 30px;font-weight: normal}
+        table{margin:15px auto;border: 1px solid black ;border-collapse:collapse;width: 100%;min-width:600px }
+        tr{border: 1px solid black ;height: 40px }
+        tr:hover{background:yellowgreen;}
+        td{padding:5px;border: 1px solid black;text-align: center }
+        th{padding:5px;border: 1px solid black;text-align: center }
+        caption{    border: 1px solid black; border-bottom: none; color: #777; text-align:left;}
+        .indent{text-indent: 3rem}
+        .temp-variate{color:red;font-weight: bold}
+    </style>
+</head>
+<body style="background: #E3E3E3">
+<div class="layouts">
+    <div class="layout-left">
+        <ul id="menuTree"></ul>
+    </div>
+    <div class="layout-right">
+        <div class="reportTitle clearfix" >
+            <ul id="theme">
+                <li>XX人民医院</li>
+                <li>医教部质控科制</li>
+            </ul>
+            <div>
+                <button type="submit" class="btn btn-primary" style="font-size: 18px" id="edit">编 辑</button>
+            </div>
+        </div>
+        <iframe id="editTools" frameborder="0" style="padding:0 20px;width:100%;height:90%;display:none"></iframe>
+        <div class="box">
+             <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 25px;font-weight: bolder">xxx人民医院
+             </p>
+             <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 25px;font-weight: bolder">2017年11月医疗质量管理报告</p>
+            <p class="indent" style="font-size:18px">医教部质控科从病历管理、院感管理、药事管理、输血管理、统计 指标、各类清单抽查情况、医疗安全、流动红旗评比情况、满意度调查 等方面对我院2012年11月份的医疗质量情况进行了汇总，现汇报如下:</p>
+             <ul style=" font-size: 18px; line-height: 30px;">
+                 <li>
+                     <p><strong><a name="C1"> 一、病历管理 </a></strong></p>
+                     <div>
+                         <ul>
+                             <li>
+                                 <p><a name="C1.1">(一)运行病历检查情况</a></p>
+                                 <div>
+                                     <p>2017年11月10日14:00--17: 00，非术科组组长带领各组成员随机抽查我院临床 科室运行病历____份。</p>
+                                     <p> 评分标准:运行病历总分85分，甲级病历>77分，乙级病历65分——75分，丙级病 历&le;65分。 </p>
+                                     <p> 检查结果:经评定，合格病历____份，合格率____%。(以下列举部分科室做样板) </p>
+                                     <p>消化科:<br>___床&nbsp;&nbsp;&nbsp;病历书写者:____&nbsp;&nbsp;&nbsp;住院医师____&nbsp;&nbsp;&nbsp;住院号:____&nbsp;&nbsp;&nbsp;得分:____分
+                                     </p>
+                                     <p>病程记录:1,病历污损;2、抢救记录无参与人员职称;3,医嘱时间涂改1处;4、无主
+                                         治医师以上人员组织抢救;5、抗生素使用过于高档(胃肠炎使用9天头袍三代抗生素); 6、大便常规示真菌感染后仍用头袍三代。 </p>
+                                     <p>呼吸内科:<br>____床&nbsp;&nbsp;&nbsp;病历书写者:____&nbsp;&nbsp;&nbsp;住院医师____&nbsp;&nbsp;&nbsp;住院号:____&nbsp;&nbsp;&nbsp;得分:____分
+                                     </p>
+                                     <p>入院记录: 1、现病史咳嗽情况描述欠缺;2、心脏体查漏项<br>病程记录: 1,鉴别诊断分析过简; 2、主治医师查房病史特点描述顺序倒错; 3、主任查
+                                         房无精神分裂病史，症状描述顺序错误; 4、10月30日病程未按24小时制书写; 5、病程中一直未描述有无精神症状;
+                                         6、病程中未包括重要脏器:心脏及神经系统情况; 7、10月29日尿常规BLD+1未分析诊断; 8、入院近2周无大便常规;
+                                         9、11月1日痰培养结果未记录; 10、11月1日重做痰培养未下医嘱。
+                                     </p>
+                                 </div>
+                             </li>
+                             <li>
+                                 <p><a name="C1.2">(二)终末病历 </a></p>
+                                 <div class="end-patient">
+                                     <table>
+                                         <caption>注:终末病历总评价总分100分，甲级病历>90分，乙级病历<b style="color:blue">76分一90分</b>，丙级病历<b
+                                                 style="color:red">&le;75分</b>;红色分数丙级，蓝色分数乙级。
+                                         </caption>
+                                         <thead>
+                                         <tr>
+                                             <th>科室</th>
+                                             <th>抽查份数</th>
+                                             <th>甲级</th>
+                                             <th>乙级</th>
+                                             <th>丙级</th>
+                                             <th width="40%">发现的问题</th>
+                                         </tr>
+                                         </thead>
+                                         <tfoot>
+                                         <tr>
+                                             <td>合计</td>
+                                             <td>100</td>
+                                             <td>99</td>
+                                             <td>1</td>
+                                             <td>0</td>
+                                             <td>备注:不合格病历占抽查病历总数的0%。</td>
+                                         </tr>
+                                         </tfoot>
+                                         <tbody>
+                                         <tr>
+                                             <td>泌尿科</td>
+                                             <td>10</td>
+                                             <td>10</td>
+                                             <td>0</td>
+                                             <td>0</td>
+                                             <td>入院记录漏项，现病史未描述呕吐和量;查房过简;异常结果未及时复查;现病史中描写“进食酒席”不妥;出院诊断与主述不符。</td>
+                                         </tr>
+                                         <tr>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                         </tr>
+                                         </tbody>
+                                     </table>
+                                 </div>
+                             </li>
+                             <li>
+                                 <p><a name="C1.3">(三)病历迟交 </a></p>
+                                 <ul>
+                                     <li>
+                                         <p>1、迟交病历情况统计表</p>
+                                         <div>
+                                             <table>
+                                                 <caption>2012年11月份迟交病历情况统计表</caption>
+                                                 <thead>
+                                                 <tr>
+                                                     <th>序号</th>
+                                                     <th>科室</th>
+                                                     <th>迟交病历医师</th>
+                                                     <th>迟交病历份数</th>
+                                                     <th>迟交天数合计</th>
+                                                     <th>科室总迟交天</th>
+                                                 </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                 <tr>
+                                                     <td>1</td>
+                                                     <td rowspan="4" class="heart-type">心内科</td>
+                                                     <td>邓医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>3</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>4</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>5</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 </tbody>
+                                                 <tbody>
+                                                 <tr>
+                                                     <td>1</td>
+                                                     <td rowspan="3" class="heart-type">呼吸科</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>3</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>4</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 </tbody>
+                                                 <tbody>
+                                                 <tr>
+                                                     <td>1</td>
+                                                     <td rowspan="4" class="heart-type">泌尿科</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>3</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>4</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td>5</td>
+                                                     <td>X医师</td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 </tbody>
+                                             </table>
+                                         </div>
+                                     </li>
+                                     <li>
+                                         <p>2、病历缺陷综述 </p>
+                                         <div>
+                                             <p>1、病历书写的规范性、及时性仍有不足，主要表现在未严格按照 《病历书写基本规范》所要求的内容进行书写，如:术前小结无
+                                                 术者术前查看患者的记录。</p>
+                                             <p> 2、上级医师查房记录中对疾病的分析不足，未能体现应有的水 平，教学性不强。 </p>
+                                             <p>3、 病程记录不能及时反映患者的病情变化。 </p>
+                                             <p>4、 上级医师指示使用抗菌药物，医嘱无指示者签名确认。</p>
+                                             <p>5、危重病人医患沟通记录内容还有进一步加强，对患者出院后需 要注意的事项交代的不够完整。</p>
+                                             <p>6、病例讨论不够充分。</p>
+                                         </div>
+                                     </li>
+                                     <li>
+                                         <p>3、病案管理 </p>
+                                         <div>
+                                             <p class="indent">
+                                                 11月病案入库____份;借出____份;返还____份;复印病历____份;截止11月30日总院库存病案____份。</p>
+                                         </div>
+                                     </li>
+                                 </ul>
+                             </li>
+                         </ul>
+                     </div>
+                 </li>
+                 <li>
+                     <p><a name="C2">二、院感管理</a></p>
+                     <div>
+                         <ul>
+                             <li>
+                                 <p><a name="C2.1">(一)医院传染病管理 </a></p>
+                                 <ul>
+                                     <li>
+                                         <p>一、传染病管理 </p>
+                                         <div>
+                                             <p>本月共报告传染病____例，漏报____例，漏报率为____。</p>
+                                             <p>各科室漏报情况: </p>
+                                             <table>
+                                                 <thead>
+                                                 <tr>
+                                                     <th>科室</th>
+                                                     <th>病案号</th>
+                                                     <th>患者姓名</th>
+                                                     <th>染病诊断</th>
+                                                     <th>医师姓名</th>
+                                                 </tr>
+                                                 </thead>
+                                                 <tbody>
+                                                 <tr>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 <tr>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                     <td></td>
+                                                 </tr>
+                                                 </tbody>
+                                             </table>
+                                         </div>
+                                     </li>
+                                 </ul>
+                             </li>
+                             <li>
+                                 <p><a name="C2.2">(二)医院感染管理 </a></p>
+                                 <div>
+                                     <p>本月共报告感染____例，漏报____例，漏报率为____。</p>
+                                     <p>各科室漏报情况: </p>
+                                     <table>
+                                         <thead>
+                                         <tr>
+                                             <th>科室</th>
+                                             <th>病案号</th>
+                                             <th>患者姓名</th>
+                                             <th>染病诊断</th>
+                                             <th>医师姓名</th>
+                                         </tr>
+                                         </thead>
+                                         <tbody>
+                                         <tr>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                         </tr>
+                                         </tbody>
+                                     </table>
+                                 </div>
+                             </li>
+                             <li>
+                                 <p><a name="C2.3">(三)药品不良反应报告情况 </a></p>
+                                 <div><p>本月共报告药品不良反应____例，无漏报。</p></div>
+                             </li>
+                         </ul>
+                     </div>
+                 </li>
+                 <li>
+                     <p><a name="">三、药事管理</a></p>
+                     <div>
+                         <p>2017年11月抗菌药物使用量排名</p>
+                         <table>
+                             <thead>
+                                 <tr>
+                                     <th>序号</th>
+                                     <th width="45%">药品名称</th>
+                                     <th>规格</th>
+                                     <th>单位</th>
+                                     <th>数量</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td>1</td>
+                                     <td>注射用头抱孟多醋钠</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>2</td>
+                                     <td>注射用头抱替哇钠</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>3</td>
+                                     <td>头抱替安(替他欣)</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>4</td>
+                                     <td>利福平胶囊</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>5</td>
+                                     <td>注射用头抱匹胺</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>6</td>
+                                     <td>甲磺酸帕珠沙星注射液</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>7</td>
+                                     <td>庆大霉素针</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>8</td>
+                                     <td>青霉素G钠</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>9</td>
+                                     <td>阿莫西林钠舒巴坦钠</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>10</td>
+                                     <td>阿莫西林胶囊</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </li>
+                 <li>
+                     <p><a name="C4">四、输血管理</a></p>
+                     <div>
+                         <ul>
+                             <li>
+                                 <p><a name="C4.1">(一)11月份全院用血情况: </a></p>
+                                 <table>
+                                     <thead>
+                                         <tr>
+                                             <th>血型</th>
+                                             <th width="50%">血液类型</th>
+                                             <th>11月</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                             <td rowspan="8"><strong  style="font-size: 18px">A</strong></td>
+                                             <td>红细胞悬液(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>洗涤红细胞(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>Rh(D)阴性红细胞悬液(&#181;)</td> <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>新鲜冰冻血浆(ml )</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>机采血小板(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>手工血小板(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>冷沉淀(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>全血(ml)</td>
+                                             <td></td>
+                                         </tr>
+                                     </tbody>
+                                     <tbody>
+                                         <tr>
+                                             <td rowspan="8"><strong style="font-size: 18px">B</strong></td>
+                                             <td>红细胞悬液(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>洗涤红细胞(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>Rh(D)阴性红细胞悬液(&#181;)</td> <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>新鲜冰冻血浆(ml )</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>机采血小板(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>手工血小板(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>冷沉淀(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>全血(ml)</td>
+                                             <td></td>
+                                         </tr>
+                                     </tbody>
+                                     <tbody>
+                                         <tr>
+                                             <td rowspan="8"><strong style="font-size: 18px">O</strong></td>
+                                             <td>红细胞悬液(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>洗涤红细胞(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>Rh(D)阴性红细胞悬液(&#181;)</td> <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>新鲜冰冻血浆(ml )</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>机采血小板(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>手工血小板(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>冷沉淀(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>全血(ml)</td>
+                                             <td></td>
+                                         </tr>
+                                     </tbody>
+                                     <tbody>
+                                         <tr>
+                                             <td rowspan="8"><strong style="font-size: 18px">AB</strong></td>
+                                             <td>红细胞悬液(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>洗涤红细胞(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>Rh(D)阴性红细胞悬液(&#181;)</td> <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>新鲜冰冻血浆(ml )</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>机采血小板(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>手工血小板(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>冷沉淀(&#181;)</td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>全血(ml)</td>
+                                             <td></td>
+                                         </tr>
+                                     </tbody>
+                                 </table>
+                             </li>
+                             <li>
+                                 <p><a name="C4.2">(二)血液科工作检查 </a></p>
+                                 <div>
+                                     <p>1、输血申请单:共____份，合格___份， </p>
+                                     <p>2、所有输血均签署《输血治疗同意书》</p>
+                                     <p>3、输血患者均执行输血前检查。 </p>
+                                     <p>4、输血适应症合格率100%。 </p>
+                                     <p>5、成分输血率100%</p>
+                                     <p>6、无输血不良反应。</p>
+                                     <p>7、无临床备血或用血一次性超过2000m1 </p>
+                                     <p>8、储血冰箱按规定作温度记录。</p>
+                                     <p>9、储血冰箱定期消毒并作细菌培养。</p>
+                                     <p>10、血液按规定验收并有出入库登记。</p>
+                                     <p>11、血液在有效期内使用。</p>
+                                     <p>12、无血液自采。</p>
+                                 </div>
+                             </li>
+                         </ul>
+                     </div>
+                 </li>
+                 <li>
+                     <p><a  name="C5">五、主要医疗统计指标 </a></p>
+                     <div>
+                         <ul>
+                             <li>
+                                 <p><a  name="C5.1">(一) 抢救成功率(三级医院“抢救成功率”标准&ge;80%)</a></p>
+                                 <table>
+                                     <thead>
+                                         <tr>
+                                             <th width="15%"></th>
+                                             <th>内一科</th>
+                                             <th>内二科</th>
+                                             <th>内三科</th>
+                                             <th>外一科</th>
+                                             <th>外二科</th>
+                                             <th>外三科</th>
+                                             <th>外四科</th>
+                                             <th>妇产科</th>
+                                             <th>儿科</th>
+                                             <th>五官科</th>
+                                             <th>ICU</th>
+                                             <th>全院</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                             <td>抢救垂危病人数</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>抢救成功人数</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                         </tr>
+                                         <tr>
+                                             <td>抢救成功率</td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                             <td></td>
+                                         </tr>
+                                     </tbody>
+                                 </table>
+                             </li>
+                             <li>
+                                 <p><a  name="C5.2">(二) 病床使用情况 </a></p>
+                                 <div>
+                                     <ul>
+                                         <li>
+                                             <p>1、2017年11月份各科平均病床利用率(三级医院“平均病床利用率” 标准&ge;90%): </p>
+                                             <div>
+                                                 <table>
+                                                     <thead>
+                                                     <tr>
+                                                         <th width="15%"></th>
+                                                         <th>内一科</th>
+                                                         <th>内二科</th>
+                                                         <th>内三科</th>
+                                                         <th>外一科</th>
+                                                         <th>外二科</th>
+                                                         <th>外三科</th>
+                                                         <th>外四科</th>
+                                                         <th>妇产科</th>
+                                                         <th>儿科</th>
+                                                         <th>五官科</th>
+                                                         <th>ICU</th>
+                                                         <th>全院</th>
+                                                     </tr>
+                                                     </thead>
+                                                     <tbody>
+                                                     <tr>
+                                                         <td>平均病床利用率%</td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                     </tr>
+                                                     </tbody>
+                                                 </table>
+                                                 <p>2017年10月与2017年11月各科平均病床利用率比较图: </p>
+                                                 <div>
+                                                     <iframe src="../chat/demo1.html" frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>
+                                                 </div>
+                                             </div>
+                                         </li>
+                                         <li>
+                                            <p>2、出院者平均住院日数(三级乙等医院“平均住院日数”标准 &le; 14天)</p>
+                                             <div>
+                                                 <table>
+                                                     <thead>
+                                                     <tr>
+                                                         <th width="15%"></th>
+                                                         <th>内一科</th>
+                                                         <th>内二科</th>
+                                                         <th>内三科</th>
+                                                         <th>外一科</th>
+                                                         <th>外二科</th>
+                                                         <th>外三科</th>
+                                                         <th>外四科</th>
+                                                         <th>妇产科</th>
+                                                         <th>儿科</th>
+                                                         <th>五官科</th>
+                                                         <th>ICU</th>
+                                                         <th>全院</th>
+                                                     </tr>
+                                                     </thead>
+                                                     <tbody>
+                                                     <tr>
+                                                         <td>平均病床利用率%</td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                     </tr>
+                                                     </tbody>
+                                                 </table>
+                                                 <p>2017年10月与2017年11月各科平均病床利用率比较图: </p>
+                                                 <div>
+                                                     <iframe src="../chat/demo1.html" frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>
+                                                 </div>
+                                             </div>
+                                         </li>
+                                         <li>
+                                            <p>3、平均病床周转次数(三级乙等医院“平均病床周转次数”标准 &ge; 1.75次)</p>
+                                             <div>
+                                                 <table>
+                                                     <thead>
+                                                     <tr>
+                                                         <th width="15%"></th>
+                                                         <th>内一科</th>
+                                                         <th>内二科</th>
+                                                         <th>内三科</th>
+                                                         <th>外一科</th>
+                                                         <th>外二科</th>
+                                                         <th>外三科</th>
+                                                         <th>外四科</th>
+                                                         <th>妇产科</th>
+                                                         <th>儿科</th>
+                                                         <th>五官科</th>
+                                                         <th>ICU</th>
+                                                         <th>全院</th>
+                                                     </tr>
+                                                     </thead>
+                                                     <tbody>
+                                                     <tr>
+                                                         <td>平均病床利用率%</td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                     </tr>
+                                                     </tbody>
+                                                 </table>
+                                                 <p>2017年10月与2017年11月各科平均病床利用率比较图: </p>
+                                                 <div>
+                                                     <iframe src="../chat/demo1.html" frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>
+                                                 </div>
+                                             </div>
+                                         </li>
+                                     </ul>
+                                 </div>
+                             </li>
+                             <li>
+                                 <p><a  name="C5.3">(三)出入院诊断符合率(三级乙等医院“出入院诊断符合率” 标准 &ge; 95% ) </a></p>
+                                 <div>
+                                     <ul>
+                                         <li>
+                                             <p>1、2017年11月份各科平均病床利用率(三级医院“平均病床利用率” 标准&ge;90%): </p>
+                                             <div>
+                                                 <table>
+                                                     <thead>
+                                                     <tr>
+                                                         <th width="15%"></th>
+                                                         <th>内一科</th>
+                                                         <th>内二科</th>
+                                                         <th>内三科</th>
+                                                         <th>外一科</th>
+                                                         <th>外二科</th>
+                                                         <th>外三科</th>
+                                                         <th>外四科</th>
+                                                         <th>妇产科</th>
+                                                         <th>儿科</th>
+                                                         <th>五官科</th>
+                                                         <th>ICU</th>
+                                                         <th>全院</th>
+                                                     </tr>
+                                                     </thead>
+                                                     <tbody>
+                                                     <tr>
+                                                         <td>平均病床利用率%</td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                     </tr>
+                                                     </tbody>
+                                                 </table>
+                                                 <p>2017年10月与2017年11月各科平均病床利用率比较图: </p>
+                                                 <div>
+                                                     <iframe src="../chat/demo1.html" frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>
+                                                 </div>
+                                             </div>
+                                         </li>
+                                         <li>
+                                             <p>2、出院者平均住院日数(三级乙等医院“平均住院日数”标准 &le; 14天)</p>
+                                             <div>
+                                                 <table>
+                                                     <thead>
+                                                     <tr>
+                                                         <th width="15%"></th>
+                                                         <th>内一科</th>
+                                                         <th>内二科</th>
+                                                         <th>内三科</th>
+                                                         <th>外一科</th>
+                                                         <th>外二科</th>
+                                                         <th>外三科</th>
+                                                         <th>外四科</th>
+                                                         <th>妇产科</th>
+                                                         <th>儿科</th>
+                                                         <th>五官科</th>
+                                                         <th>ICU</th>
+                                                         <th>全院</th>
+                                                     </tr>
+                                                     </thead>
+                                                     <tbody>
+                                                     <tr>
+                                                         <td>平均病床利用率%</td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                     </tr>
+                                                     </tbody>
+                                                 </table>
+                                                 <p>2017年10月与2017年11月各科平均病床利用率比较图: </p>
+                                                 <div>
+                                                     <iframe src="../chat/demo1.html" frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>
+                                                 </div>
+                                             </div>
+                                         </li>
+                                         <li>
+                                             <p>3、平均病床周转次数(三级乙等医院“平均病床周转次数”标准 &ge; 1.75次)</p>
+                                             <div>
+                                                 <table>
+                                                     <thead>
+                                                     <tr>
+                                                         <th width="15%"></th>
+                                                         <th>内一科</th>
+                                                         <th>内二科</th>
+                                                         <th>内三科</th>
+                                                         <th>外一科</th>
+                                                         <th>外二科</th>
+                                                         <th>外三科</th>
+                                                         <th>外四科</th>
+                                                         <th>妇产科</th>
+                                                         <th>儿科</th>
+                                                         <th>五官科</th>
+                                                         <th>ICU</th>
+                                                         <th>全院</th>
+                                                     </tr>
+                                                     </thead>
+                                                     <tbody>
+                                                     <tr>
+                                                         <td>平均病床利用率%</td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                         <td></td>
+                                                     </tr>
+                                                     </tbody>
+                                                 </table>
+                                                 <p>2017年10月与2017年11月各科平均病床利用率比较图: </p>
+                                                 <div>
+                                                     <iframe src="../chat/demo1.html" frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>
+                                                 </div>
+                                             </div>
+                                         </li>
+                                     </ul>
+                                 </div>
+                             </li>
+                             <li>
+                                 <p><a  name="C5.4">(四)各类业务指标 </a></p>
+                                 <div>
+                                     <p>1、本月入院病人____(人次)，比上月上升_____%，</p>
+                                     <p>2、出院病人____(人次)，比上月上升____%。</p>
+                                     <p>3、本月门诊总量____(人次)，比上月上升____%。</p>
+                                     <p>4、本月急诊总量____(人次)，比上月上升____%</p>
+                                     <p>5、本月彩超人次____，比上月上升____%</p>
+                                     <p>6、本月手术____(台)，比上月上升_____%。</p>
+                                     <p>7、本月血透____(人次)，比上月增长___%。 </p>
+                                 </div>
+                             </li>
+                         </ul>
+                     </div>
+                 </li>
+                 <li>
+                     <p><a  name="C6">六、各种申请单抽检情况 </a></p>
+                     <div>
+                         <div>
+                             <p>1、病理申请单:抽查____份，合格___份，合格率____%。 </p>
+                             <p>2、彩超申请单:抽查____份，合格___份，合格率____%。 </p>
+                             <p>3、处方申请单:抽查____份，合格___份，合格率____%。 </p>
+                             <p>4、手术申请单:抽查____份，合格___份，合格率____%。 </p>
+                             <p>5、输血申请单:抽查____份，合格___份，合格率____%。 </p></div>
+                         <div>
+                             <p>2017年10月与2017年11月各种申请单抽检情况比较图: </p>
+                             <iframe src="../chat/demo1.html" frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>
+                         </div>
+                     </div>
+                 </li>
+                 <li>
+                     <p><a  name="C7">七、医疗安全</a></p>
+                     <div>
+                         <ul>
+                             <li><p>1、11月份无明显医疗安全隐患。 </p></li>
+                             <li><p>2、11月份无医疗纠纷、医疗事故及医疗服务投诉。</p></li>
+                         </ul>
+                     </div>
+                 </li>
+                 <li>
+                     <p><a  name="C8">八、流动红旗评比情况</a></p>
+                     <div>
+                         <p>2012年11月流动红旗评比结果 </p>
+                         <table>
+                             <thead>
+                                 <tr>
+                                     <th width="15%">科室</th>
+                                     <th>内一科</th>
+                                     <th>内二科</th>
+                                     <th>内三科</th>
+                                     <th>外一科</th>
+                                     <th>外二科</th>
+                                     <th>外三科</th>
+                                     <th>外四科</th>
+                                     <th>妇产科</th>
+                                     <th>儿科</th>
+                                     <th>五官科</th>
+                                 </tr>
+                             </thead>
+                             <tbody>
+                                 <tr>
+                                     <td>得分</td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                 </tr>
+                                 <tr>
+                                     <td>备注</td>
+                                     <td colspan="10">本月流动红旗推荐:_____科</td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </li>
+                 <li>
+                     <p><a  name="C9">九、满意度调查 </a></p>
+                     <div>
+                         <ul>
+                             <li><p><a  name="C9.1">(一)住院患者对医院满意度____%。 </a></p></li>
+                             <li>
+                                 <p><a  name="C9.2">(二)2012年11月份对各个辅助科室考核情况 </a></p>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>科室</th>
+                                                <th>门诊工作考核<br>(满分50分)</th>
+                                                <th>急诊科工作考核<br>(满分50分)</th>
+                                                <th>放射科工作考核<br>(满分100分)</th>
+                                                <th>检验科工作考核<br>(满分90分)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>得分</th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                             </li>
+                             <li>
+                                 <p><a  name="C9.3">(三)2017年11月份各临床科室对医技科室的满意度 </a></p>
+                                 <div>
+                                     <table>
+                                         <thead>
+                                             <tr>
+                                                 <th></th>
+                                                 <th>放射科</th>
+                                                 <th>CT室</th>
+                                                 <th>特检科</th>
+                                                 <th>病理科</th>
+                                                 <th>检验科</th>
+                                                 <th>药剂科</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <tr>
+                                                 <td>内一科</td>
+                                                 <td>较满意</td>
+                                                 <td>较满意</td>
+                                                 <td>满意</td>
+                                                 <td>非常满意</td>
+                                                 <td>满意</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>内二科</td>
+                                                 <td>较满意</td>
+                                                 <td>较满意</td>
+                                                 <td>——</td>
+                                                 <td>非常满意</td>
+                                                 <td>满意</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>内三科</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                                 <td>——</td>
+                                                 <td>非常满意</td>
+                                                 <td>满意</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>内三科</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                                 <td>非常满意</td>
+                                                 <td>非常满意</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>外一科</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                                 <td>——</td>
+                                                 <td>非常满意</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>外二科</td>
+                                                 <td>非常满意</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                                 <td>非常满意</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>外三科</td>
+                                                 <td>非常满意</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                                 <td>非常满意</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>外四科</td>
+                                                 <td>非常满意</td>
+                                                 <td>较满意</td>
+                                                 <td>较满意</td>
+                                                 <td>非常满意</td>
+                                                 <td>较满意</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>妇产科</td>
+                                                 <td>非常满意</td>
+                                                 <td>较满意</td>
+                                                 <td>——</td>
+                                                 <td>非常满意</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>儿科</td>
+                                                 <td>非常满意</td>
+                                                 <td>较满意</td>
+                                                 <td>非常满意</td>
+                                                 <td>非常满意</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                             <tr>
+                                                 <td>五官科</td>
+                                                 <td>非常满意</td>
+                                                 <td>——</td>
+                                                 <td>非常满意</td>
+                                                 <td>满意</td>
+                                                 <td>——</td>
+                                                 <td>较满意</td>
+                                             </tr>
+                                         </tbody>
+                                     </table>
+                                 </div>
+                             </li>
+                         </ul>
+                     </div>
+                 </li>
+             </ul>
+            <p>二0一一年十二月二十日</p>
+            <!--<iframe src="../chat/demo1.html" frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>-->
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
+<script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common.js"></script>
+<script src="../../resources/echarts/echarts.js"></script>
+<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script src="../../resources/js/modal.js"></script>
+<script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
+<!--<script id="tem" type="text/template">
+    <h3 style="padding: 0; margin: 10px 0 17px 0; text-align: center">[%=list.currYear+"年"+list.curentSeason+"度医疗质控总结"%]</h3>
+    <p style="white-space:pre-wrap; font-size: 18px; line-height: 30px;text-indent: 2rem">[%="
+        一、医疗质控信息
+        1、年初制定了医疗质控计划与目标，并下发到各科室。
+        2、重新调整了医疗质量管理委员会及科室质控小组人员。
+        3、 2月12日在十二楼会议室对全体住院医师进行了《病历书写基本规范》等内容的培训。
+        4、3月30日召开了一季度医疗质控例会，对本季度医疗质控存在的问题及时反馈，提出了整改意见，同时对各科主任、质控医师及相关人员进行了等级评审知识培训。
+        二、医疗质控工作小结
+        （一）住院病历质控
+        第一季度质控科共对3960份在院病历进行实时监控，发现不合格病历及质量缺陷及时给与纠正，有效降低了不合格病历的发生。同时做好终末病历的质控，1-3月份共对1839份出院病历进行了质控。其中甲级病历1817份，甲级病案率98.3%；乙级病历22份，乙级病案率0.98%；无病等病历。主要存在以下问题：
+        1、主诉书写有缺陷，不能导出第一诊断。
+        2、入院记录中基本信息填写不全。
+        3、初步诊断、出院诊断书写不全。
+        4、未按时完成上级医师首次查房记录。
+        5、日常病程未按时完成。
+        6、交接班记录未按时完成。
+        7、住院超30天缺阶段小结。
+        8、异常辅助检查结果未及时补充诊断。
+        9、体格检查书写不全。
+        10、手术分级不明确，个别病历Ⅲ类手术无术前讨论。
+        11、手术记录、术后病程中手术部位书写错误。
+        12、死亡病历讨论未按时完成，且内容空洞无分析。
+        13、现病史、既往史有缺陷。
+        14、个别病历无出院小结，出院记录中治疗效果书写欠妥当。
+        15、错字别字较多。
+        16、其它科室收治的儿科患者应按儿科病历书写要求书写。
+        （二）门、急诊工作
+        一季度共对门急诊工作进行了质控，共抽查门诊病历87份，日誌39本及各种申请书、报告单568份进行质量检查。存在问题如下：
+        1、处方诊断书写不规范。
+        2、电子处方无医生签名。
+        3、诊断与开具的药物不符。
+        4、审核发药师及调配药师无签名。
+        5、个别申请单填写项目不全，报告书写欠规范。
+        6、多数门诊病历未书写就诊科室、病史记录有缺陷。
+        7、门诊日誌有空项，个别日誌记录无关内容。
+        （三）医技科室
+        第一季第共抽查西药处方883份，中药处方594张，合格率分别为96.5%、97.2%。均达到质量标准。同时每月对门诊西药、中药处方进行质量标准日督查，1——3月共调剂西药处方9408张，合格处方9108张，合格率96.8%，中药处方6760
+        张，合格处方6730张，合格率99.1%。
+        一季度医技科室督查结果如下：
+        C T室	放 射 科	B 超 室 	输 血 科
+        检查数	阳性率%	检查数	阳性率%	检查数	阳性率%	输血数	适应症%
+        1	1195	77.4	1426	39.1	1972	79.3	115	100
+        2	1071	79.9	1137	58.5	1416	72.3	95	100
+        3	1362	78.3	1802	57.9	2105	73.68	160	100
+        （四）科室相关质控工作检查反馈
+        第一季度按照质控工作计划，我科坚持每周、每月对科室质控工作进行督查检查，现把存在问题反馈如下：
+        1、无科质控方案或计划。
+        2、无科室“三基”培训记录及计划。
+        3、相关资料不全。
+        4、交接班记录个别科室存在空白交接，无交接医师签名，甚至无资质独立执业问题。
+        5、科室医疗安全会议未按时召开或流于形式。
+        6、核心制度落实较差（术前讨论、疑难病例讨论、死亡讨论。）
+        7、科室一级质控不到位。
+        三、整改意见
+        各科室要以“二甲” 复审为契机，认真对照评审标准，积极自查自纠，查漏补缺，做好科室医疗质量质控工作，落实好医核心制度，全面提升我院医疗质量，确保医疗安全，力争“二甲”复审成功。"%]
+    </p>
+    <iframe src=[%="../chat/demo"+list.id+".html"%] frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>
+</script>-->
+<!--编辑器-->
+<script>
+    var $edit=$("#edit");
+    var $box=$(".box");
+    var editID=parseInt((location.search).split("=")[1])-1;
+    var is_edit=location.search.indexOf("edit");
+    if(is_edit>=0){
+        $edit.show();
+    }else{
+        $edit.hide();
+    }
+    $.ajax({
+        url:"../ajax/tree4.json",
+        success:function (data) {
+//            $box.html(baidu.template("tem",data[editID]));
+        }
+    });
+    /*文档树*/
+    var $menuTree=$("#menuTree"),
+     $theme=$("#theme"),
+     $editTools=$("#editTools");
+     $menuTree.tree({
+         url:"../ajax/tree2.json",
+         method:"get",
+         animate:true,
+         dnd:true,
+         onClick:function (node) {
+             if(node.children) return;
+             $editTools.hide();
+             $box.show();
+             $edit.html("编辑");
+             window.location.href=node.id;
+             var arr=[];
+             var children=$(node.target).children(".tree-title");
+             while (true){
+                 var str="<li>"+children.html()+"</li>";
+                 arr.push(str);
+                 children=children.parent().parent().parent().siblings("div").children(".tree-title");
+                if (children.html()=="质控报告"){
+                    break;
+                }
+             }
+             $theme.html(arr.reverse());
+            $.ajax({
+                url:"../ajax/tree4.json",
+                id:node.id,
+                success:function (data) {
+                    var index=parseInt(this.id)-1;
+//                   $(".box").html(baidu.template("tem",data[index]));
+                }
+            })
+         },
+         onDragEnter:function (e,source) {
+                var node =$menuTree.tree("getNode",e);
+         if(node.children.length==0){
+                return false;
+         }
+     }
+     });
+     /*编辑器*/
+    $edit.click(function () {
+         var self=$(this);
+         if($(this)[0].innerHTML=="取消"){
+             $editTools.hide();
+             $box.show();
+             self[0].innerHTML="编辑";
+         }else{
+         $editTools[0].src="complete.html";
+         $editTools.load(function () {
+             $(this).show();
+             $box.hide();
+             self[0].innerHTML="取消";
+         })
+         }
+     })
+</script>
+<div class="clr"></div>
+</body>
+</html>
