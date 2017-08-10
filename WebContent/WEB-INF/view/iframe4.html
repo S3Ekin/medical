@@ -23,14 +23,14 @@
         /*.reportTitle>ul{float:left;padding-left: 10px; margin-top: 10px;}*/
         /*.reportTitle ul li {float:left;height:20px;padding:0 5px;border-right:3px solid #0090E5 ;line-height: 20px;font-size: 18px}*/
         /*.reportTitle ul li:last-child {border-right:none}*/
-        .reportTitle>div{float:left;padding-top:5px;color:#112fd7;margin-left: 30px;font-size: 16px}
+        .reportTitle>div{float:left;padding-top:5px;color:#112fd7;margin-left: 30px}
         .reportTitle div:last-child{float:right;padding-top:5px;margin-right: 30px}
         div.box{padding:10px 30px ;position: relative;min-width: 600px;height:90%;overflow-y:scroll;overflow-x: hidden}
         .editBtn>div{float:left}
         .des th{text-align: center;width: 90px; height:30px; }
-        .box ul{line-height: 30px;}
-        .box ul a{font-size:18px }
-        .box >ul >li>p{padding:10px 0 }
+         #content{line-height: 30px;}
+        #content a{font-size:18px }
+        #content >li>p{padding:10px 0 }
         table{margin:15px auto;border: 1px solid black ;border-collapse:collapse;width: 100%;min-width:600px }
         tr{border: 1px solid black ;height: 40px }
         tr:hover{background:yellowgreen;}
@@ -50,36 +50,36 @@
     </div>
     <div class="layout-right">
         <div class="reportTitle clearfix" >
-            <div id="theme">
+            <div id="theme" style="font-size: 16px;  padding-top: 13px;">
                 <span>XX人民医院</span>
-                <span class="title">2017年11月医疗质量管理报告</span>
+                <span class="title">模版报告2</span>
             </div>
             <div>
-                <!--<button type="submit" class="btn btn-primary" style="font-size: 18px" id="edit">编 辑</button>-->
-                <span>医教部质控科制</span>
+                <button type="submit" class="btn btn-primary" style="font-size: 18px" id="edit">编 辑</button>
+                <!--<span>医教部质控科制</span>-->
             </div>
         </div>
         <iframe id="editTools" frameborder="0" style="padding:0 20px;width:100%;height:90%;display:none"></iframe>
         <div class="box">
              <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 25px;font-weight: bolder">xxx人民医院
              </p>
-             <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 25px;font-weight: bolder">2017年11月医疗质量管理报告</p>
-            <p class="indent" style="font-size:18px;line-height: 30px">医教部质控科从病历管理、院感管理、药事管理、输血管理、统计 指标、各类清单抽查情况、医疗安全、流动红旗评比情况、满意度调查 等方面对我院2017年11月份的医疗质量情况进行了汇总，现汇报如下:</p>
-             <ul  style=" font-size: 15px; line-height: 30px;">
+             <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 25px;font-weight: bolder">____年____月医疗质量管理报告</p>
+            <p class="indent" style="font-size:18px">医教部质控科从病历管理、院感管理、药事管理、输血管理、统计 指标、各类清单抽查情况、医疗安全、流动红旗评比情况、满意度调查 等方面对我院____年____月份的医疗质量情况进行了汇总，现汇报如下:</p>
+             <ul  style=" font-size: 15px; line-height: 30px;list-style: none" id="content">
                  <li>
-                     <p><strong><a name="C1"> 一、病历管理 </a></strong></p>
+                     <p><a name="C1"><strong> 一、病历管理 </strong></a></p>
                      <div>
                          <ul>
                              <li>
                                  <p><a name="C1.1">(一)&nbsp;&nbsp;&nbsp;运行病历检查情况</a></p>
                                  <div class="run-patient">
-                                     <p>2017年11月10日14:00--17: 00，非术科组组长带领各组成员随机抽查我院临床 科室运行病历300份。</p>
+                                     <p>2017年11月10日14:00--17: 00，非术科组组长带领各组成员随机抽查我院临床 科室运行病历____份。</p>
                                      <p> 评分标准:运行病历总分85分，甲级病历>77分，乙级病历65分—75分，丙级病 历 &le; 65分。 </p>
-                                     <p> 检查结果:经评定，合格病历280份，合格率93%。 </p><span>消化科:</span>
-                                     <p>098床&nbsp;&nbsp;&nbsp;病历书写者:王&nbsp;&nbsp;&nbsp;住院医师黄&nbsp;&nbsp;&nbsp;住院号:99791&nbsp;&nbsp;&nbsp;得分:89分 </p><span>病程记录:</span>
+                                     <p> 检查结果:经评定，合格病历____份，合格率____%。(以下列举部分科室做样板)。 </p><span>消化科:</span>
+                                     <p>___床&nbsp;&nbsp;&nbsp;病历书写者:____&nbsp;&nbsp;&nbsp;住院医师____&nbsp;&nbsp;&nbsp;住院号:____&nbsp;&nbsp;&nbsp;得分:____分 </p><span>病程记录:</span>
                                      <p>1、病历污损;2、抢救记录无参与人员职称;3,医嘱时间涂改1处;4、无主治医师以上人员组织抢救;5、抗生素使用过于高档(胃肠炎使用9天头袍三代抗生素); 6、大便常规示真菌感染后仍用头袍三代。 </p>
                                      <span>呼吸内科:</span>
-                                     <p>097床&nbsp;&nbsp;&nbsp;病历书写者:王&nbsp;&nbsp;&nbsp;住院医师：胡&nbsp;&nbsp;&nbsp;住院号:13991&nbsp;&nbsp;&nbsp;得分:90分 </p>
+                                     <p>____床&nbsp;&nbsp;&nbsp;病历书写者:____&nbsp;&nbsp;&nbsp;住院医师____&nbsp;&nbsp;&nbsp;住院号:____&nbsp;&nbsp;&nbsp;得分:____分 </p>
                                      <span>入院记录:</span>
                                      <p> 1、现病史咳嗽情况描述欠缺;&nbsp;&nbsp;2、心脏体查漏项。</p>
                                      <span>病程记录:</span>
@@ -280,7 +280,7 @@
                                      <li>
                                          <p><b>3、病案管理</b> </p>
                                          <div>
-                                             <p class="indent"> 11月病案入库500份;借出60份;返还50份;复印病历100份;截止11月30日总院库存病案480份。</p>
+                                             <p class="indent"> 11月病案入库____份;借出____份;返还____份;复印病历____份;截止11月30日总院库存病案____份。</p>
                                          </div>
                                      </li>
                                  </ul>
@@ -298,7 +298,7 @@
                                      <li>
                                          <p><b>一、传染病管理</b> </p>
                                          <div>
-                                             <p>本月共报告传染病40例，漏报2例，漏报率为5%。</p>
+                                             <p>本月共报告传染病____例，漏报____例，漏报率为____。</p>
                                              <p>各科室漏报情况: </p>
                                              <table>
                                                  <thead>
@@ -342,7 +342,7 @@
                                  <p><a name="C2.2">(二)&nbsp;&nbsp;&nbsp;医院感染管理 </a></p>
                                  <p><b>一、感染管理</b> </p>
                                  <div>
-                                     <p>本月共报告感染3例，漏报0例，漏报率为0。</p>
+                                     <p>本月共报告感染____例，漏报____例，漏报率为____。</p>
                                      <p>各科室漏报情况: </p>
                                      <table>
                                          <thead>
@@ -375,7 +375,7 @@
                              </li>
                              <li>
                                  <p><a name="C2.3">(三)&nbsp;&nbsp;&nbsp;&nbsp;药品不良反应报告情况 </a></p>
-                                 <div><p>本月共报告药品不良反应18例，无漏报。</p></div>
+                                 <div><p>本月共报告药品不良反应____例，无漏报。</p></div>
                              </li>
                          </ul>
                      </div>
@@ -624,7 +624,7 @@
                              <li>
                                  <p><a name="C4.2">(二)&nbsp;&nbsp;&nbsp;&nbsp;血液科工作检查 </a></p>
                                  <div style="padding-left: 3rem ">
-                                     <p>1、输血申请单:共100份，合格98份， </p>
+                                     <p>1、输血申请单:共____份，合格___份， </p>
                                      <p>2、所有输血均签署《输血治疗同意书》</p>
                                      <p>3、输血患者均执行输血前检查。 </p>
                                      <p>4、输血适应症合格率100%。 </p>
@@ -1001,13 +1001,13 @@
                              <li>
                                  <p><a  name="C5.4">(四)&nbsp;&nbsp;&nbsp;&nbsp;各类业务指标 </a></p>
                                  <div style="padding-left: 3rem">
-                                     <p>1、本月入院病人800(人次)，比上月上升10%，</p>
-                                     <p>2、出院病人600(人次)，比上月上升5%。</p>
-                                     <p>3、本月门诊总量900(人次)，比上月上升9%。</p>
-                                     <p>4、本月急诊总量200(人次)，比上月上升1%</p>
-                                     <p>5、本月彩超人次300，比上月上升2%</p>
-                                     <p>6、本月手术130(台)，比上月上升4%。</p>
-                                     <p>7、本月血透30(人次)，比上月增长2%。 </p>
+                                     <p>1、本月入院病人____(人次)，比上月上升_____%，</p>
+                                     <p>2、出院病人____(人次)，比上月上升____%。</p>
+                                     <p>3、本月门诊总量____(人次)，比上月上升____%。</p>
+                                     <p>4、本月急诊总量____(人次)，比上月上升____%</p>
+                                     <p>5、本月彩超人次____，比上月上升____%</p>
+                                     <p>6、本月手术____(台)，比上月上升_____%。</p>
+                                     <p>7、本月血透____(人次)，比上月增长___%。 </p>
                                  </div>
                              </li>
                          </ul>
@@ -1017,11 +1017,11 @@
                      <p><a  name="C6"><strong>六、各种申请单抽检情况</strong></a></p>
                      <div>
                          <div style="padding-left: 3rem">
-                             <p>1、病理申请单:抽查100份，合格98份，合格率98%。 </p>
-                             <p>2、彩超申请单:抽查50份，合格48份，合格率96%。 </p>
-                             <p>3、处方申请单:抽查200份，合格180份，合格率90%。 </p>
-                             <p>4、手术申请单:抽查50份，合格50份，合格率100%。 </p>
-                             <p>5、输血申请单:抽查300份，合格280份，合格率93%。 </p></div>
+                             <p>1、病理申请单:抽查____份，合格___份，合格率____%。 </p>
+                             <p>2、彩超申请单:抽查____份，合格___份，合格率____%。 </p>
+                             <p>3、处方申请单:抽查____份，合格___份，合格率____%。 </p>
+                             <p>4、手术申请单:抽查____份，合格___份，合格率____%。 </p>
+                             <p>5、输血申请单:抽查____份，合格___份，合格率____%。 </p></div>
                          <div>
                              <p>2017年10月与2017年11月各种申请单抽检情况比较图: </p>
                              <iframe src="../chat/demo1.html" frameborder="0" style="margin:10px 7.5%;width:85%;height:300px" ></iframe>
@@ -1073,7 +1073,7 @@
                                  </tr>
                                  <tr>
                                      <td>备注</td>
-                                     <td colspan="10">本月流动红旗推荐:外二科</td>
+                                     <td colspan="10">本月流动红旗推荐:_____科</td>
                                  </tr>
                              </tbody>
                          </table>
@@ -1083,7 +1083,7 @@
                      <p><a  name="C9"><strong>九、满意度调查</strong> </a></p>
                      <div>
                          <ul>
-                             <li><p><a  name="C9.1">(一)&nbsp;&nbsp;&nbsp;住院患者对医院满意度94%。 </a></p></li>
+                             <li><p><a  name="C9.1">(一)&nbsp;&nbsp;&nbsp;住院患者对医院满意度____%。 </a></p></li>
                              <li>
                                  <p><a  name="C9.2">(二)&nbsp;&nbsp;&nbsp;2012年11月份对各个辅助科室考核情况 </a></p>
                                     <table>
@@ -1349,7 +1349,7 @@
 //             if(node.children) return;
              $editTools.hide();
              $box.show();
-//             $(".title").html(node.text);
+             $(".title").html(node.text);
 //             $edit.html("编辑");
              window.location.href=node.id;
 //             var arr=[];

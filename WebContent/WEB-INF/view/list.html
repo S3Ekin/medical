@@ -240,7 +240,7 @@
         var id=this.getAttribute("data-echo");
 	    switch (this.innerText){
 			case "浏览":
-			    window.parent.frames[0].location.href="iframe1.html?id="+id;
+			    window.parent.frames[0].location.href="iframe"+id+".html";
 			    break;
             case "删除":
                 var self=$(this);
@@ -252,7 +252,7 @@
             case "导出":
                 break;
             case "编辑":
-                window.parent.frames[0].location.href="iframe2.html?edit&id="+id;
+                window.parent.frames[0].location.href="iframe"+id+".html";
                 break;
             case "另存":
                 break;

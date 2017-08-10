@@ -4,10 +4,16 @@ iframe{ width:80% ;min-width:550px;margin: auto}
     border: 1px solid red;
 }*/
 .temp-variate{color:red;font-weight: bold}
-ul{list-style: none;padding: 0}
-
+#content{font-size:16px }
+ul{list-style: none !important;line-height:30px}
+#content strong{font-size:18px }
+#content >li>p{padding:10px 0 }
 table{margin:15px auto;border: 1px solid black ;border-collapse:collapse;width: 100%;min-width:600px }
-tr{border: 1px solid black }
-tr:hover{background:yellowgreen }
+tr{border: 1px solid black ;height: 40px }
+tr:hover{background:yellowgreen;}
 td{padding:5px;border: 1px solid black;text-align: center }
-.indent{text-indent:3rem }
+th{padding:5px;border: 1px solid black;text-align: center }
+caption{padding:5px;border: 1px solid black; border-bottom: none; color: #777;;}
+.indent{text-indent: 3rem}
+.temp-variate{color:red;font-weight: bold}
+.run-patient>p{text-indent: 3rem}

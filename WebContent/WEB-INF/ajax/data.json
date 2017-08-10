@@ -27,7 +27,6 @@
   "rotate":[
     {"id":1,"text":"年份","value":"year"},
     {"id":2,"text":"季度","value":"season"},
-    {"id":3,"text":"月份","value":"month","selected":true},
-    {"id":4,"text":"日期","value":"data"}
+    {"id":3,"text":"月份","value":"month","selected":true}
   ]
 }
