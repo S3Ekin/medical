@@ -287,7 +287,6 @@
 <script src="../../resources/echarts/echarts.js"></script>
 <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script src="../../resources/jQuery/easyui-lang-zh_CN.js"></script>
-<script src="../../resources/websql/websql.js"></script>
 <script>
     var $radio = $("input[name=dataType]"),
         $sourceSlect=$(".sourceBtn span"),
@@ -657,17 +656,19 @@
 
         $(".pre").show();
     });
-    $("#save").click(function () {
-        webSql.searchSinge("tables",tableArrs.text).then(function (data) {
-			if(data.data.length==0){
-                webSql.add(tableArrs,"tables");
-			}else{
-			    alert("该表名已存在了，换一个！")
-			}
-        });
+//    $("#save").click(function () {
+//        var index=window.localStorage["table"].indexOf(tableArrs.text);
+//        if(index.)
 //
-
-    });
+////        webSql.searchSinge("tables",tableArrs.text).then(function (data) {
+////			if(data.data.length==0){
+////                webSql.add(tableArrs,"tables");
+////			}else{
+////			    alert("该表名已存在了，换一个！")
+////			}
+////        });
+//
+//    });
 </script>
 <div class="clr"></div>
 </body>

@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/icon.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/image/style.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css">
-    <script type="text/javascript" src="../../resources/websql/websql.js"></script>
 </head>
 <body >
 <ul id="header" class="nosel" style="width:100%;background:#24BAFF url('../../resources/image/LOGO_RT.png') no-repeat">
@@ -151,15 +150,7 @@
 <script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../resources/js/common.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
-
 <script type="text/javascript">
-    /*建一个本地数据库
-    * createTable:建表
-     * @table 放表格
-     * @chat 放图形
-    * */
-    webSql.createTable("tables");
-    webSql.createTable("chat");
     window.onload=function () {
         window.frames[0].location.href ="list.html";
     };
