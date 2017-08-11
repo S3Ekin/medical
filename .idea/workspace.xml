@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4f60df0-64b0-4be8-bb87-72e70867aa4e" name="Default" comment="1.7">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/chat/科室督查.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,111 +29,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/index.html">
+      <file leaf-file-name="table_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="91" selection-start-line="10" selection-start-column="91" selection-end-line="10" selection-end-column="91" />
+            <state relative-caret-position="-2631">
+              <caret line="347" column="43" selection-start-line="347" selection-start-column="43" selection-end-line="347" selection-end-column="43" />
               <folding>
-                <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#3;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#li#3;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#td#1;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#9715#9775#0" expanded="false" />
-                <element signature="e#9876#9916#0" expanded="false" />
-                <element signature="e#9963#10788#0" expanded="false" />
-                <element signature="e#10863#11091#0" expanded="false" />
-                <element signature="e#11136#11551#0" expanded="false" />
-                <element signature="e#11587#11894#0" expanded="false" />
+                <marker date="1502412977997" expanded="true" signature="10764:10770" ph=" " />
+                <marker date="1502412977997" expanded="true" signature="11249:11255" ph=" " />
+                <marker date="1502412977997" expanded="true" signature="11941:11947" ph=" " />
+                <marker date="1502412977997" expanded="true" signature="13125:13131" ph=" " />
+                <marker date="1502412977997" expanded="true" signature="13698:13704" ph=" " />
+                <marker date="1502412977997" expanded="true" signature="18234:18245" ph="..." />
+                <marker date="1502412977997" expanded="true" signature="18277:18308" ph="..." />
+                <marker date="1502412977997" expanded="true" signature="18360:18371" ph="..." />
+                <marker date="1502412977997" expanded="true" signature="19257:19275" ph="..." />
+                <marker date="1502412977997" expanded="true" signature="19277:19283" ph=" " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="iframe3.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/iframe3.html">
+      <file leaf-file-name="demo6.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/chat/demo6.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4080">
-              <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
+            <state relative-caret-position="251">
+              <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="科室督查.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/chat/科室督查.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
               <folding>
-                <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#li#0;n#ul#0;n#li#2;n#ul#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#li#0;n#ul#0;n#li#0;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#2;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#3;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#4;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#5;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#6;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#7;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#8;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#9;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#1;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#2;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#3;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#4;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#5;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#6;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#7;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tbody#1;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#1;n#tbody#1;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#2;n#tbody#1;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#3;n#tbody#1;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#4;n#tbody#1;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#5;n#tbody#1;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#6;n#tbody#1;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tbody#2;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tbody#3;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#li#1;n#ul#0;n#div#0;n#li#3;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#li#0;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#thead#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#1;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#2;n#tbody#0;n#table#0;n#li#0;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#thead#0;n#table#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#thead#0;n#table#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#thead#0;n#table#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#thead#0;n#table#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#li#1;n#ul#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#li#3;n#ul#0;n#div#0;n#li#4;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#table#0;n#div#0;n#li#7;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#li#1;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#tbody#0;n#table#0;n#li#1;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#2;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#3;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#4;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#5;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#6;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#7;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#8;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#9;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#tr#10;n#tbody#0;n#table#0;n#div#0;n#li#2;n#ul#0;n#div#0;n#li#8;n#ul#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#72533#74876#0" expanded="false" />
-                <element signature="e#75058#75079#0" expanded="false" />
-                <element signature="e#75582#76079#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#576#664#0" expanded="false" />
+                <element signature="e#716#768#0" expanded="false" />
+                <element signature="e#784#810#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -205,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/express.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/colorbutton.js" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/dialog.js" />
         <option value="$PROJECT_DIR$/.gitosc/ISSUE_TEMPLATE.zh-CN.md" />
@@ -217,7 +155,6 @@
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeButton.js" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/index-1.html" />
         <option value="$PROJECT_DIR$/全屏.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo6.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/a_type.json" />
         <option value="$PROJECT_DIR$/WebContent/resources/websql/websql.js" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree2.json" />
@@ -237,7 +174,6 @@
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/data.json" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/list.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree5.json" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/ajax/show_type.json" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/chat_edit.css" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html" />
@@ -254,8 +190,11 @@
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/iframe4.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/complete.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo6.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/chat/科室督查.html" />
       </list>
     </option>
   </component>
@@ -304,6 +243,70 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebContent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebContent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medical" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebContent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -322,11 +325,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\wamp\www\medical\WebContent\WEB-INF\chat" />
       <recent name="D:\wamp\www\project\WebContent\WEB-INF\view" />
       <recent name="D:\wamp\www\project\WebContent\WEB-INF\ajax" />
       <recent name="D:\wamp\www\project\WebContent\resources\websql" />
       <recent name="D:\wamp\www\project" />
-      <recent name="D:\wamp\www\project\WebContent\WEB-INF\charts_edit" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -450,7 +453,7 @@
       <workItem from="1502415107181" duration="348000" />
       <workItem from="1502415530605" duration="99000" />
       <workItem from="1502415663513" duration="116000" />
-      <workItem from="1502415799725" duration="58000" />
+      <workItem from="1502415799725" duration="10960000" />
     </task>
     <task id="LOCAL-00001" summary="ueditor 弹出框消失问题">
       <created>1501238799302</created>
@@ -498,28 +501,28 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353375000" />
+    <option name="totallyTimeSpent" value="364277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1554" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13390501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23416887" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32804233" sideWeight="0.5026385" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24960998" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37830687" sideWeight="0.49736148" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4272487" sideWeight="0.49736148" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32872504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -588,14 +591,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebContent/resources/lib/my97/skin/default/datepicker.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/course/secretry/client/onClassServer/tools/DBManager.js" />
     <entry file="file://E:/course/secretry/server/secretary/www/js/map.js" />
     <entry file="file://E:/course/secretry/server/secretary/www/js/HTTPServer.js" />
     <entry file="file://E:/course/secretry/server/secretary/www/js/services.js" />
@@ -604,13 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/ueditor.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="345" column="0" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -688,13 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -831,24 +812,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="633" column="405" selection-start-line="633" selection-start-column="405" selection-end-line="633" selection-end-column="405" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ajax/show_type.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="2" column="311" selection-start-line="2" selection-start-column="309" selection-end-line="2" selection-end-column="311" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/iframe2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="55" column="108" selection-start-line="55" selection-start-column="108" selection-end-line="55" selection-end-column="108" />
         </state>
       </provider>
     </entry>
@@ -887,13 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="23" column="137" selection-start-line="23" selection-start-column="137" selection-end-line="23" selection-end-column="137" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/complete.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="742">
@@ -903,7 +863,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/iframe3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4080">
+        <state relative-caret-position="-1904">
           <caret line="60" column="14" selection-start-line="60" selection-start-column="14" selection-end-line="60" selection-end-column="14" />
           <folding>
             <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -985,10 +945,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/iframe2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-935">
+          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/ueditor.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2089">
+          <caret line="81" column="26" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <folding>
+            <marker date="1502438668480" expanded="true" signature="954:994" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2026">
+          <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+          <folding>
+            <marker date="1502439373730" expanded="true" signature="4104:4129" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="91" selection-start-line="10" selection-start-column="91" selection-end-line="10" selection-end-column="91" />
+        <state relative-caret-position="680">
+          <caret line="159" column="31" selection-start-line="159" selection-start-column="31" selection-end-line="159" selection-end-column="31" />
           <folding>
             <element signature="n#ul#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#span#0;n#li#2;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1003,6 +999,46 @@
             <element signature="e#10863#11091#0" expanded="false" />
             <element signature="e#11136#11551#0" expanded="false" />
             <element signature="e#11587#11894#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2631">
+          <caret line="347" column="43" selection-start-line="347" selection-start-column="43" selection-end-line="347" selection-end-column="43" />
+          <folding>
+            <marker date="1502412977997" expanded="true" signature="10764:10770" ph=" " />
+            <marker date="1502412977997" expanded="true" signature="11249:11255" ph=" " />
+            <marker date="1502412977997" expanded="true" signature="11941:11947" ph=" " />
+            <marker date="1502412977997" expanded="true" signature="13125:13131" ph=" " />
+            <marker date="1502412977997" expanded="true" signature="13698:13704" ph=" " />
+            <marker date="1502412977997" expanded="true" signature="18234:18245" ph="..." />
+            <marker date="1502412977997" expanded="true" signature="18277:18308" ph="..." />
+            <marker date="1502412977997" expanded="true" signature="18360:18371" ph="..." />
+            <marker date="1502412977997" expanded="true" signature="19257:19275" ph="..." />
+            <marker date="1502412977997" expanded="true" signature="19277:19283" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/chat/demo6.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/chat/科室督查.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#576#664#0" expanded="false" />
+            <element signature="e#716#768#0" expanded="false" />
+            <element signature="e#784#810#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -1,42 +1,48 @@
 UE.registerUI('dialog',function(editor,uiName){
 
     //创建dialog
+
+
+
     var dialog = new UE.ui.Dialog({
         //指定弹出层中页面的路径，这里只能支持页面,因为跟addCustomizeDialog.js相同目录，所以无需加路径
         // iframeUrl:'customizeDialogPage.html',
-        iframeUrl:'chat.html',
+        iframeUrl: 'chat.html',
         //需要指定当前的编辑器实例
-        editor:editor,
+        editor: editor,
         //指定dialog的名字
-        name:uiName,
+        name: uiName,
         //dialog的标题
-        title:"请选择",
+        title: "请选择",
         //指定dialog的外围样式
-        cssRules:"width:700px;height:350px",
-        buttons:[
+        cssRules: "width:700px;height:350px",
+        // initialDialogHeight:"100%",
+        // initialDialogWidth:"100%",
+        buttons: [
             {
-                className:'edui-okbutton',
-                label:'确定',
-                onclick:function () {
-                    var sonWindow=document.getElementById("edui168_iframe"),str;
-                    var is_chat=sonWindow.contentWindow._chart;
-                    if(is_chat==1){
-                        str="<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px auto;width:85%;height:350px;'></iframe>"
-                    }else{
-                        str=sonWindow.contentDocument.getElementsByClassName("layout-right")[0].innerHTML;
+                className: 'edui-okbutton',
+                label: '确定',
+                onclick: function () {
+                    var sonWindow = document.getElementById("edui168_iframe"), str;
+                    var is_chat = sonWindow.contentWindow._chart;
+                    if (is_chat == 1) {
+                        str = "<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px auto;width:85%;height:350px;'></iframe>"
+                    } else {
+                        str = sonWindow.contentDocument.getElementsByClassName("layout-right")[0].innerHTML;
                     }
-                    editor.execCommand("insertHtml",str);
+                    editor.execCommand("insertHtml", str);
                     dialog.close(true);
                 }
             },
             {
-                className:'edui-cancelbutton',
-                label:'取消',
-                onclick:function () {
+                className: 'edui-cancelbutton',
+                label: '取消',
+                onclick: function () {
                     dialog.close(false);
                 }
             }
-        ]});
+        ]
+    });
     //参考addCustomizeButton.js
     var btn = new UE.ui.Button({
         name:'dialogbutton' + uiName,
