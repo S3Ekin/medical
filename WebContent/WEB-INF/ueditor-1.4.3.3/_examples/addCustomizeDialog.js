@@ -19,10 +19,9 @@ UE.registerUI('dialog',function(editor,uiName){
                 label:'确定',
                 onclick:function () {
                     var sonWindow=document.getElementById("edui168_iframe"),str;
-                    var is_chat=sonWindow.contentWindow.is_chat;
-                    alert(is_chat);
-                    if(is_chat>=0){
-                        str="<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px 7.5%;width:85%;height:350px;border:1px solid red'></iframe>"
+                    var is_chat=sonWindow.contentWindow._chart;
+                    if(is_chat==1){
+                        str="<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px auto;width:85%;height:350px;'></iframe>"
                     }else{
                         str=sonWindow.contentDocument.getElementsByClassName("layout-right")[0].innerHTML;
                     }

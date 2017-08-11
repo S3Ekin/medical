@@ -23,3 +23,5 @@ span.tree-title{font-size: 14px}
 div.topic { text-align: right; font-size: 16px; font-weight: 700; }
 .add-field{color:#2081BB;}
 #sourceSelected{display: none}
+.combo-title{padding-right: 5px}
+.combo-data>div{display: inline-block}

@@ -26,7 +26,21 @@ $.ajax({
             width:80,
             height:30,
             panelWidth:80,
-            panelHeight:100,
+            panelHeight:'auto',
+            formatter:function (row) {
+                return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+            }
+        });
+        /*年期框加载*/
+        $(".data-combo-year").combobox({
+            valueField:"id",
+            textField:"text",
+            data:dataArray.year,
+            editable:true,
+            width:80,
+            height:30,
+            panelWidth:80,
+            panelHeight:'auto',
             formatter:function (row) {
                 return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
             }
@@ -40,28 +54,20 @@ $.ajax({
             width:70,
             height:30,
             panelWidth:70,
-            panelHeight:100,
-            onLoadSuccess:function(){
-                var loadData=$(this).combobox("getData");
-                $(this).combobox("setValue",loadData[2].text);
-            },
+            panelHeight:'auto',
+            value:'月份',
+//                onLoadSuccess:function(){
+//                    var loadData=$(this).combobox("getData");
+//                    $(this).combobox("setValue",loadData[2].text);
+//                },
             formatter:function (row) {
                 return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
             },
             onSelect:function (recoder) {
                 var item=recoder.value;
-                if(recoder.id==4){
+                if(recoder.id==1){
                     $dataCombo.parent().hide();
-                    $calendar.parent().show();
-                    $calendar.datebox({
-                        width:180,
-                        height:30,
-                        panelWidth:180,
-                        panelHeight:200,
-                        value:"Today"
-                    });
                 }else{
-                    $calendar.parent().hide();
                     $dataCombo.parent().show();
                     $dataCombo.combobox("loadData",dataArray[item]);
                 }
@@ -70,21 +76,23 @@ $.ajax({
     }
 });
 /*机构树加载*/
-$org.combotree({
+$org.combobox({
     url:"../ajax/org.json",
     method:"get",
+    valueField:"id",
+    textField:"text",
     editable:true,
-    width:180,
+    width:120,
     height:30,
-    panelWidth:180,
+    panelWidth:120,
     panelHeight:300,
-    value:"信息科"
+    value:"全院"
 });
 /*维度框加载*/
 $(".wd-combo").combobox({
     valueField:"id",
     textField:"text",
-    url:"../ajax/row_wd.json",
+    url:"../ajax/field_wd.json",
     method:"get",
     editable:true,
     width:180,
@@ -103,7 +111,7 @@ $(".wd-combo").combobox({
 $(".field-combo").combobox({
     valueField:"id",
     textField:"text",
-    url:"../ajax/row_wd.json",
+    url:"../ajax/field_wd.json",
     method:"get",
     editable:true,
     width:180,
@@ -127,19 +135,19 @@ $("#field-btn").click(function () {
     $(".new-field").combobox({
         valueField:"id",
         textField:"text",
-        url:"../ajax/row_wd.json",
+        url:"../ajax/field_wd.json",
         method:"get",
         editable:true,
         width:180,
         height:30,
         panelWidth:180,
-        panelHeight:100,
+        panelHeight:'auto',
         onLoadSuccess:function(data){
             var loadData=$(this).combobox("getData");
             $(this).combobox("setValue",loadData[3].text);
         },
         formatter:function (row) {
-            return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+            return "<span class='glyphicon glyphicon-check' style='line-height: 18px'>&nbsp;"+row.text+"</span>"
         }
     });
 });
@@ -184,7 +192,7 @@ $sourceSelected.window({
     modal : true,
     shadow : true,
     closed : true,
-    width : 300,
+    width : 360,
     height : 400,
     padding : 10,
     minimizable : false,
@@ -197,7 +205,7 @@ $sourceSelected.window({
     onOpen : function(){
         var urls,is_checked;
         if(is_zb){
-            urls="../ajax/SelectKpi.json";
+            urls="../ajax/a.json";
             is_checked=true;
         }else{
             urls="../ajax/upload.json";
@@ -232,42 +240,48 @@ $(".footer").on("click","button",function(){
                 if(nodes.length){
                     for (var i = 0,length=nodes.length; i <length; i++) {
                         var obj = nodes[i];
-                        if (obj.children.length!=0){
+                        if (obj.children){
                             continue;
                         }else{
-                            var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
-                            str ='<div class="row"><div class ="col-xs-2 zb-name topic">'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-4 no-padding" ><div id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div class ="col-xs-4 no-padding" ><div class="chat-type"></div></div></div >';
+                            var show_id;
+                            if(102020000<parseInt(obj.id)){
+                                show_id=1;
+                            }else if(102010000<parseInt(obj.id)){
+                                show_id=0;
+                            }
+                            str ='<div class="row"><div class = "col-xs-2 zb-name topic" >指标名称:</div><div class ="col-xs-10 no-padding"><div class ="col-xs-1 zb-name" style="width: auto">'+obj.text+'</div><div style="float: left;padding-right: 20px">'+show_combo[show_id].type+':'+'</div><div style="float: left"><div  id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div style="float:left;" ><div class="chat-type"></div></div></div></div >';
+
+                           /* str ='<div class="row"><div class ="col-xs-2 zb-name topic">'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-4 no-padding" ><div id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div class ="col-xs-4 no-padding" ><div class="chat-type"></div></div></div >';*/
                             $newAdd.append(str);
                             $("#show_type_"+i).combobox({
                                 valueField:"id",
                                 textField:"text",
-                                data:show_combo[_showId].combo,
+                                data:show_combo[show_id].combo,
                                 editable:true,
-                                width:180,
+                                width:150,
                                 height:30,
-                                panelWidth:180,
+                                panelWidth:150,
                                 panelHeight:100,
                                 onLoadSuccess:function(){
                                     var loadData=$(this).combobox("getData");
                                     $(this).combobox("setValue",loadData[1].text);
                                 },
                                 formatter:function (row) {
-                                    return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                                    return "<span class='glyphicon glyphicon-check' style='line-height: 18px'>&nbsp;" + row.text + "</span>"
                                 }
                             });
-                            console.log(show_combo[3].combo,"jkk");
                             $(".chat-type").combobox({
                                 valueField:"id",
                                 textField:"text",
-                                data:show_combo[3].combo,
+                                data:show_combo[2].combo,
                                 editable:true,
-                                width:140,
+                                width:80,
                                 height:30,
-                                panelWidth:140,
-                                panelHeight:100,
+                                panelWidth:80,
+                                panelHeight:'auto',
                                 onLoadSuccess:function(){
-                                    /* var loadData=$(this).combobox("getData");
-                                     $(this).combobox("setValue",loadData[1].text);*/
+                                     var loadData=$(this).combobox("getData");
+                                     $(this).combobox("setValue",loadData[1].text);
                                 },
                                 formatter:function (row) {
                                     return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
@@ -283,7 +297,7 @@ $(".footer").on("click","button",function(){
                     return ;
                 }
             }else{
-                if(!nodes||nodes.children.length){
+                if(!nodes||nodes.children){
                     alert("请选择文件！");
                     return ;
                 }else{
