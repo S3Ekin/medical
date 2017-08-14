@@ -1,9 +1,5 @@
 UE.registerUI('dialog',function(editor,uiName){
-
     //创建dialog
-
-
-
     var dialog = new UE.ui.Dialog({
         //指定弹出层中页面的路径，这里只能支持页面,因为跟addCustomizeDialog.js相同目录，所以无需加路径
         // iframeUrl:'customizeDialogPage.html',
@@ -23,12 +19,15 @@ UE.registerUI('dialog',function(editor,uiName){
                 className: 'edui-okbutton',
                 label: '确定',
                 onclick: function () {
-                    var sonWindow = document.getElementById("edui168_iframe"), str;
-                    var is_chat = sonWindow.contentWindow._chart;
+                    var iframe=document.getElementsByClassName("edui-for-dialog")[0];
+                    iframe=iframe.getElementsByTagName("iframe")[0];
+                    console.log(iframe);
+                    // var sonWindow = document.getElementById("edui168_iframe"), str;
+                    var is_chat = iframe.contentWindow._chart;
                     if (is_chat == 1) {
                         str = "<iframe frameborder='0' src='../chat/demo6.html' style='margin:10px auto;width:85%;height:350px;'></iframe>"
                     } else {
-                        str = sonWindow.contentDocument.getElementsByClassName("layout-right")[0].innerHTML;
+                        str = iframe.contentDocument.getElementsByClassName("layout-right")[0].innerHTML;
                     }
                     editor.execCommand("insertHtml", str);
                     dialog.close(true);
@@ -109,12 +108,14 @@ UE.registerUI('express',function(editor,uiName){
             var range = me.selection.getRange();
             express.render();
             express.open();
-            var iframe=document.getElementById("edui173_iframe");
+            var iframe=document.getElementsByClassName("edui-for-express")[0];
+            iframe=iframe.getElementsByTagName("iframe")[0];
+            console.log(iframe);
             iframe.onload=function () {
-                var express=iframe.contentDocument.getElementById("express");
+                var expressEdit=iframe.contentDocument.getElementById("express");
                 var val=range.endContainer.data.match(/^\[%(\w+)%]$/);
                 status=val?true:false;
-                express.value=val?val[1]:null;
+                expressEdit.value=val?val[1]:null;
             };
 
         }
