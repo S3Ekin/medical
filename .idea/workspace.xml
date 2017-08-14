@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76cdb6b3-5e97-42ae-b2a1-7d72a8c1f185" name="Default" comment="" />
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="76cdb6b3-5e97-42ae-b2a1-7d72a8c1f185" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+    </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +60,8 @@
       <file leaf-file-name="iframe4.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/iframe4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="1325" column="21" lean-forward="false" selection-start-line="1325" selection-start-column="21" selection-end-line="1327" selection-end-column="34" />
+            <state relative-caret-position="-660">
+              <caret line="1308" column="23" lean-forward="true" selection-start-line="1308" selection-start-column="23" selection-end-line="1308" selection-end-column="23" />
               <folding>
                 <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="e#72681#75024#0" expanded="false" />
@@ -115,35 +114,8 @@
       </file>
     </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>白</find>
-      <find>link</find>
-      <find>anchor</find>
-      <find>医疗质控工作小结</find>
-      <find>三、整改意见</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo6.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/chat/科室督查.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/editor_api.js" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/ueditor.config.js" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/adapter/editor.js" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/anchor.js" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/complete.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeButton.js" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/iframe4.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/iframe2.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/view/complete_1.html" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -157,44 +129,8 @@
     <option name="width" value="1320" />
     <option name="height" value="784" />
   </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="js.last.introduce.type" value="VAR" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -291,12 +227,12 @@
       <workItem from="1502591733289" duration="7336000" />
       <workItem from="1502620828349" duration="14874000" />
       <workItem from="1502670612565" duration="5686000" />
-      <workItem from="1502677785518" duration="1426000" />
+      <workItem from="1502677785518" duration="2309000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37719000" />
+    <option name="totallyTimeSpent" value="38602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
@@ -750,8 +686,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/view/iframe4.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="1325" column="21" lean-forward="false" selection-start-line="1325" selection-start-column="21" selection-end-line="1327" selection-end-column="34" />
+        <state relative-caret-position="-660">
+          <caret line="1308" column="23" lean-forward="true" selection-start-line="1308" selection-start-column="23" selection-end-line="1308" selection-end-column="23" />
           <folding>
             <element signature="n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#72681#75024#0" expanded="false" />
