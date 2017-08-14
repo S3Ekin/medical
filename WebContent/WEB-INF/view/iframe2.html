@@ -165,7 +165,7 @@
         </div>
         <iframe id="editTools" frameborder="0" style="padding:0 20px;width:100%;height:90%;display:none"></iframe>
         <div class="box">
-            <h3 style="padding: 0; margin: 10px 0 17px 0; text-align: center">____年第____季度医疗质控总结</h3>
+            <h3 style="padding: 0; margin: 10px 0 17px 0; text-align: center"><a name="C0">____年第____季度医疗质控总结</a></h3>
             <dl style=" font-size: 18px; line-height: 30px;">
                 <dt><strong><a name="C1">一、医疗质控信息</a></strong></dt>
                 <dd>
@@ -546,6 +546,7 @@
         animate: true,
         dnd: true,
         onLoadSuccess: function () {
+            window.localStorage.editState="false";
             var $title = $("span.tree-title");
             $title.prop("data-toggle", "tooltip");
             var olength = $title.length;
@@ -565,6 +566,7 @@
 //             if(node.children) return;
             if(window.localStorage.editState=="edit"){
                 var a=$("#editTools")[0].contentDocument.getElementById("ueditor_0");
+                console.log(a.contentWindow.location.href);
                 a.contentWindow.location.href="about:blank"+node.id;
             }
 
