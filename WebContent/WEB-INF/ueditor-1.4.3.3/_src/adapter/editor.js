@@ -306,7 +306,7 @@
                                 html += '<div style="height:5px;"></div>'
                             }
                             html += popup.formatHtml(
-                                '<nobr>' + editor.getLang("anthorMsg") + ': <a target="_blank" href="' + url + '" title="' + url + '" >' + txt + '</a>' +
+                                '<nobr>' + editor.getLang("anthorMsg") + ': <a  href="' + url + '" title="' + url + '" >' + txt + '</a>' +
                                     ' <span class="edui-clickable" onclick="$$._onEditButtonClick();">' + editor.getLang("modify") + '</span>' +
                                     ' <span class="edui-clickable" onclick="$$._onRemoveButtonClick(\'unlink\');"> ' + editor.getLang("clear") + '</span></nobr>');
                             popup.showAnchor(link);

@@ -34,7 +34,7 @@
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的重新定义
         , toolbars: [['source',
-             'undo', 'redo', '|',
+             'undo', 'redo', 'Anchor','link','|',
             'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat',  'autotypeset', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'cleardoc', '|','rowspacingtop', 'rowspacingbottom', 'lineheight', '|','paragraph', 'fontfamily', 'fontsize', '|','directionalityltr', 'directionalityrtl', 'indent', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|','simpleupload', 'insertimage', 'attachment',  'template', '|','horizontal', 'date', 'time', 'spechars',  '|', 'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts'
         ]]
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
@@ -352,7 +352,7 @@
 		,outputXssFilter: true
 		// xss过滤白名单 名单来源: https://raw.githubusercontent.com/leizongmin/js-xss/master/lib/default.js
 		,whitList: {
-			a:      ['target', 'href', 'title', 'class', 'style'],
+			a:      ['target', 'href', 'title', 'class', 'style','name'],
 			abbr:   ['title', 'class', 'style'],
 			address: ['class', 'style'],
 			area:   ['shape', 'coords', 'href', 'alt'],
@@ -389,7 +389,7 @@
 			header: [],
 			hr:     [],
 			i:      ['class', 'style'],
-			img:    ['src', 'alt', 'title', 'width', 'height', 'id', '_src', 'loadingclass', 'class', 'data-latex'],
+			img:    ['src', 'alt', 'title', 'width', 'height', 'id', '_src', 'loadingclass', 'class', 'data-latex','anchorname'],
 			ins:    ['datetime'],
 			li:     ['class', 'style'],
 			mark:   [],

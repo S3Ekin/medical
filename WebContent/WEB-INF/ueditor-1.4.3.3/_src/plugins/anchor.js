@@ -16,7 +16,7 @@ UE.plugin.register('anchor', function (){
             }
         },
        outputRule: function(root){
-           utils.each(root.getNodesByTagName('img'),function(a){
+       /*    utils.each(root.getNodesByTagName('img'),function(a){
                var val;
                if(val = a.getAttr('anchorname')){
                    a.tagName = 'a';
@@ -26,10 +26,10 @@ UE.plugin.register('anchor', function (){
                        'class' : ''
                    })
                }
-           })
+           })*/
        },
        inputRule:function(root){
-           utils.each(root.getNodesByTagName('a'),function(a){
+          /* utils.each(root.getNodesByTagName('a'),function(a){
                var val;
                if((val = a.getAttr('name')) && !a.getAttr('href')){
                    a.tagName = 'img';
@@ -40,7 +40,7 @@ UE.plugin.register('anchor', function (){
                    a.setAttr('name')
 
                }
-           })
+           })*/
 
        },
        commands:{

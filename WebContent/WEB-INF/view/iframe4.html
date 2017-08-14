@@ -1346,12 +1346,16 @@
              $title.tooltip();
          },
          onClick:function (node) {
+             if(localStorage.editState2=="edit"){
+                 var a=$("#editTools")[0].contentDocument.getElementById("ueditor_0");
+                 a.contentWindow.location.href="about:blank"+node.id;
+             }
 //             if(node.children) return;
-             $editTools.hide();
-             $box.show();
+//             $editTools.hide();
+//             $box.show();
              $(".title").html(node.text);
 //             $edit.html("编辑");
-             window.location.href=node.id;
+               window.location.href=node.id;
 //             var arr=[];
 //             var children=$(node.target).children(".tree-title");
 //             while (true){
@@ -1386,6 +1390,8 @@
              $editTools.hide();
              $box.show();
              self[0].innerHTML="编辑";
+             window.localStorage.editState2="false";
+
          }else{
          $editTools[0].src="complete.html";
          $editTools.load(function () {

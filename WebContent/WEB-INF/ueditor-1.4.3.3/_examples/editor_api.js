@@ -48,7 +48,7 @@
             'plugins/lineheight.js',
             'plugins/insertcode.js',
             'plugins/cleardoc.js',
-            // 'plugins/anchor.js',
+            'plugins/anchor.js',
             'plugins/wordcount.js',
             'plugins/pagebreak.js',
             // 'plugins/wordimage.js',
