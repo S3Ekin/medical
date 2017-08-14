@@ -18,6 +18,8 @@ UE.registerUI('button',function(editor,uiName){
         onclick:function () {
             //这里可以不用执行命令,做你自己的操作也可
            // editor.execCommand(uiName);
+            window.localStorage.editState="false";
+            window.localStorage.editState2="false";
             var box=parent.document.getElementsByClassName("box");
           parent.document.getElementById("editTools").style.display="none";
           box[0].style.display="block";
