@@ -73,7 +73,9 @@ UE.registerUI('express',function(editor,uiName){
                 onclick:function () {
                     var range = me.selection.getRange();
                     var val=range.endContainer.parentNode;
-                    var str=document.getElementById("edui173_iframe").contentDocument.getElementById("express").value;
+                    var iframe=document.getElementsByClassName("edui-for-express")[0];
+                    iframe=iframe.getElementsByTagName("iframe")[0];
+                    var str=iframe.contentDocument.getElementById("express").value;
                     str=str.split("+");
                     var items="";
                     for (var i = 0; i < str.length; i++) {
@@ -110,7 +112,6 @@ UE.registerUI('express',function(editor,uiName){
             express.open();
             var iframe=document.getElementsByClassName("edui-for-express")[0];
             iframe=iframe.getElementsByTagName("iframe")[0];
-            console.log(iframe);
             iframe.onload=function () {
                 var expressEdit=iframe.contentDocument.getElementById("express");
                 var val=range.endContainer.data.match(/^\[%(\w+)%]$/);
