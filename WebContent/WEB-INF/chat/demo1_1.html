@@ -13,12 +13,12 @@
 	<script type="text/javascript">
 		var pieoption = {
 			title : {
-			        text: '10月与11月各科平均病床利用率比较图',
+			        text: '10月与11月各科出院者平均住院日数',
 			        x:'center'
 			    },
 			    tooltip : {
 			        trigger: 'axis',
-			        formatter: "{b} <br/>{a0}:{c0}%<br/>{a1}:{c1}%"
+			        formatter: "{b} <br/>{a0}:{c0} 天<br/>{a1}:{c1} 天"
 			    },
 			    xAxis:[
 					{
@@ -33,26 +33,19 @@
 					{
 						type:"value",
 					 	axisLabel:{
-                           formatter:'{value}%'
-					    },
-                       /* splitLine: {
-							show: true,
-							lineStyle: {
-								color: "green"
-							},
-						},
-						splitNumber:10,*/
+                           formatter:'{value} 天'
+					    }
 					}
 				],
 			    legend:{
 					bottom:"bottom",
-					data:["10月","11月"],
+					data:["10月","11月"]
 				} ,
 			    series : [
 			        {
 			            name: '10月',
 			            type: 'bar',
-			            data:['90','87','93','91','88','94','86','86','89','95','91'] ,
+			            data:['9','7','6','9','8','14','6','10','8','9','11'] ,
 
 			            itemStyle: {
 			                emphasis: {
@@ -61,15 +54,14 @@
 			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
 			                },
 							normal:{
-			                	color:"#B8A200"
+			                	color:"#E8C700"
 							}
-			            },
+			            }
 			        }
 					,{
 			            name: '11月',
 			            type: 'bar',
-			            data:['93','92','93','97','88','87','80','86','89','90','76'] ,
-
+			            data:['13','12','13','9','8','16','10','16','9','10','16'] ,
 			            itemStyle: {
 			                emphasis: {
 			                    shadowBlur: 10,
@@ -77,28 +69,28 @@
 			                    shadowColor: 'rgba(0, 0, 0, 0.5)'
 			                },
 							normal:{
-			                	color:"#c6e107"
+			                	color:"#c6D907"
 							}
 			            },
 						markLine:{
 							data:[{
 								name:'三甲标准',
-								yAxis:90,
+								yAxis:14,
                                 label:{
 									normal:{
-										formatter:"90%"
+										formatter:"14天"
 									}
 								}
 							}],
 							lineStyle:{
 								normal:{
-									color:"red"
+									color:"green"
 								}
 							}
 						}
 			        }
 			    ]
-			}
+			};
 		var myChart = echarts.init($('#p1_div_chart').get(0));
 		myChart.setOption(pieoption);
 		window.onresize = myChart.resize;//窗口自适应
