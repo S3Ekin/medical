@@ -4,228 +4,254 @@
     <title>表格创建编辑</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
-	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
-	<style>
-		#table1 tr th{padding: 8px 5px;text-align:center;}
-		#table1 tr td{padding: 8px 5px;text-align:center;}
-		.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
-		form{width:100%;}
-		.bv-form .help-block{margin-bottom:0}
-		.bv-form .tooltip-inner{text-align:left}
-		.nav-tabs li.bv-tab-success>a{color:#3c763d}
-		.nav-tabs li.bv-tab-error>a{color:#a94442}
-		div.row { height:40px;line-height: 40px}
-		div.topic { text-align: right; font-size: 16px; font-weight: 700; }
-		.sourceBtn {padding:0 8px;height:26px;}
-		div.content{padding:10px 5px;
-			height:320px;overflow-y: scroll}
-		div.footer button{padding: 5px 10px ;height: 30px;margin-right: 10px}
-		div.footer{text-align: right;padding:5px 50px 5px 0;border-top: 2px solid #95B8E7;}
-		.zb-name {color:#2081BB;white-space: nowrap;}
-		.upload{display: none}
-		.table{display: none}
-		.zb{display: none}
-		.pre{padding:20px; border: 1px solid #95B8E7; margin-top:35px;display: none}
-		#organization{height: 30px}
-		 span.tree-title{font-size: 14px}
-		.no-padding{padding:0}
-	</style>
+    <link rel="stylesheet" type="text/css" href="../../resources/images/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+    <style>
+        tr th { padding: 8px 5px; text-align: center; }
+        tr td { padding: 8px 5px; text-align: center; }
+        .optBtn button { padding: 0 8px; height: 26px; margin-right: 10px; }
+        form { width: 100%; }
+        .bv-form .help-block { margin-bottom: 0 }
+        .bv-form .tooltip-inner { text-align: left }
+        .nav-tabs li.bv-tab-success > a { color: #3c763d }
+        .nav-tabs li.bv-tab-error > a { color: #a94442 }
+        div.row { height: 40px; line-height: 40px }
+        div.topic { text-align: right; font-size: 16px; font-weight: 700; }
+        .sourceBtn { padding: 0 8px; height: 26px; }
+        div.content { padding: 10px 5px; height: 320px; overflow-y: scroll }
+        div.footer button { padding: 5px 10px; height: 30px; margin-right: 10px }
+        div.footer { text-align: right; padding: 5px 50px 5px 0; border-top: 2px solid #95B8E7; }
+        .zb-name { color: #2081BB; white-space: nowrap; }
+        .upload { display: none }
+        .table { display: none }
+        .zb { display: none }
+        .pre { padding: 10px 20px 20px 20px; border: 1px solid #95B8E7; display: none; margin-left: 17.7% }
+        #organization { height: 30px }
+        span.tree-title { font-size: 14px }
+        .no-padding { padding: 0 }
+        caption { padding: 0; height: 30px; font-weight: bolder }
+        .combo-title { padding-right: 5px }
+        .combo-data > div { display: inline-block }
+        td div{width: 100%;text-overflow: ellipsis;overflow: hidden;white-space:nowrap;}
+        /*table{width: 100%}*/
+        span.combo{line-height: 23px}
+    </style>
 
 </head>
 <body>
 <div class="mr15">
     <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
-       	<span class="tab_title">表格创建编辑</span>
-		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
+        <span class="tab_title">表格创建编辑</span>
+        <hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
     </div>
-	<div class="container-fluid" style="width:90%;min-width:900px;padding: 20px 0 0 0" >
-		<div class="row">
-			<div  class="col-xs-2 topic">名称:</div>
-			<div class="col-xs-9">
-				<input type="text" class="clo-xs-9" id="name" style="width:100%;max-width: 400px ;height:30px" value="表格创建编辑">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-2 topic">数据源类型:</div>
-			<div class="col-xs-4">
-				<input type="radio" name="dataType" value="1" checked="checked"><span>指标数据</span>
-				<input type="radio" name="dataType" value="0"  style="margin-left: 20px"><span>上传数据</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-2 topic">数据源:</div>
-			<div class="col-xs-2" >
-				<button class="btn btn-primary sourceBtn">选择(<span>多选</span>)</button>
-			</div>
-			<div class="col-xs-7 theme">
+    <div class="container-fluid" style="width:90%;min-width:900px;padding: 20px 0 0 0">
+        <div class="row">
+            <div class="col-xs-2 topic">名称:</div>
+            <div class="col-xs-9">
+                <input type="text" class="clo-xs-9" id="name" style="width:100%;max-width: 400px ;height:30px"
+                       value="表格1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 topic">数据源类型:</div>
+            <div class="col-xs-4">
+                <input type="radio" name="dataType" value="1" checked="checked"><span>指标数据</span>
+                <input type="radio" name="dataType" value="0" style="margin-left: 20px"><span>上传数据</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 topic">数据源:</div>
+            <div class="col-xs-2">
+                <button class="btn btn-primary sourceBtn">选择(<span>多选</span>)</button>
+            </div>
+            <div class="col-xs-7 theme">
 
-			</div>
-		</div>
-		<!--<div class="zb">
-			<div class="row">
-				<div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
-				<div class="col-xs-1" style="width: 65px">时间:</div>
-				<div class="col-xs-3 no-padding">
-					<input class="easyui-datebox" data-options="sharedCalendar:'#cc',width:200,height:30,panelWidth:200,currentText:'Today',value:'Today'" >
-					<div id="cc" class="easyui-calendar"></div>
-				</div>
-				<div class="col-xs-1" style="width: 65px">机构:</div>
-				<div class="col-xs-3 no-padding">
-					<div id="organization"></div>
-				</div>
-			</div>
-			<div class="newAdd"></div>
-			<div class="row">
-				<div class="col-xs-2 topic">横轴维度:</div>
-				<div class="col-xs-3">
-					<div class="wd-combo"></div>
-				 </div>
-			</div>
-			<div class="row">
-				<div class="col-xs-2 topic">纵轴维度:</div>
-				<div class="col-xs-4">
-					<div class="wd-combo"></div>
-				</div>
-			</div>
-		</div>-->
-		<div class="zb">
-			<div class="row">
-				<div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
-				<div class="col-xs-1" style="width: 65px">频率:</div>
-				<div class="col-xs-1 no-padding "  style="width:80px;">
-					<div id="rotate"></div>
-				</div>
-				<!--<div class="col-xs-1" style="width: 65px">日期:</div>-->
-				<div class="col-xs-2 no-padding" style="width:100px;text-align: right">
-					<div>
-						<div class="data-combo"></div>
-					</div>
-					<div style="display: none">
-						<div class="calendar-combo" ></div>
-					</div>
-				</div>
-				<div class="col-xs-1" style="width:45px;color: #2081BB;text-align: center;padding: 0">——</div>
-				<div class="col-xs-2 no-padding" style="width:100px">
-					<div>
-						<div class="data-combo"></div>
-					</div>
-					<div style="display: none">
-						<div class="calendar-combo" ></div>
-					</div>
-				</div>
-				<div class="col-xs-1" style="width: 65px">机构:</div>
-				<div class="col-xs-3 no-padding">
-					<div id="organization"></div>
-				</div>
-			</div>
-			<div class="newAdd"></div>
-			<div class="row">
-				<div class="col-xs-2 topic">横轴维度:</div>
-				<div class="col-xs-3">
-					<div class="wd-combo"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-2 topic">纵轴维度:</div>
-				<div class="col-xs-4">
-					<div class="wd-combo"></div>
-				</div>
-			</div>
-		</div>
-		<div class="upload">
-			<div class="row">
-				<div class="col-xs-2 topic">数据名称:</div>
-				<div class="col-xs-10 zb-name"></div>
-			</div>
-			<div class="row">
-				<div class="col-xs-2 topic ">横轴字段:</div>
-				<div class="col-xs-4">
-					<div class="field-combo"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-2 topic">纵轴字段:</div>
-				<div class="col-xs-4">
-					<div class="field-combo"></div>
-				</div>
-			</div>
-		</div>
-		<div class="row table">
-			<div class="col-xs-2 topic">
-				<button type="button" class="btn btn-primary " id="preChat">预览</button>
-			</div>
-			<div class="col-xs-10 pre">
-				<table cellspacing="0" cellpadding="0" class="list1" style="width:100%;margin:auto">
-					<tr>
-						<th style="width:6%;text-align:center;">指标</th>
-						<!--<th style="width:6%;text-align:center;">ISSN论文</th>
-						<th style="width:8%;text-align:center;">SCI论文</th>
-						<th style="width:15%;text-align:center;">报告类型</th>
-						<th style="width:18%;text-align:center;">被引用次数</th>
-						<th style="width:15%;text-align:center;">完成国家级课题数</th>
-						<th style="width:8%;text-align:center;">完成省级课题数</th>-->
-						<th style="width:6%;text-align:center;">2016</th>
-						<th style="width:8%;text-align:center;">2017</th>
-					</tr>
-					<tbody id="table1">
-						<tr>
-							<th>实际开放床位</th>
-							<td>4532</td>
-							<td>1244</td>
-							<!--<td>52</td>
-							<td>34</td>
-							<td>39</td>
-							<td>33</td>
-							<td>22</td>
-							<td>32</td>-->
-						</tr>
-						<tr>
-							<th>重症医学科床位数</th>
-							<td>232</td>
-							<td>144</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+        <div class="zb">
+            <div class="row">
+                <div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
+                <div class="col-xs-7 combo-data">
+                    <span class="combo-title">频率:</span>
+                    <div id="rotate"></div>
+                    <div class="data-combo-year"></div>
+                    <div>
+                        <div class="data-combo"></div>
+                    </div>
+                    <span style="color:darkgreen">———</span>
+                    <div class="data-combo-year"></div>
+                    <div>
+                        <div class="data-combo"></div>
+                    </div>
+                </div>
+                <div class="col-xs-3 no-padding">
+                    <span class="combo-title">科室:</span>
+                    <div id="organization"></div>
+                </div>
+            </div>
+            <div class="newAdd"></div>
+            <div class="row">
+                <div class="col-xs-2 topic">横轴维度:</div>
+                <div class="col-xs-3">
+                    <div class="wd-combo" data-options="value:'重点疾病'"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 topic">纵轴维度:</div>
+                <div class="col-xs-4">
+                    <div class="wd-combo" data-options="value:'时间'"></div>
+                </div>
+            </div>
+        </div>
+        <div class="upload">
+            <div class="row">
+                <div class="col-xs-2 topic">数据名称:</div>
+                <div class="col-xs-10 zb-name update-name"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 topic ">横轴字段:</div>
+                <div class="col-xs-4">
+                    <div class="field-combo" data-options="value:'时间'"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 topic">纵轴字段:</div>
+                <div class="col-xs-4">
+                    <div class="field-combo" data-options="value:'科室'"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2 topic">图形参数:</div>
+                <div class="col-xs-10 no-padding">
+                    <div class="col-xs-3" style="width: 86px">表头合并</div>
+                    <div class="col-xs-2 no-padding">
+                        <input type="radio" name="rowspan" value="1" checked="checked"><span>是</span>
+                        <input type="radio" name="rowspan" value="0" style="margin-left: 20px"><span>否</span></div>
+                </div>
+            </div>
+        </div>
+        <div class=" table">
+            <div class="row">
+                <div class="col-xs-2 topic">
+                    <button type="button" class="btn btn-primary " id="preChat">预览</button>
+                </div>
+                <div class="col-xs-10 " style="text-align: right;">
+                    <button type="button" class="btn btn-green " id="save" style="display:none">保存</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 pre" >
+                    <table cellspacing="0" cellpadding="0" class="list1" style="width:100%;margin:auto" id="create-table">
+                        <tr class="norowspan">
+                            <td>月份/科室</td>
+                            <td>C T室</td>
+                            <td>C T室</td>
+                            <td>放 射 科</td>
+                            <td>放 射 科</td>
+                            <td>B 超 室</td>
+                            <td>B 超 室</td>
+                            <td>输 血 科</td>
+                            <td>输 血 科</td>
+                        </tr>
+                        <tr class="rowspan">
+                            <td rowspan="2">月份/科室</td>
+                            <td colspan="2">C T室</td>
+                            <td colspan="2">放 射 科</td>
+                            <td colspan="2">B 超 室</td>
+                            <td colspan="2">输 血 科</td>
+                        </tr>
+                        <tr>
+                            <td class="norowspan"></td>
+                            <td>检查数</td>
+                            <td>阳性率%</td>
+                            <td>检查数</td>
+                            <td>阳性率%</td>
+                            <td>检查数</td>
+                            <td>阳性率%</td>
+                            <td>输血数</td>
+                            <td>适应症%</td>
+                        </tr>
+                        <tbody id="table1">
+                        <tr>
+                            <td>1</td>
+                            <td>1195</td>
+                            <td>77.4</td>
+                            <td>1426</td>
+                            <td>39.1</td>
+                            <td>1972</td>
+                            <td>79.3</td>
+                            <td>115</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>1071</td>
+                            <td>79.4</td>
+                            <td>1137</td>
+                            <td>58.5</td>
+                            <td>1416</td>
+                            <td>72.3</td>
+                            <td>95</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>1326</td>
+                            <td>78.3</td>
+                            <td>1802</td>
+                            <td>57.9</td>
+                            <td>2105</td>
+                            <td>73.68</td>
+                            <td>160</td>
+                            <td>100</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
 </div>
 <!-- 数据源 -->
 <div id="sourceSelected" style="display: none">
-	<div class="content" >
-		<ul id="sourceTree">
-		</ul>
-	</div>
-	<div class="footer">
-		<button type="button" class="btn btn-primary "   id="select">确定</button>
-				<button type="button" class="btn btn-primary" id="cancel">取消</button>
-	</div>
+    <div class="content">
+        <ul id="sourceTree">
+        </ul>
+    </div>
+    <div class="footer">
+        <button type="button" class="btn btn-primary " id="select">确定</button>
+        <button type="button" class="btn btn-primary" id="cancel">取消</button>
+    </div>
 </div>
 <!-- alert共用模态框 -->
-<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
-	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
-		<div class="modal-content">
-			<div class="modal-header" id="modal_title">
-				<button type="button" class="close" data-dismiss="modal">
-					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
-				</button>
+<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     data-backdrop="false">
+    <div class="modal-dialog" style="width:300px;margin:65px auto;">
+        <div class="modal-content">
+            <div class="modal-header" id="modal_title">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span class="is_true" aria-hidden="true"
+                          style="position:relative;top:-8px;font-size:25px;">&times;</span><span
+                        class="sr-only">Close</span>
+                </button>
 
-			</div>
-			<div class="modal-body">
-				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
-					<span >确定删除吗?</span>
-				</div>
-			</div>
-			<div class="modal-footer" style="text-align:center;">
-				<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
-				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
-			</div>
-		</div>
-	</div>
+            </div>
+            <div class="modal-body">
+                <div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
+                    <span>确定删除吗?</span>
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align:center;">
+                <button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+                <button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
@@ -234,309 +260,451 @@
 <script src="../../resources/jQuery/easyui-lang-zh_CN.js"></script>
 <script>
     var $radio = $("input[name=dataType]"),
-        $sourceSlect=$(".sourceBtn span"),
-        $zbName=$(".zb-name"),
-        is_zb=true,
-        $zb=$(".zb"),
-        $newAdd=$(".newAdd"),
-        $org=$("#organization"),
-        $upload=$(".upload"),
-        $table=$(".table"),
-        $dataCombo=$(".data-combo"),
-        $calendar=$(".calendar-combo"),
-        $sourceSelected=$("#sourceSelected"),
-		$sourceBtn=$(".sourceBtn");
-
-    var temArr={"list":[]};
-
-	/*日期选择*/
+            $sourceSlect = $(".sourceBtn span"),
+            $zbName = $(".zb-name"),
+            is_zb = true,
+            $zb = $(".zb"),
+            $newAdd = $(".newAdd"),
+            $org = $("#organization"),
+            $upload = $(".upload"),
+            $table = $(".table"),
+            $dataCombo = $(".data-combo"),
+            $calendar = $(".calendar-combo"),
+            $sourceSelected = $("#sourceSelected"),
+            $sourceBtn = $(".sourceBtn");
+    /*日期选择*/
     $.ajax({
-        url:"../ajax/data.json",
-        dataType:"json",
-        success:function (data) {
-            var dataArray=data;
-			/*月期框加载*/
+        url: "../ajax/data.json",
+        dataType: "json",
+        success: function (data) {
+            var dataArray = data;
+            /*月期框加载*/
             $dataCombo.combobox({
-                valueField:"id",
-                textField:"text",
-                data:dataArray.month,
-                editable:true,
-                width:80,
-                height:30,
-                panelWidth:80,
-                panelHeight:100,
-                formatter:function (row) {
-                    return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+                valueField: "id",
+                textField: "text",
+                data: dataArray.month,
+                editable: true,
+                width: 80,
+                height: 30,
+                panelWidth: 80,
+                panelHeight: 'auto',
+                formatter: function (row) {
+                    return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
                 }
             });
-			/*频率框加载*/
+            /*年期框加载*/
+            $(".data-combo-year").combobox({
+                valueField: "id",
+                textField: "text",
+                data: dataArray.year,
+                editable: true,
+                width: 80,
+                height: 30,
+                panelWidth: 80,
+                panelHeight: 'auto',
+                formatter: function (row) {
+                    return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                }
+            });
+            /*频率框加载*/
             $("#rotate").combobox({
-                valueField:"id",
-                textField:"text",
-                data:dataArray.rotate,
-                editable:true,
-                width:70,
-                height:30,
-                panelWidth:70,
-                panelHeight:100,
-                onLoadSuccess:function(){
-                    var loadData=$(this).combobox("getData");
-                    $(this).combobox("setValue",loadData[2].text);
+                valueField: "id",
+                textField: "text",
+                data: dataArray.rotate,
+                editable: true,
+                width: 70,
+                height: 30,
+                panelWidth: 70,
+                panelHeight: 'auto',
+                value: '月份',
+//                onLoadSuccess:function(){
+//                    var loadData=$(this).combobox("getData");
+//                    $(this).combobox("setValue",loadData[2].text);
+//                },
+                formatter: function (row) {
+                    return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
                 },
-                formatter:function (row) {
-                    return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
-                },
-                onSelect:function (recoder) {
-                    var item=recoder.value;
-                    if(recoder.id==4){
+                onSelect: function (recoder) {
+                    var item = recoder.value;
+                    if (recoder.id == 1) {
                         $dataCombo.parent().hide();
-                        $calendar.parent().show();
-                        $calendar.datebox({
-                            width:100,
-                            height:30,
-                            panelWidth:180,
-                            panelHeight:200,
-                            value:"Today"
-                        });
-                    }else{
-                        $calendar.parent().hide();
+                    } else {
                         $dataCombo.parent().show();
-                        $dataCombo.combobox("loadData",dataArray[item]);
+                        $dataCombo.combobox("loadData", dataArray[item]);
                     }
                 }
             });
         }
     });
     /*机构树加载*/
-    $org.combotree({
-		url:"../ajax/org.json",
-		method:"get",
-        editable:true,
-		width:180,
-		height:30,
-        panelWidth:180,
-        panelHeight:300,
-        value:"信息科"
-	});
-	/*维度框加载*/
+    $org.combobox({
+        url: "../ajax/org.json",
+        method: "get",
+        valueField: "id",
+        textField: "text",
+        editable: true,
+        width: 120,
+        height: 30,
+        panelWidth: 120,
+        panelHeight: 300,
+        value: "全院"
+    });
+    /*维度框加载*/
     $(".wd-combo").combobox({
-		valueField:"id",
-		textField:"text",
-        url:"../ajax/row_wd.json",
-        method:"get",
-        editable:true,
-        width:180,
-        height:30,
-        panelWidth:180,
-        panelHeight:100,
-        onLoadSuccess:function(data){
-			var loadData=$(this).combobox("getData");
-			$(this).combobox("setValue",loadData[3].text);
-		},
-		formatter:function (row) {
-            return "<span class='glyphicon glyphicon-pushpin'>&nbsp;"+row.text+"</span>"
-        }
-    });
-	/*字段框加载*/
-    $(".field-combo").combobox({
-        valueField:"id",
-        textField:"text",
-        url:"../ajax/row_wd.json",
-        method:"get",
-        editable:true,
-        width:180,
-        height:30,
-        panelWidth:180,
-        panelHeight:100,
-        onLoadSuccess:function(data){
-            var loadData=$(this).combobox("getData");
-            $(this).combobox("setValue",loadData[3].text);
+        valueField: "id",
+        textField: "text",
+        url: "../ajax/field_wd.json",
+        method: "get",
+        editable: true,
+        width: 180,
+        height: 30,
+        panelWidth: 180,
+        panelHeight: 100,
+        onLoadSuccess: function (data) {
+//			var loadData=$(this).combobox("getData");
+//			$(this).combobox("setValue",loadData[3].text);
         },
-        formatter:function (row) {
-            return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+        formatter: function (row) {
+            return "<span class='glyphicon glyphicon-pushpin'>&nbsp;" + row.text + "</span>"
         }
     });
-	/*单选按钮事件*/
-    $radio.on("click",function () {
+    /*字段框加载*/
+    $(".field-combo").combobox({
+        valueField: "id",
+        textField: "text",
+        url: "../ajax/field_wd.json",
+        method: "get",
+        editable: true,
+        width: 180,
+        height: 30,
+        panelWidth: 180,
+        panelHeight: 'auto',
+        onLoadSuccess: function (data) {
+//            var loadData=$(this).combobox("getData");
+//            $(this).combobox("setValue",loadData[0].text);
+        },
+        formatter: function (row) {
+            return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+        }
+    });
+    /*单选按钮事件*/
+    //    var tableArr={"zb":[]};
+    $radio.on("click", function () {
+        $("#save").hide();
         $(".pre").hide();
         $zbName.html(null);
         $table.hide();
         $zb.hide();
         $upload.hide();
-		if($(this).val()==1){
+        if ($(this).val() == 1) {
             $sourceSlect.html("多选");
-            is_zb=true;
-		}else{
+            is_zb = true;
+        } else {
             $sourceSlect.html("单选");
-            is_zb=false;
-		}
+            is_zb = false;
+        }
     });
-	/*数据源选择按钮*/
-    $sourceBtn.on("click",function () {
+    /*数据源选择按钮*/
+    $sourceBtn.on("click", function () {
         $sourceSelected.window("open");
     });
-//	todo：数据源选择
-	/*数据源窗口加载*/
+    /*数据源窗口加载*/
     $sourceSelected.window({
-        title : '数据源选择',
-        modal : true,
-        shadow : true,
-        closed : true,
-        width : 300,
-        height : 400,
-        padding : 10,
-        resizable:false,
-        minimizable : false,
-        maximizable : false,
-        collapsible : false,
-        top : ($(window).height() - 500) * 0.5,
-        left : ($(window).width() - 400) * 0.5,
-        onOpen : function(){
-            var urls,is_checked;
-            if(is_zb){
-                 urls="../ajax/a.json";
-					is_checked=true;
-			}else{
-                 urls="../ajax/upload.json";
-                is_checked=false;
-			}
-		// 加载窗口树
+        title: '数据源选择',
+        modal: true,
+        shadow: true,
+        closed: true,
+        width: 360,
+        height: 400,
+        padding: 10,
+        resizable: false,
+        minimizable: false,
+        maximizable: false,
+        collapsible: false,
+        top: ($(window).height() - 500) * 0.5,
+        left: ($(window).width() - 400) * 0.5,
+        onOpen: function () {
+            var urls, is_checked;
+            if (is_zb) {
+                urls = "../ajax/a.json";
+                is_checked = true;
+            } else {
+                urls = "../ajax/upload.json";
+                is_checked = false;
+            }
+            // 加载窗口树
             $('#sourceTree').tree({
-                url:urls,
-                method:"get",
-                animate:true,
-                checkbox:is_checked
+                url: urls,
+                method: "get",
+                animate: true,
+                checkbox: is_checked
             });
         }
     });
-	/*添加资源*/
-	var show_combo;
-	$.ajax({
-        url:"../ajax/show_type.json",
-		success:function (data) {
-            show_combo=data;
+    /*添加资源*/
+    var show_combo;
+    $.ajax({
+        url: "../ajax/show_type.json",
+        success: function (data) {
+            show_combo = data;
         }
-	});
-    $(".footer").on("click","button",function(){
-        switch ($(this).html()){
-			case "确定":
-                var htm ="",
-                	str ="",
-					state = is_zb ? "getChecked":"getSelected";
+    });
+    $(".footer").on("click", "button", function () {
+        switch ($(this).html()) {
+            case "确定":
+                var htm = "",
+                        str = "",
+                        state = is_zb ? "getChecked" : "getSelected";
                 $newAdd.html(null);
-				var nodes=$("#sourceTree").tree(state);
-				console.log(nodes,"nodes");
-				if(is_zb){
-				    if(nodes.length){
-                for (var i = 0,length=nodes.length; i <length; i++) {
-                    var obj = nodes[i];
-					if (obj.children){
-					    continue;
-					}else{
-					    !function (item,i) {
-                            $.ajax({
-                                url:"../ajax/a_type.json",
-                                success:function (data) {
-                                    console.log(item);
-                                    var _data= data[item.id];
-                                    str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+item.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-1" style="width: auto;">'+_data.selectText+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';
-                                    $newAdd.append(str);
-                                    $("#show_type_"+i).combobox({
-                                        valueField:"id",
-                                        textField:"text",
-                                        data:_data.children,
-                                        editable:true,
-                                        width:200,
-                                        height:30,
-                                        panelWidth:210,
-                                        panelHeight:100,
-                                        onLoadSuccess:function(){
-                                            var loadData=$(this).combobox("getData");
-                                            $(this).combobox("setValue",loadData[1].text);
-                                        },
-                                        formatter:function (row) {
-                                            return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
-                                        }
-                                    });
-                                }
-                            });
-                        }(obj,i);
+                var nodes = $("#sourceTree").tree(state);
+                if (is_zb) {
+                    if (nodes.length) {
+                        for (var i = 0, length = nodes.length; i < length; i++) {
+                            var obj = nodes[i];
+                            if (obj.children) {
+                                continue;
+                            } else {
+//                        tableArr.zb.push(obj.text);
+                                /*!function (item,i) {
+                                 $.ajax({
+                                 url:"../ajax/a_type.json",
+                                 success:function (data) {
+                                 var _data= data[item.id];
+                                 str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+item.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-1" style="width: auto;">'+_data.selectText+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';
+                                 $newAdd.append(str);
+                                 $("#show_type_"+i).combobox({
+                                 valueField:"id",
+                                 textField:"text",
+                                 data:_data.children,
+                                 editable:true,
+                                 width:200,
+                                 height:30,
+                                 panelWidth:210,
+                                 panelHeight:100,
+                                 onLoadSuccess:function(){
+                                 var loadData=$(this).combobox("getData");
+                                 $(this).combobox("setValue",loadData[1].text);
+                                 },
+                                 formatter:function (row) {
+                                 return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                                 }
+                                 });
+                                 }
+                                 });
+                                 }(obj,i);*/
 
-                        /*var _showId=(obj.id<5)?0:((obj.id<13)?1:2);
-                        str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-1">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';
-                        $newAdd.append(str);
-                        $("#show_type_"+i).combobox({
-                            valueField:"id",
-                            textField:"text",
-                            data:show_combo[_showId].combo,
-                            editable:true,
-                            width:180,
-                            height:30,
-                            panelWidth:180,
-                            panelHeight:100,
-                            onLoadSuccess:function(){
-                                var loadData=$(this).combobox("getData");
-                                $(this).combobox("setValue",loadData[1].text);
-                            },
-                            formatter:function (row) {
-                                return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+                                /*str ='<div class="row"><div class = "col-xs-2 zb-name topic" >'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-1">'+show_combo[0].type+':'+'</div><div class ="col-xs-9 no-padding" ><div id="show_type_'+i+'"></div></div></div >';*/
+                                var show_id;
+                                if (102020000 < parseInt(obj.id)) {
+                                    show_id = 1;
+                                } else if (102010000 < parseInt(obj.id)) {
+                                    show_id = 0;
+                                }
+                                str = '<div class="row"><div style="color:seagreen" class = "col-xs-2  topic" >指标名称:</div><div class ="col-xs-10 no-padding"><div class ="col-xs-1 zb-name" style="width: auto">' + obj.text + '</div><div style="float: left;padding-right: 20px">' + show_combo[show_id].type + ':' + '</div><div style="float: left;line-height: 20px" id="show_type_' + i + '"></div></div></div >';
+                                $newAdd.append(str);
+
+                                $("#show_type_" + i).combobox({
+                                    valueField: "id",
+                                    textField: "text",
+                                    multiple:true,
+                                    multiline:true,
+                                    data: show_combo[show_id].combo,
+                                    editable: true,
+                                    width: 180,
+                                    height: 30,
+                                    lineHeight:20,
+                                    panelWidth: 180,
+                                    panelHeight: 300,
+                                    onLoadSuccess: function () {
+                                        $(this).siblings("span").find("textarea")[0].placeholder="请选择（可以多选）" ;
+                                    },
+                                    formatter: function (row) {
+                                        return "<span class='glyphicon glyphicon-check' >&nbsp;" + row.text + "</span>"
+                                    }
+                                });
                             }
-                        });*/
+                        }
+
+                        $zb.show();
+                        $upload.hide();
+                    } else {
+                        alert("没有选择文件！");
+                        return;
+                    }
+                } else {
+                    if (!nodes || nodes.children) {
+                        alert("请选择文件！");
+                        return;
+                    } else {
+                        $zb.hide();
+                        $upload.show();
+                        htm = "<span >" + nodes.text + "</span>";
+                        $(".update-name").html(htm);
                     }
                 }
-
-				$zb.show();
-				$upload.hide();
-                    }else{
-                        alert("没有选择文件！");
-                        return ;
-                    }
-                }else{
-				    if(!nodes||nodes.children.length){
-				        alert("请选择文件！");
-				        return ;
-					}else{
-				        $zb.hide();
-				        $upload.show();
-                        htm="<span >"+nodes.text+"</span>";
-                        $zbName.html(htm);
-					}
-				}
-				$table.show();
-			    break;
-			default:
-			    break;
-		}
+                $table.show();
+                break;
+            default:
+                break;
+        }
         $sourceSelected.window("close");
     });
 </script>
 <script id="tpl12" type="text/template">
-	<tr>
-		<th>指标</th>
-		<th>2016</th>
-		<th>2017</th>
-	</tr>
-	<tbody>
-		[% for(var i in list){%]
-		<tr>
-			<td>list.zb</td>
-			<td>34</td>
-			<td>25</td>
-		</tr>
-		[%}%]
-	</tbody>
+    <tr>
+        <th>指标</th>
+        <th>2016</th>
+        <th>2017</th>
+    </tr>
+    <tbody>
+    [% for(var i in list){%]
+    <tr>
+        <td>list.zb</td>
+        <td>34</td>
+        <td>25</td>
+    </tr>
+    [%}%]
+    </tbody>
 </script>
 <script>
-	/*tables加载*/
-	
+    /*tables加载*/
     $("#preChat").click(function () {
-        var getVal=$dataCombo.combobox("getValue");
-        alert(getVal);
-        if(is_zb){
-        }else{
+        $("#save").show();
+        switch (is_zb) {
+            case false:
+                /*表头合并*/
+                $("#create-table").html(str);
+                var val = $("input[name='rowspan']:checked").val();
+                if (val == 1) {
+                    $(".rowspan").show();
+                    $(".norowspan").hide();
+                } else {
+                    $(".rowspan").hide();
+                    $(".norowspan").show();
+                }
+                break;
+            default:
+                /*生成表格*/
+                var comboData = $(".textbox-text")
+                var tableArr = [], rightTabH = "", colNum;
+                var leg = comboData.length;
+                for (var i = 0; i < leg; i++) {
+                    var obj = comboData[i];
+                    tableArr.push(obj.value);
+                }
+                var time = tableArr.slice(1, 5);
+                /*获取纯数据*/
+                for (var i = 0; i < time.length; i++) {
+                    time[i] = parseInt(time[i]);
+                }
+                var zbName = $(".newAdd").find(".zb-name");
+                var vueArr= $(zbName[0]).parent().find(".textbox-text")[0].value.split(",");
+                for (var i = 0; i < zbName.length; i++) {
+                    var obj = zbName[i].parent().find(".textbox-text")[0].value;
+
+                }
+                console.log(vueArr);
+                console.log(zbName);
+                console.log(tableArr)
+                console.log(time)
+                /*计算时间间隔*/
+                var _year = time[0], _month = time[1] - 1, _season = time[1] - 1;
+                switch (tableArr[0]) {
+                    case "年份":
+                        colNum = time[2] - time[0];
+                        for (var i = 0; i < colNum + 1; i++) {
+                            _year = _year + i;
+                            rightTabH += "<th width='100'>" + _year + "年" + "</th>";
+                            console.log(colNum, _year);
+                        }
+                        break;
+                    case "季度":
+                        colNum = time[3] + (time[2] - time[0] - 1) * 4 + 4 - time[1];
+                        for (var i = 0; i < colNum + 1; i++) {
+                            if ((1 + _season) % 5 == 0) {
+                                _season = 1;
+                                _year++;
+                            } else {
+                                _season = (1 + _season) % 5;
+                            }
+                            rightTabH += "<th width='100'>" + _year + "年" + _season + "季度" + "</th>";
+                            console.log(colNum, _year, _season);
+                        }
+                        break;
+                    default:
+                        colNum = time[3] + (time[2] - time[0] - 1) * 12 + 12 - time[1];
+                        for (var i = 0; i < colNum + 1; i++) {
+                            if ((1 + _month) % 13 == 0) {
+                                _month = 1;
+                                _year++;
+                            } else {
+                                _month = (1 + _month) % 13;
+                            }
+                            console.log(colNum, _year, _month);
+                            rightTabH += "<th width='100'>" + _year + "年" + _month + "月" + "</th>";
+                        }
+                        break;
+                }
+                //右表身体
+                var rightTabB = "";
+                for (var i = 0; i < zbName.length; i++) {
+                    var _td="";
+                    for (var j = 0; j < colNum+1; j++) {
+                       _td+="<td >"+parseInt(Math.random()*50+5)+"</td>"
+                    }
+                    rightTabB+="<tr>"+_td+"</tr>";
+                }
+                //右表头
+                rightTabH = "<thead><tr>" + rightTabH + "</tr></thead>";
+                    var rightTab="<div class='col-xs-5 no-padding' style='overflow-x: auto'><table class='list1' width='100%' border='1' cellpadding='0' cellspacing='0' style='table-layout:fixed'>"+rightTabH+"<tbody>"+rightTabB+"</tbody></table></div>"
+
+                //左表头
+                var LeftTabH = '<thead><tr><th >科室</th> <th colspan="2" >指标</th></tr></thead>';
+                var LeftTabB = "";
+                var zbLeg = zbName.length;
+
+                //左表身体
+                for (var i = 0; i < zbLeg; i++) {
+
+                    if (i == 0) {
+                        LeftTabB += "<tr><td rowspan='" + zbLeg + "'><div>" + tableArr[5] + "</div></td><td ><div>" + zbName[0].innerHTML + "</div></td><td><div>" + $(zbName[0]).parent().find(".textbox-text")[0].value + "</div></td></tr>"
+                    } else {
+                        LeftTabB += "<tr><td ><div>" + zbName[i].innerHTML + "</div></td><td><div>" + $(zbName[i]).parent().find(".textbox-text")[0].value + "</div></td></tr>"
+                    }
+                }
+                var LetTab = "<div class='col-xs-7 no-padding'><table class='list1' style='width: 100%'>" + LeftTabH + "<tbody>" + LeftTabB + "</tbody>" + "</table></div>"
+
+                /*var comboData=$(".textbox-text");
+                 var tableArr=[];
+                 var leg=comboData.length;
+                 for (var i = 0; i<leg ; i++) {
+                 var obj = comboData[i];
+                 tableArr.push(obj.value);
+                 }
+                 var _data=parseInt(tableArr[2])-parseInt(tableArr[1])+1;
+                 var _zb="",_time="";
+                 var tabHead="";
+                 /!*表头*!/
+                 for (var i = 4; i <(leg-4); i++) {
+                 tabHead+="<td>" +tableArr[i]+"</td>";
+                 }
+                 tabHead="<tr><td>"+tableArr[0]+"/指标</td>"+tabHead+"</tr>";
+                 /!*表内容*!/
+                 for (var i = 0; i < _data; i++) {
+                 var obj =i+parseInt(tableArr[1]);
+                 _zb="";
+                 for (var j =4; j < (tableArr.length-8+4); j++) {
+                 _zb+="<td>" +parseInt(Math.random()*200+60)+"</td>";
+                 }
+                 _time+="<tr><td>"+obj+"</td>"+_zb+"</tr>";
+                 }
+                 var cap="<caption style='padding:0;height: 30px;font-weight: bolder'>科室:"+tableArr[3]+"</caption>";*/
+                $(".pre").html(LetTab+rightTab);
+
+                break;
         }
         $(".pre").show();
-    })
+    });
 </script>
 <div class="clr"></div>
 </body>

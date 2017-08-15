@@ -147,7 +147,7 @@ ul,li{ list-style:none;}
 .rmktxt { border:solid 1px #dfe0e1; padding:5px; background-color:#efefef; margin-top:5px;}
 
 .list1 { border:solid 1px #d3d3d3; color:#000;border-collapse:collapse;}
-.list1 th { padding:4px 5px; background-color:#f6fbfe; border:solid 1px #d3d3d3; text-align:left; font-weight:600;color:#7e7e7e;}
+.list1 th { padding:4px 5px; background-color:#f6fbfe; border:solid 1px #d3d3d3; text-align:center; font-weight:600;color:#7e7e7e;}
 .list1 td { padding:4px 5px; background-color:#fff; border-bottom:solid 1px #d3d3d3;border-right:solid 1px #d3d3d3; }
 .list1 tr:hover>td { background-color:#ffd;}
 .list1 tr.ext>td { background-color:#fff!important;}
