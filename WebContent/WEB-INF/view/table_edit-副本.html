@@ -598,15 +598,21 @@
                     time[i] = parseInt(time[i]);
                 }
                 var zbName = $(".newAdd").find(".zb-name");
-                var vueArr= $(zbName[0]).parent().find(".textbox-text")[0].value.split(",");
-                for (var i = 0; i < zbName.length; i++) {
-                    var obj = zbName[i].parent().find(".textbox-text")[0].value;
+//                var vueArr= $(zbName[0]).parent().find(".textbox-text")[0].value.split(",");
+                var vueArr={},zbArr=[];
 
+                for (var i = 0; i < zbName.length; i++) {
+                    var obj = $(zbName[i]).parent().find(".textbox-text")[0].value.split(",");
+//                    vueArr[i]={};
+
+                   vueArr[i]= obj;
+                    zbArr.push(zbName[i].innerHTML);
                 }
-                console.log(vueArr);
+
+                console.log(vueArr,zbArr);
                 console.log(zbName);
-                console.log(tableArr)
-                console.log(time)
+                console.log(tableArr);
+                console.log(time);
                 /*计算时间间隔*/
                 var _year = time[0], _month = time[1] - 1, _season = time[1] - 1;
                 switch (tableArr[0]) {
@@ -656,7 +662,7 @@
                 }
                 //右表头
                 rightTabH = "<thead><tr>" + rightTabH + "</tr></thead>";
-                    var rightTab="<div class='col-xs-5 no-padding' style='overflow-x: auto'><table class='list1' width='100%' border='1' cellpadding='0' cellspacing='0' style='table-layout:fixed'>"+rightTabH+"<tbody>"+rightTabB+"</tbody></table></div>"
+                    var rightTab="<div class='col-xs-5 no-padding' style='overflow-x: auto'><table class='list1' width='100%' border='1' cellpadding='0' cellspacing='0' style='table-layout:fixed'>"+rightTabH+"<tbody>"+rightTabB+"</tbody></table></div>";
 
                 //左表头
                 var LeftTabH = '<thead><tr><th >科室</th> <th colspan="2" >指标</th></tr></thead>';
@@ -672,7 +678,7 @@
                         LeftTabB += "<tr><td ><div>" + zbName[i].innerHTML + "</div></td><td><div>" + $(zbName[i]).parent().find(".textbox-text")[0].value + "</div></td></tr>"
                     }
                 }
-                var LetTab = "<div class='col-xs-7 no-padding'><table class='list1' style='width: 100%'>" + LeftTabH + "<tbody>" + LeftTabB + "</tbody>" + "</table></div>"
+                var LetTab = "<div class='col-xs-7 no-padding'><table class='list1' style='width: 100%'>" + LeftTabH + "<tbody>" + LeftTabB + "</tbody>" + "</table></div>";
 
                 /*var comboData=$(".textbox-text");
                  var tableArr=[];
