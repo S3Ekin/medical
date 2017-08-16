@@ -92,8 +92,8 @@
 		<div class="table">
 			<div class="row">
 				<div class="col-xs-2 topic">图形标题:</div>
-				<div class="col-xs-4">
-					<input type="text" style="height: 30px;width: 100%" value="2016年护理部各指标" id="title">
+				<div class="col-xs-6">
+					<input type="text" style="height: 30px;width: 100%"  id="title">
 				</div>
 			</div>
 			<div class="row ">
@@ -102,7 +102,7 @@
 				</div>
 			</div>
 			<div class="pre">
-				<div id="chat" style="width:760px;height:350px"></div>
+				<div id="chat" style="width:760px;height:600px"></div>
 			</div>
 		</div>
 	</div>
@@ -147,7 +147,160 @@
 <script src="chat_edit.js"></script>
 <script>
 	/*chats加载*/
-    $("#preChat").click(function () {
+
+	$("#preChat").click(function () {
+		switch (is_zb) {
+			case true:
+				var comboData = $(" .zb .textbox-text");
+				var Arr=[];
+				for (var  i= 0;  i< comboData.length; i++) {
+					var obj = comboData[i];
+					Arr.push(obj.value)
+				}
+				/*时间 指标*/
+				var time=Arr.slice(1,5),
+					zbArr=Arr.slice(6,(Arr.length-2));
+				for (var i = 0; i <time.length; i++) {
+					time[i] =parseInt(time[i]);
+				}
+				var zbName=$(".zb .zb-name");
+				var legenData=[];
+				for (var i = 0,count=0; i < zbName.length; i++,count+=2) {
+					zbArr[count]=zbArr[count]+zbName[i].innerHTML.replace(/(住院重点疾病|住院重点手术)*/g,"");
+					legenData.push(zbArr[count]);
+				}
+				console.log(Arr,zbArr,time);
+				var _title ,_count;
+				var _year = time[0], _month = time[1] - 1, _season = time[1] - 1;
+				var XData=[];
+				switch (Arr[0]) {
+					case "年份":
+						_title=Arr[5]+Arr[1]+"—"+Arr[3]+"各医疗质量指标";
+						_count = time[2] - time[0];
+						_year=_year-1;
+						for (var i = 0; i < _count + 1; i++) {
+							_year = _year + 1;
+							XData.push(_year);
+						}
+						break;
+					case "季度":
+						_title=Arr[5]+Arr[1]+Arr[2]+"—"+Arr[3]+Arr[4]+"各医疗质量指标";
+						_count = time[3] + (time[2] - time[0] - 1) * 4 + 4 - time[1];
+						for (var i = 0; i < _count + 1; i++) {
+							if ((1 + _season) % 5 == 0) {
+								_season = 1;
+								_year++;
+							} else {
+								_season = (1 + _season) % 5;
+							}
+							XData.push(_year+"年"+_season+"季度");
+						}
+						break;
+					default:
+						_title=Arr[5]+Arr[1]+Arr[2]+"—"+Arr[3]+Arr[4]+"各医疗质量指标";
+						_count = time[3] + (time[2] - time[0] - 1) * 12 + 12 - time[1];
+						for (var i = 0; i < _count + 1; i++) {
+							if ((1 + _month) % 13 == 0) {
+								_month = 1;
+								_year++;
+							} else {
+								_month = (1 + _month) % 13;
+							}
+							XData.push(_year+"年"+_month+"月");
+						}
+						break;
+				}
+				var seriesData=[];
+				for (var i = 0,count=1; i < legenData.length; i++,count+=2) {
+					seriesData[i]={};
+					seriesData[i].name=legenData[i];
+					seriesData[i].type=zbArr[count]=="柱状"?'bar':"line";
+					seriesData[i].areaStyle={};
+					seriesData[i].areaStyle=zbArr[count]=="面积"?{normal: {}}:null;
+					seriesData[i].data=[];
+					for (var j = 0; j < XData.length; j++) {
+						seriesData[i].data.push(parseInt(Math.random()*90+1))
+					}
+				}
+				if(!$("#title").val()){
+					$("#title").val(_title);
+				}
+				break;
+			default:
+
+				break;
+		};
+		$(".pre").show();
+		var pieoption = {
+			title: {
+				text: $("#title").val(),
+				x: 'center',
+			},
+			tooltip: {
+				trigger: 'axis',
+				axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+					type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+				}
+			},
+			grid:{
+				containLabel:true,
+				height:400,
+			},
+			legend: {
+//				orient: 'vertical',
+				bottom:'bottom',
+				data:legenData,
+			},
+			toolbox: {
+				top:25,
+				show: true,
+				feature: {
+					dataZoom: {
+						yAxisIndex: false
+					},
+					dataView: {readOnly: false},
+					//显示模式 line折线，bar柱状，stack堆叠，tiled平铺
+					magicType: {type: ['line', 'bar','stack','tiled']},
+					restore: {},
+					saveAsImage: {}
+				}
+			},
+			xAxis: {
+				type: 'category',
+				boundaryGap: true,
+				data: XData
+			},
+			yAxis: [{
+				position:"left",
+				name:"例",
+				type: 'value',
+				axisLabel: {
+					formatter: '{value}'
+				}
+			},{
+				position:"right",
+				max:100,
+				min:0,
+				type: 'value',
+				axisLabel: {
+					formatter: '{value}%'
+				}
+			}],
+			series:seriesData,
+			dataZoom: [{
+				start: 10,
+				end: 100,
+				bottom:"80"
+			}, {
+				type: 'inside'
+			}],
+		};
+		var myChart = echarts.init($('#chat')[0]);
+		myChart.setOption(pieoption);
+	})
+
+
+    /*$("#preChat").click(function () {
         if(is_zb){
         }else{
         }
@@ -169,7 +322,8 @@
             },
             //图例
             legend: {
-                top:'bottom',
+//                top:'bottom',
+				right:"right",
                 //数据
                 data:['预算管理指标','预算执行率','预算收入执行率']
             },
@@ -221,8 +375,7 @@
 //				formatter: '{value} °C'
 //			}
             },
-            series:
-                [
+            series:[
                     //准备添加的数据
                     {
                         name:'预算管理指标',
@@ -312,10 +465,16 @@
 //					]
 //				}
 //			}
-            ]
-        };
+            ],
+			dataZoom: [{
+				start: 10,
+				end: 100
+			}, {
+				type: 'inside'
+			}],
+		};
         myChart.setOption(pieoption);
-    })
+    })*/
 </script>
 <div class="clr"></div>
 </body>
