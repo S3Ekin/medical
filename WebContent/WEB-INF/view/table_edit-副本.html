@@ -603,16 +603,9 @@
 
                 for (var i = 0; i < zbName.length; i++) {
                     var obj = $(zbName[i]).parent().find(".textbox-text")[0].value.split(",");
-//                    vueArr[i]={};
-
                    vueArr[i]= obj;
                     zbArr.push(zbName[i].innerHTML);
                 }
-
-                console.log(vueArr,zbArr);
-                console.log(zbName);
-                console.log(tableArr);
-                console.log(time);
                 /*计算时间间隔*/
                 var _year = time[0], _month = time[1] - 1, _season = time[1] - 1;
                 switch (tableArr[0]) {
@@ -671,7 +664,6 @@
 
                 //左表身体
                 for (var i = 0; i < zbLeg; i++) {
-
                     if (i == 0) {
                         LeftTabB += "<tr><td rowspan='" + zbLeg + "'><div>" + tableArr[5] + "</div></td><td ><div>" + zbName[0].innerHTML + "</div></td><td><div>" + $(zbName[0]).parent().find(".textbox-text")[0].value + "</div></td></tr>"
                     } else {
