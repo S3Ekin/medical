@@ -174,6 +174,7 @@ $radio.on("click",function () {
     $(".pre").hide();
     $zb.hide();
     $upload.hide();
+    $("#title").val(null);
     if($(this).val()==1){
         $sourceSlect.html("多选");
         is_zb=true;
@@ -249,7 +250,7 @@ $(".footer").on("click","button",function(){
                             }else if(102010000<parseInt(obj.id)){
                                 show_id=0;
                             }
-                            str ='<div class="row"><div class = "col-xs-2 zb-name topic" >指标名称:</div><div class ="col-xs-10 no-padding"><div class ="col-xs-1 zb-name" style="width: auto">'+obj.text+'</div><div style="float: left;padding-right: 20px">'+show_combo[show_id].type+':'+'</div><div style="float: left"><div  id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div style="float:left;" ><div class="chat-type"></div></div></div></div >';
+                            str ='<div class="row"><div style="color:seagreen" class = "col-xs-2  topic" >指标名称:</div><div class ="col-xs-10 no-padding"><div class ="col-xs-1 zb-name" style="width: auto">'+obj.text+'</div><div style="float: left;padding-right: 20px">'+show_combo[show_id].type+':'+'</div><div style="float: left"><div  id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div style="float:left;" ><div class="chat-type"></div></div></div></div >';
 
                            /* str ='<div class="row"><div class ="col-xs-2 zb-name topic">'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-4 no-padding" ><div id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div class ="col-xs-4 no-padding" ><div class="chat-type"></div></div></div >';*/
                             $newAdd.append(str);
@@ -281,7 +282,7 @@ $(".footer").on("click","button",function(){
                                 panelHeight:'auto',
                                 onLoadSuccess:function(){
                                      var loadData=$(this).combobox("getData");
-                                     $(this).combobox("setValue",loadData[1].text);
+                                     $(this).combobox("setValue",loadData[0].text);
                                 },
                                 formatter:function (row) {
                                     return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
@@ -314,3 +315,6 @@ $(".footer").on("click","button",function(){
     }
     $sourceSelected.window("close");
 });
+$(".zb").on("click","a.combo-arrow",function () {
+    $("#title").val(null);
+})
