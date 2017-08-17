@@ -5,7 +5,6 @@ UE.registerUI('button',function(editor,uiName){
             alert('execCommand:' + uiName)
         }
     });
-
     //创建一个button
     var btn = new UE.ui.Button({
         //按钮的名字
@@ -17,13 +16,13 @@ UE.registerUI('button',function(editor,uiName){
         //点击时执行的命令
         onclick:function () {
             //这里可以不用执行命令,做你自己的操作也可
-           // editor.execCommand(uiName);
             window.localStorage.editState="false";
             window.localStorage.editState2="false";
             var box=parent.document.getElementsByClassName("box");
           parent.document.getElementById("editTools").style.display="none";
           box[0].style.display="block";
-          box[0].innerHTML=ue.getContent();
+            var reg=/\[%\w+%]/g;
+          box[0].innerHTML=ue.getContent().replace(reg,"_____");
             parent.document.getElementById("edit").innerText="编辑";
         }
     });
@@ -39,7 +38,5 @@ UE.registerUI('button',function(editor,uiName){
             btn.setChecked(state);
         }
     });
-
-    //因为你是添加button,所以需要返回这个button
     return btn;
 }/*index 指定添加到工具栏上的那个位置，默认时追加到最后,editorId 指定这个UI是那个编辑器实例上的，默认是页面上所有的编辑器都会添加这个按钮*/);
