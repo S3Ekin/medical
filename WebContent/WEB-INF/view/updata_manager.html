@@ -29,6 +29,7 @@
 		span.tree-title{font-size: 12px}
 		#is_modified{display: none}
 		td{text-align: center}
+		.input-rowspan{width:100px;border:1px solid #95B8E7; height: 30px; padding:0 4px;  outline-style: none; resize: none; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;}
 		/*#field-content{height:200px;overflow: hidden}*/
 	</style>
 	
@@ -83,7 +84,7 @@
 	<div class="modal-dialog" style="width:800px;margin:10px auto;" >
 		<div class="modal-content">
 			<div class="modal-header">
-				<span style="font-size: 20px">上传</span>
+				<span style="font-size: 20px" class="add-title">上传</span>
 				<button type="button" class="close" data-dismiss="modal">
 					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
 				</button>
@@ -155,7 +156,6 @@
 			</div>
 			<div class="modal-footer" style="padding-right: 100px;">
 				<a type="button" class="btn btn-primary "   id="is_add">确定</a>
-				<a type="button" class="btn btn-primary "   id="is_modified">确定</a>
 				<button type="button" class="btn btn-primary "  data-dismiss="modal">取消</button>
 			</div>
 		</div>
@@ -189,6 +189,8 @@
 		<div class="modal-content">
 			<div class="modal-header"  style="padding: 5px 15px;">
 				<span>预览</span>
+				<label for="search-num" style="padding-left: 30px">查看数量(条)：</label>
+				<input type="number" id="search-num" min="20" value="20"  class="input-rowspan" >
 				<button type="button" class="close" data-dismiss="modal">
 					<span class="is_true" aria-hidden="true" style="position:relative;top:-2px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
 				</button>
@@ -228,7 +230,7 @@
 		[%	var j=1;
 		for(var i in list){%]
 		<tr>
-			<td>[%=j%]</td>
+			<td class="order">[%=j%]</td>
 			<td >[%=list[i].name%]</td>
 			<td >[%=list[i].des%]</td>
 			<td >[%=list[i].chatTimes%]</td>
@@ -252,6 +254,7 @@
         $des=$("#des"),
         $alertAdd=$("#modal_add"),
         $alertModal=$("#modal_alert"),
+		stateFlag="",
     	$upload=$("#upload");
     var selecte=document.getElementsByName("des");
 		/*加载数据*/
@@ -264,14 +267,14 @@
 		});
 	/*上传*/
     $upload.click(function () {
-        $("#is_add").show();
-        $("#is_modified").hide();
         $(".panelBtn").children("a").removeAttr("disabled");
         $name.removeAttr("disabled");
         $des.removeAttr("disabled");
         $name.val(null);
         $des.val(null);
+		stateFlag="上传";
         $alertAdd.modal("toggle");
+		$(".add-title").html(stateFlag);
     });
 	/*默认事件*/
     $(".modal-footer").children().click(function () {
@@ -279,31 +282,42 @@
         if($is_edit.length){
             finishEdit($(".is_edit"));
         }
-
     });
-	/*弹出框确认按钮*/
+	/*上传模态框的确认按钮*/
     $("#is_add").click(function () {
-	   var length=$table1.children().length+1,
-		   docName= $name.val(),
-		   docDes= $des.val(),
-		   time=new  Date(),
-		   vMon = time.getMonth() + 1,
-		   vDay = time.getDate(),
-		   saveTime= time.getFullYear() +"-"+ (vMon < 10 ? "0" + vMon : vMon) +"-"+ (vDay < 10 ? "0" + vDay : vDay);
-	   if(!docName){
-		   alert("填写名称!");
-		   return ;
-	   }
-	   var _add='<tr> <td>'+length+'</td> <td >'+docName+'</td> <td >'+docDes+'</td> <td >4</td> <td>2</td> <td>3</td> <td>'+saveTime+'</td> <td>财务部</td> <td class="optBtn "> <button class="btn btn-primary edit"  >预览</button> <button class="btn btn-red delModel">删除</button> <button class="btn btn-primary">重传</button> <button class="btn btn-primary">追加</button> </td> </tr>';
-	   $table1.append(_add);
+        switch (stateFlag){
+			case "上传":
+                var docName= $name.val(),
+                docDes= $des.val(),
+               time=new  Date(),
+               vMon = time.getMonth() + 1,
+               vDay = time.getDate(),
+               saveTime= time.getFullYear() +"-"+ (vMon < 10 ? "0" + vMon : vMon) +"-"+ (vDay < 10 ? "0" + vDay : vDay);
+           if(!docName){
+               alert("填写名称!");
+               return ;
+           }
+           var _add='<tr> <td class="order"></td> <td >'+docName+'</td> <td >'+docDes+'</td> <td >4</td> <td>2</td> <td>3</td> <td>'+saveTime+'</td> <td>财务部</td> <td class="optBtn "> <button class="btn btn-primary edit"  >预览</button> <button class="btn btn-red delModel">删除</button> <button class="btn btn-primary">重传</button> <button class="btn btn-primary">追加</button> </td> </tr>';
+           $table1.append(_add);
+            order();
+				break;
+			case "重传":
+				$table1.children().eq(trID).children().eq(1).html($name.val());
+				$table1.children().eq(trID).children().eq(2).html($des.val());
+
+				break;
+			case "追加":
+				break;
+		}
+
 	   $alertAdd.modal("hide");
     });
 </script>
 <script>
+
 	/*报告操作*/
+	var trID;
 	$("#table1").on("click","button",function () {
-		$("#is_add").hide();
-	    $("#is_modified").show();
 	    var self=$(this);
         var id=this.getAttribute("data-echo");
         var nameVal=$(this).parent().siblings("td").eq(1).html();
@@ -316,18 +330,21 @@
                 $alertModal.modal("toggle");
                 $("#is_true").click(function () {
                     self.parent().parent().remove();
+					order();
                 });
                 break;
             case "重传":
+                stateFlag="重传";
                 $(".panelBtn").children("a").removeAttr("disabled");
                 $name.removeAttr("disabled");
                 $des.removeAttr("disabled");
                 $name.val(nameVal);
                 $des.val(desVal);
-
                 $alertAdd.modal("toggle");
+				trID=$table1.children().index($(this).parent().parent());
                 break;
             case "追加":
+            	stateFlag="追加";
                 $(".panelBtn").children("a").attr({"disabled":"disabled"});
                 $name.attr({"disabled":"disabled"});
                 $des.attr({"disabled":"disabled"});
@@ -336,11 +353,7 @@
                 $alertAdd.modal("toggle");
                 break;
 		}
-		$("#is_modified").click(function () {
-		    self.parent().siblings().eq(1).html($name.val());
-		    self.parent().siblings().eq(2).html($des.val());
-            $alertAdd.modal("hide");
-        });
+		$(".add-title").html(stateFlag);
     });
 	/*完成编辑*/
     function finishEdit(btn) {
@@ -352,6 +365,13 @@
         btn.html("编辑");
         btn.removeClass("is_edit");
     }
+    /*排序*/
+    function order(){
+    	var $order=$(".order");
+		for (var i = 0; i < $order.length; i++) {
+			$order[i].innerHTML=i+1;
+		}
+	}
 	/*字段编辑*/
 	$("#field-content").on("click","a",function () {
 	    var $is_edit=$(".is_edit");
@@ -390,11 +410,6 @@
                 break;
             case "完成":
                 finishEdit(self);
-               /* var fieldVal=$(editContent[0]).children("input").val();
-                var fieldType="数子";
-                editContent[0].innerHTML=fieldVal;
-                editContent[1].innerHTML=fieldType;
-                self.html("编辑");*/
                 break;
 		}
 

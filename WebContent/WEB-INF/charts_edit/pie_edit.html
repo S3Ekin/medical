@@ -611,7 +611,27 @@
 				}
 				break;
 			default:
-				
+				var tabId=$("#sourceTree").tree("getSelected").id;
+				if(tabId==12){
+					$("#title").val("一季度各科室检查数")
+					 var legenData=['C T室','放 射 科','B 超 室','输 血 科'];
+					 chatTitle=$("#title").val();
+					 seriesData=[
+					 {value:1195,name:"C T室"},
+					 {value:1115,name:"放 射 科"},
+					 {value:1972,name:"B 超 室"},
+					 {value:1026,name:"输 血 科"}
+					 ];
+				}else{
+					$("#title").val("泌尿科终末病历总评价")
+					var legenData=['甲级','乙级','丙级'];
+					chatTitle=$("#title").val();
+					seriesData=[
+						{value:8,name:"甲级"},
+						{value:1,name:"乙级"},
+						{value:1,name:"丙级"}
+					];
+				}
 				break;
 		};
 
