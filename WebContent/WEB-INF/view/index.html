@@ -206,9 +206,6 @@
         var ul_m=$(o).parent().parent().find('ul.ul_m');
         ul_m.slideToggle(); //动画伸缩
     }
-
-
-
     /* 设置内联框架的高度 */
     function winresize() {
         var h = T(window).height();
@@ -229,7 +226,6 @@
     menu_a.each(function () {
         $(this).click(function () {
             $(this).parents(".panel_div").slideUp();//点击跳转的a链接后，面板隐藏
-
         })
     });
     //切换角色下拉框内的背景色切换
@@ -238,15 +234,10 @@
         var Srole_id = "#" + role_id;
         $(Srole_id).parent().find('a').removeClass('bg_gray');
         $(Srole_id).addClass("bg_gray");
-//        getleftmenu(role_id);
     }
-
     /* 修改密码框 */
     var leftmenu = T('#leftmenu');
     var screenWidth = document.body.clientWidth;//获取当前可用屏幕宽度
-    function mine(url) {
-
-    }
 </script>
 <div class="clr"></div>
 </body>
