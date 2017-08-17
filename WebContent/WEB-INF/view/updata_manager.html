@@ -28,6 +28,7 @@
 		.addField{float: right; margin-right: 85px;padding: 2px 10px}
 		span.tree-title{font-size: 12px}
 		#is_modified{display: none}
+		td{text-align: center}
 		/*#field-content{height:200px;overflow: hidden}*/
 	</style>
 	
@@ -119,7 +120,7 @@
 									<tbody class="table" id="field-content">
 										<tr>
 											<td>1</td>
-											<td class="edit-content">xxx</td>
+											<td class="edit-content">检查数</td>
 											<td class="edit-content">数字</td>
 											<td class="optBtn panelBtn">
 												<a class="btn btn-primary ">编辑</a>
@@ -128,8 +129,8 @@
 										</tr>
 										<tr>
 											<td>2</td>
-											<td class="edit-content">xxx</td>
-											<td class="edit-content">字符</td>
+											<td class="edit-content">阳性率</td>
+											<td class="edit-content">数字</td>
 											<td class="optBtn panelBtn">
 												<a class="btn btn-primary ">编辑</a>
 												<a class="btn btn-red ">删除</a>
@@ -182,6 +183,38 @@
 		</div>
 	</div>
 </div>
+<!-- 预览共用模态框 -->
+<div class="modal fade" id="modal_pre" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog" style="width:400px;margin:65px auto;" >
+		<div class="modal-content">
+			<div class="modal-header"  style="padding: 5px 15px;">
+				<span>预览</span>
+				<button type="button" class="close" data-dismiss="modal">
+					<span class="is_true" aria-hidden="true" style="position:relative;top:-2px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+				</button>
+
+			</div>
+			<div class="modal-body">
+				<table border="1" cellspacing="0" width="100%" class="list1">
+					<tr>
+						<th width="40%">名称</th>
+						<th width="20%">类型</th>
+					</tr>
+					<tr>
+						<td class="edit-content">检查数</td>
+						<td class="edit-content">数字</td>
+					</tr>
+					<tr>
+						<td class="edit-content">阳性率</td>
+						<td class="edit-content">数字</td>
+					</tr>
+				</table>
+			</div>
+			<!--<div class="modal-footer" style="text-align:center;"></div>-->
+		</div>
+	</div>
+</div>
+
 <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
 <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
 <script type="text/javascript" src="../../resources/lib/echarts/echarts.min.js"></script>
@@ -277,6 +310,7 @@
         var desVal=$(this).parent().siblings("td").eq(2).html();
 	    switch (this.innerHTML){
 			case "预览":
+				$("#modal_pre").modal("show");
 			    break;
             case "删除":
                 $alertModal.modal("toggle");
