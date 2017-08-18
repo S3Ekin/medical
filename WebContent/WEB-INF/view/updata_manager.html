@@ -190,14 +190,14 @@
 			<div class="modal-header"  style="padding: 5px 15px;">
 				<span>预览</span>
 				<label for="search-num" style="padding-left: 30px">查看数量(条)：</label>
-				<input type="number" id="search-num" min="20" value="20"  class="input-rowspan" >
+				<input type="number" id="search-num" min="5" value="10"  class="input-rowspan" >
 				<button type="button" class="close" data-dismiss="modal">
 					<span class="is_true" aria-hidden="true" style="position:relative;top:-2px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
 				</button>
 
 			</div>
 			<div class="modal-body">
-				<table border="1" cellspacing="0" width="100%" class="list1">
+				<table border="1" id="preTab" cellspacing="0" width="100%" class="list1">
 					<tr>
 						<th width="40%">字段</th>
 						<th width="20%">类型</th>
@@ -212,7 +212,10 @@
 					</tr>
 				</table>
 			</div>
-			<!--<div class="modal-footer" style="text-align:center;"></div>-->
+			<div class="modal-footer" style="text-align:center;">
+				<button  class="btn btn-secondary" id="upPage">上一页</button>
+				<button  class="btn btn-green"  id="downPage">下一页</button>
+			</div>
 		</div>
 	</div>
 </div>
@@ -244,6 +247,25 @@
 				<button class="btn btn-primary">重传</button>
 				<button class="btn btn-primary">追加</button>
 			</td>
+		</tr>
+		[%j++;}%]
+</script>
+<script id="tpl13" type="text/template">
+	<tr>
+		<td >序号</td>
+		<td >名称</td>
+		<td >数值</td>
+	</tr>
+		[%
+	        var endNum=parseInt(window.localStorage.endNum);
+	        var startNum=parseInt(window.localStorage.startNum);
+		for(var i=startNum;i<endNum;i++){
+	        var j=i-1;
+	%]
+		<tr>
+			<td class="pre_order">[%=i%]</td>
+			<td >[%=list[j].name%]</td>
+			<td >[%=list[j].val%]</td>
 		</tr>
 		[%j++;}%]
 </script>
@@ -314,9 +336,10 @@
     });
 </script>
 <script>
-
 	/*报告操作*/
-	var trID;
+	var trID,count=0;
+	var num=window.localStorage.endNum=11;
+	var start=window.localStorage.startNum=1;
 	$("#table1").on("click","button",function () {
 	    var self=$(this);
         var id=this.getAttribute("data-echo");
@@ -325,6 +348,36 @@
 	    switch (this.innerHTML){
 			case "预览":
 				$("#modal_pre").modal("show");
+				$.ajax({
+					url:"../ajax/pretab.json",
+					success:function (data) {
+						var length=data.list.length;
+						$("#preTab").html(baidu.template("tpl13",data));
+						$("#upPage").click(function () {
+							var searchNum=parseInt($("#search-num").val());
+							var _id=$(".pre_order").first().html();
+							var startNum=parseInt(_id)-searchNum;
+								startNum=startNum<1?(length-length%searchNum)+1:startNum;
+							var endNum=startNum+searchNum;
+								endNum=endNum>(length+1)?(length+1):endNum;
+							window.localStorage.startNum=startNum;
+							window.localStorage.endNum=endNum;
+							$("#preTab").html(baidu.template("tpl13",data));
+						})
+						$("#downPage").click(function () {
+							var searchNum=parseInt($("#search-num").val());
+							var _ide=$(".pre_order").last().html();
+							var startNum=parseInt(_ide)+1;
+							startNum=startNum>length?1:startNum;
+							var endNum=startNum+searchNum;
+							endNum=endNum>=(length+1)?(length+1):endNum;
+							window.localStorage.startNum=startNum;
+							window.localStorage.endNum=endNum;
+							$("#preTab").html(baidu.template("tpl13",data));
+						})
+
+					}
+				});
 			    break;
             case "删除":
                 $alertModal.modal("toggle");
@@ -355,6 +408,10 @@
 		}
 		$(".add-title").html(stateFlag);
     });
+	$(".modal-content").mousedown(function (event) {
+		event.stopPropagation();
+		$(this).css("border","1px solid red");
+	})
 	/*完成编辑*/
     function finishEdit(btn) {
         var editContent=btn.parent().siblings(".edit-content");

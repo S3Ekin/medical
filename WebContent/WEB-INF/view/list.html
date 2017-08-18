@@ -195,12 +195,12 @@
 			<td>[%=list[i].creatTime%]</td>
 			<td>[%=list[i].creatPeople%]</td>
 			<td class="optBtn">[%if(list[i].type=="0"){%]
-				<button class="btn btn-primary edit"   data-echo="[%=list[i].id%]">编辑</button>
+				<button class="btn btn-primary edit"   data-echo="[%=list[i].model_id%]">编辑</button>
 				<button class="btn btn-red delModel" >删除</button>
 				<button class="btn btn-primary" >另存</button><!--<br>-->
-				<button class="btn btn-primary"  <!--style="margin-top:5px;padding:0 8px;height:26px;"-->>保存为报告</button>
+				<button class="btn btn-primary" >保存为报告</button>
 				[%}else{%]
-				<button class="btn btn-primary browserRe"   data-echo="[%=list[i].id%]">浏览</button>
+				<button class="btn btn-primary browserRe"   data-echo="[%=list[i].report_id%]">浏览</button>
 				<button class="btn btn-red delRe"  >删除</button>
 				<button class="btn btn-primary exportRe" >导出</button>
 				[%}%]
@@ -258,7 +258,7 @@
         var id=this.getAttribute("data-echo");
 	    switch (this.innerText){
 			case "浏览":
-			    window.parent.frames[0].location.href="iframe"+id+".html";
+			    window.parent.frames[0].location.href="iframe4.html?edit="+id+"&report";
 			    break;
             case "删除":
                 var self=$(this);
@@ -270,7 +270,7 @@
             case "导出":
                 break;
             case "编辑":
-                window.parent.frames[0].location.href="iframe"+id+".html";
+                window.parent.frames[0].location.href="iframe4.html?edit="+id;
                 break;
             case "另存":
                 break;

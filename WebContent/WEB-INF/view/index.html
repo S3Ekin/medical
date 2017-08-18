@@ -124,6 +124,7 @@
                     </ul>
                 </li>
             </ul>
+            <ul id="test"></ul>
         </td>
         <td id="rightcnt" valign="top" style="position: relative">
             <!-- 点击隐藏显示按钮 -->
@@ -150,6 +151,25 @@
 <script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../resources/js/common.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
+<script type="text/templete" id="tpl1">
+   [% for(var i in list){
+        var liList=list[i].list;
+   %]
+   <li>
+        <div class="div_m" id="[%='dul'+(1109+parseInt(i))%]">
+             <a class="a_m" ><i class="icon-jiance6"></i> <span>[%=list[i].name%]</span></a><b onclick="nav(this)"><i class="fa fa-chevron-up"></i></b>
+        </div>
+        <ul id="[%='ul'+(1001+parseInt(i))%]" class="ul_m">
+            [%for(var j in liList){%]
+            <li id="[%='li'+(1000+parseInt(j))%]" class="li_m review ">
+                            <a id="[%='link_'+(1130+parseInt(j))%]"  onclick="navto(this, event,'../charts_edit/scatter_edit.html')"><i class="fa fa-circle"></i><span>[%=liList[j].name%]</span><b><i class="fa fa-chevron-right"></i></b></a>
+            </li>
+            [%}%]
+        </ul>
+    </li>
+[%}%]
+</script>
 <script type="text/javascript">
     window.onload=function () {
         window.frames[0].location.href ="list.html";
@@ -180,6 +200,13 @@
             });
         }
     });
+    /*菜单加载*/
+//    $.ajax({
+//        url:"../ajax/main.json",
+//        success:function (data) {
+//            $("#test").html(baidu.template("tpl1",data));
+//        }
+//    });
     /*左侧菜单栏 箭头和文字点击事件分开 */
     //一级 文字点击事件
     function navopen(o, e, t){

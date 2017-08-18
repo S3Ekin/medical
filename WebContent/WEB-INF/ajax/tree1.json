@@ -1,6 +1,10 @@
 [{"children":[
-  {"id":1,"text":"预算管理指标","children":[{"id":2,"text":"预算执行率","children":[{"id":3,"text":"预算收入执行率","children":[]},{"id":4,"text":"预算支出执行率","children":[]}]},{"id":5,"text":"财政专项拨款执行率","children":[]}]},
-  {"id":6,"text":"结余和风险管理指标","children":[{"id":7,"text":"业务收支结余率","children":[]},{"id":8,"text":"资产负债率","children":[]},{"id":9,"text":"流动比率","children":[]}]},
-  {"id":10,"text":"资产运营指标","children":[{"id":11,"text":"总资产周转率","children":[]},{"id":12,"text":"应收账款周转天数","children":[]},{"id":13,"text":"存货周转率","children":[]}]},
-  {"id":14,"text":"成本管理指标","children":[{"id":15,"text":"每门诊人次收入","children":[]},{"id":16,"text":"每门诊人次支出","children":[]},{"id":17,"text":"门诊收入成本率","children":[]},{"id":18,"text":"每住院人次收入","children":[]},{"id":19,"text":"每住院人次支出","children":[]},{"id":20,"text":"住院收入成本率","children":[]}]}
-],"id":-1,"text":"指标"}]
+  {"text":"一、医疗质控信息","id":"#C1"},
+  {"text":"二、医疗质控工作小结","id":"#C2","children":[
+    {"text":"（一）住院病历质控","id":"#C2.1"},
+    {"text":"（二）门、急诊工作","id":"#C2.2"},
+    {"text":"（三）医技科室","id":"#C2.3"},
+    {"text":"（四）科室相关质控工作检查反馈","id":"#C2.4"}
+  ]},
+  {"text":"整改意见","id":"#C3"}
+],"text":"目 录","id":"#C1" }]

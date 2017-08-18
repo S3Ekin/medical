@@ -16,7 +16,6 @@ UE.registerUI('button',function(editor,uiName){
         //点击时执行的命令
         onclick:function () {
             //这里可以不用执行命令,做你自己的操作也可
-            window.localStorage.editState="false";
             window.localStorage.editState2="false";
             var box=parent.document.getElementsByClassName("box");
           parent.document.getElementById("editTools").style.display="none";
@@ -26,7 +25,6 @@ UE.registerUI('button',function(editor,uiName){
             parent.document.getElementById("edit").innerText="编辑";
         }
     });
-
     //当点到编辑内容上时，按钮要做的状态反射
     editor.addListener('selectionchange', function () {
         var state = editor.queryCommandState(uiName);
