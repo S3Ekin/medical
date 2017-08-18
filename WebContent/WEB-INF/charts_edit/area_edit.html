@@ -225,13 +225,7 @@
 				if(!$("#title").val()){
 					$("#title").val(_title);
 				}
-				break;
-			default:
-
-				break;
-		};
-		$(".pre").show();
-		var pieoption = {
+					var pieoption = {
 			title: {
 				text: $("#title").val(),
 				x: 'center',
@@ -295,6 +289,217 @@
 				type: 'inside'
 			}],
 		};
+				break;
+			default:
+                var tabId=$("#sourceTree").tree("getSelected").id;
+				if(tabId==12){
+					$("#title").val("一季度各科室检查数")
+					 var pieoption= {
+           title: {
+               text: $("#title").val(),
+               x:'10%'
+           },
+           tooltip: {
+               trigger: 'axis',
+               formatter: "{b}: {c} 次"
+           },
+           toolbox: {
+               feature: {
+                   dataView: {
+                       show: true,
+                       readOnly: false
+                   },
+                   restore: {
+                       show: true
+                   },
+                   saveAsImage: {
+                       show: true
+                   }
+               }
+           },
+           grid: {
+               containLabel: true
+           },
+           legend: {
+               data: ['一月','二月','三月']
+           },
+           xAxis: [{
+               type: 'category',
+               name:"科室",
+               nameGap:50,
+               axisTick: {
+                   alignWithLabel: true
+               },
+               data:['C T室','放 射 科','B 超 室','输 血 科']
+           }],
+           yAxis: [
+              /* {
+               type: 'category',
+               name: '阳性率',
+               min: 0,
+               max: 100,
+               position: 'right',
+               axisLabel: {
+                   formatter: '{value} %'
+               }
+           }, */
+			   {
+               type: 'value',
+               name: '检查数',
+               position: 'left'
+           }],
+           series: [
+           /*    {
+               name: '阳性率',
+               type: 'line',
+               lineStyle: {
+                   normal: {
+                       width: 3,
+                       shadowColor: 'rgba(0,0,0,0.4)',
+                       shadowBlur: 10,
+                       shadowOffsetY: 10
+                   }
+               },
+               data: [
+                   // 每一列称为一个『维度』。
+                   // 这里分别是维度 0、1、2、3、4。
+                   [12, 44, 55, 66],
+                   [23, 6, 16, 23],
+                   [23, 6, 16, 23]
+           ]
+           },*/
+           /*{
+               type:"bar",
+			   dimensions:	['C T室', '放 射 科', 'B 超 室','输 血 科'],
+			   data:[
+					   1190,1226,1693,78
+           ]}*/
+			   {
+                   name: '一月',
+                   type: 'bar',
+//                   yAxisIndex: 1,
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+                              },
+                   data: [1190,1426,1793,115]
+               },{
+                   name: '二月',
+                   type: 'bar',
+//                   yAxisIndex:1,
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+						  },
+                   data: [1190,1226,1693,125]
+               },{
+                   name: '三月',
+                   type: 'bar',
+//                   yAxisIndex: 1,
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+						 },
+                   data: [1390,1126,1593,135]
+               }
+
+           ]
+       };
+				}else{
+					$("#title").val("各科终末病历总评价")
+
+    			var pieoption= {
+           title: {
+               text: $("#title").val(),
+               x:'10%'
+           },
+           tooltip: {
+               trigger: 'axis',
+			   formatter: "{b} <br/>{a0} : {c0} 次<br/>{a1} : {c1} 次<br/>{a2} : {c2} 次"
+           },
+           toolbox: {
+               feature: {
+                   dataView: {
+                       show: true,
+                       readOnly: false
+                   },
+                   restore: {
+                       show: true
+                   },
+                   saveAsImage: {
+                       show: true
+                   }
+               }
+           },
+           grid: {
+               containLabel: true
+           },
+           legend: {
+               data: ['甲级','乙级','丙级']
+           },
+           xAxis: [{
+               type: 'category',
+               name:"科室",
+               nameGap:50,
+               axisTick: {
+                   alignWithLabel: true
+               },
+               data:['泌尿科','心内科','呼吸科','外三科']
+           }],
+           yAxis: [
+			   {
+               type: 'value',
+               name: '检查数',
+               position: 'left'
+           }],
+           series: [
+			   {
+                   name: '甲级',
+                   type: 'bar',
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+                              },
+                   data: [9,8,8,8]
+               },
+			   {
+
+                   name: '乙级',
+                   type: 'bar',
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+						  },
+                   data: [1,0,1,1]
+               },{
+                   name: '丙级',
+                   type: 'bar',
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+						 },
+                   data: [0,2,1,1]
+               }
+
+           ]
+       };
+		}
+				break;
+		};
+		$(".pre").show();
+
 		var myChart = echarts.init($('#chat')[0]);
 		myChart.setOption(pieoption);
 	})

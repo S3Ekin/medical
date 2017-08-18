@@ -1,6 +1,6 @@
 {"list":[
-  {"saveTime":"2017-4-14","type":"0","name":"模版报告1","catStyle":"0","creatTime":"2017-4-14","creatPeople":"质控科","id":"2"},
-  {"saveTime":"2017-5-18","type":"0","name":"模版报告2","catStyle":"1","creatTime":"2017-4-18","creatPeople":"质控科","id":"4"},
-  {"saveTime":"2017-4-14","type":"1","name":"2017年第一季度质控报告","catStyle":"1","creatTime":"2017-4-14","creatPeople":"质控科","id":"1"},
-  {"saveTime":"2017-9-14","type":"1","name":"2017年11月医疗质量管理报告", "catStyle":"1","creatTime":"2017-9-14","creatPeople":"质控科","id":"3"}
+  {"saveTime":"2017-4-14","type":"0","name":"模版报告1","catStyle":"0","creatTime":"2017-4-14","creatPeople":"质控科","model_id":"1"},
+  {"saveTime":"2017-5-18","type":"0","name":"模版报告2","catStyle":"1","creatTime":"2017-4-18","creatPeople":"质控科","model_id":"2"},
+  {"saveTime":"2017-4-14","type":"1","name":"2017年第一季度质控报告","catStyle":"1","creatTime":"2017-4-14","creatPeople":"质控科","report_id":"1"},
+  {"saveTime":"2017-9-14","type":"1","name":"2017年11月医疗质量管理报告", "catStyle":"1","creatTime":"2017-9-14","creatPeople":"质控科","report_id":"2"}
 ]}
