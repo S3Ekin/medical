@@ -4,7 +4,7 @@ iframe{ width:80% ;min-width:550px;margin: auto}
     border: 1px solid red;
 }*/
 .temp-variate{color:red;font-weight: bold}
-#content{font-size:16px }
+#content{font-size:16px;font-family: 楷体}
 ul{list-style: none !important;line-height:30px}
 #content strong{font-size:18px }
 #content >li>p{padding:10px 0 }
@@ -17,3 +17,5 @@ caption{padding:5px;border: 1px solid black; border-bottom: none; color: #777;;}
 .indent{text-indent: 3rem}
 .temp-variate{color:red;font-weight: bold}
 .run-patient>p{text-indent: 3rem}
+.font-set{font-size: 18px}
+.box{font-family: 楷体}
