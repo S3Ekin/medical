@@ -130,7 +130,7 @@ $(".field-combo").combobox({
 var count=1;
 $("#field-btn").click(function () {
     count++;
-    var str='<div class="row"><div class="col-xs-2 topic add-field">纵轴字段<span>'+count+'</span>:</div><div class="col-xs-4"><div class="new-field"></div></div><div class="col-xs-2" > <button type="button" class="btn btn-red field-del" >删除</button> </div></div>';
+    var str='<div class="row"><div class="col-xs-2 topic add-field">纵轴字段<span>'+count+'</span>:</div><div class="col-xs-4"><div class="new-field" ></div ><button type="button" class="btn btn-red field-del" style="margin-left: 10px">删除</button></div></div>';
     $(".add-col-field").append(str);
     $(".new-field").combobox({
         valueField:"id",
@@ -168,6 +168,7 @@ $addColField.on("mouseover",".field-del",function () {
 });
 /*单选按钮事件*/
 $radio.on("click",function () {
+    $("#save").hide();
     $zbName.html(null);
     $(".add-col-field").html(null);
     $table.hide();
@@ -251,8 +252,6 @@ $(".footer").on("click","button",function(){
                                 show_id=0;
                             }
                             str ='<div class="row"><div style="color:seagreen" class = "col-xs-2  topic" >指标名称:</div><div class ="col-xs-10 no-padding"><div class ="col-xs-1 zb-name" style="width: auto">'+obj.text+'</div><div style="float: left;padding-right: 20px">'+show_combo[show_id].type+':'+'</div><div style="float: left"><div  id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div style="float:left;" ><div class="chat-type"></div></div></div></div >';
-
-                           /* str ='<div class="row"><div class ="col-xs-2 zb-name topic">'+obj.text+":"+'</div><div class = "col-xs-10 no-padding" ><div class="col-xs-2" style="width: 65px;">'+show_combo[_showId].type+':'+'</div><div class ="col-xs-4 no-padding" ><div id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div class ="col-xs-4 no-padding" ><div class="chat-type"></div></div></div >';*/
                             $newAdd.append(str);
                             $("#show_type_"+i).combobox({
                                 valueField:"id",

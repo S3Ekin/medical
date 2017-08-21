@@ -408,10 +408,6 @@
 		}
 		$(".add-title").html(stateFlag);
     });
-	$(".modal-content").mousedown(function (event) {
-		event.stopPropagation();
-		$(this).css("border","1px solid red");
-	})
 	/*完成编辑*/
     function finishEdit(btn) {
         var editContent=btn.parent().siblings(".edit-content");
