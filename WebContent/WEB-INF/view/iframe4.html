@@ -72,7 +72,7 @@
                 <span class="title">模版报告2</span>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary" style="font-size: 18px" id="edit" style="display: none">编 辑</button>
+                <button type="submit" class="btn btn-primary" style="font-size:18px; display: none" id="edit" >编 辑</button>
                 <span class="sub-title" style="display: none">医教部质控科制</span>
             </div>
         </div>
@@ -92,7 +92,7 @@
 <script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
 <script>
     var $edit=$("#edit");
-    var $subTitle=$(".sub-title")
+    var $subTitle=$(".sub-title");
     var $box=$(".box");
     var editID=parseInt((location.search).split("=")[1]);
     var is_edit=location.search.indexOf("report");
