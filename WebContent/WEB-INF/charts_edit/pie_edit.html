@@ -101,7 +101,7 @@
 		}
 
 		.pre {
-			margin-left: 16%;
+			margin-left: 17.7%;
 			padding: 20px;
 			border: 1px solid #95B8E7;
 			display: none;
@@ -204,9 +204,7 @@
 				<div class="col-xs-2 topic">纵轴字段1:</div>
 				<div class="col-xs-4">
 					<div class="field-combo"></div>
-				</div>
-				<div class="col-xs-2">
-					<button type="button" class="btn btn-primary " id="field-btn">添加</button>
+					<button type="button" class="btn btn-primary " id="field-btn" style="margin-left: 10px">添加</button>
 				</div>
 			</div>
 			<div class="add-col-field"></div>
@@ -232,8 +230,11 @@
 				<div class="col-xs-2 topic">
 					<button type="button" class="btn btn-primary " id="preChat">预览</button>
 				</div>
+				 <div class="col-xs-10 " style="text-align: right;width: 800px;padding: 0">
+                    <button type="button" class="btn btn-green " id="save" style="display:none;">保存</button>
+                </div>
 			</div>
-			<div>
+			<div class="row">
 				<div class="pre">
 					<div id="chat" style="width:760px;height:350px;"></div>
 				</div>
@@ -329,7 +330,7 @@
 	var count = 1;
 	$("#field-btn").click(function () {
 		count++;
-		var str = '<div class="row"><div class="col-xs-2 topic add-field">纵轴字段<span>' + count + '</span>:</div><div class="col-xs-4"><div class="new-field"></div></div><div class="col-xs-2" > <button type="button" class="btn btn-red field-del" >删除</button> </div></div>';
+		var str = '<div class="row"><div class="col-xs-2 topic add-field">纵轴字段<span>' + count + '</span>:</div><div class="col-xs-4"><div class="new-field"></div><button type="button" class="btn btn-red field-del" style="margin-left: 10px">删除</button></div></div>';
 		$(".add-col-field").append(str);
 		$(".new-field").combobox({
 			valueField: "id",
@@ -431,6 +432,7 @@
 	});
 	/*单选按钮事件*/
 	$radio.on("click", function () {
+		$("#save").hide();
 		$zbName.html(null);
 		$(".add-col-field").html(null);
 		$table.hide();
@@ -539,6 +541,7 @@
 <script>
 	/*chats加载*/
 	$("#preChat").click(function () {
+	    $("#save").show();
 		switch (is_zb) {
 			case true:
 				var comboData = $(" .zb .textbox-text")
