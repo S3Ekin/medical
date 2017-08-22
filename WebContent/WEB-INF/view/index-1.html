@@ -14,26 +14,190 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/icon.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/image/style.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css">
+	<style>
+		.datetimepicker{top:27%;left:2%;}
+		.time4_tab{color:#000;border:1px solid #95B8E7;border-right:none;font-size:14px;}
+		/* 	.time4_tab label input,.time4_tab label span{color:#000;} */
+		.time4_tab>tr>td{border-right:1px solid #95B8E7;}
+		.time4_tab tr td label .v_align{vertical-align:middle;margin:0px;}
+		#togg {width:30px;height:30px;line-height:30px;border-radius:15px;background:#fff;border:none;position:relative;top:2px;}
+		#togg:hover {background:#bedef1;border:1px solid #0e83b9}
+		#togg i{padding:8px 5px;}
+		.nav61{background: url('${ctx}/resources/images/nav61.png') no-repeat right center;}
+		.nav62{background: url('${ctx}/resources/images/nav62.png') no-repeat right center;}
+		.zb_label{height:25px;line-height:25px;margin:0;margin-right:20px;font-weight:500;color:#000;}
+		.xuanze{display:inline-block;width:40px;text-align:center;border:1px solid transparent;border-radius:3px;cursor:pointer;}
+		.xuanze:hover{border-color:#95B8E7;}
+		.col-0081c2{border-color:#0081c2;}
+		.yes_check{display:inline-block;height:20px;line-height:20px;padding:0 9px;border-radius:15px;margin-right:5px;margin-bottom:5px;background:#1297fb;color:#fff;cursor:pointer;}
+		.no_check{display:inline-block;height:20px;line-height:20px;padding:0 9px;border-radius:15px;margin-right:5px;margin-bottom:5px;background:#e5e5e5;color:#B9B7B7;cursor:pointer;}
+
+	</style>
 </head>
 <body >
-    <div>
+<input id="kpi_ids" type="hidden" value=""/>
+<table>
+	<tbody class="time4_tab" id="parent_tab">
+	<tr class="row except" style="height:35px;line-height:35px;border-bottom:1px solid #95B8E7;">
+		<td class="col-xs-12">
+			<span class="_title">查询条件</span>
+			<div class="fr" style="height:35px">
+				<button type="button" id="_button" class="btn btn-primary" style="margin-right:20px;"><i class="fa fa-search"></i> 查询</button>
+				<button  type="button" class="btn btn-green" onclick="exportFile()" style="height: 26px;line-height:10px;"><i class="fa fa-download"></i>导出</button>
+				<button type="button" id="togg" title="点击隐藏"><i class="nav61"></i></button>
+			</div>
+			<div id="summary" style="position:absolute;top:50px;right:45px;">
+				<button type="button" id="getSummary" class="btn btn-primary"><i class="fa fa-search"></i>查看总表</button>
+			</div>
+		</td>
+	</tr>
+	<tr class="row" id="dim_tr" style="display:none">
+		<td class="col-xs-12" style="padding-top:10px;">
+			<div style="display:inline-block;/* width:33.5% */">
+				<div  id="dimType" style="display:inline-block;min-width:90px;">维度</div>
+				<div class="pr" style="width:147px;display:inline-block;vertical-align: middle; margin-right: 30px;">
+					<input type="hidden" id="dimContent" name="dimContent" value="allill"/>
+					<input type="text" id="_dimContent" class="input inp dd"  title="请选择" value="全部" autocomplete="off" data-to="dimContent" data-type="json" data-src="_json_dimContent" onkeydown="return false;" style="width:98%;height:16px;text-align:center;"/>
+				</div>
+			</div>
+		</td>
+	</tr>
+	<tr class="row pitchOn">
+		<td class="col-xs-12" style="padding-top:5px;">
+			<div style="display:inline-block;">
+				<div style="display:inline-block;width:90px;">机构 </div>
+				<label style="font-weight: normal;margin-right:48px;">
+					<input class="allorg v_align" type="radio" value="allorg" name="org" checked />
+					<span class="v_align">全院</span>
+				</label>
+				<label style="font-weight: normal;margin-right:48px;">
+					<input class="eachorg v_align" type="radio" value="alleachorg" id="allorgsle" name="org"/>
+					<span calss="v_align">按科室(包含全院)</span>
+				</label>
+				<label style="font-weight: normal;margin-right:48px;">
+					<input class="eachorg v_align" type="radio" value="eachorg" id="orgsle" name="org"/>
+					<span calss="v_align">按科室</span>
+				</label>
+				<!--  <label style="font-weight: normal;">
+						<input class="eachorg v_align" type="radio" value="otherorg" id="orgsle" name="org"/>
+						<span calss="v_align">科室</span>
+				</label>  -->
+			</div>
+		</td>
+	</tr>
+	<tr class="row" id="year_tr" >
+		<td class="col-xs-12" style="padding-top:2px;">
+			<div>
 				<div style="display:inline-block;width:90px;">
-					<label style="height:28px;line-height:28px;margin-right:10px;font-weight:500;color:#000;">
-	       				<input type="checkbox" class="v_align" style="border-color:#d3d3d3" id="yearcheck" name="yearcheck">
-	       				<span class="v_align">年</span>
-	       			</label>
-       			</div>
-       			<div class="pr" style="width:142px;margin-right:19px;display:inline-block;vertical-align: middle;">
-					<input type="hidden" id="year" name="year" value="2016">
-					<input type="text" id="_year" class="input inp dd" title="请选择起始年份" autocomplete="off" data-to="year" data-type="json" data-src="_json_years" onkeydown="return false;" style="width:100%;height:16px;text-align:center;">
+					<label style="height:28px;line-height:28px;margin-right:10px;font-weight:500;color:#000;" >
+						<input type="checkbox" class="v_align" style="border-color:#d3d3d3" id="yearcheck" name= "yearcheck" />
+						<span class="v_align">年</span>
+					</label>
+				</div>
+				<div class="pr" style="width:142px;margin-right:19px;display:inline-block;vertical-align: middle;">
+					<input type="hidden" id="year" name="year" class="last"/>
+					<input type="text" id="_year" class="input inp dd last" title="请选择起始年份" autocomplete="off" data-to="year" data-type="json" data-src="_json_years" onkeydown="return false;" style="width:100%;height:16px;text-align:center;" value="2016"/>
 				</div>
 				<i style="color:#999">—</i>
 				<div class="pr" style="width:142px;margin-left:5px;display:inline-block;vertical-align: middle;">
-					<input type="hidden" id="year2" name="year2" value="2017">
-					<input type="text" id="_year2" class="input inp dd" title="请选择终止年份" autocomplete="off" data-to="year2" data-type="json" data-src="_json_years2" onkeydown="return false;" style="width:100%;height:16px;text-align:center;">
+					<input type="hidden" id="year2" name="year2" class="currYear"/>
+					<input type="text" id="_year2" class="input inp dd currYear" title="请选择终止年份" autocomplete="off" data-to="year2" data-type="json" data-src="_json_years2" onkeydown="return false;" value="2017" style="width:100%;height:16px;text-align:center;"/>
 				</div>
 
 			</div>
+		</td>
+	</tr>
+	<tr class="row" id="season_tr" >
+		<td class="col-xs-12" style="padding-top:0px;">
+			<div>
+				<div style="display:inline-block;width:90px;">
+					<label style="height:28px;line-height:28px;margin-right:10px;font-weight:500;color:#000;">
+						<input type="checkbox" class="v_align" style="border-color:#d3d3d3" id="seasoncheck" name="seasoncheck"/>
+						<span class="v_align">季</span>
+					</label>
+				</div>
+				<div class="pr" style="width:157px;margin-right:18px;display:inline-block;vertical-align: middle;">
+					<input type="hidden" id="season_year" name="season_year" class="last"/>
+					<input type="text" id="_season_year" class="input inp dd last" title="请选择起始年度" autocomplete="off" data-to="season_year" data-type="json" data-src="_json_years_2" onkeydown="return false;" style="width:97%;height:16px;text-align:center;"/>
+				</div>
+				<div class="pr" style="width:157px;margin-right:17px;display:inline-block;vertical-align: middle;">
+					<input type="hidden" id="season" name="season" value="1"/>
+					<input type="text" id="_season" class="input inp dd" title="请选择起始季度" autocomplete="off" data-to="season" value="1季度" data-type="json" data-src="_json_season1" onkeydown="return false;" style="width:97%;height:16px;text-align:center;"/>
+				</div>
+				<i style="color:#999">—</i>
+				<div class="pr" style="width:157px;margin-left:5px;margin-right:19px;display:inline-block;vertical-align: middle;">
+					<input type="hidden" id="season_year2" name="season_year2" class="currYear"/>
+					<input type="text" id="_season_year2" class="input inp dd currYear" title="请选择终止年度" autocomplete="off" data-to="season_year2" data-type="json" data-src="_json_years2_2" onkeydown="return false;" style="width:98%;height:16px;text-align:center;"/>
+				</div>
+				<div class="pr" style="width:157px;display:inline-block;vertical-align: middle;">
+					<input type="hidden" id="season2" name="season2" value="4"/>
+					<input type="text" id="_season2" class="input inp dd" title="请选择终止季度" autocomplete="off" data-to="season2" value="4季度" data-type="json" data-src="_json_season2" onkeydown="return false;" style="width:98%;height:16px;text-align:center;"/>
+				</div>
+			</div>
+		</td>
+	</tr>
+	<tr class="row" id="month_tr" >
+		<td class="col-xs-12"  style="padding-top:2px;">
+			<div>
+				<div style="display:inline-block;width:90px;">
+					<label style="height:28px;line-height:28px;margin-right:10px;font-weight:500;color:#000;">
+						<input type="checkbox" class="v_align" style="border-color:#d3d3d3" id="monthcheck" name="monthcheck" />
+						<span  class="v_align">月</span>
+					</label>
+				</div>
+				<div class="pr" style="width:157px;margin-right:18px;display:inline-block;vertical-align: middle;">
+					<input type="hidden" id="month_year" name="month_year"/>
+					<input type="text" id="_month_year" class="input inp dd last"  title="请选择起始年度" autocomplete="off" data-to="month_year" data-type="json" data-src="_json_years_3" onkeydown="return false;" style="width:97%;height:16px;text-align:center;"/>
+				</div>
+				<div class="pr" style="width:157px;margin-right:17px;display:inline-block;vertical-align: middle;">
+					<input type="hidden" id="month" name="month" value="1"/>
+					<input type="text" id="_month" class="input inp dd" title="请选择起始月份" autocomplete="off" data-to="month"  value="1月份" data-type="json" data-src="_json_month1" onkeydown="return false;" style="width:97%;height:16px;text-align:center;"/>
+				</div>
+				<i style="color:#999">—</i>
+				<div class="pr" style="width:157px;margin-left:5px;margin-right:19px;display:inline-block;vertical-align: middle;">
+
+					<input type="hidden" id="month_year2" name="month_year2"/>
+					<input type="text" id="_month_year2" class="input inp dd currYear" title="请选择终止年度" autocomplete="off" data-to="month_year2" data-type="json" data-src="_json_years2_3" onkeydown="return false;" style="width:98%;height:16px;text-align:center;"/>
+				</div>
+				<div class="pr" style="width:157px;display:inline-block;vertical-align: middle;">
+					<input type="hidden" id="month2" name="month2" value="12"/>
+					<input type="text" id="_month2" class="input inp dd " title="请选择终止月份"  autocomplete="off" data-to="month2" value="12月份" data-type="json" data-src="_json_month2" onkeydown="return false;"  style="width:98%;height:16px;text-align:center;"/>
+				</div>
+			</div>
+		</td>
+	</tr>
+	<tr class="row"  id="day_tr" >
+		<td class="col-xs-12" style="padding-top:2px;">
+			<div>
+				<div style="display:inline-block;width:90px;">
+					<label style="height:28px;line-height:28px;margin-right:10px;font-weight:500;color:#000;">
+						<input type="checkbox" class="v_align" style="border-color:#d3d3d3" name="daycheck"/>
+						<span class="v_align">日</span>
+					</label>
+				</div>
+				<div class="demo pr" style="display:inline-block;width:347px;">
+					<input type="text" id="config-demo" title="点击选取起始日期和终止日期" style="width:95%;height:16px;" value="" class="form-control input inp dd">
+				</div>
+			</div>
+		</td>
+	</tr>
+	<tr class="row pitchOn">
+		<td class="col-xs-12"  style="padding-top:2px;">
+			<div class="in-block t_align" style="width:90px;">指标 </div>
+			<div class="in-block" style="width:85%;margin-bottom:10px;">
+				<div style="margin-bottom:5px;">
+					<span class="xuanze col-0081c2" id="all_xz" data-type='0'>全选</span>
+					<span> / </span>
+					<span class="xuanze" id="fan_xz">反选</span>
+				</div>
+				<div id="kpi_zb" class="pr" style="margin-right:18px;vertical-align: middle;">
+
+				</div>
+			</div>
+		</td>
+	</tr>
+	</tbody>
+</table>
 <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
 <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
@@ -42,789 +206,562 @@
 <script type="text/javascript" src="../../resources/js/common.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
-<script>
-     //获取近四年的年份
-   function getYears() {
-   	var nowDate = new Date();
-   	year_f = nowDate.getFullYear();
+<script type="text/javascript">
+	var _json_years =[];//第一个年
+	var _json_years2=[];//第二个年
+	var _json_years_2 =[];//第一个季度的年
+	var _json_years2_2=[];//第二个季度的年
+	var _json_years_3 =[]; //第一个月的年
+	var _json_years2_3 =[]; //第二个月的年
+	var _json_season1 = [
+		{id:'1', text:'第1季度'},
+		{id:'2', text:'第2季度'},
+		{id:'3', text:'第3季度'},
+		{id:'4', text:'第4季度'}
+	];
+	var _json_season2 = [
+		{id:'1', text:'第1季度'},
+		{id:'2', text:'第2季度'},
+		{id:'3', text:'第3季度'},
+		{id:'4', text:'第4季度'}
+	];
+	var _json_month2 = [
+		{id:'1', text:'1月'},
+		{id:'2', text:'2月'},
+		{id:'3', text:'3月'},
+		{id:'4', text:'4月'},
+		{id:'5', text:'5月'},
+		{id:'6', text:'6月'},
+		{id:'7', text:'7月'},
+		{id:'8', text:'8月'},
+		{id:'9', text:'9月'},
+		{id:'10', text:'10月'},
+		{id:'11', text:'11月'},
+		{id:'12', text:'12月'}
+	];
+	var _json_dimContent = [];
+	var _json_dimContent2 = [];
+	var dimParam="";
+	var dim_name_info="";
 
-   	year_last = year_f-1;
-   	var year_s = year_f - 3;
-   	_json_years=[];
-   	_json_years_2=[];
-   	_json_years_3=[];
-   	var id,text;
-   	for(var y=year_f;y>=year_s;y--) {
-   		id=y.toString();
-   		text=id;
-   		_json_years.push({id:id,text:text});
-   		_json_years_2.push({id:id,text:text});
-   		_json_years_3.push({id:id,text:text});
-   	}
-   }
-getYears()
+	/*if("${summary}" == "1"){
+		T("#summary").show();
+	} else {
+		T("#summary").hide();
+	}*/
 
-   function year_change(){
-	   var nowDate = new Date();
-	   var year_f = nowDate.getFullYear();
-	   var firstyear=T("#_year").val();
-	   var secyear=T("#_year2").val();
-	   if(secyear<firstyear){
-		   T("#year2").val(year_f);
-		   T("#_year2").val(year_f);
-	   }
-	   _json_years2=[];
-	   var id,text;
-	   	for(var y=year_f;y>=firstyear;y--) {
-	   		id=y.toString();
-	   		text=id;
-	   		_json_years2.push({id:id,text:text});
-	   	}http://192.168.15.248:808e/medical/WebContent/WEB-INF/view/:
-	    T('#_year2').dropdown();
-   }
 
-    function year_change_2(){
- 	   var nowDate = new Date();
- 	   var year_f = nowDate.getFullYear();
- 	   var firstyear=T("#_season_year").val();
- 	   var secyear=T("#_season_year2").val();
- 	   if(secyear<firstyear){
- 		  T("#season_year2").val(year_f);
- 		   T("#_season_year2").val(year_f);
- 	   }
- 	   _json_years2_2=[];
- 	   var id,text;
- 	   	for(var y=year_f;y>=firstyear;y--) {
- 	   		id=y.toString();
- 	   		text=id;
- 	   		_json_years2_2.push({id:id,text:text});
- 	   	}
-		}
-</script>
-<div class="clr"></div>
-	<script>
-		/*
-		* <%@ page language="java" contentType="text/html; charset=UTF-8"
-		 pageEncoding="UTF-8"%>
-		 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-		 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-		 <html>
-		 <head>
-		 <title>基本运行监测--医疗质量与安全指标的公用页面</title>
-		 <%@ include file="/jsp/headerfile.jsp"%>
-		 </head>
-		 <body>
-		 <div id="body_main" class="mr15" style="min-width:1000px;padding:0;">
-		 <div class="tab">
-		 <ul class="" id="meun">
-		 </ul>
-		 </div>
-		 <div class="pa30">
-		 <div style="width:100%;margin-top:5px;z-index:9999;">
-		 <form action="" method="get">
-		 <table id="cx_tab" style="float:right;color:#000;margin-bottom:30px;width:100%;position:relative;z-index:1000;" cellpadding="3" cellspacing="0">
-		 <%@ include file="/jsp/time7.jsp" %>
-		 </table>
-		 </form>
-		 </div>
-		 <div style="padding-top:10px;" id="container">
-		 <!-- easy-UI 表格 -->
-		 <div id="tab_div">
+	/*function kpifresh(id){
+		T('.loading').show();
+		$("#table").find("div").remove();
+		$("#chart").find("div").remove();
+		kpi_id=[];
+		var thir_id = id.substring(4,id.length);
+		var kpistr="";
+		var resparam="";
 
-		 </div>
+		var year_last="";
+		var year_f ="";
+		getYears();
+		/!*查询当前的指标及维度*!/
+		T.getJson('${ctx}/RStat/survey/getKpiAndDim?kpi_id='+thir_id+'&org_role_name=${user.org_name[0]}', function(result){
+			if(result.kpi_freq==1){
+				$('#year_tr').show();
+				$('#year_tr').addClass('pitchOn');
+			}else if(result.kpi_freq==2){
+				$('#year_tr').show();
+				$('#season_tr').show();
+				$('#year_tr').addClass('pitchOn');
+				$('#season_tr').addClass('pitchOn');
+			}else if(result.kpi_freq==3){
+				$('#year_tr').show();
+				$('#season_tr').show();
+				$('#month_tr').show();
+				$('#year_tr').addClass('pitchOn');
+				$('#season_tr').addClass('pitchOn');
+				$('#month_tr').addClass('pitchOn');
+			}else if(result.kpi_freq==4){
+				$('#year_tr').show();
+				$('#season_tr').show();
+				$('#month_tr').show();
+				$('#day_tr').show();
+				$('#year_tr').addClass('pitchOn');
+				$('#season_tr').addClass('pitchOn');
+				$('#month_tr').addClass('pitchOn');
+				$('#day_tr').addClass('pitchOn');
+			}else{
 
-		 <!-- 上面是表格    这里放图表 -->
-		 <div style="border:1px solid #95B8E7;margin-top:35px;">
-		 <div style="height:35px;line-height:35px;padding-left:10px;border-bottom:1px solid #95B8E7;">
-		 <span class="_title">图表详情</span>
-		 <div class="in-block" style="width:86%;text-align:right;margin-left:30px;">
-		 <div id="orgselect" style="vertical-align: middle;">
-		 <div style="display:inline-block;">科室:</div>
-		 <div class="pr" style="display:inline-block;vertical-align: middle;text-align:left;width:150px;">
-		 <input type="hidden" id="dimContent2" name="dimContent2" value=""/>
-		 <input type="text" id="_dimContent2" class="input inp dd" title="请选择" value="请选择科室" autocomplete="off" data-to="dimContent2" data-type="json" data-src="_json_dimContent2" onkeydown="return false;" style="width:85%;height:16px;text-align:center;"/>
-		 </div>
-		 <div style="display:inline-block;">
-		 <button type="button" id="searchOrg" name="确定"  class="btn btn-primary">
-		 <i class="fa fa-refresh"></i>
-		 刷新显示图表
-		 </button>
-		 </div>
-		 </div>
-		 </div>
-		 <div class="fr in-block" style="width:20px;height:35px;position:relative;">
-		 <div class="panel-tool">
-		 <a href="javascript:;" id="panel-ss" class="panel-tool-collapse"></a>
-		 </div>
-		 </div>
-		 </div>
-		 <div id="pictures" style="width:100%;min-height:100px;margin:40px auto 0px;text-align:center;">
-
-		 </div>
-		 </div>
-		 </div>
-		 </div>
-		 </div>
-
-		 <!-- 查看总表-模态弹出框 -->
-		 <div class="modal fade" id="modal-summary22" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
-		 <div class="modal-dialog" style="width:80%;margin:65px auto;" >
-		 <div class="modal-content">
-		 <div class="modal-header" style="height:46px;background-color:#0A6999;border-radius: 5px 5px 0 0">
-		 <button type="button" class="close" data-dismiss="modal">
-		 <span aria-hidden="true" style="font-size:30px;">&times;</span><span class="sr-only">Close</span>
-		 </button>
-		 <h4 class="modal-title" style="color:#fff;">总表</h4>
-		 </div>
-		 <div class="modal-body">
-		 <div style="margin:10px 0;">
-		 <span style="font-weight:600;color:#7e7e7e;">按年显示：</span>
-		 <div class="pr" style="width:10.6%;margin-right:19px;display:inline-block;vertical-align: middle;">
-		 <input type="hidden" id="sumyear" name="year"/>
-		 <input type="text" id="_sumyear" class="input inp dd" title="请选择年份" value="2017" autocomplete="off" data-to="sumyear" data-type="json" data-src="_json_yearsum" onkeydown="return false;" style="width:100%;height:16px;text-align:center;"/>
-		 </div>
-		 <div  style="float:right;">
-		 <button type="button" class="btn btn-green fa fa-download" onclick="tableToExcel('summaryTable', 'W3C Example Table')" data-dismiss="modal">导出</button>
-		 </div>
-		 </div>
-		 <div style="text-align:center" id="tablesum"></div>
-		 </div>
-		 <div class="modal-footer" style="text-align:center;">
-		 <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
-		 </div>
-		 </div>
-		 </div>
-		 </div>
-		 <!-- alert共用模态框 -->
-		 <div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
-		 <div class="modal-dialog" style="width:300px;margin:180px 0 0 34%;" >
-		 <div class="modal-content">
-		 <div class="modal-header">
-		 <button type="button" class="close" data-dismiss="modal">
-		 <span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
-		 </button>
-		 </div>
-		 <div class="modal-body">
-		 <div style="height:65px;" id="txt_insert">
-		 <!-- <p>TEXT！</p> -->
-		 </div>
-		 </div>
-		 <div class="modal-footer" style="text-align:center;">
-		 <button type="button" class="btn btn-primary is_true" data-dismiss="modal">确定</button>
-		 </div>
-		 </div>
-		 </div>
-		 </div>
-
-		 <script id="tplsum" type="text/template">
-		 <div class="rep15">
-		 <table class="rep" style="padding-bottom:30px;" id="summaryTable">
-		 [%for(var i in data){
-		 if(i==0){
-		 %]
-		 <tr class="row tel">
-		 [%for(var j in data[i]){
-		 if(j==0){
-		 %]
-		 <td class="col-xs">[%= data[i][j] %]</td>
-		 [%}else{%]
-		 <th class="col-xs">[%= data[i][j] %]</th>
-		 [%}}%]
-		 </tr>
-		 [%}else{%]
-		 <tr class="row tel">
-		 [%for(var j in data[i]){
-		 if(j==0){
-		 %]
-		 <th class="col-xs" style="width: 225px;">[%= data[i][j] %]</th>
-		 [%}else{%]
-		 <td class="col-xs">[%= data[i][j] %]</td>
-		 [%}}%]
-		 </tr>
-		 [%}%]
-		 [%}%]
-		 </table>
-		 </div>
-
-	</script>
-	<script id="tpl300" type="text/template">
-		<div style='width:100%;max-height:420px;overflow:auto'>
-			[%
-
-			%]
-			<table cellspacing="0" cellpadding="0" id="tableExcel" style="" class="list1" >
-
-				<tr>
-
-					<th style="text-align:center;">[%= data[0].colums[0] %]</th>
-					<th style="text-align:center;">[%= data[0].colums[1] %]</th>
-					<th style="text-align:center;">[%= data[0].colums[2] %]</th>
-					[%
-					for(var i=3; i<data[0].colums.length; i++){
-					%]
-					<th style="text-align:center;width:120px;">[%= data[0].colums[i] %]</th>
-					[%
-					}
-					%]
-				</tr>
-				[%
-				var alldata = data[0].alldata;
-				for(var i=0; i<alldata.length; i++){
-				var item = alldata[i];
-				%]
-				<tr>
-					[%
-					if(item[0] != -1){//第一列有单元格合并
-					%]
-					<td style="text-align:center;" rowspan="[%=	parseInt(item[0]) %]">[%= item[2] %]</td>
-					[%
-					if(item[1] != -1){//第二列有单元格合并
-					%]
-					<td style="text-align:center;" rowspan="[%=	parseInt(item[1]) %]">[%= item[3] %]</td>
-					[%
-					} else {//第二列没有单元格合并
-
-					}
-					} else {<!--第一列没有单元格合并-->
-					if(item[1] != -1){<!--第二列有单元格合并-->
-					%]
-					<td style="text-align:center;" rowspan="[%=	parseInt(item[1]) %]">[%= item[3] %]</td>
-					[%
-					} else if(alldata[i+1] != null && alldata[i][3] != alldata[i+1][3] && alldata[i] == alldata[i-1][3]) {
-					%]
-					<td style="text-align:center;" rowspan="1">[%= item[3] %]</td>
-					[%
-					}
-					}
-					//遍历每一行右边的指标以及数据
-					for(var j=4; j<item.length; j++){
-					%]
-					<td style="text-align:center;">[%= item[j] %]</td>
-					[%
-					}
-					}
-					%]
-				</tr>
-			</table>
-		</div>
-	</script>
-	<!-- EASYUI 表格 -->
-	<script id="easy-UI" type="text/template">
-		<table id="table1" title="数据详情" style="width:100%;height:400px"
-			   data-options="singleSelect:true,collapsible:true,
-							onLoadSuccess:rowspan_td
-								">
-			<thead data-options="frozen:true">
-			<tr>
-				<th data-options="field:'dimX',width:205,align:'center'">[%= aa[0].dimX %]</th>
-				<th data-options="field:'dim2',width:100,align:'center'">[%= aa[1].dim2 %]</th>
-				<th data-options="field:'kpi_name',width:150,align:'left'">[%= aa[2].kpi_name %]</th>
-			</tr>
-			</thead>
-			<thead>
-			<tr>
-				[%for(var i in bb){
-				var num=parseInt(i)+parseInt(3);
-				var time="time"+num;
-				var txt=bb[i][time];
-				%]
-				<th data-options="field:'[%= time %]',width:110,align:'center'">[%= txt %]</th>
-				[%}%]
-			</tr>
-			</thead>
-		</table>
-	</script>
-	<!-- EASYUI 表格(开始默认状态) -->
-	<script id="easy-UI-MR" type="text/template">
-		<table id="table1" title="数据详情" style="width:100%;height:180px"
-			   data-options="singleSelect:true,collapsible:true">
-			<thead data-options="frozen:true">
-			</thead>
-			<thead>
-			</thead>
-		</table>
-	</script>
-	<script type="text/javascript">
-		var tableToExcel = (function() {
-			var uri = 'data:application/vnd.ms-excel;base64,'
-					, template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
-					, base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
-					, format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) };
-			return function(table, name) {
-				if (!table.nodeType) table = document.getElementById(table)
-				var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML};
-				window.location.href = uri + base64(format(template, ctx));
 			}
-		})()
-	</script>
-	<script type="text/javascript">
-		/* 设置主体内容最小高度 */
-		var main_h=$('#mainframe', parent.document).height();
-		var min_H=main_h-20;
-		$("#body_main").css("min-height",min_H);
 
-		/* 页面进来默认表格状态 */
-		var tab_list=[]
-		function UI_MR(){
-			//清空查询条件复选
-			$("#cx_tab").find('input[type="checkbox"]').prop("checked",false);
-			$("#_dimContent").val('全部');
-			$("#dimContent").val('allill');
-			_get('tab_div').innerHTML = baidu.template('easy-UI-MR', tab_list);
-			$('#table1').datagrid({data:tab_list})
-			//清空图表
-			$("#_dimContent2").val('请选择科室');
-			$("#dimContent2").val('');
-			$("#orgselect").hide();
-			$("#pictures").find('div').remove();
-		};
-		UI_MR();
+			$('#kpi_ids').val(result.kpi_ids);
+			if(result.kpi_dim.length==0){
+				$('#dim_tr').hide();
+				$('#_dimContent').val('');
 
-		var kpi_id=[];
-		var o_id=parent.o_id;//获取iframe 内联框架的父级页面(左侧菜单的子节点)的点击事件的id
-		var sec_id = parseInt(o_id.substring(5,o_id.length));
-		$("#fuzhi_id").text(sec_id);
-		T.getJson('${ctx}/RStat/diy/getTree?id='+sec_id+'&NoType=1',function(res){
-			if(res.deep>0){
-				T.getJson('${ctx}/RStat/diy/getTree?id='+sec_id+"&NoType=0",function(half){
-					if(half.deep==0){
-						if(res.tree.kname.indexOf('单病种') >= 0 ){
-							for(var i=0;i<res.tree.nodes.length;i++){
-								var li_a="<li class='fl txt is_focus' style='width:auto' id='tip_"+res.tree.nodes[i].kid+"'><a>"+res.tree.nodes[i].kname+"</a></li>";
-								T('#meun').append(li_a);
-							}
-						}else{
-							for(var i=0;i<res.tree.nodes.length;i++){
-								var li_a="<li class='fl txt is_focus' id='tip_"+res.tree.nodes[i].kid+"'><a>"+res.tree.nodes[i].kname+"</a></li>";
-								T('#meun').append(li_a);
-							}
-						}
-						T('#meun li:first-child').addClass('focus');
-						kpifresh(T('#meun li:first-child').attr("id"));
-						$(".is_focus").click(function(){
-							$(this).siblings().removeClass('focus');
-							$(this).addClass('focus');
-							kpifresh(this.id);
-							$("#all_xz").click();
-							UI_MR();//回复默认状态
-							$("#all_xz").addClass('col-0081c2');
-						});
-					}else{
-						//var li_s="<li class='fl txt is_focus' id='tip_"+half.tree.kid+"'><a >"+half.tree.kname+"</a></li>";
-						//T('#meun').append(li_s);
-						for(var i=0;i<res.tree.nodes.length;i++){
-							var li_a="<li class='fl txt is_focus' style='width:auto'  id='tip_"+res.tree.nodes[i].kid+"'><a>"+res.tree.nodes[i].kname+"</a></li>";
-							T('#meun').append(li_a);
-						}
-						T('#meun li:first-child').addClass('focus');
-						kpifresh(T('#meun li:first-child').attr("id"));
-						$(".is_focus").click(function(){
-							$(this).siblings().removeClass('focus');
-							$(this).addClass('focus');
-							kpifresh(this.id);
-							$("#all_xz").click();
-							UI_MR();//回复默认状态
-							$("#all_xz").addClass('col-0081c2');
-						});
-					}
-				});
-			}else if(res.deep==0){
-				var li_a="<li class='fl txt is_focus' style='width:auto' id='tip_"+res.tree.kid+"'><a >"+res.tree.kname+"</a></li>";
-				T('#meun').append(li_a);
-				T('#meun li:first-child').addClass('focus');
-				kpifresh(T('#meun li:first-child').attr("id"));
-				$(".is_focus").click(function(){
-					$(this).siblings().removeClass('focus');
-					$(this).addClass('focus');
-					kpifresh(this.id);
-					$("#all_xz").click();
-					UI_MR();//回复默认状态
-					$("#all_xz").addClass('col-0081c2');
-				});
+				getYears();
+				$("#year").val(year_last);
+				$("#_year").val(year_last);
+				$("#season_year").val(year_last);
+				$("#_season_year").val(year_last);
+				$("#month_year").val(year_last);
+				$("#_month_year").val(year_last);
+				year_change();
+				year_change_2();
+				year_change_3();
+				T('#_year').dropdown({after:year_change});
+				//季度下拉框的实现
+				T("#_season_year").dropdown({after:year_change_2});
+				//T("#_season2").dropdown();
+				T("#_season").dropdown({after:season_change});
+				//月份下拉框的实现
+				T("#_month_year").dropdown({after:year_change_3});
+				//T("#_month2").dropdown();
+				T("#_month").dropdown({after:month_change});
+				T('.loading').hide();
+			}else{
+				$('#dim_tr').show();
+				$('#dim_tr').addClass('pitchOn');
+				dimParam=result.kpi_dim[0].dim_name;
+				dim_name_info=result.kpi_dim[0].dim_name;
+				$('#dimType').html(result.kpi_dim[0].dim_desc+" : ");
+				var kpi_ids=result.kpi_ids;
+				/!* 维度下拉框 *!/
+				T.getJson('${ctx}/RStat/survey/getDimContent?kpi_ids='+kpi_ids+'&kpi_dim_id='+result.kpi_dim[0].kpi_dim_id, function(res){
+					_json_dimContent = res;
+					T('#_dimContent').dropdown({height:'300px'});
+
+					getYears();
+					$("#year").val(year_last);
+					$("#_year").val(year_last);
+					$("#season_year").val(year_last);
+					$("#_season_year").val(year_last);
+					$("#month_year").val(year_last);
+					$("#_month_year").val(year_last);
+					year_change();
+					year_change_2();
+					year_change_3();
+					T('#_year').dropdown({after:year_change});
+					//季度下拉框的实现
+					T("#_season_year").dropdown({after:year_change_2});
+					//T("#_season2").dropdown();
+					T("#_season").dropdown({after:season_change});
+					//月份下拉框的实现
+					T("#_month_year").dropdown({after:year_change_3});
+					//T("#_month2").dropdown();
+					T("#_month").dropdown({after:month_change});
+					T('.loading').hide();
+				})
+			}
+
+			/!* 获取多选的指标数据 *!/
+			var zb_data=result.kpi_zb;
+			if(zb_data.length!=0){
+				$("#kpi_zb").find("span").remove();
+				for(var i=0;i<zb_data.length;i++){
+// 	    		var html='<label class="zb_label">'+
+// 			   				'<input id="'+zb_data[i].id+'" checked type="checkbox" class="v_align"/> '+
+// 			     				' <span class="v_align yes_check">'+zb_data[i].name+'</span>'+
+// 			     			'</label>';
+
+					var html='<span id="'+zb_data[i].id+'" class="yes_check">'+zb_data[i].name+'</span>';
+					$("#kpi_zb").append(html);
+				}
+				all_select();
+				all_invert();
 			}
 		});
 
-		//设置全局变量
-		var setlist;
-		$('#orgselect').hide();
-		function getIllRow(item){
-			var rows = 0;
-			for(var i=0; i<item.orglist.length; i++){
-				item1 = item.orglist[i];
-				for (var j=0; j<item1.kpilist.length; j++){
-					rows++;
+		/!*封装全选(针对复选框)  *!/
+		/!* function all_select(){
+		 // 点击全选复选框
+		 var all_che=$("#kpi_zb").find("input:checkbox");
+		 var all_span=$("#kpi_zb").find("span");
+		 //点击全选后，下面的复选框全勾上，再点击时取消
+		 $("#all_xz").unbind();
+		 $("#all_xz").click(function(){
+		 $(this).toggleClass('xz');
+		 all_span.toggleClass('no_check')
+		 if($(this).attr('class')=='xuanze xz'){
+		 $(this).addClass('col-0081c2');
+		 all_che.prop("checked",true);
+		 }else{
+		 $(this).removeClass('col-0081c2');
+		 all_che.prop("checked",false);
+		 };
+		 });
+		 //二级复选框全勾上后，全选勾上
+		 all_che.change(function(){
+		 if(all_che.not("input:checked").size() <= 0){
+		 //如果其它的复选框全部被勾选了，那么全选勾中
+		 $('#all_xz').addClass('col-0081c2');
+		 }else{
+		 $('#all_xz').removeClass('col-0081c2');
+		 }
+		 });
+		 }  *!/
+
+		/!* 封装反选 (针对复选框)*!/
+		/!* function all_invert(){
+		 var all_che2=$("#kpi_zb").find('input');
+		 $("#fan_xz").click(function(){
+		 $('#all_xz').removeClass('col-0081c2');
+		 $('#all_xz').removeClass('xz');
+		 all_che2.each(function() {
+		 if (this.checked == true) {
+		 this.checked = false;
+		 } else {
+		 this.checked = true;
+		 }
+		 })
+		 });
+		 } *!/
+
+		/!* 封装全选(无复选框) *!/
+		function all_select(){
+			var all_span=$("#kpi_zb").find("span");
+			//点击全选后，下面的复选框全勾上，再点击时取消
+			$("#all_xz").unbind();
+			$("#all_xz").click(function(){
+				if($(this).attr('class')=='xuanze'){
+					$(this).addClass('col-0081c2');
+					all_span.removeClass('no_check').addClass('yes_check');
+				}else{
+					$(this).removeClass('col-0081c2');
+					all_span.removeClass('yes_check').addClass('no_check');
+				};
+			})
+			//二级复选框全勾上后，全选勾上
+			all_span.click(function(){
+				$(this).toggleClass('yes_check').toggleClass('no_check');
+				if($('#kpi_zb').find("span.no_check").length == 0){
+					//如果其它的复选框全部被勾选了，那么全选勾中
+					$('#all_xz').addClass('col-0081c2');
+				}else{
+					$('#all_xz').removeClass('col-0081c2');
 				}
-				rows++;
-			}
-			return rows+1;
+			});
 		}
-
-
-		//easy-ui合并单元格全局变量
-		//第1列数据
-		var RSdata1='';
-		var merges1=[];
-		//第2列数据
-		var RSdata2='';
-		var merges2=[];
-		//var kpi_id = "116,117,118,119,123,124,18001,18002,18003";
-		var role_id = ${user.role_id[user.role_index]};
-		var org_id = ${user.org_id[0]};
-		//导出表格
-		function exportFile(){
-			var kpi_id =$('#kpi_ids').val();
-			$.ajax({
-				url: '${ctx}/RStat/getReadAndWrite?flag=read&kpi_ids='+kpi_id+'&org_id='+org_id,
-				type: 'post',
-				dataType: "text",
-				success:function(res){
-					kpi_id=res;
-					//多选指标数组
-					var all_checkd=$("#kpi_zb").find('span.yes_check');
-					var kpi_zb='';
-					for(var i=0;i<all_checkd.length;i++){
-						kpi_zb+=all_checkd.eq(i).attr("id")+",";
+		/!* 封装反选(无复选框)*!/
+		function all_invert(){
+			var all_span2=$("#kpi_zb").find("span");
+			$("#fan_xz").click(function(){
+				all_span2.each(function() {
+					if ($(this).attr('class') == 'yes_check') {
+						$(this).removeClass('yes_check').addClass('no_check');
+					} else {
+						$(this).removeClass('no_check').addClass('yes_check');
 					}
-					kpi_id=kpi_zb.substring(0,kpi_zb.length-1);
-
-					if (kpi_id!="") {
-						var param = getSurveyParam(kpi_id, role_id, org_id);
-						var pic=T("#pictures").find("div");
-						if(pic){
-							pic.remove();
-						}
-						var surveyParam=getSurveyParam(kpi_id,role_id,org_id);
-						if($('#_dimContent').val()=="全部"){
-							$('#orgselect').hide();
-						}else{
-							$('#orgselect').show();
-						}
-						window.location.href = "${ctx}/Expo/getExcelValue"+surveyParam+"&file_name=kpiValue";
-
-					}else{
-						$("#txt_insert p").remove();
-						$("#txt_insert").append("<p>您没有权限下载该部分内容！</p>");
-						$("#modal_alert").modal("toggle");
-						UI_MR();//回复默认状态
-					}
-				},
-				error:function(){
-					$("#txt_insert p").remove();
-					$("#txt_insert").append("<p>获取权限失败！</p>");
-					$("#modal_alert").modal("toggle");
-					UI_MR();//回复默认状态
+				})
+				//如果其它的复选框全部被勾选了，那么全选勾中
+				if($('#kpi_zb').find("span.no_check").length == 0){
+					$('#all_xz').addClass('col-0081c2');
+				}else{
+					$('#all_xz').removeClass('col-0081c2');
 				}
 			});
 		}
 
-
-
-
-
-		T("#_button").click(function(){
-			var kpi_id =$('#kpi_ids').val();
-			$.ajax({
-				url: '${ctx}/RStat/getReadAndWrite?flag=read&kpi_ids='+kpi_id+'&org_id='+org_id,
-				type: 'post',
-				dataType: "text",
-				success:function(res){
-					kpi_id=res;
-					//多选指标数组
-					var all_checkd=$("#kpi_zb").find('span.yes_check');
-					var kpi_zb='';
-					for(var i=0;i<all_checkd.length;i++){
-						kpi_zb+=all_checkd.eq(i).attr("id")+",";
-					}
-					kpi_id=kpi_zb.substring(0,kpi_zb.length-1);
-
-					if (kpi_id!="") {
-						var param = getSurveyParam(kpi_id, role_id, org_id);
-
-						var pic=T("#pictures").find("div");
-						if(pic){
-							pic.remove();
-						}
-
-						var surveyParam=getSurveyParam(kpi_id,role_id,org_id);
-						if($('#_dimContent').val()=="全部"){
-							$('#orgselect').hide();
-						}else{
-							$('#orgselect').show();
-						}
-
-						T('#table').children('div').remove();
-						T.getJson('${ctx}/RStat/survey/getSurveyData'+surveyParam,function(data){
-							//alert(JSON.stringify(data))
-							if(data.length>1){ //当没勾选查询条件时出现
-								/* EASY-UI表格 */
-								RSdata1=data[1].index;  //第1列合并数据
-								RSdata2=data[1].indexN; //第2列合并数据
-								_get('tab_div').innerHTML = baidu.template('easy-UI', data[1].col);
-								/* UI数据 */
-								var table_data=data[1].datanum;
-								$('#table1').datagrid({data:table_data})//填入数据
-								//$('.panel-tool').hide();//隐藏收缩按钮
-							}else{
-								UI_MR();//回复默认状态
-							}
-
-							var datas = {data:data};
-							setlist = datas.data[0].setlist;
-							_json_dimContent2 = setlist;
-							T('#_dimContent2').dropdown({height:'190px'});
-							for(var i=0;i<datas.data[0].ja.length;i++){
-								var s=datas.data[0].ja[i].type;
-								var type=s.substring(0,s.length-2);
-								var add_div="<div style='text-align:center;margin: 0 auto;width:850px;height:400px;margin-bottom:20px;border:1px solid #cfcfcf;border-radius:10px;box-shadow:2px 2px 6px 0px #aaa;display:none;' id='picture"+i+"' class='"+type+" pit' ></div>";
-								T("#pictures").append(add_div);
-								var add_title="<div style='display:none;' id='title"+i+"' class='title"+datas.data[0].ja[i].type+"' ></div>";
-								T("#pictures").append(add_title);
-								var myChartsp= echarts.init(document.getElementById("picture"+i));
-								var option=datas.data[0].ja[i];
-								myChartsp.setOption(option);
-							}
-						})
-					}else{
-						$("#txt_insert p").remove();
-						$("#txt_insert").append("<p>您没有权限查看该部分内容！</p>");
-						$("#modal_alert").modal("toggle");
-						UI_MR();//回复默认状态
-					}
-				},
-				error:function(){
-					$("#txt_insert p").remove();
-					$("#txt_insert").append("<p>获取权限失败！</p>");
-					$("#modal_alert").modal("toggle");
-					UI_MR();//回复默认状态
-				}
-			});
-		})
-
-		/* EASY-UI表格合并单元格 */
-		//fn 方法
-		function rowspan_td(){
-			//第1列合并操作
-			merges1=[];
-			for(var i=0;i<RSdata1.length;i++){
-				var obj1={index:RSdata1[i][0],rowspan:RSdata1[i][1]}
-				merges1.push(obj1);
-			}
-			for (var i = 0; i < merges1.length; i++) {
-				$(this).datagrid('mergeCells', {
-					index: merges1[i].index,
-					field: 'dimX',
-					rowspan: merges1[i].rowspan
-				});
-			}
-
-			//第2列合并操作
-			merges2=[];
-			for(var i=0;i<RSdata2.length;i++){
-				var obj2={index:RSdata2[i][0],rowspan:RSdata2[i][1]}
-				merges2.push(obj2);
-			}
-			for (var i = 0; i < merges2.length; i++) {
-				$(this).datagrid('mergeCells', {
-					index: merges2[i].index,
-					field: 'dim2',
-					rowspan: merges2[i].rowspan
-				});
-			}
-		}
-		//单元格点击事件
-		function jump(t){
-			var kpi_data=[];
-			var _jb=$(t).attr('data-jb');
-			var _ks=$(t).attr('data-ks');
-			var _zb=$(t).attr('data-zb');
-			var _sj=$(t).attr('data-sj');
-			var _val=$(t).attr('data-val');
-			//alert("指标:"+_zb+"   疾病:"+_jb+"   科室:"+_ks+"   时间:"+_sj+"   VAL:"+_val);
-			//传后台
-			//var obj={'kpi':_zb,'dim1':_sj,'dim2':_ks,'dim3':_jb,'val':_val};
-			var obj={'kpi':0,'dim1':0,'dim2':0,'dim3':0,'val':0};
-			kpi_data.push(obj);
-			/* T.getJson('${ctx}/RStat/getCasetab?kpi='+_zb+"&dim3="+_jb+"&dim2="+_ks+"&dim1="+_sj+"&val="+_val,function(res){
-			 //alert(JSON.stringify(res));
-			 });  */
-
-		}
-
-
-		/* 查看总表 */
-		var nowDate = new Date();
-		var thisyear = nowDate.getFullYear();
-		//获取近四年的年份
-		_json_yearsum=[];
-		function getYearsum() {
+		/!*!//获取近四年的年份
+		function getYears() {
 			var nowDate = new Date();
-			var year_f = nowDate.getFullYear();
+			year_f = nowDate.getFullYear();
+			year_last = year_f-1;
 			var year_s = year_f - 3;
+			_json_years=[];
+			_json_years_2=[];
+			_json_years_3=[];
 			var id,text;
 			for(var y=year_f;y>=year_s;y--) {
 				id=y.toString();
 				text=id;
-				_json_yearsum.push({id:id,text:text});
+				_json_years.push({id:id,text:text});
+				_json_years_2.push({id:id,text:text});
+				_json_years_3.push({id:id,text:text});
 			}
 		}
-		getYearsum();
-		T('#_sumyear').dropdown({after:yearchange});
-
-		//加载总表
-		T("#getSummary").click(function(){
-			$("#modal-summary22").modal("toggle");
-			T.getJson('${ctx}/RStat/survey/getSummary?kpi_id='+kpi_id+"&year="+thisyear,function(res2){
-				var data={data:res2};
-				_get('tablesum').innerHTML = baidu.template('tplsum', data);
-			});
-		});
-
-		//切换时间
-		function yearchange(){
-			var year = T("#_sumyear").val();
-			T.getJson('${ctx}/RStat/survey/getSummary?kpi_id='+kpi_id+"&year="+year,function(res2){
-				var data={data:res2};
-				_get('tablesum').innerHTML = baidu.template('tplsum', data);
-			});
-		}
-
-		/* 刷新显示图表 按钮 */
-		$('#searchOrg').click(function() {
-			if(T("#_dimContent2").val()=="请选择科室"){
-				$("#txt_insert p").remove();
-				$("#txt_insert").append("<p>未选择科室，请选择！</p>");
-				$("#modal_alert").modal("toggle");
-			}else{
-				var info2=$('#_dimContent2').val();
-				var info2=$('#_dimContent2').val();
-				T('.'+info2+'').show();
-				T('.'+"title"+info2+'').show();
+		function year_change(){
+			var nowDate = new Date();
+			var year_f = nowDate.getFullYear();
+			var firstyear=T("#_year").val();
+			var secyear=T("#_year2").val();
+			if(secyear<firstyear){
+				T("#year2").val(year_f);
+				T("#_year2").val(year_f);
 			}
-		});
-		/* 图表收缩按钮箭头 */
-		$("#panel-ss").click(function(){
-			$(this).toggleClass('panel-tool-expand');
-			$("#pictures").slideToggle();
-		});
-
-		function wait() {
-			T('#_button').attr('disabled',true);
-			setTimeout(function(){
-				T('#_button').attr('disabled',false);
-			}, 2000);
+			_json_years2=[];
+			var id,text;
+			for(var y=year_f;y>=firstyear;y--) {
+				id=y.toString();
+				text=id;
+				_json_years2.push({id:id,text:text});
+			}
+			T('#_year2').dropdown();
 		}
+		function year_change_2(){
+			var nowDate = new Date();
+			var year_f = nowDate.getFullYear();
+			var firstyear=T("#_season_year").val();
+			var secyear=T("#_season_year2").val();
+			if(secyear<firstyear){
+				T("#season_year2").val(year_f);
+				T("#_season_year2").val(year_f);
+			}
+			_json_years2_2=[];
+			var id,text;
+			for(var y=year_f;y>=firstyear;y--) {
+				id=y.toString();
+				text=id;
+				_json_years2_2.push({id:id,text:text});
+			}
 
-		//多态点击科室下拉框
-		function getSurveyParam(kpi_id,role_id,org_id){
-			if($('#_dimContent').is(':hidden')){
-				dimParam="_";
-			}else{
-				if($('#_dimContent').val()=="全部"){
-					dimParam=dim_name_info;
-				}else {
-					dimParam=$('#dimContent').val()+"_"+dim_name_info;
+			//判断季度
+			season_change();
+			T("#_season2").dropdown();
+			T('#_season_year2').dropdown({after:season_change});
+		}
+		function season_change(){
+			var firstyear=parseInt(T("#_season_year").val());
+			var secyear=parseInt(T("#_season_year2").val());
+			if (firstyear==secyear){
+				var firstseason=parseInt(T("#season").val());
+				var secseason = parseInt(T("#season2").val());
+				if(secseason<firstseason){
+					T("#season2").val(firstseason);
+				}
+				_json_season2=[];
+				for(var i=firstseason;i<=4;i++) {
+					id=i.toString();
+					text="第"+id+"季度";
+					_json_season2.push({id:id,text:text});
+				}
+			}else if(firstyear<secyear){
+				_json_season2=[];
+				for(var i=1;i<=4;i++) {
+					id=i.toString();
+					text="第"+id+"季度";
+					_json_season2.push({id:id,text:text});
 				}
 			}
-			var filter_str="?";
-			var year1="";
-			var year2="";
-			var season1="";
-			var season2="";
-			var month1="";
-			var month2="";
-			var day1="";
-			var day2= "";
-			if(T("[name='yearcheck']").attr("checked")){
-				year1=T("#_year").val();
-				year2=T("#_year2").val();
-			}
-			filter_str+="year1=";
-			filter_str+=year1;
-			filter_str+="&year2=";
-			filter_str+=year2;
-			if(T("[name='seasoncheck']").attr("checked")){
-				var year_1=T("#_season_year").val();
-				var year_2=T("#_season_year2").val();
-				var season_1=T("#season").val();
-				var season_2=T("#season2").val();
-				season1+=year_1+"S"+season_1;
-				season2+=year_2+"S"+season_2;
-			}
-			filter_str+="&season1=";
-			filter_str+=season1;
-			filter_str+="&season2=";
-			filter_str+=season2;
-			if(T("[name='monthcheck']").attr("checked")){
-				var year_1=T("#_month_year").val();
-				var year_2=T("#_month_year2").val();
-				var month_1=T("#month").val();
-				var month_2=T("#month2").val();
-				if(parseInt(month_1)<=9){
-					month_1="0"+month_1;
-				}
-				if(parseInt(month_2)<=9){
-					month_2=""+month_2;
-				}
-				month1+=year_1;
-				month1+=month_1;
-				month2+=year_2;
-				month2+=month_2;
-			}
-			filter_str+="&month1=";
-			filter_str+=month1;
-			filter_str+="&month2=";
-			filter_str+=month2;
-			//03/01/2017 - 03/07/2017
-			if(T("[name='daycheck']").attr("checked")){
-				var range=T("#config-demo").val();
-				var day_1=range.substr(0,2);
-				var month_1=range.substr(3,2);
-				var year_1=range.substr(6,4);
-				var day_2=range.substr(13,2);
-				var month_2=range.substr(16,2);
-				var year_2=range.substr(19,4);
-				day1=year_1+ month_1 + day_1;
-				day2=year_2 + month_2 + day_2;
-			}
-			filter_str+="&day1=";
-			filter_str+=day1;
-			filter_str+="&day2=";
-			filter_str+=day2;
-			var org=T("input[name='org']:checked").val();
-			filter_str+="&org=";
-			filter_str+=org;
-			filter_str+="&ill="
-			filter_str+=dimParam;
-			filter_str+="&kpi_id=";
-			filter_str+=kpi_id;
-			filter_str+="&role_id=";
-			filter_str+=role_id;
-			filter_str+="&org_id=";
-			filter_str+=org_id;
+			T("#_season2").dropdown();
 
-			return filter_str;
 		}
-		$('#config-demo').daterangepicker({
-			locale: {
-				format: 'DD/MM/YYYY',
-				applyLabel: '确认',
-				cancelLabel: '取消',
-				fromLabel : '起始时间',
-				toLabel : '结束时间',
-				customRangeLabel : '自定义',
-				firstDay : 1,
-				daysOfWeek:["日", "一", "二", "三", "四", "五", "六"],
-				monthNames:["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
+		function year_change_3(){
+			var nowDate = new Date();
+			var year_f = nowDate.getFullYear();
+			var firstyear=T("#_month_year").val();
+			var secyear=T("#_month_year2").val();
+			if(secyear<firstyear){
+				T("#month_year2").val(year_f);
+				T("#_month_year2").val(year_f);
 			}
-		});
+			_json_years2_3=[];
+			var id,text;
+			for(var y=year_f;y>=firstyear;y--) {
+				id=y.toString();
+				text=id;
+				_json_years2_3.push({id:id,text:text});
+			}
+
+			//判断月份
+			month_change();
+			T("#_month2").dropdown();
+			T('#_month_year2').dropdown({after:month_change});
+		}
+		function month_change(){
+			var firstyear=parseInt(T("#_month_year").val());
+			var secyear=parseInt(T("#_month_year2").val());
+			if (firstyear==secyear){
+				var firstmonth=parseInt(T("#month").val());
+				var secmonth = parseInt(T("#month2").val());
+				if(secmonth<firstmonth){
+					T("#month2").val(firstmonth);
+				}
+				_json_month2=[];
+				for(var i=firstmonth;i<=12;i++) {
+					id=i.toString();
+					text=id+"月";
+					_json_month2.push({id:id,text:text});
+				}
+			}else if(firstyear<secyear){
+				_json_month2=[];
+				for(var i=1;i<=12;i++) {
+					id=i.toString();
+					text=id+"月";
+					if(i<10){id='0'+id}
+					_json_month2.push({id:id,text:text});
+				}
+			}
+		}*!/
+	}
+	$("#togg").click(function(){
+		$(this).find('i').toggleClass('nav62');
+		var ss=$("#parent_tab").find('tr.pitchOn');
+		ss.toggle();
+		if($(this).find('i').attr('class')=="nav61"){
+			$(this).attr('title','点击隐藏')
+		}else{
+			$(this).attr('title','点击展开')
+		}
+	})*/
+		
 
 
+//	var _json_month2=[]
+	var currYear=new Date().getFullYear()
+	$("input.last").val(currYear-1);
+	$("input.currYear").val(currYear);
+	//获取近四年的年份
+	function getYears() {
+		var nowDate = new Date();
+		year_f = nowDate.getFullYear();
+		year_last = year_f-1;
+		var year_s = year_f - 3;
+		_json_years=[];
+		_json_years_2=[];
+		_json_years_3=[];
+		var id,text;
+		for(var y=year_f;y>=year_s;y--) {
+			id=y.toString();
+			text=id;
+			_json_years.push({id:id,text:text});
+			_json_years_2.push({id:id,text:text});
+			_json_years_3.push({id:id,text:text});
+		}
+	}
+	getYears();
+	console.log(_json_years,_json_years_2,_json_years_3,"得到近四年");
+	function year_change(){
+		var nowDate = new Date();
+		var year_f = nowDate.getFullYear();
+		var firstyear=T("#_year").val();
+		var secyear=T("#_year2").val();
+		if(secyear<firstyear){
+			T("#year2").val(year_f);
+			T("#_year2").val(year_f);
+		}
+		_json_years2=[];
+		var id,text;
+		for(var y=year_f;y>=firstyear;y--) {
+			id=y.toString();
+			text=id;
+			_json_years2.push({id:id,text:text});
+		}
+		T('#_year2').dropdown();
+	}
+	year_change();
+	T('#_year').dropdown({after:year_change});
 
-	</script>
-	<div class="clr"></div>
+	year_change_2();
+	T('#_season_year').dropdown({after:year_change_2});
+	T("#_season").dropdown({after:season_change});
+
+	year_change_3();
+	T('#_month_year').dropdown({after:year_change_3});
+	T("#_month").dropdown({after:month_change});
+
+	function year_change_2(){
+		var nowDate = new Date();
+		var year_f = nowDate.getFullYear();
+		var firstyear=T("#_season_year").val();
+		var secyear=T("#_season_year2").val();
+		if(secyear<firstyear){
+			T("#season_year2").val(year_f);
+			T("#_season_year2").val(year_f);
+		}
+		_json_years2_2=[];
+		var id,text;
+		for(var y=year_f;y>=firstyear;y--) {
+			id=y.toString();
+			text=id;
+			_json_years2_2.push({id:id,text:text});
+		}
+		//判断季度
+		season_change();
+		T("#_season2").dropdown();
+		T('#_season_year2').dropdown({after:season_change});
+	}
+
+	function season_change(){
+		var firstyear=parseInt(T("#_season_year").val());
+		var secyear=parseInt(T("#_season_year2").val());
+		if (firstyear==secyear){
+			var firstseason=parseInt(T("#season").val());
+			var secseason = parseInt(T("#season2").val());
+			if(secseason<firstseason){
+				T("#season2").val(firstseason);
+			}
+			_json_season2=[];
+			for(var i=firstseason;i<=4;i++) {
+				id=i.toString();
+				text="第"+id+"季度";
+				_json_season2.push({id:id,text:text});
+			}
+		}else if(firstyear<secyear){
+			_json_season2=[];
+			for(var i=1;i<=4;i++) {
+				id=i.toString();
+				text="第"+id+"季度";
+				_json_season2.push({id:id,text:text});
+			}
+		}
+		T("#_season2").dropdown();
+	}
+
+
+	function year_change_3(){
+		var nowDate = new Date();
+		var year_f = nowDate.getFullYear();
+		var firstyear=T("#_month_year").val();
+		var secyear=T("#_month_year2").val();
+		if(secyear<firstyear){
+			T("#month_year2").val(year_f);
+		}
+		_json_years2_3=[];
+		var id,text;
+		for(var y=year_f;y>=firstyear;y--) {
+			id=y.toString();
+			text=id;
+			_json_years2_3.push({id:id,text:text});
+		}
+		//判断月份
+		month_change();
+		T("#_month2").dropdown();
+		T("#_month_year2").dropdown({after:month_change});
+
+	}
+
+	function month_change(){
+		var firstyear=parseInt(T("#_month_year").val());
+		var secyear=parseInt(T("#_month_year2").val());
+		if (firstyear==secyear){
+			var firstmonth=parseInt(T("#month").val());
+			var secmonth = parseInt(T("#month2").val());
+			if(secmonth<firstmonth){
+				T("#month2").val(firstmonth);
+			}
+			_json_month2=[];
+			for(var i=firstmonth;i<=12;i++) {
+				var id=i.toString();
+				if(i<10){id='0'+id}
+				var text=id+"月";
+				_json_month2.push({id:id,text:text});
+
+			}
+
+		}else if(firstyear<secyear){
+			_json_month2=[];
+			for(var i=1;i<=12;i++) {
+				var id=i.toString();
+				if(i<10){id='0'+id}
+				var text=id+"月";
+				_json_month2.push({id:id,text:text});
+			}
+		}
+		T("#_month2").dropdown();
+	}
+
+</script>
+<div class="clr"></div>
 </body>
 </html>
-		* */
-	</script>
-</body>
-</html>
+

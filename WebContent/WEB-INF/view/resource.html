@@ -8,89 +8,225 @@
     <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
     <style>
-        div.layout {background: #e3e3e3; padding: 1% 15px 1% 315px; width: 100%; height: 100vh;}
-        div.layout:after { content: ""; display: block; clear: both; }
-        div.layout > div { background: white; float: left; height: 100%; border-radius: 10px; }
-        div.layout-right { width:100%;min-width: 480px; overflow:hidden;overflow-y: auto ;padding: 30px}
-        div.layout-left { padding:10px;margin-left:-300px;width: 280px;  overflow-x:hidden}
-        dl { margin-top: 0; margin-bottom: 0; }
-        span.tree-title{width:210px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden}
-        span.tree-title input{width:200px!important;;height: 30px!important;}
-        table{border: 1px solid black ;border-collapse:collapse;width: 100%;}
-        tr{border: 1px solid black }
-        tr:hover{background:yellowgreen }
-        td{padding:5px;border: 1px solid black;text-align: center }
-        caption{padding:0;height: 30px;font-weight: bolder}
+        div.layout {
+            background: #e3e3e3;
+            padding: 1% 15px 1% 315px;
+            width: 100%;
+            height: 100vh;
+        }
+
+        div.layout:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        div.layout > div {
+            background: white;
+            float: left;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        div.layout-right {
+            width: 100%;
+            min-width: 480px;
+            overflow: hidden;
+            overflow-y: auto;
+            padding: 30px
+        }
+
+        div.layout-left {
+            padding: 10px;
+            margin-left: -300px;
+            width: 280px;
+            overflow-x: hidden
+        }
+
+        dl {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        span.tree-title {
+            width: 210px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden
+        }
+
+        span.tree-title input {
+            width: 200px !important;;
+            height: 30px !important;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        tr {
+            border: 1px solid black
+        }
+
+        tr:hover {
+            background: yellowgreen
+        }
+
+        td {
+            padding: 5px;
+            border: 1px solid black;
+            text-align: center
+        }
+
+        caption {
+            padding: 0;
+            height: 30px;
+            font-weight: bolder
+        }
     </style>
 </head>
 <body>
 <div class="layout">
     <div class="layout-left">
-        <ul id="menu_tree" >
+        <ul id="menu_tree">
 
         </ul>
         <!-- 图表右键菜单 -->
-			<div id="update_menu" class="easyui-menu" style="width:120px;display:none">
-				<div onclick="updateitem()" data-options="iconCls:'icon-save'">编辑图形</div>
-				<div onclick="_menu.rename()">重命名</div>
-				<div onclick="_menu.remove()" data-options="iconCls:'icon-print'">删除</div>
-			</div>
+        <div id="update_menu" class="easyui-menu" style="width:120px;display:none">
+           <!-- <div onclick="updateitem()" data-options="iconCls:'icon-save'">编辑图形</div>-->
+            <div onclick="_menu.rename()">重命名</div>
+            <div onclick="_menu.remove()" data-options="iconCls:'icon-print'">删除</div>
+        </div>
     </div>
     <div class="layout-right">
-        <table> <tr> <td rowspan="2">月份/科室</td> <td colspan="2">C T室</td> <td colspan="2">放 射 科</td> <td colspan="2">B 超 室</td> <td colspan="2">输 血 科</td> </tr> <tr> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>输血数</td> <td>适应症%</td> </tr> <tr> <td>1</td> <td>1195</td> <td>77.4</td> <td>1426</td> <td>39.1</td> <td>1972</td> <td>79.3</td> <td>115</td> <td>100</td> </tr> <tr> <td>2</td> <td>1071</td> <td>79.4</td> <td>1137</td> <td>58.5</td> <td>1416</td> <td>72.3</td> <td>95</td> <td>100</td> </tr> <tr> <td>3</td> <td>1326</td> <td>78.3</td> <td>1802</td> <td>57.9</td> <td>2105</td> <td>73.68</td> <td>160</td> <td>100</td> </tr> </table>
+        <table>
+            <tr>
+                <td rowspan="2">月份/科室</td>
+                <td colspan="2">C T室</td>
+                <td colspan="2">放 射 科</td>
+                <td colspan="2">B 超 室</td>
+                <td colspan="2">输 血 科</td>
+            </tr>
+            <tr>
+                <td>检查数</td>
+                <td>阳性率%</td>
+                <td>检查数</td>
+                <td>阳性率%</td>
+                <td>检查数</td>
+                <td>阳性率%</td>
+                <td>输血数</td>
+                <td>适应症%</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1195</td>
+                <td>77.4</td>
+                <td>1426</td>
+                <td>39.1</td>
+                <td>1972</td>
+                <td>79.3</td>
+                <td>115</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>1071</td>
+                <td>79.4</td>
+                <td>1137</td>
+                <td>58.5</td>
+                <td>1416</td>
+                <td>72.3</td>
+                <td>95</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>1326</td>
+                <td>78.3</td>
+                <td>1802</td>
+                <td>57.9</td>
+                <td>2105</td>
+                <td>73.68</td>
+                <td>160</td>
+                <td>100</td>
+            </tr>
+        </table>
     </div>
+</div>
+<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
+		<div class="modal-content">
+			<div class="modal-header" id="modal_title">
+				<button type="button" class="close" data-dismiss="modal">
+					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+				</button>
+
+			</div>
+			<div class="modal-body">
+				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
+					<span >确定删除吗?</span>
+				</div>
+			</div>
+			<div class="modal-footer" style="text-align:center;">
+				<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
 </div>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources/echarts/echarts.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script>
-    var $layoutRight=$(".layout-right");
-    var _chart=0;
+    var $layoutRight = $(".layout-right");
+    var _chart = 0;
     $("#menu_tree").tree({
-        url:"../ajax/tree5.json",
-        method:"get",
-        animate:true,
-        dnd:true,
-        onLoadSuccess:function () {
-            var $title=$("span.tree-title");
-            var olength= $title.length;
+        url: "../ajax/tree5.json",
+        method: "get",
+        animate: true,
+        dnd: true,
+        onLoadSuccess: function () {
+            var $title = $("span.tree-title");
+            var olength = $title.length;
             for (var i = 0; i < olength; i++) {
-                var tip= $title[i].innerHTML;
-                $title.eq(i).attr("title",tip);
+                var tip = $title[i].innerHTML;
+                $title.eq(i).attr("title", tip);
             }
             $title.tooltip({
-                palcement:"top"
+                palcement: "top"
             });
         },
-        onClick:function (node) {
-            if(node.children){
+        onClick: function (node) {
+            if (node.children) {
                 return;
-            }else{
-                var is_chat=$(node.target).parent().parent().siblings().find(".tree-title").html();
-                switch (is_chat){
+            } else {
+                var is_chat = $(node.target).parent().parent().siblings().find(".tree-title").html();
+                switch (is_chat) {
                     case "表格":
-                        _chart=0;
-                        var str='<table> <tr> <td rowspan="2">月份/科室</td> <td colspan="2">C T室</td> <td colspan="2">放 射 科</td> <td colspan="2">B 超 室</td> <td colspan="2">输 血 科</td> </tr> <tr> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>输血数</td> <td>适应症%</td> </tr> <tr> <td>1</td> <td>1195</td> <td>77.4</td> <td>1426</td> <td>39.1</td> <td>1972</td> <td>79.3</td> <td>115</td> <td>100</td> </tr> <tr> <td>2</td> <td>1071</td> <td>79.4</td> <td>1137</td> <td>58.5</td> <td>1416</td> <td>72.3</td> <td>95</td> <td>100</td> </tr> <tr> <td>3</td> <td>1326</td> <td>78.3</td> <td>1802</td> <td>57.9</td> <td>2105</td> <td>73.68</td> <td>160</td> <td>100</td> </tr> </table>';
+                        _chart = 0;
+                        var str = '<table> <tr> <td rowspan="2">月份/科室</td> <td colspan="2">C T室</td> <td colspan="2">放 射 科</td> <td colspan="2">B 超 室</td> <td colspan="2">输 血 科</td> </tr> <tr> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>输血数</td> <td>适应症%</td> </tr> <tr> <td>1</td> <td>1195</td> <td>77.4</td> <td>1426</td> <td>39.1</td> <td>1972</td> <td>79.3</td> <td>115</td> <td>100</td> </tr> <tr> <td>2</td> <td>1071</td> <td>79.4</td> <td>1137</td> <td>58.5</td> <td>1416</td> <td>72.3</td> <td>95</td> <td>100</td> </tr> <tr> <td>3</td> <td>1326</td> <td>78.3</td> <td>1802</td> <td>57.9</td> <td>2105</td> <td>73.68</td> <td>160</td> <td>100</td> </tr> </table>';
                         $layoutRight.html(str);
                         break;
                     default:
-                        _chart=1;
+                        _chart = 1;
                         $layoutRight.html("<div id='chat' style='width: 100%;height: 100%;'></div>");
                         var baroption = {
                             //标题
                             title: {
                                 text: '科室督查结果',
-                                left:"10%"
+                                left: "10%"
                             },
-                            grid:{left:'15%'},
+                            grid: {left: '15%'},
                             tooltip: {
                                 trigger: 'axis'
                             },
                             legend: {
-                                top:'bottom',
+                                top: 'bottom',
                                 //数据
-                                data:['1月','2月','3月']
+                                data: ['1月', '2月', '3月']
                             },
                             //工具箱
                             toolbox: {
@@ -106,10 +242,10 @@
                                 }
                             },
                             //横坐标
-                            xAxis:  {
+                            xAxis: {
                                 type: 'category',
                                 boundaryGap: true,
-                                data:['C T室','放 射 科','B 超 室','输 血 科']
+                                data: ['C T室', '放 射 科', 'B 超 室', '输 血 科']
 //			//坐标轴类型，value数据，category类型，time时间，
 //			type: 'category',
 //			//起点和重点数据是否定格，是否留白
@@ -132,106 +268,64 @@
 //				formatter: '{value} °C'
 //			}
                             },
-                            series:[
+                            series: [
                                 //准备添加的数据
                                 {
-                                    name:'1月',
+                                    name: '1月',
                                     //折线图
-                                    type:'bar',
+                                    type: 'bar',
                                     //数据
-                                    data:[1195,1426,1972,115]
+                                    data: [1195, 1426, 1972, 115]
                                 },
                                 {
-                                    name:'2月',
-                                    type:'bar',
+                                    name: '2月',
+                                    type: 'bar',
                                     //数据
-                                    data:[1071,1137,1416,95]
+                                    data: [1071, 1137, 1416, 95]
                                 },
                                 {
-                                    name:'3月',
-                                    type:'bar',
-                                    data:[1362,1802,2105,160]
+                                    name: '3月',
+                                    type: 'bar',
+                                    data: [1362, 1802, 2105, 160]
                                 }
                             ]
                         };
-                        var $chat=$("#chat")[0];
+                        var $chat = $("#chat")[0];
                         var myChart = echarts.init($chat);
                         myChart.setOption(baroption);
                         break;
                 }
             }
-    }
-        ,onContextMenu:function (e,node) {
-            console.log(e,node);
+        },
+        onContextMenu: function (e, node) {
             e.preventDefault();
-             $('#menu_tree').tree('select',node.target);
-           $("#update_menu").menu("show",{
-               left:e.pageX,
-               top:e.pageY
-           })
+            $('#menu_tree').tree('select', node.target);
+            $("#update_menu").menu("show", {
+                left: e.pageX,
+                top: e.pageY
+            })
         }
     });
- var _menu={
-     node:function () {
-         return $("#menu_tree").tree("getSelected") ;
-     },
-    rename:function () {
-         var self=this;
-        $("#menu_tree").tree("beginEdit",this.node().target );
-
-     },
-     updata:function () {
-
-     },
-     remove:function () {
-          var self=this;
-         $(this.node().target ).remove();
-     }
-
- }
-
-</script>
-<script>
-   /* var pieoption = {
-        title : {
-            text: '各科室10月的支出饼状图',
-            x:'center'
+    var _menu = {
+        node: function () {
+            return $("#menu_tree").tree("getSelected");
         },
-        tooltip : {
-            trigger: 'item',
-            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        rename: function () {
+            var self = this;
+            $("#menu_tree").tree("beginEdit", self.node().target);
         },
-        legend: {
-            orient: 'vertical',
-            left: 'left',
-            data: ['院办公室','信息科','财务科','总务科','医务科']
+        updata: function () {
+
         },
-        series : [
-            {
-                name: '科室',
-                type: 'pie',
-                radius : '55%',
-                center: ['50%', '60%'],
-                data:[
-                    {value:335, name:'院办公室'},
-                    {value:310, name:'信息科'},
-                    {value:234, name:'财务科'},
-                    {value:135, name:'总务科'},
-                    {value:1548, name:'医务科'}
-                ],
-                itemStyle: {
-                    emphasis: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)'
-                    }
-                }
-            }
-        ]
-    };
-    var $chat=$("#chats")[0];
-    var myChart = echarts.init($chat);
-    myChart.setOption(pieoption);*/
+        remove: function () {
+            var self = this;
+            $("#modal_alert").modal("toggle");
+            $("#is_true").click(function () {
+                $(self.node().target).remove();
+            })
+        }
+
+    }
 </script>
 </body>
 </html>

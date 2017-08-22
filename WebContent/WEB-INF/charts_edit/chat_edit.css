@@ -6,7 +6,7 @@ form{width:100%;}
 .bv-form .tooltip-inner{text-align:left}
 .nav-tabs li.bv-tab-success>a{color:#3c763d}
 .nav-tabs li.bv-tab-error>a{color:#a94442}
-div.row { height:40px;line-height: 40px}
+div.row { line-height: 40px}
 .sourceBtn {padding:0 8px;height:26px;}
 div.content{padding:10px 5px;
     height:320px;overflow-y: scroll}

@@ -141,7 +141,7 @@
 								</table >
 							</div>
 
-						<div class="form-group " >
+						<div class="form-group updata" >
 							<p style="text-align: left;padding-left: 80px;font-weight: 700">数据上传:</p>
 							<div>
 								<div style="display:inline-block;margin-left: -110px;border: 1px solid #3c763d"><input type="file" id="files" style="opacity: 0;"></div>
@@ -289,6 +289,7 @@
 		});
 	/*上传*/
     $upload.click(function () {
+    	$(".updata").show();
         $(".panelBtn").children("a").removeAttr("disabled");
         $name.removeAttr("disabled");
         $des.removeAttr("disabled");
@@ -326,7 +327,6 @@
 			case "重传":
 				$table1.children().eq(trID).children().eq(1).html($name.val());
 				$table1.children().eq(trID).children().eq(2).html($des.val());
-
 				break;
 			case "追加":
 				break;
@@ -345,6 +345,7 @@
         var id=this.getAttribute("data-echo");
         var nameVal=$(this).parent().siblings("td").eq(1).html();
         var desVal=$(this).parent().siblings("td").eq(2).html();
+		$(".updata").show();
 	    switch (this.innerHTML){
 			case "预览":
 				$("#modal_pre").modal("show");
@@ -401,6 +402,7 @@
                 $(".panelBtn").children("a").attr({"disabled":"disabled"});
                 $name.attr({"disabled":"disabled"});
                 $des.attr({"disabled":"disabled"});
+                $(".updata").hide();
                 $name.val(nameVal);
                 $des.val(desVal);
                 $alertAdd.modal("toggle");
