@@ -215,6 +215,21 @@
     /*日期选择*/
     var year_f,year_last,year_s;
     var yearArr=[];
+    var month = [
+        {id:'1', text:'1月'},
+        {id:'2', text:'2月'},
+        {id:'3', text:'3月'},
+        {id:'4', text:'4月'},
+        {id:'5', text:'5月'},
+        {id:'6', text:'6月'},
+        {id:'7', text:'7月'},
+        {id:'8', text:'8月'},
+        {id:'9', text:'9月'},
+        {id:'10', text:'10月'},
+        {id:'11', text:'11月'},
+        {id:'12', text:'12月'}
+    ];
+    var secondMon=month.slice(5);
     getYears();
    function getYears() {
 		var nowDate = new Date();
@@ -230,6 +245,56 @@
 	}
     /*年份框加载*/
     var secondYear=yearArr.slice(0,2);
+    /*结束-月期框加载*/
+    $dataCombo.last().combobox({
+        valueField: "id",
+        textField: "text",
+        data:month,
+        value:"6月",
+        editable: true,
+        width: 80,
+        height: 30,
+        panelWidth: 80,
+        panelHeight: 'auto',
+        formatter: function (row) {
+            return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+        },
+        onSelect:function (node) {
+        }
+
+    });
+    /*开始-月期框加载*/
+    $dataCombo.first().combobox({
+        valueField: "id",
+        textField: "text",
+        data:month,
+        value:"1月",
+        editable: true,
+        width: 80,
+        height: 30,
+        panelWidth: 80,
+        panelHeight: 'auto',
+        formatter: function (row) {
+            return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+        },
+        onSelect:function (node) {
+            yearChange(null,node);
+           /* var startYear=parseInt( $yearCombo.first().combobox("getValue"));
+            var endYear= parseInt($yearCombo.last().combobox("getValue"));
+            if(startYear<endYear){
+                secondMon=month.slice();
+            }else{
+                secondMon=month.slice(node.id-1);
+                var last =$dataCombo.last().combobox("getValue");
+                if(parseInt(node.id)>parseInt(last)){
+                    $dataCombo.last().combobox("setValue",node.id);
+                }
+            }
+            $dataCombo.last().combobox("loadData",secondMon);*/
+        }
+
+    });
+    /*结束年份*/
     $yearCombo.last().combobox({
         valueField: "id",
         textField: "text",
@@ -242,8 +307,59 @@
         panelHeight: 'auto',
         formatter: function (row) {
             return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+        },
+        onSelect:function (node) {
+            $(this).unbind("click");
+            yearChange2(node,null);
         }
     });
+    /*开始年份*/
+    function yearChange(yearNode,monNode) {
+        alert(1);
+        var startYear=yearNode?yearNode.id:( $yearCombo.first().combobox("getValue"));
+        startYear=parseInt(startYear);
+        var endYear= parseInt($yearCombo.last().combobox("getValue"));
+        var startMon=monNode?monNode.id:($dataCombo.first().combobox("getValue"));
+        startMon=parseInt(startMon);
+        var endMon=parseInt($dataCombo.last().combobox("getValue"));
+        console.log(startYear,startMon,endYear,endMon,"1");
+        secondYear=yearArr.slice(0,(year_f-startYear+1));
+        if(startYear>=endYear){
+            $yearCombo.last().combobox("setValue",startYear);
+            secondMon=month.slice(startMon-1);
+            if(startMon>=endMon){
+                $dataCombo.last().combobox("setValue",startMon);
+            }
+        }else{
+                        secondMon=month.slice();
+
+        }
+        $dataCombo.last().combobox("loadData",secondMon);
+        if(yearNode){
+            $yearCombo.last().combobox("loadData",secondYear);
+        }
+    }
+    function yearChange2(yearNode,monNode) {
+        alert(2);
+        var endYear =yearNode?yearNode.id:( $yearCombo.last().combobox("getValue"));
+            endYear=parseInt(endYear);
+        var startYear= parseInt($yearCombo.first().combobox("getValue"));
+        var startMon=monNode?monNode.id:($dataCombo.first().combobox("getValue"));
+        startMon=parseInt(startMon);
+        var endMon=parseInt($dataCombo.last().combobox("getValue"));
+        console.log(startYear,startMon,endYear,endMon,"2");
+//        secondYear=yearArr.slice(0,(year_f-startYear+1));
+        if(startYear==endYear){
+//            $yearCombo.last().combobox("setValue",startYear);
+            secondMon=month.slice(startMon-1);
+            if(startMon>endMon){
+                $dataCombo.last().combobox("setValue",startMon);
+            }
+        }else{
+            secondMon=month.slice();
+        }
+        $dataCombo.last().combobox("loadData",secondMon);
+    }
     $yearCombo.first().combobox({
         valueField: "id",
         textField: "text",
@@ -257,83 +373,31 @@
         formatter: function (row) {
             return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
         },
-       onSelect:function (node) {
-                    secondYear=yearArr.slice(0,year_f-parseInt(node.id)+1);
-                    var last =$yearCombo.last().combobox("getValue");
-                    if(parseInt(node.id)>parseInt(last)){
-                        $yearCombo.last().combobox("setValue",node.id);
-                    }
-                   $yearCombo.last().combobox("loadData",secondYear);
+        onSelect:function (node) {
+           yearChange(node,null);
+//            var startMon=parseInt($dataCombo.first().combobox("getValue"));
+//            var endMon=parseInt($dataCombo.last().combobox("getValue"));
+//                    secondYear=yearArr.slice(0,year_f-parseInt(node.id)+1);
+//                    var endYear =$yearCombo.last().combobox("getValue");
+//                    console.log(startMon,endMon)
+//                    if(parseInt(node.id)>=parseInt(endYear)){
+//                        $yearCombo.last().combobox("setValue",node.id);
+//                        secondMon=month.slice(startMon-1);
+//                       if(startMon>endMon){
+//                           $dataCombo.last().combobox("setValue",startMon);
+//                       }
+//                    }else{
+//                        secondMon=month.slice();
+//                    }
+//                   $yearCombo.last().combobox("loadData",secondYear);
+//            console.log(secondMon);
+//                   $dataCombo.last().combobox("loadData",secondMon);
                 }
     });
+
     var roteArr=[{"id":1,"text":"年份","value":"year"},
     {"id":2,"text":"季度","value":"season"},
-    {"id":3,"text":"月份","value":"month","selected":true}]
-    var month = [
-		{id:'1', text:'1月'},
-		{id:'2', text:'2月'},
-		{id:'3', text:'3月'},
-		{id:'4', text:'4月'},
-		{id:'5', text:'5月'},
-		{id:'6', text:'6月'},
-		{id:'7', text:'7月'},
-		{id:'8', text:'8月'},
-		{id:'9', text:'9月'},
-		{id:'10', text:'10月'},
-		{id:'11', text:'11月'},
-		{id:'12', text:'12月'}
-	];
-    var secondMon=month.slice(5);
-                /*结束-月期框加载*/
-              $dataCombo.last().combobox({
-                valueField: "id",
-                textField: "text",
-                data:month,
-                value:"6月",
-                editable: true,
-                width: 80,
-                height: 30,
-                panelWidth: 80,
-                panelHeight: 'auto',
-                formatter: function (row) {
-                    return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
-                },
-                onSelect:function (node) {
-                }
-
-            });
-               /*开始-月期框加载*/
-              $dataCombo.first().combobox({
-                valueField: "id",
-                textField: "text",
-                data:month,
-                value:"1月",
-                editable: true,
-                width: 80,
-                height: 30,
-                panelWidth: 80,
-                panelHeight: 'auto',
-                formatter: function (row) {
-                    return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
-                },
-                onSelect:function (node) {
-                    var startYear=parseInt( $yearCombo.first().combobox("getValue"));
-                    var endYear= parseInt($yearCombo.last().combobox("getValue"));
-                    alert(endYear);
-                    if(startYear<endYear){
-                        alert(1);
-                        secondMon=month.slice();
-                    }else{
-                        secondMon=month.slice(node.id-1);
-                        var last =$dataCombo.last().combobox("getValue");
-                        if(parseInt(node.id)>parseInt(last)){
-                            $dataCombo.last().combobox("setValue",node.id);
-                        }
-                    }
-                   $dataCombo.last().combobox("loadData",secondMon);
-                }
-
-            });
+    {"id":3,"text":"月份","value":"month","selected":true}];
               /*频率框加载*/
         /*    $("#rotate").combobox({
                 valueField: "id",
