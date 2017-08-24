@@ -30,6 +30,4 @@
 *.exe
 *.out
 *.app
-
 # 目录表
-workspace.xml
