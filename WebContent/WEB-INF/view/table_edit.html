@@ -209,16 +209,15 @@
             $upload = $(".upload"),
             $table = $(".table"),
             $dataCombo = $(".data-combo"),
-            $calendar = $(".calendar-combo"),
             $sourceSelected = $("#sourceSelected"),
             $sourceBtn = $(".sourceBtn");
     /*日期选择*/
     $.ajax({
-        url: "../ajax/data.json",
+        url: "../../resources/ajax/data.json",
         dataType: "json",
         success: function (data) {
             var dataArray = data;
-            /*月期框加载*/
+            /*月-加载*/
             $dataCombo.combobox({
                 valueField: "id",
                 textField: "text",
@@ -232,7 +231,7 @@
                     return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
                 }
             });
-            /*年期框加载*/
+            /*年-加载*/
             $(".data-combo-year").combobox({
                 valueField: "id",
                 textField: "text",
@@ -246,7 +245,7 @@
                     return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
                 }
             });
-            /*频率框加载*/
+            /*频率-加载*/
             $("#rotate").combobox({
                 valueField: "id",
                 textField: "text",
@@ -257,10 +256,6 @@
                 panelWidth: 70,
                 panelHeight: 'auto',
                 value: '月份',
-//                onLoadSuccess:function(){
-//                    var loadData=$(this).combobox("getData");
-//                    $(this).combobox("setValue",loadData[2].text);
-//                },
                 formatter: function (row) {
                     return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
                 },
@@ -278,7 +273,7 @@
     });
     /*机构树加载*/
     $org.combobox({
-        url: "../ajax/org.json",
+        url: "../../resources/ajax/org.json",
         method: "get",
         valueField: "id",
         textField: "text",
@@ -293,7 +288,7 @@
     $(".wd-combo").combobox({
         valueField: "id",
         textField: "text",
-        url: "../ajax/field_wd.json",
+        url: "../../resources/ajax/field_wd.json",
         method: "get",
         editable: true,
         width: 180,
@@ -312,7 +307,7 @@
     $(".field-combo").combobox({
         valueField: "id",
         textField: "text",
-        url: "../ajax/field_wd.json",
+        url: "../../resources/ajax/field_wd.json",
         method: "get",
         editable: true,
         width: 180,
@@ -365,10 +360,10 @@
         onOpen: function () {
             var urls, is_checked;
             if (is_zb) {
-                urls = "../ajax/a.json";
+                urls = "../../resources/ajax/a.json";
                 is_checked = true;
             } else {
-                urls = "../ajax/upload.json";
+                urls = "../../resources/ajax/upload.json";
                 is_checked = false;
             }
             // 加载窗口树
@@ -380,14 +375,15 @@
             });
         }
     });
-    /*添加资源*/
+    /*指标源加载*/
     var show_combo;
     $.ajax({
-        url: "../ajax/show_type.json",
+        url: "../../resources/ajax/show_type.json",
         success: function (data) {
             show_combo = data;
         }
     });
+    /*指标源选择确定按钮*/
     $(".footer").on("click", "button", function () {
         switch ($(this).html()) {
             case "确定":
@@ -411,7 +407,7 @@
                                 }
                                 str = '<div class="row"><div style="color:seagreen" class = "col-xs-2  topic" >指标名称:</div><div class ="col-xs-10 no-padding"><div class ="col-xs-1 zb-name" style="width: auto">' + obj.text + '</div><div style="float: left;padding-right: 20px">' + show_combo[show_id].type + ':' + '</div><div style="float: left;line-height: 20px" id="show_type_' + i + '"></div></div></div >';
                                 $newAdd.append(str);
-
+                                /*对应的下拉框加载*/
                                 $("#show_type_" + i).combobox({
                                     valueField: "id",
                                     textField: "text",
@@ -441,7 +437,6 @@
                                 });
                             }
                         }
-
                         $zb.show();
                         $upload.hide();
                     } else {
@@ -484,7 +479,7 @@
                 var tabId=$("#sourceTree").tree("getSelected").id;
                 if(tabId==12){
                 $.ajax({
-                    url:"../ajax/tab12.json",
+                    url:"../../resources/ajax/tab12.json",
                     success:function (data) {
                         $(".pre").html(data.tab);
                         var val = $("input[name='rowspan']:checked").val();
@@ -499,7 +494,7 @@
                 });
                 }else{
                     $.ajax({
-                        url:"../ajax/tab11.json",
+                        url:"../../resources/ajax/tab11.json",
                         success:function (data) {
                             $(".pre").html(data.tab);
                         }
@@ -516,7 +511,7 @@
                     tableArr.push(obj.value);
                 }
                 var time = tableArr.slice(1, 5);
-                /*获取纯数据*/
+                /*获取选择的时间用来计算*/
                 for (var i = 0; i < time.length; i++) {
                     time[i] = parseInt(time[i]);
                 }
@@ -534,8 +529,9 @@
                 switch (tableArr[0]) {
                     case "年份":
                         colNum = time[2] - time[0];
+                        _year=_year-1;
                         for (var i = 0; i < colNum + 1; i++) {
-                            _year = _year + i;
+                            _year = _year + 1;
                             rightTabH += "<th width='100'>" + _year + "年" + "</th>";
                             console.log(colNum, _year);
                         }
@@ -588,7 +584,6 @@
                 //左表身体
                  LeftTabB="<tr><td rowspan='" + rowNum + "'>" + tableArr[5] + "</td><td rowspan='"+vueArr[0].length+"'><div>" + zbArr[0] + "</div></td><td><div>" +vueArr[0][0] + "</div></td></tr>";
                 for (var i = 0; i < zbLeg; i++) {
-
                     if(i==0){
                         for (var j = 1; j < vueArr[i].length; j++) {
                      LeftTabB+="<tr><td><div>"+vueArr[i][j]+"</div></td></tr>"

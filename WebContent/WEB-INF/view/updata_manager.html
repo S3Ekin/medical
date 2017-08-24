@@ -269,25 +269,24 @@
 		</tr>
 		[%j++;}%]
 </script>
-
 <script>
     var $name=$("#names"),
 		$table1=$("#table1"),
         $des=$("#des"),
         $alertAdd=$("#modal_add"),
         $alertModal=$("#modal_alert"),
-		stateFlag="",
+		stateFlag="",/*用于储存状态属于哪一种状态（重传，追加，上传）*/
     	$upload=$("#upload");
     var selecte=document.getElementsByName("des");
-		/*加载数据*/
+		/*加载已经上传的数据*/
 		$.ajax({
-			url:"../ajax/tree6.json",
+			url:"../../resources/ajax/tree6.json",
 			success:function (data) {
 			    $(".loading").hide();
 				$("#table1").html(baidu.template("tpl12",data));
 			}
 		});
-	/*上传*/
+	/*上传按钮*/
     $upload.click(function () {
     	$(".updata").show();
         $(".panelBtn").children("a").removeAttr("disabled");
@@ -299,14 +298,14 @@
         $alertAdd.modal("toggle");
 		$(".add-title").html(stateFlag);
     });
-	/*默认事件*/
+	/*点击模态框确定按钮，默认完成字段编辑*/
     $(".modal-footer").children().click(function () {
         var $is_edit=$(".is_edit");
         if($is_edit.length){
             finishEdit($(".is_edit"));
         }
     });
-	/*上传模态框的确认按钮*/
+	/*模态框的确认按钮事件*/
     $("#is_add").click(function () {
         switch (stateFlag){
 			case "上传":
@@ -350,7 +349,7 @@
 			case "预览":
 				$("#modal_pre").modal("show");
 				$.ajax({
-					url:"../ajax/pretab.json",
+					url:"../../resources/ajax/pretab.json",
 					success:function (data) {
 						var length=data.list.length;
 						$("#preTab").html(baidu.template("tpl13",data));
@@ -376,7 +375,6 @@
 							window.localStorage.endNum=endNum;
 							$("#preTab").html(baidu.template("tpl13",data));
 						})
-
 					}
 				});
 			    break;
@@ -395,7 +393,7 @@
                 $name.val(nameVal);
                 $des.val(desVal);
                 $alertAdd.modal("toggle");
-				trID=$table1.children().index($(this).parent().parent());
+				trID=$table1.children().index($(this).parent().parent());/*找到当前重传的是哪一个*/
                 break;
             case "追加":
             	stateFlag="追加";
@@ -420,7 +418,7 @@
         btn.html("编辑");
         btn.removeClass("is_edit");
     }
-    /*排序*/
+    /*排序，当删除或增加时，序号自动按顺序排列*/
     function order(){
     	var $order=$(".order");
 		for (var i = 0; i < $order.length; i++) {
@@ -445,7 +443,7 @@
                 $(".typeTree").combobox({
                     valueField:"id",
                     textField:"text",
-                    url:"../ajax/type.json",
+                    url:"../../resources/ajax/type.json",
                     method:"get",
                     editable:true,
                     width:80,

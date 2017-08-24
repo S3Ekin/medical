@@ -10,8 +10,6 @@
     <link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
 	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
-
-	
 	<style>
 		#table1 tr th{padding: 8px 5px;text-align:center;}
 		#table1 tr td{padding: 8px 5px;text-align:center;}
@@ -182,7 +180,6 @@
 <script type="text/javascript" src="../../resources/js/mchart.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
-<script type="text/javascript" src="../../resources/js/bootstrapValidator.js"></script>
 <script id="tpl11" type="text/template">
 		[%	var j=1;
 		for(var i in list){%]
@@ -208,7 +205,6 @@
 		</tr>
 		[%j++;}%]
 </script>
-
 <script>
     var $name=$("#names"),
 		$table1=$("#table1"),
@@ -216,18 +212,16 @@
         $alertAdd=$("#modal_add"),
         $alertModal=$("#modal_alert"),
         $val=$("#val"),
-        $form=$("#defaxultForm"),
     	$addBtn=$("#addModel");
     var selecte=document.getElementsByName("des");
-		/*加载数据*/
+		/*加载质控报告清单*/
 		$.ajax({
-			url:"../ajax/tree3.json",
+			url:"../../resources/ajax/tree3.json",
 			success:function (data) {
 			    $(".loading").hide();
 				$("#table1").html(baidu.template("tpl11",data));
 			}
 		});
-
 	/*添加*/
     $addBtn.click(function (event) {
         $name.val(null);
@@ -238,8 +232,9 @@
     $("#is_add").click(function () {
         var modelBtnArr='<td class="modelOptBtn"> <button class="btn btn-primary "  style="padding:0 8px;height:26px;margin-right:10px;">编辑</button><button class="btn btn-red delModel"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary"  style="padding:0 8px;height:26px;">另存</button><button class="btn btn-primary"  style="margin-left:5px;padding:0 8px;height:26px;">保存为报告</button> </td> ';
         var  reportBtnArr='<td style="text-align:center;width: 300px" class="optBtn"> <button class="btn btn-primary browserRe"  style="padding:0 8px;height:26px;margin-right:10px;">浏览</button> <button class="btn btn-red delRe"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary exportRe"  style="padding:0 8px;height:26px;">导出</button> </td>';
-        var length=$table1.children().length+1,
-			docName= $name.val(),
+//        var length=$table1.children().length+1,
+		var length = parseInt($table1.children().last().children().first().html()) + 1;
+			var docName= $name.val(),
 			type=$("input:radio:checked").val(),
 			time=new  Date(),
 			vMon = time.getMonth() + 1,
@@ -258,7 +253,7 @@
         var id=this.getAttribute("data-echo");
 	    switch (this.innerText){
 			case "浏览":
-			    window.parent.frames[0].location.href="iframe4.html?edit="+id+"&report";
+			    window.parent.frames[0].location.href="report.html?edit="+id+"&report";
 			    break;
             case "删除":
                 var self=$(this);
@@ -270,7 +265,7 @@
             case "导出":
                 break;
             case "编辑":
-                window.parent.frames[0].location.href="iframe4.html?edit="+id;
+                window.parent.frames[0].location.href="report.html?edit="+id;
                 break;
             case "另存":
                 break;
@@ -278,54 +273,6 @@
                 break;
 
 		}
-    });
-	/*表单验证*/
-    $(document).ready(function() {
-        $('#defaultForm')
-            .bootstrapValidator({
-                message: 'This value is not valid',
-                feedbackIcons: {
-                    valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
-                },
-                fields: {
-                    names: {
-                        message: 'The username is not valid',
-                        validators: {
-                            notEmpty: {
-                                message: '名称不能为空！'
-                            },
-                            stringLength: {
-                                max:30,
-                                message: '名称太长！'
-                            }
-                        }
-                    },
-                    val: {
-                        validators: {
-                            notEmpty: {
-                                message: '值不能为空！'
-                            }
-                        }
-                    }
-                }
-            })
-            .on('success.form.bv', function(e) {
-                // Prevent form submission
-                e.preventDefault();
-                alert(1);
-                // Get the form instance
-                var $form = $(e.target);
-
-                // Get the BootstrapValidator instance
-                var bv = $form.data('bootstrapValidator');
-
-                // Use Ajax to submit form data
-				/*$.post($form.attr('action'), $form.serialize(), function(result) {
-				 console.log(result);
-				 }, 'json');*/
-            });
     });
 </script>
 <div class="clr"></div>

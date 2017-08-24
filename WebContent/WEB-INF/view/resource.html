@@ -2,89 +2,25 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>资源管理器</title>
     <link rel="stylesheet" href="../../resources/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../../resources/css/icon.css">
     <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
     <style>
-        div.layout {
-            background: #e3e3e3;
-            padding: 1% 15px 1% 315px;
-            width: 100%;
-            height: 100vh;
-        }
-
-        div.layout:after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        div.layout > div {
-            background: white;
-            float: left;
-            height: 100%;
-            border-radius: 10px;
-        }
-
-        div.layout-right {
-            width: 100%;
-            min-width: 480px;
-            overflow: hidden;
-            overflow-y: auto;
-            padding: 30px
-        }
-
-        div.layout-left {
-            padding: 10px;
-            margin-left: -300px;
-            width: 280px;
-            overflow-x: hidden
-        }
-
-        dl {
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
-        span.tree-title {
-            width: 210px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden
-        }
-
-        span.tree-title input {
-            width: 200px !important;;
-            height: 30px !important;
-        }
-
-        table {
-            border: 1px solid black;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        tr {
-            border: 1px solid black
-        }
-
-        tr:hover {
-            background: yellowgreen
-        }
-
-        td {
-            padding: 5px;
-            border: 1px solid black;
-            text-align: center
-        }
-
-        caption {
-            padding: 0;
-            height: 30px;
-            font-weight: bolder
-        }
+        div.layout { background: #e3e3e3; padding: 1% 15px 1% 315px; width: 100%; height: 100vh; }
+        div.layout:after { content: ""; display: block; clear: both; }
+        div.layout > div { background: white; float: left; height: 100%; border-radius: 10px; }
+        div.layout-right { width: 100%; min-width: 480px; overflow: hidden; overflow-y: auto; padding: 30px }
+        div.layout-left { padding: 10px; margin-left: -300px; width: 280px; overflow-x: hidden }
+        dl { margin-top: 0; margin-bottom: 0; }
+        span.tree-title { width: 210px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden }
+        span.tree-title input { width: 200px !important;; height: 30px !important; }
+        table { border: 1px solid black; border-collapse: collapse; width: 100%; }
+        tr { border: 1px solid black }
+        tr:hover { background: yellowgreen }
+        td { padding: 5px; border: 1px solid black; text-align: center }
+        caption { padding: 0; height: 30px; font-weight: bolder }
     </style>
 </head>
 <body>
@@ -155,6 +91,7 @@
         </table>
     </div>
 </div>
+<!--删除模态框-->
 <div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
 	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
 		<div class="modal-content">
@@ -162,7 +99,6 @@
 				<button type="button" class="close" data-dismiss="modal">
 					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
 				</button>
-
 			</div>
 			<div class="modal-body">
 				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
@@ -183,21 +119,20 @@
 <script>
     var $layoutRight = $(".layout-right");
     var _chart = 0;
+    /*左侧菜单加载*/
     $("#menu_tree").tree({
-        url: "../ajax/tree5.json",
+        url: "../../resources/ajax/tree5.json",
         method: "get",
         animate: true,
         dnd: true,
         onLoadSuccess: function () {
+            /*省略号提示*/
             var $title = $("span.tree-title");
             var olength = $title.length;
             for (var i = 0; i < olength; i++) {
                 var tip = $title[i].innerHTML;
                 $title.eq(i).attr("title", tip);
             }
-            $title.tooltip({
-                palcement: "top"
-            });
         },
         onClick: function (node) {
             if (node.children) {
@@ -246,41 +181,22 @@
                                 type: 'category',
                                 boundaryGap: true,
                                 data: ['C T室', '放 射 科', 'B 超 室', '输 血 科']
-//			//坐标轴类型，value数据，category类型，time时间，
-//			type: 'category',
-//			//起点和重点数据是否定格，是否留白
-//			boundaryGap: true,
-//			//数据
-//			data: ['周一','周二','周三','周四','周五','周六','周日','周一','周二','周三','周四','周五','周六','周日']
                             },
-                            //纵坐标
                             yAxis: {
-
                                 type: 'value',
                                 axisLabel: {
                                     formatter: '{value}次'
                                 }
-
-
-//			type: 'value',
-//			//纵坐标显示标签
-//			axisLabel: {
-//				formatter: '{value} °C'
-//			}
                             },
                             series: [
-                                //准备添加的数据
                                 {
                                     name: '1月',
-                                    //折线图
                                     type: 'bar',
-                                    //数据
                                     data: [1195, 1426, 1972, 115]
                                 },
                                 {
                                     name: '2月',
                                     type: 'bar',
-                                    //数据
                                     data: [1071, 1137, 1416, 95]
                                 },
                                 {

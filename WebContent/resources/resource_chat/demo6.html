@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>pie_chart</title>
+	<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+	<script type="text/javascript" src="../../resources/echarts/echarts.js"></script>
+</head>
+<body>
+	<div id="p6_div_chart" style="width:100%;height: 300px"></div>
+	<script type="text/javascript">
+	radaroption = {
+        title: {
+            text: '科室督查结果',
+			left:'10%'
+        },
+        grid:{left:'15%'},
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            top:'bottom',
+            //数据
+            data:['1月','2月','3月']
+        },
+        //工具箱
+        toolbox: {
+            show: true,
+            feature: {
+                dataZoom: {
+                    yAxisIndex: false
+                },
+                dataView: {readOnly: false},
+                magicType: {type: ['line', 'bar']},
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        //横坐标
+        xAxis:  {
+            type: 'category',
+            boundaryGap: true,
+            name:"科室",
+            nameTextStyle:{
+                color:"green",
+				fontWeight:"bold",
+				fontSize:18
+			},
+            data:['C T室','放 射 科','B 超 室','输 血 科']
+//			//坐标轴类型，value数据，category类型，time时间，
+//			type: 'category',
+//			//起点和重点数据是否定格，是否留白
+//			boundaryGap: true,
+//			//数据
+//			data: ['周一','周二','周三','周四','周五','周六','周日','周一','周二','周三','周四','周五','周六','周日']
+        },
+        //纵坐标
+        yAxis: {
+            name:"检查次数",
+            nameTextStyle:{
+                color:"green",
+                fontWeight:"bold",
+                fontSize:18
+            },
+            type: 'value',
+            axisLabel: {
+                formatter: '{value}次'
+            }
+
+
+//			type: 'value',
+//			//纵坐标显示标签
+//			axisLabel: {
+//				formatter: '{value} °C'
+//			}
+        },
+        series:[
+            //准备添加的数据
+            {
+                name:'1月',
+                //折线图
+                type:'bar',
+                //数据
+                data:[1195,1426,1972,115]
+            },
+            {
+                name:'2月',
+                type:'bar',
+                //数据
+                data:[1071,1137,1416,95]
+            },
+            {
+                name:'3月',
+                type:'bar',
+                data:[1362,1802,2105,160]
+            }
+        ]
+    };
+		var myChart = echarts.init($('#p6_div_chart').get(0));
+		myChart.setOption(radaroption);
+		window.onresize = myChart.resize;//窗口自适应
+	</script>
+</body>
+</html>

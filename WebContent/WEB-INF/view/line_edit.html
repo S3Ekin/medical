@@ -1,0 +1,830 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>折线图</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+</head>
+<style>
+	#table1 tr th{padding: 8px 5px;text-align:center;}
+	#table1 tr td{padding: 8px 5px;text-align:center;}
+	.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
+	form{width:100%;}
+	.bv-form .help-block{margin-bottom:0}
+	.bv-form .tooltip-inner{text-align:left}
+	.nav-tabs li.bv-tab-success>a{color:#3c763d}
+	.nav-tabs li.bv-tab-error>a{color:#a94442}
+	div.row { line-height: 40px}
+	.sourceBtn {padding:0 8px;height:26px;}
+	div.content{padding:10px 5px;
+		height:320px;overflow-y: scroll}
+	div.footer button{padding: 5px 10px ;height: 30px;margin-right: 10px}
+	div.footer{text-align: right;padding:5px 50px 5px 0;border-top: 2px solid #95B8E7;}
+	.zb-name {color:#2081BB;white-space: nowrap;}
+	.upload{display: none}
+	.table{display: none}
+	.zb{display: none}
+	.pre{margin-left:16.7%;padding:20px; border: 1px solid #95B8E7;display: none;width:800px}
+	#organization{height: 30px}
+	span.tree-title{font-size: 14px}
+	.no-padding{padding: 0}
+	div.topic { text-align: right; font-size: 16px; font-weight: 700; }
+	.add-field{color:#2081BB;}
+	#sourceSelected{display: none}
+	.combo-title{padding-right: 5px}
+	.combo-data>div{display: inline-block}
+</style>
+<body>
+<div class="mr15">
+    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
+       	<span class="tab_title">图表创建编辑</span>
+		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
+    </div>
+	<div class="container-fluid" style="width:90%;min-width:900px;padding: 20px 0 0 0" >
+		<div class="row">
+			<div  class="col-xs-2 topic">名称:</div>
+			<div class="col-xs-9">
+				<input type="text" class="clo-xs-9" id="name" value="折线图" style="width:100%;max-width: 400px ;height:30px">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2 topic">数据源类型:</div>
+			<div class="col-xs-4">
+				<input type="radio" name="dataType" value="1" checked="checked"><span>指标数据</span>
+				<input type="radio" name="dataType" value="0"  style="margin-left: 20px"><span>上传数据</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-2 topic">数据源:</div>
+			<div class="col-xs-1" >
+				<button class="btn btn-primary sourceBtn">选择(<span>多选</span>)</button>
+			</div>
+		</div>
+		<div class="zb">
+			<div class="row">
+				<div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
+				<div class="col-xs-7 combo-data" >
+					<span class="combo-title">频率:</span>
+					<div id="rotate"></div>
+					<div class="data-combo-year"></div>
+					<div> <div class="data-combo"></div>
+					</div>
+					<span style="color:darkgreen">———</span>
+					<div class="data-combo-year"></div>
+					<div> <div class="data-combo"></div>
+					</div>
+				</div>
+				<div class="col-xs-3 no-padding">
+					<span class="combo-title">科室:</span><div id="organization"></div>
+				</div>
+			</div>
+			<div class="newAdd"></div>
+			<div class="row">
+				<div class="col-xs-2 topic">横轴维度:</div>
+				<div class="col-xs-3 ">
+					<div class="wd-combo"></div>
+				 </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 topic">纵轴维度:</div>
+				<div class="col-xs-4">
+					<div class="wd-combo"></div>
+				</div>
+			</div>
+		</div>
+		<div class="upload">
+			<div class="row">
+				<div class="col-xs-2 topic">数据名称:</div>
+				<div class="col-xs-10 zb-name"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 topic">横轴字段:</div>
+				<div class="col-xs-4">
+					<div class="field-combo"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2 topic">纵轴字段1:</div>
+				<div class="col-xs-4">
+					<div class="field-combo"></div>
+					<button type="button" class="btn btn-primary " id="field-btn" style="margin-left: 10px">添加</button>
+				</div>
+			</div>
+			<div class="add-col-field"></div>
+		</div>
+		<div class="table">
+			<div class="row">
+				<div class="col-xs-2 topic">图形标题:</div>
+				<div class="col-xs-6">
+					<input type="text" style="height: 30px;width: 100%"  id="title">
+				</div>
+			</div>
+			<div class="row ">
+				<div class="col-xs-2 topic">
+					<button type="button" class="btn btn-primary " id="preChat">预览</button>
+				</div>
+				<div class="col-xs-2 " >
+					<button type="button" class="btn btn-green " id="save" style="display:none;">保存</button>
+				</div>
+			</div>
+
+			<div class="pre">
+				<div id="chat" style="width:760px;height:500px"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 数据源 -->
+<div id="sourceSelected" style="display: none">
+	<div class="content" >
+		<ul id="sourceTree"></ul>
+	</div>
+	<div class="footer">
+		<button type="button" class="btn btn-primary "   id="select">确定</button>
+				<button type="button" class="btn btn-primary" id="cancel">取消</button>
+	</div>
+</div>
+<!-- alert共用模态框 -->
+<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
+		<div class="modal-content">
+			<div class="modal-header" id="modal_title">
+				<button type="button" class="close" data-dismiss="modal">
+					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+				</button>
+
+			</div>
+			<div class="modal-body">
+				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
+					<span >确定删除吗?</span>
+				</div>
+			</div>
+			<div class="modal-footer" style="text-align:center;">
+				<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
+<script src="../../resources/echarts/echarts.js"></script>
+<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script >
+	var $radio = $("input[name=dataType]"),
+			$sourceSlect=$(".sourceBtn span"),
+			$zbName=$(".zb-name"),
+			is_zb=true,
+			$zb=$(".zb"),
+			$newAdd=$(".newAdd"),
+			$org=$("#organization"),
+			$dataCombo=$(".data-combo"),
+			$upload=$(".upload"),
+			$table=$(".table"),
+			$sourceSelected=$("#sourceSelected"),
+			$sourceBtn=$(".sourceBtn");
+	/*日期下拉框加载*/
+	$.ajax({
+		url:"../../resources/ajax/data.json",
+		dataType:"json",
+		success:function (data) {
+			var dataArray=data;
+			/*月期框加载*/
+			$dataCombo.combobox({
+				valueField:"id",
+				textField:"text",
+				data:dataArray.month,
+				editable:true,
+				width:80,
+				height:30,
+				panelWidth:80,
+				panelHeight:'auto',
+				formatter:function (row) {
+					return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+				}
+			});
+			/*年期框加载*/
+			$(".data-combo-year").combobox({
+				valueField:"id",
+				textField:"text",
+				data:dataArray.year,
+				editable:true,
+				width:80,
+				height:30,
+				panelWidth:80,
+				panelHeight:'auto',
+				formatter:function (row) {
+					return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+				}
+			});
+			/*频率框加载*/
+			$("#rotate").combobox({
+				valueField:"id",
+				textField:"text",
+				data:dataArray.rotate,
+				editable:true,
+				width:70,
+				height:30,
+				panelWidth:70,
+				panelHeight:'auto',
+				value:'月份',
+//                onLoadSuccess:function(){
+//                    var loadData=$(this).combobox("getData");
+//                    $(this).combobox("setValue",loadData[2].text);
+//                },
+				formatter:function (row) {
+					return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+				},
+				onSelect:function (recoder) {
+					var item=recoder.value;
+					if(recoder.id==1){
+						$dataCombo.parent().hide();
+					}else{
+						$dataCombo.parent().show();
+						$dataCombo.combobox("loadData",dataArray[item]);
+					}
+				}
+			});
+		}
+	});
+	/*机构树加载*/
+	$org.combobox({
+		url:"../../resources/ajax/org.json",
+		method:"get",
+		valueField:"id",
+		textField:"text",
+		editable:true,
+		width:120,
+		height:30,
+		panelWidth:120,
+		panelHeight:300,
+		value:"全院"
+	});
+	/*维度框加载*/
+	$(".wd-combo").combobox({
+		valueField:"id",
+		textField:"text",
+		url:"../../resources/ajax/field_wd.json",
+		method:"get",
+		editable:true,
+		width:180,
+		height:30,
+		panelWidth:180,
+		panelHeight:100,
+		onLoadSuccess:function(data){
+			var loadData=$(this).combobox("getData");
+			$(this).combobox("setValue",loadData[3].text);
+		},
+		formatter:function (row) {
+			return "<span class='glyphicon glyphicon-pushpin'>&nbsp;"+row.text+"</span>"
+		}
+	});
+	/*字段框加载*/
+	$(".field-combo").combobox({
+		valueField:"id",
+		textField:"text",
+		url:"../../resources/ajax/field_wd.json",
+		method:"get",
+		editable:true,
+		width:180,
+		height:30,
+		panelWidth:180,
+		panelHeight:100,
+		onLoadSuccess:function(data){
+			var loadData=$(this).combobox("getData");
+			$(this).combobox("setValue",loadData[3].text);
+		},
+		formatter:function (row) {
+			return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>"
+		}
+	});
+	/*添加纵轴字段*/
+	var count=1;
+	$("#field-btn").click(function () {
+		count++;
+		var str='<div class="row"><div class="col-xs-2 topic add-field">纵轴字段<span>'+count+'</span>:</div><div class="col-xs-4"><div class="new-field" ></div ><button type="button" class="btn btn-red field-del" style="margin-left: 10px">删除</button></div></div>';
+		$(".add-col-field").append(str);
+		$(".new-field").combobox({
+			valueField:"id",
+			textField:"text",
+			url:"../../resources/ajax/field_wd.json",
+			method:"get",
+			editable:true,
+			width:180,
+			height:30,
+			panelWidth:180,
+			panelHeight:'auto',
+			onLoadSuccess:function(data){
+				var loadData=$(this).combobox("getData");
+				$(this).combobox("setValue",loadData[3].text);
+			},
+			formatter:function (row) {
+				return "<span class='glyphicon glyphicon-check' style='line-height: 18px'>&nbsp;"+row.text+"</span>"
+			}
+		});
+	});
+	/*删除纵轴字段*/
+	var $addColField=$(".add-col-field");
+	$addColField.on("click",".field-del",function () {
+		var self=$(this);
+		$("#modal_alert").modal("show");
+		$("#is_true").click(function () {
+			self.parent().parent().remove();
+		});
+	});
+	/*删除纵轴字段按钮hover事件*/
+	$addColField.on("mouseover",".field-del",function () {
+		$(this).parent().siblings().eq(0).css("color","red");
+	}).on("mouseout",".field-del",function () {
+		$(this).parent().siblings().eq(0).css("color","#2081BB");
+	});
+	/*单选按钮事件*/
+	$radio.on("click",function () {
+		$("#save").hide();
+		$zbName.html(null);
+		$(".add-col-field").html(null);
+		$table.hide();
+		$(".pre").hide();
+		$zb.hide();
+		$upload.hide();
+		$("#title").val(null);
+		if($(this).val()==1){
+			$sourceSlect.html("多选");
+			is_zb=true;
+		}else{
+			$sourceSlect.html("单选");
+			is_zb=false;
+		}
+	});
+	/*数据源选择按钮*/
+	$sourceBtn.on("click",function () {
+		$sourceSelected.window("open");
+	});
+	/*数据源窗口加载*/
+	$sourceSelected.window({
+		title : '数据源选择',
+		modal : true,
+		shadow : true,
+		closed : true,
+		width : 360,
+		height : 400,
+		padding : 10,
+		minimizable : false,
+		maximizable : false,
+		collapsible : false,
+		top : ($(window).height() - 500) * 0.5,
+		left : ($(window).width() - 400) * 0.5,
+		resizable:false,
+		inline:false,
+		onOpen : function(){
+			var urls,is_checked;
+			if(is_zb){
+				urls="../../resources/ajax/a.json";
+				is_checked=true;
+			}else{
+				urls="../../resources/ajax/upload.json";
+				is_checked=false;
+			}
+			// 加载窗口树文件
+			$('#sourceTree').tree({
+				url:urls,
+				method:"get",
+				animate:true,
+				checkbox:is_checked
+			});
+		}
+	});
+	/*添加资源*/
+	var show_combo;
+	$.ajax({
+		url:"../../resources/ajax/show_type.json",
+		success:function (data) {
+			show_combo=data;
+		}
+	});
+	$(".footer").on("click","button",function(){
+		switch ($(this).html()){
+			case "确定":
+				var htm ="",
+						str ="",
+						state = is_zb ? "getChecked":"getSelected";
+				$newAdd.html(null);
+				var nodes=$("#sourceTree").tree(state);
+				if(is_zb){
+					if(nodes.length){
+						for (var i = 0,length=nodes.length; i <length; i++) {
+							var obj = nodes[i];
+							if (obj.children){
+								continue;
+							}else{
+								var show_id;
+								if(102020000<parseInt(obj.id)){
+									show_id=1;
+								}else if(102010000<parseInt(obj.id)){
+									show_id=0;
+								}
+								str ='<div class="row"><div style="color:seagreen" class = "col-xs-2  topic" >指标名称:</div><div class ="col-xs-10 no-padding"><div class ="col-xs-1 zb-name" style="width: auto">'+obj.text+'</div><div style="float: left;padding-right: 20px">'+show_combo[show_id].type+':'+'</div><div style="float: left"><div  id="show_type_'+i+'"></div></div><div class="col-xs-2" style="width:90px">展示类型:</div><div style="float:left;" ><div class="chat-type"></div></div></div></div >';
+								$newAdd.append(str);
+								$("#show_type_"+i).combobox({
+									valueField:"id",
+									textField:"text",
+									data:show_combo[show_id].combo,
+									editable:true,
+									width:150,
+									height:30,
+									panelWidth:150,
+									panelHeight:100,
+									onLoadSuccess:function(){
+										var loadData=$(this).combobox("getData");
+										$(this).combobox("setValue",loadData[1].text);
+									},
+									formatter:function (row) {
+										return "<span class='glyphicon glyphicon-check' style='line-height: 18px'>&nbsp;" + row.text + "</span>"
+									}
+								});
+								$(".chat-type").combobox({
+									valueField:"id",
+									textField:"text",
+									data:show_combo[2].combo,
+									editable:true,
+									width:80,
+									height:30,
+									panelWidth:80,
+									panelHeight:'auto',
+									onLoadSuccess:function(){
+										var loadData=$(this).combobox("getData");
+										$(this).combobox("setValue",loadData[0].text);
+									},
+									formatter:function (row) {
+										return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+									}
+								});
+							}
+						}
+
+						$zb.show();
+						$upload.hide();
+					}else{
+						alert("没有选择文件！");
+						return ;
+					}
+				}else{
+					if(!nodes||nodes.children){
+						alert("请选择文件！");
+						return ;
+					}else{
+						$zb.hide();
+						$upload.show();
+						htm="<span >"+nodes.text+"</span>";
+						$zbName.html(htm);
+					}
+				}
+				$table.show();
+				break;
+			default:
+				break;
+		}
+		$sourceSelected.window("close");
+	});
+	$(".zb").on("click","a.combo-arrow",function () {
+		$("#title").val(null);
+	})
+</script>
+<script>
+	/*chats加载*/
+	$("#preChat").click(function () {
+	  $("#save").show();
+		switch (is_zb) {
+			case true:
+				var comboData = $(" .zb .textbox-text");
+				var Arr=[];
+				for (var  i= 0;  i< comboData.length; i++) {
+					var obj = comboData[i];
+					Arr.push(obj.value)
+				}
+				/*时间 指标*/
+				var time=Arr.slice(1,5),
+					zbArr=Arr.slice(6,(Arr.length-2));
+				for (var i = 0; i <time.length; i++) {
+					time[i] =parseInt(time[i]);
+				}
+				var zbName=$(".zb .zb-name");
+				var legenData=[];
+				for (var i = 0,count=0; i < zbName.length; i++,count+=2) {
+					zbArr[count]=zbArr[count]+zbName[i].innerHTML.replace(/(住院重点疾病|住院重点手术)*/g,"");
+					legenData.push(zbArr[count]);
+				}
+				console.log(Arr,zbArr,time);
+				var _title ,_count;
+				var _year = time[0], _month = time[1] - 1, _season = time[1] - 1;
+				var XData=[];
+				switch (Arr[0]) {
+					case "年份":
+						_title=Arr[5]+Arr[1]+"—"+Arr[3]+"各医疗质量指标";
+						_count = time[2] - time[0];
+						_year=_year-1;
+						for (var i = 0; i < _count + 1; i++) {
+							_year = _year + 1;
+							XData.push(_year);
+						}
+						break;
+					case "季度":
+						_title=Arr[5]+Arr[1]+Arr[2]+"—"+Arr[3]+Arr[4]+"各医疗质量指标";
+						_count = time[3] + (time[2] - time[0] - 1) * 4 + 4 - time[1];
+						for (var i = 0; i < _count + 1; i++) {
+							if ((1 + _season) % 5 == 0) {
+								_season = 1;
+								_year++;
+							} else {
+								_season = (1 + _season) % 5;
+							}
+							XData.push(_year+"年"+_season+"季度");
+						}
+						break;
+					default:
+						_title=Arr[5]+Arr[1]+Arr[2]+"—"+Arr[3]+Arr[4]+"各医疗质量指标";
+						_count = time[3] + (time[2] - time[0] - 1) * 12 + 12 - time[1];
+						for (var i = 0; i < _count + 1; i++) {
+							if ((1 + _month) % 13 == 0) {
+								_month = 1;
+								_year++;
+							} else {
+								_month = (1 + _month) % 13;
+							}
+							XData.push(_year+"年"+_month+"月");
+						}
+						break;
+				}
+				var seriesData=[];
+				for (var i = 0,count=1; i < legenData.length; i++,count+=2) {
+					seriesData[i]={};
+					seriesData[i].name=legenData[i];
+					seriesData[i].type=zbArr[count]=="柱状"?'bar':"line";
+					seriesData[i].areaStyle={};
+					seriesData[i].areaStyle=zbArr[count]=="面积"?{normal: {}}:null;
+					seriesData[i].data=[];
+					for (var j = 0; j < XData.length; j++) {
+						seriesData[i].data.push(parseInt(Math.random()*90+1))
+					}
+				}
+				if(!$("#title").val()){
+					$("#title").val(_title);
+				}
+					var pieoption = {
+			title: {
+				text: $("#title").val(),
+				x: 'center',
+			},
+			tooltip: {
+				trigger: 'axis',
+				axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+					type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+				}
+			},
+			grid:{
+				containLabel:true,
+				height:400,
+			},
+			legend: {
+//				orient: 'vertical',
+				bottom:'bottom',
+				data:legenData,
+			},
+			toolbox: {
+				top:25,
+				show: true,
+				feature: {
+					dataZoom: {
+						yAxisIndex: false
+					},
+					dataView: {readOnly: false},
+					//显示模式 line折线，bar柱状，stack堆叠，tiled平铺
+					magicType: {type: ['line', 'bar','stack','tiled']},
+					restore: {},
+					saveAsImage: {}
+				}
+			},
+			xAxis: {
+				type: 'category',
+				boundaryGap: true,
+				data: XData
+			},
+			yAxis: [{
+				position:"left",
+				name:"例",
+				type: 'value',
+				axisLabel: {
+					formatter: '{value}'
+				}
+			},{
+				position:"right",
+				max:100,
+				min:0,
+				type: 'value',
+				axisLabel: {
+					formatter: '{value}%'
+				}
+			}],
+			series:seriesData,
+		/*	dataZoom: [{
+				start: 10,
+				end: 100,
+				bottom:"80"
+			}, {
+				type: 'inside'
+			}],*/
+		};
+				break;
+			default:
+                var tabId=$("#sourceTree").tree("getSelected").id;
+				if(tabId==12){
+					$("#title").val("一季度各科室检查数")
+					 var pieoption= {
+           title: {
+               text: $("#title").val(),
+               x:'10%'
+           },
+           tooltip: {
+               trigger: 'axis',
+               formatter: "{b}: {c} 次"
+           },
+           toolbox: {
+               feature: {
+                   dataView: {
+                       show: true,
+                       readOnly: false
+                   },
+                   restore: {
+                       show: true
+                   },
+                   saveAsImage: {
+                       show: true
+                   }
+               }
+           },
+           grid: {
+               containLabel: true
+           },
+           legend: {
+               data: ['一月','二月','三月']
+           },
+           xAxis: [{
+               type: 'category',
+               name:"科室",
+               nameGap:50,
+               axisTick: {
+                   alignWithLabel: true
+               },
+               data:['C T室','放 射 科','B 超 室','输 血 科']
+           }],
+           yAxis: [
+              /* {
+               type: 'category',
+               name: '阳性率',
+               min: 0,
+               max: 100,
+               position: 'right',
+               axisLabel: {
+                   formatter: '{value} %'
+               }
+           }, */
+			   {
+               type: 'value',
+               name: '检查数',
+               position: 'left'
+           }],
+           series: [
+			   {
+                   name: '一月',
+                   type: 'bar',
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+                              },
+                   data: [1190,1426,1793,115]
+               },{
+                   name: '二月',
+                   type: 'bar',
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+						  },
+                   data: [1190,1226,1693,125]
+               },{
+                   name: '三月',
+                   type: 'bar',
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+						 },
+                   data: [1390,1126,1593,135]
+               }
+
+           ]
+       };
+				}else{
+					$("#title").val("各科终末病历总评价")
+
+    			var pieoption= {
+           title: {
+               text: $("#title").val(),
+               x:'10%'
+           },
+           tooltip: {
+               trigger: 'axis',
+			   formatter: "{b} <br/>{a0} : {c0} 次<br/>{a1} : {c1} 次<br/>{a2} : {c2} 次"
+           },
+           toolbox: {
+               feature: {
+                   dataView: {
+                       show: true,
+                       readOnly: false
+                   },
+                   restore: {
+                       show: true
+                   },
+                   saveAsImage: {
+                       show: true
+                   }
+               }
+           },
+           grid: {
+               containLabel: true
+           },
+           legend: {
+               bottom:"bottom",
+               data: ['甲级','乙级','丙级']
+           },
+           xAxis: [{
+               type: 'category',
+               name:"科室",
+               nameGap:50,
+               axisTick: {
+                   alignWithLabel: true
+               },
+               data:['泌尿科','心内科','呼吸科','外三科']
+           }],
+           yAxis: [
+			   {
+               type: 'value',
+               name: '检查数',
+               position: 'left'
+           }],
+           series: [
+			   {
+                   name: '甲级',
+                   type: 'bar',
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+                              },
+                   data: [9,8,8,8]
+               },
+			   {
+
+                   name: '乙级',
+                   type: 'bar',
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+						  },
+                   data: [1,0,1,1]
+               },{
+                   name: '丙级',
+                   type: 'bar',
+                   label: {
+                              normal: {
+                              show: true,
+                              position: 'top'
+                              }
+						 },
+                   data: [0,2,1,1]
+               }
+
+           ]
+       };
+		}
+				break;
+		};
+		$(".pre").show();
+
+		var myChart = echarts.init($('#chat')[0]);
+		myChart.setOption(pieoption);
+	})
+</script>
+<div class="clr"></div>
+</body>
+</html>

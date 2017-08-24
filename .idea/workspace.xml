@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7cdc6adb-317c-4575-8db1-415bc3964e10" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/insert_chat.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/ueditor.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitosc/ISSUE_TEMPLATE.zh-CN.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitosc/PULL_REQUEST_TEMPLATE.zh-CN.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/project.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/WEB-INF/lib/commons-dbcp2-2.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/WEB-INF/lib/commons-pool2-2.4.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/WEB-INF/lib/gson-2.2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/WEB-INF/lib/json-lib-2.2.3-jdk15.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/WEB-INF/lib/log4j-1.2.16.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/WEB-INF/lib/phoenix-4.6.0-HBase-1.1-client.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/WEB-INF/lib/phoenix-4.6.0-HBase-1.1-server.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/ajax/GetDimComboBox4.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/ajax/GetDimComboTree2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/ajax/GetDimComboTree3.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/ajax/GetDimValue.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/ajax/GetKpiTabs.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/ajax/GetLegendServlet.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/ajax/PieChartServlet.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/ajax/SearchKpi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/ajax/SelectKpi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/area.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/bar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts/area_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts/bar_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts/funnel_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts/line_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts/multiline_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts/pie_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts/radar_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts/scatter_chart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/area_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/area_edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/bar_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/bar_edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/funnel_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/funnel_edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/line_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/line_edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/multiline_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/multiline_edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/pie_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/pie_edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/radar_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/radar_edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/scatter_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/charts_edit/scatter_edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/color.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/demo.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/easyui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icon.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/back.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/blank.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/cancel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/clear.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/cut.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/edit_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/edit_remove.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/filesave.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/filter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/help.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/large_chart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/large_clipart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/large_picture.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/large_shapes.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/large_smartart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/lock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/man.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/mini_add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/mini_edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/mini_refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/more.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/no.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/ok.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/pencil.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/print.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/redo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/reload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/search.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/sum.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/tip.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/icons/undo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/accordion_arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/blank.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/calendar_arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/combo_arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/datagrid_icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/datebox_arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/layout_arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/linkbutton_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/menu_arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/messager_icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/pagination_icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/panel_tools.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/searchbox_button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/slider_handle.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/spinner_arrows.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/tabs_icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/tree_icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/images/validatebox_warning.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/css/jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/data/datagrid_data1.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/demo3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/echarts/areachart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/echarts/barchart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/echarts/echarts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/echarts/funnelchart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/echarts/linechart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/echarts/multilinechart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/echarts/piechart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/echarts/radarchart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/echarts/scatterchart.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/funnel.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/area.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/bar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/demo3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/funnel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/jquery.easyui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/line.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/makechat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/multiline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/pie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/portal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/radar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/scatter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/js/text.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/json/tree_data1.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/line.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/main.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/multiline.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/myiframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/pie.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_edit_1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_edit_2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_edit_3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p10.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p11.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p12.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p13.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p14.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p15.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p16.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p17.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p18.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/portal_p9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/radar.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/scatter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Singleton_temp/WebContent/test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/GetDimComboBox4.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/GetDimComboTree2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/GetDimComboTree3.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/GetDimValue.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/GetKpiTabs.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/GetLegendServlet.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/PieChartServlet.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/SearchKpi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/SelectKpi.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/row_wd.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree2副本.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/area_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/bar_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/chat_edit.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/chat_edit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/funnel-edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/lines_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/multip_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/pie_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/radar_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/scatter_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/charts_edit/table_edit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo10.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo11.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo7.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/科室督查.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/.editorconfig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/Gruntfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeButton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeCombox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/addCustomizeDialog.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/charts.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/completeDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/customPluginDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/customToolbarDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/customizeDialogPage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/customizeToolbarUIDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/editor_api.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/filterRuleDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/highlightDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/jqueryCompleteDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/jqueryValidation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/multiDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/multiEditorWithOneInstance.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/renderInTable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/resetDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/sectiondemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/server/getContent.ashx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/server/getContent.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/server/getContent.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/server/getContent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/setWidthHeightDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/simpleDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/sortableDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/submitFormDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/textareaDemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_examples/uparsedemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_parse/background.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_parse/charts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_parse/insertcode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_parse/list.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_parse/parse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_parse/table.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_parse/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/adapter/autosave.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/adapter/editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/adapter/editorui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/adapter/message.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/api.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/Editor.defaultoptions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/Editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/EventBase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/Range.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/Selection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/ajax.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/domUtils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/dtd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/filternode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/filterword.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/htmlparser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/keymap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/loadconfig.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/localstorage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/node.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/core/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/anchor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/autofloat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/autoheight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/autolink.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/autosave.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/autosubmit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/autotypeset.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/autoupload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/background.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/basestyle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/blockquote.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/catchremoteimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/charts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/cleardoc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/contextmenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/convertcase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/copy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/customstyle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/defaultfilter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/directionality.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/dragdrop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/elementpath.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/enterkey.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/fiximgclick.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/font.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/formatmatch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/horizontal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/iframe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/indent.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/insertcode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/insertfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/inserthtml.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/insertparagraph.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/justify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/keystrokes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/lineheight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/link.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/list.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/music.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/pagebreak.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/paragraph.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/paste.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/preview.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/print.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/puretxtpaste.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/removeformat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/rowspacing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/scrawl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/searchreplace.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/section.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/selectall.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/serverparam.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/shortcutmenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/simpleupload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/snapscreen.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/source.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/table.action.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/table.cmds.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/table.core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/table.sort.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/template.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/time.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/undo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/webapp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/wordcount.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/wordimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/plugins/xssFilter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/autotypesetbutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/autotypesetpicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/breakline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/button.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/cellalignpicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/colorbutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/colorpicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/combox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/dialog.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/mask.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/menu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/menubutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/message.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/multiMenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/pastepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/popup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/separator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/shortcutmenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/splitbutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/stateful.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/tablebutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/tablepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/toolbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/uibase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_src/ui/uiutils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/Editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/EventBase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/Range.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/Selection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/ajax.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/ajax.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/domUtils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/filternode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/filterword.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/htmlparser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/localstorage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/node.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/plugin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/tools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/core/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/api.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/commands.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/Editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/EventBase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/Range.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/Selection.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/ajax.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/browser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/domUtils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/dtd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/filternode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/filterword.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/htmlparser.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/node.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/core/utils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/customEvent.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/jscoverage-highlight.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/jscoverage-ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/jscoverage-throbber.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/jscoverage.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/jscoverage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/jscoverage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/anchor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/autofloat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/autoheight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/autolink.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/autosubmit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/autotypeset.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/background.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/basestyle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/blockquote.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/catchremoteimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/cleardoc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/contextmenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/convertcase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/customstyle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/defaultfilter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/directionality.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/dragdrop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/elementpath.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/enterkey.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/fiximgclick.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/font.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/formatmatch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/horizontal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/iframe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/indent.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/insertcode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/inserthtml.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/insertparagraph.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/justify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/keystrokes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/lineheight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/link.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/list.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/music.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/pagebreak.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/paragraph.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/paste.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/preview.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/print.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/puretxtpaste.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/removeformat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/rowspacing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/scrawl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/searchreplace.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/selectall.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/shortcutmenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/snapscreen.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/source.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/table.action.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/table.cmds.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/table.core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/template.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/time.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/undo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/webapp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/wordcount.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/plugins/wordimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/autotypesetbutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/autotypesetpicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/breakline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/button.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/cellalignpicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/colorbutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/colorpicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/combox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/dialog.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/editorui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/mask.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/menu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/menubutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/multiMenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/pastepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/popup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/separator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/shortcutmenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/splitbutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/stateful.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/tablebutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/tablepicker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/toolbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/uibase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/coverage/ui/uiutils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/editor_config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/editor_config_src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/import.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/anchor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/auto.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/autofloat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/autoheight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/autolink.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/autosave.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/autotypeset.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/autoupload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/background.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/basestyle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/blockquote.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/catchremoteimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/charts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/cleardoc.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/contextmenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/convertcase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/copy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/customstyle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/defaultfilter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/directionality.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/dragdrop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/elementpath.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/enterkey.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/fiximgclick.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/font.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/formatmatch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/horizontal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/iframe.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/indent.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/insertcode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/inserthtml.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/insertparagraph.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/justify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/keystrokes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/lineheight.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/link.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/list.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/music.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/pagebreak.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/paragraph.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/paste.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/preview.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/print.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/removeformat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/rowspacing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/scrawl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/searchreplace.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/section.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/selectall.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/serverparam.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/shortcutkeys.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/shortcutmenu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/snapscreen.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/source.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/table.action.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/table.cmds.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/table.core.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/table.sort.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/template.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/time.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/tools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/ueditor.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/undo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/webapp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/wordcount.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/plugins/wordimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/qunit/jquery-1.5.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/qunit/qunit.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/qunit/qunit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/qunit/tools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/8eaccbef76094b364e2cfddaa1cc7cd98d109d49.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/Manual regression cases.xmind" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/VersionUpdate/readme.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/VersionUpdate/test list for 1.3.0.xmind" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/VersionUpdate/test list for 1.3.6.xmind" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/VersionUpdate/test list for 1.4.0.xmind" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/VersionUpdate/test list for 1.4.3.xmind" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/demo_1.3.0/IEAutolinkFalse_demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/demo_1.3.0/uparse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/demo_1.3.6/Demo_3831.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/demo_1.3.6/Demo_contentchange.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/demo_1.4.0/uparsedemo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/testDesign/offical site.xmind" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/analysis.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/batchrun.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/case.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/coverage/jscov.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/coverage/jscoverage-highlight.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/coverage/jscoverage-ie.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/coverage/jscoverage-throbber.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/coverage/jscoverage.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/coverage/jscoverage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/coverage/jscoverage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/coverage/readCoverage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/css/bg_button_a.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/css/bg_button_span.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/css/qunit.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/css/tangramtest.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/css/testsuite.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/filehelper.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/geneHTML.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/geneHistory.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/geneXML.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/import.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/js/UserAction manual.rar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/js/UserAction.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/js/ext_qunit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/js/jquery-1.5.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/js/run.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/js/tangram.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/js/testrunner.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/js/tools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/lib/Staf.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/lib/StafResult.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/log.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/mail.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/read.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/record.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/report.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/run.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/runC.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/runall.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/txt/test1_1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/txt/test1_2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/txt/test1_3.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/txt/test2_1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/txt/test2_2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/txt/test2_3.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/br/txt/test3_1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/coverage/cov.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/coverage/jscoverage.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/data/frame.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/data/frame.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/data/test.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/data/test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/data/testReady.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/ant_tangram_ext.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/js.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/conf/check.cfg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/conf/custcheck.conf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/conf/ignore.list" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/conf/omitfiles.conf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/core/customcheck/cust.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/core/jshint/js.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/core/jshint/jshint-rhino.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/core/tpl/htmlpart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/core/tpl/toggle_tpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/hint.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/jshint.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jshunter_1.2.0.1/jshunter_dev/jshunter/version" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jslint4java-2.0.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/jslint4java-ant-1.4.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/tools/lib/npPlugintest.dll" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/autotypesetbutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/button.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/colorbutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/combox.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/css/DEFAULT.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/editor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/editorui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/mask.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/menu.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/menubutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/popup.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/separator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/splitbutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/stateful.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/tablebutton.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/toolbar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/tools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/uibase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/ui/uiutils.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/_test/关键字.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/ASPJson.class.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/MultiformProcessor.class.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/PathFormatter.class.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/Uploader.Class.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/action_config.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/action_crawler.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/action_list.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/action_upload.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/config_loader.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/asp/controller.asp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/changelog.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/anchor/anchor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/attachment.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/attachment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/attachment.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_chm.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_default.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_doc.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_exe.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_jpg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_mp3.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_mv.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_pdf.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_ppt.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_psd.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_rar.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_txt.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/fileTypeImages/icon_xls.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/alignicon.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/alignicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/file-icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/file-icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/image.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/progress.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/success.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/attachment/images/success.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/background/background.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/background/background.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/background/background.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/background/images/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/background/images/success.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/chart.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/charts.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/charts.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/charts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/images/charts0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/images/charts1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/images/charts2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/images/charts3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/images/charts4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/charts/images/charts5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/emotion.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/emotion.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/emotion.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/images/0.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/images/bface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/images/cface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/images/fface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/images/jxface2.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/images/neweditor-tab-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/images/tface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/images/wface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/emotion/images/yface.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/gmap/gmap.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/help/help.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/help/help.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/help/help.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/image.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/image.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/image.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/images/alignicon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/images/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/images/icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/images/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/images/image.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/images/progress.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/images/success.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/image/images/success.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/insertframe/insertframe.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/internal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/link/link.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/map/map.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/map/show.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/music/music.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/music/music.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/music/music.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/preview/preview.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/addimg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/brush.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/delimg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/delimgH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/empty.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/emptyH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/eraser.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/redo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/redoH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/scale.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/scaleH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/size.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/undo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/images/undoH.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/scrawl.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/scrawl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/scrawl/scrawl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/searchreplace/searchreplace.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/searchreplace/searchreplace.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/snapscreen/snapscreen.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/spechars/spechars.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/spechars/spechars.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/table/dragicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/table/edittable.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/table/edittable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/table/edittable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/table/edittd.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/table/edittip.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/images/bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/images/pre0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/images/pre1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/images/pre2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/images/pre3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/images/pre4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/template.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/template.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/template/template.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/center_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/file-icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/file-icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/image.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/left_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/none_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/progress.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/right_focus.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/success.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/images/success.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/video.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/video.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/video/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/webapp/webapp.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/wordimage/fClipboard_ueditor.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/wordimage/imageUploader.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/wordimage/tangram.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/wordimage/wordimage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/dialogs/wordimage/wordimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/controller.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/lib/commons-codec-1.9.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/lib/commons-fileupload-1.3.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/lib/commons-io-2.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/lib/json.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/lib/ueditor-1.1.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/ActionEnter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/ConfigManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/Encoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/PathFormat.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/define/ActionMap.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/define/ActionState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/define/AppInfo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/define/BaseState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/define/FileType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/define/MIMEType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/define/MultiState.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/define/State.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/hunter/FileManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/hunter/ImageHunter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/upload/Base64Uploader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/upload/BinaryUploader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/upload/StorageManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/jsp/src/com/baidu/ueditor/upload/Uploader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/en.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/addimage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/alldeletebtnhoverskin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/alldeletebtnupskin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/background.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/button.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/copy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/deletedisable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/deleteenable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/listbackground.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/localimage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/music.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/rotateleftdisable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/rotateleftenable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/rotaterightdisable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/rotaterightenable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/en/images/upload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/zh-cn/images/copy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/zh-cn/images/localimage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/zh-cn/images/music.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/zh-cn/images/upload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/lang/zh-cn/zh-cn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/App_Code/Config.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/App_Code/ConfigHandler.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/App_Code/CrawlerHandler.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/App_Code/Handler.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/App_Code/ListFileHandler.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/App_Code/NotSupportedHandler.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/App_Code/PathFormater.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/App_Code/UploadHandler.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/Web.config" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/controller.ashx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/net/net.sln" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/php/Uploader.class.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/php/action_crawler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/php/action_list.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/php/action_upload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/php/config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/php/controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/autotypesetpicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/button.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/buttonicon.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/cellalignpicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/colorbutton.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/colorpicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/combox.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/contextmenu.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/dialog.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/editor.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/menu.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/menubutton.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/message.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/multiMenu.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/paragraphpicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/pastepicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/popup.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/separtor.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/shortcutmenu.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/splitbutton.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/tablepicker.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/toolbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/ueditor.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/_css/uibase.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/dialogbase.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/anchor.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/arrow_down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/arrow_up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/button-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/cancelbutton.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/charts.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/cursor_h.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/cursor_h.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/cursor_v.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/cursor_v.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/dialog-title-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/filescan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/highlighted.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/icons-all.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/loaderror.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/lock.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/neweditor-tab-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/pagebreak.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/scale.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/sortable.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/spacer.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/sparator_v.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/table-cell-align.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/tangram-colorpicker.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/toolbar_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/unhighlighted.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/upload.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/videologo.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/word.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/default/images/wordpaste.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/themes/iframe.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/SyntaxHighlighter/shCore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/SyntaxHighlighter/shCoreDefault.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/codemirror/codemirror.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/codemirror/codemirror.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/adapters/mootools-adapter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/adapters/mootools-adapter.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/adapters/prototype-adapter.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/adapters/prototype-adapter.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/adapters/standalone-framework.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/adapters/standalone-framework.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/highcharts-more.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/highcharts-more.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/highcharts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/highcharts.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/annotations.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/annotations.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/canvas-tools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/canvas-tools.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/data.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/data.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/drilldown.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/drilldown.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/exporting.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/exporting.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/funnel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/funnel.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/heatmap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/heatmap.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/map.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/no-data-to-display.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/modules/no-data-to-display.src.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/themes/dark-blue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/themes/dark-green.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/themes/gray.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/themes/grid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/highcharts/themes/skies.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/jquery-1.10.2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/jquery-1.10.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/jquery-1.10.2.min.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/snapscreen/UEditorSnapscreen.exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/video-js/font/vjs.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/video-js/font/vjs.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/video-js/font/vjs.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/video-js/font/vjs.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/video-js/video-js.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/video-js/video-js.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/video-js/video-js.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/video-js/video.dev.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/video-js/video.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/Uploader.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.flashonly.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.flashonly.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.html5only.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.html5only.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.withoutimage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/webuploader/webuploader.withoutimage.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/xss.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/zeroclipboard/ZeroClipboard.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/zeroclipboard/ZeroClipboard.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/third-party/zeroclipboard/ZeroClipboard.swf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/toolbars.text" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/ueditor.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ueditor-1.4.3.3/ueditor.parse.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/Gruntfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/ajaxSubmit.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/ajaxSubmit.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/attribute.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/choice.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/collapse.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/container.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/container2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/container3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/container4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/date.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/defaultMessage.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/dynamic.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/dynamic2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/dynamic3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/dynamic4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/enable.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/enable2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/event.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/event2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/event3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/feedbackIcons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/group.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/html5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/i18n.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/invisible.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/message.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/multiple.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/remote.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/reset.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/selector.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/selector2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/specialName.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/submitHandler.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/tab.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/demo/validators.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/css/bootstrapValidator.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/css/bootstrapValidator.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/bootstrapValidator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/bootstrapValidator.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/be_NL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/bg_BG.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/cs_CZ.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/de_DE.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/en_US.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/es_CL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/es_ES.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/fr_FR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/gr_EL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/hu_HU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/it_IT.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/pl_PL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/pt_BR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/tr_TR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/vi_VN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/zh_CN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/dist/js/language/zh_TW.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/remote.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/remote2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/screenshots/screenshot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/css/bootstrapValidator.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/bootstrapValidator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/be_NL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/bg_BG.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/cs_CZ.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/de_DE.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/en_US.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/es_CL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/es_ES.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/fr_FR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/gr_EL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/hu_HU.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/it_IT.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/pl_PL.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/pt_BR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/tr_TR.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/vi_VN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/zh_CN.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/language/zh_TW.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/base64.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/between.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/callback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/choice.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/creditCard.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/cusip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/cvv.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/date.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/different.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/digits.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/ean.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/emailAddress.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/file.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/greaterThan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/grid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/hex.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/hexColor.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/iban.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/id.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/identical.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/imei.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/imo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/integer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/ip.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/isbn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/isin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/ismn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/issn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/lessThan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/mac.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/meid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/notEmpty.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/numeric.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/phone.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/regexp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/remote.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/rtn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/sedol.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/siren.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/siret.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/step.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/stringCase.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/stringLength.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/uri.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/uuid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/vat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/vin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/src/js/validator/zipCode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/target.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/api.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/container.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/enable.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/event.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/excluded.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/group.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/i18n.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/message.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/between.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/callback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/creditCard.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/date.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/ean.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/greaterThan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/iban.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/id.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/imo.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/isbn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/isin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/ismn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/issn.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/lessThan.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/meid.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/uri.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/vat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/test/spec/validator/zipCode.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/jasmine/boot.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/jasmine/console.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/jasmine/jasmine-html.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/jasmine/jasmine.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/jasmine/jasmine.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/jasmine/jasmine_favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/jquery/jquery-1.10.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/bootstrapvalidator-master/vendor/jquery/jquery-1.10.2.min.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/chat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/complete.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/index-2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit-1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/新建文本文档.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WebContent/resources/websql/websql.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/catalogue.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/catalogue.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/express.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/express.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/list.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/model.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/model.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/resource.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/resource.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/table_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/updata_manager.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/updata_manager.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/a.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/a.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/a_type.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/a_type.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/data.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/data.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/field_wd.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/field_wd.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/main.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/main.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/model1.txt" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/model1.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/model2.txt" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/model2.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/org.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/org.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/pretab.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/pretab.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/report1.txt" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/report1.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/report2.txt" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/report2.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/show_type.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/show_type.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tab11.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tab11.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tab12.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tab12.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tree.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree1.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tree1.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree2.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tree2.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree2_1.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tree2_1.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree3.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tree3.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree4.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tree4.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree5.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tree5.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/tree6.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/tree6.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/type.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/type.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/ajax/upload.json" afterPath="$PROJECT_DIR$/WebContent/resources/ajax/upload.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo1.html" afterPath="$PROJECT_DIR$/WebContent/resources/resource_chat/demo1.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo1_1.html" afterPath="$PROJECT_DIR$/WebContent/resources/resource_chat/demo1_1.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo1_2.html" afterPath="$PROJECT_DIR$/WebContent/resources/resource_chat/demo1_2.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/chat/demo1_3.html" afterPath="$PROJECT_DIR$/WebContent/resources/resource_chat/demo1_3.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/view/iframe4.html" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/view/report.html" />
+    </list>
+    <ignored path="medicals.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="medicals" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-34" />
+    <option name="y" value="245" />
+    <option name="width" value="1554" />
+    <option name="height" value="912" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="medicals" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7cdc6adb-317c-4575-8db1-415bc3964e10" name="Default" comment="" />
+      <created>1503554432259</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1503554432259</updated>
+      <workItem from="1503554435191" duration="69000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="69000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-34" y="245" width="1554" height="912" extended-state="1" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33111703" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>
