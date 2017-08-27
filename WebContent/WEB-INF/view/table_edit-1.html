@@ -70,14 +70,14 @@
                 <div class="col-xs-7 combo-data">
                     <span class="combo-title">频率:</span>
                     <div id="rotate"></div>
-                    <div class="data-combo-year"></div>
+                    <div id="data-combo-year-start"></div>
                     <div>
-                        <div class="data-combo"></div>
+                        <div id="data-combo-start"></div>
                     </div>
                     <span style="color:darkgreen">———</span>
-                    <div class="data-combo-year"></div>
+                    <div id="data-combo-year-end"></div>
                     <div>
-                        <div class="data-combo"></div>
+                        <div id="data-combo-end"></div>
                     </div>
                 </div>
                 <div class="col-xs-3 no-padding">
@@ -167,18 +167,20 @@
 <script src="../../resources/jQuery/easyui-lang-zh_CN.js"></script>
 <script>
     var $radio = $("input[name=dataType]"),
-            $sourceSlect = $(".sourceBtn span"),
-            $zbName = $(".zb-name"),
-            is_zb = true,
-            $zb = $(".zb"),
-            $newAdd = $(".newAdd"),
-            $org = $("#organization"),
-            $upload = $(".upload"),
-            $table = $(".table"),
-            $dataCombo = $(".data-combo"),
-            $yearCombo = $(".data-combo-year"),
-            $sourceSelected = $("#sourceSelected"),
-            $sourceBtn = $(".sourceBtn");
+        $sourceSlect = $(".sourceBtn span"),
+        $zbName = $(".zb-name"),
+        is_zb = true,
+        $zb = $(".zb"),
+        $newAdd = $(".newAdd"),
+        $org = $("#organization"),
+        $upload = $(".upload"),
+        $table = $(".table"),
+        $dataComboStar = $("#data-combo-start"),
+        $dataComboEnd = $("#data-combo-end"),
+        $yearComboStart = $("#data-combo-year-start"),
+        $yearComboEnd = $("#data-combo-year-end"),
+        $sourceSelected = $("#sourceSelected"),
+        $sourceBtn = $(".sourceBtn");
     /*日期选择*/
     var year_f, year_last, year_s;
     var yearArr = [];
@@ -197,8 +199,8 @@
         {id: '12', text: '12月'}
     ];
     var roteArr = [{"id": 1, "text": "年份", "value": "1"},
-    {"id": 2, "text": "季度", "value": "2"},
-    {"id": 3, "text": "月份", "value": "3"}];/*频率选择数组*/
+        {"id": 2, "text": "季度", "value": "2"},
+        {"id": 3, "text": "月份", "value": "3"}];/*频率选择数组*/
     var season = [
         {id: '1', text: '1季度'},
         {id: '2', text: '2季度'},
@@ -221,7 +223,7 @@
     /*默认第二个年的数组，包含今年和去年*/
     var secondYear = yearArr.slice(0, 2);
     /*结束-月框加载*/
-    $dataCombo.last().combobox({
+    $dataComboEnd.combobox({
         valueField: "id",
         textField: "text",
         data: month,
@@ -235,11 +237,11 @@
             return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
         },
         onSelect:function () {
-           alert("结束月");
+            alert("结束月");
         }
     });
     /*开始-月框加载*/
-    $dataCombo.first().combobox({
+    $dataComboStar.combobox({
         valueField: "id",
         textField: "text",
         data: month,
@@ -259,7 +261,7 @@
 
     });
     /*结束年份*/
-    $yearCombo.last().combobox({
+    $yearComboEnd.combobox({
         valueField: "id",
         textField: "text",
         data: secondYear,
@@ -278,7 +280,7 @@
         }
     });
     /*开始年份*/
-    $yearCombo.first().combobox({
+    $yearComboStart.combobox({
         valueField: "id",
         textField: "text",
         data: yearArr,
@@ -297,42 +299,49 @@
         }
     });
     /*第一个年框改变
-    * @params yearNode:在年框里调用这个方法的时候，把选择的年份节点传过来，月份节点参数为null,
-    * */
+     * @params yearNode:在年框里调用这个方法的时候，把选择的年份节点传过来，月份节点参数为null,
+     * */
     function yearChange(yearNode, monNode) {
         var rotate = $("#rotate").combobox("getText");/*获取频率*/
+        console.log(rotate);
         var flagArr = [], second = [];/*设置中转数组*/
         if (rotate == "月份") {
             flagArr = month.slice();
         } else if (rotate == "季度") {
             flagArr = season.slice();
         }
-        var startYear = yearNode ? yearNode.id : ( $yearCombo.first().combobox("getText"));
+        var startYear = yearNode ? yearNode.id : ( $yearComboStart.combobox("getText"));
         startYear = parseInt(startYear);
-        var endYear = parseInt($yearCombo.last().combobox("getText"));
-        var start = monNode ? monNode.id : ($dataCombo.first().combobox("getText"));/*第一个月或季度*/
+        var endYear = parseInt($yearComboEnd.combobox("getText"));
+        var start = monNode ? monNode.id : ($dataComboStar.combobox("getText"));/*第一个月或季度*/
         start = parseInt(start);
-        var end = parseInt($dataCombo.last().combobox("getText"));
-        console.log($dataCombo.last().combobox("getText"));
-        /*第二个月或季度*/
+        var end = parseInt($dataComboEnd.combobox("getText"));/*第二个月或季度*/
         console.log(startYear, start, endYear, end, "1");
         secondYear = yearArr.slice(0, (year_f - startYear + 1));
-        if (yearNode) {/*如果是月框改变，就不必要重新加载年框的数据*/
-            $yearCombo.last().combobox("loadData", secondYear);
-        }
+        /*if (yearNode) {/!*如果是月框改变，就不必要重新加载年框的数据*!/
+            $yearComboEnd.combobox("loadData", secondYear);
+        }*/
         if (startYear >= endYear) {
-            $yearCombo.last().combobox("setValue", startYear);
+            $yearComboEnd.combobox("loadData", secondYear);
+//            $yearCombo.last().combobox("setValue", startYear);
+            $yearComboEnd.combobox("setText", startYear);
             second = flagArr.slice(start - 1);/*第二个月或季度显示的数组*/
-            $dataCombo.last().combobox("loadData", second);
+//            $dataComboEnd.combobox("loadData", second);
             if (start >= end) {
-                $dataCombo.last().combobox("setValue", start);
+                $dataComboEnd.combobox("loadData", second);
+//                $dataComboEnd.combobox("setValue", start);
+                $dataComboEnd.combobox("setText", start);
             }else{
-                $dataCombo.last().combobox("setValue", end);
+//                $dataComboEnd.combobox("setValue", end);
+//                $dataComboEnd.combobox("setText", end);
             }
         } else {
             second = flagArr.slice();
-            $dataCombo.last().combobox("loadData", second);
-            $dataCombo.last().combobox("setValue", end);
+            $yearComboEnd.combobox("setText", endYear);
+            $yearComboEnd.combobox("loadData", secondYear);
+            $dataComboEnd.combobox("loadData", second);
+
+//            $dataComboEnd.combobox("setValue", end);
         }
     }
     /*第二个年框改变*/
@@ -344,25 +353,25 @@
         } else if (rotate == "季度") {
             flagArr = season.slice();
         }
-        var endYear = yearNode ? yearNode.id : ( $yearCombo.last().combobox("getText"));
+        var endYear = yearNode ? yearNode.id : ( $yearComboEnd.combobox("getText"));
         endYear = parseInt(endYear);
-        var startYear = parseInt($yearCombo.first().combobox("getText"));
-        var start = monNode ? monNode.id : ($dataCombo.first().combobox("getText"));
+        var startYear = parseInt($yearComboStart.combobox("getText"));
+        var start = monNode ? monNode.id : ($dataComboStar.combobox("getText"));
         start = parseInt(start);
-        var end = parseInt($dataCombo.last().combobox("getText"));
+        var end = parseInt($dataComboEnd.combobox("getText"));
         console.log(startYear, start, endYear, end, "2");
         if (startYear == endYear) {
             second = flagArr.slice(start - 1);
-            $dataCombo.last().combobox("loadData", second);
+            $dataComboEnd.combobox("loadData", second);
             if (start > end) {
-                $dataCombo.last().combobox("setValue", start);
+                $dataComboEnd.combobox("setValue", start);
             }else{
-                $dataCombo.last().combobox("setValue", end);
+                $dataComboEnd.combobox("setValue", end);
             }
         } else {
             second = flagArr.slice();
-            $dataCombo.last().combobox("loadData", second);
-            $dataCombo.last().combobox("setValue", end);
+            $dataComboEnd.combobox("loadData", second);
+            $dataComboEnd.combobox("setValue", end);
         }
     }
     /*频率框加载*/
@@ -381,15 +390,21 @@
         },
         onSelect: function (recoder) {
             if (recoder.id == 1) {/*1:频率为年；2：季节；3：月份*/
-                $dataCombo.parent().hide();
+                $dataComboEnd.parent().hide();
+                $dataComboStar.parent().hide();
             } else {
                 var firstArr,defaultVal;
                 firstArr=recoder.id==2?season:month;
                 defaultVal=recoder.id==2?"1季度":"1月";
-                $dataCombo.combobox("clear");
-                $dataCombo.parent().show();
-                $dataCombo.combobox("loadData", firstArr);
-                $dataCombo.combobox("setText", defaultVal);
+                $dataComboStar.combobox("clear");
+                $dataComboEnd.combobox("clear");
+                $dataComboEnd.parent().show();
+                $dataComboStar.parent().show();
+//                $dataCombo.combobox("loadData", firstArr);
+                $dataComboEnd.combobox("loadData", firstArr);
+                $dataComboStar.combobox("loadData", firstArr);
+                $dataComboStar.combobox("setText", defaultVal);
+                $dataComboEnd.combobox("setText", defaultVal);
 //                $dataCombo.combobox("setValue", "1");
             }
         }
@@ -622,11 +637,11 @@
                 for (var i = 0; i < leg; i++) {
                     var obj = comboData[i];
                     tableArr.push(obj.value);/*把所有下拉框节点的值变为数组，这些值分别代表
-                    [频率，开始年份，开始月份，结束月份，结束年份，科室，指标名称（可能有多个），横轴维度，纵轴维度]
-                    */
+                     [频率，开始年份，开始月份，结束月份，结束年份，科室，指标名称（可能有多个），横轴维度，纵轴维度]
+                     */
                 }
                 var time = tableArr.slice(1, 5);
-                    console.log(time,"time");
+                console.log(time,"time");
                 /*获取时间*/
                 var reg = /\d+/g;
                 for (var i = 0; i < time.length; i++) {

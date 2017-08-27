@@ -3,6 +3,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>pie_chart</title>
+	<style>
+		img{width:70%;}
+	</style>
 	<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 	<script type="text/javascript" src="../../resources/echarts/echarts.js"></script>
 </head>
@@ -99,6 +102,18 @@
 		var myChart = echarts.init($('#p6_div_chart').get(0));
 		myChart.setOption(radaroption);
 		window.onresize = myChart.resize;//窗口自适应
+		/*echat转图片*/
+	var imgCanvas=document.getElementsByTagName('canvas')[0];
+		/*setTimeout(function () {
+			var imgCanvas=document.getElementsByTagName('canvas')[0];
+			console.log(imgCanvas);
+			var mgContext=imgCanvas.getContext('2d');
+			var imgAsDataURL=imgCanvas.toDataURL("image/png");
+			console.log(imgAsDataURL);
+			var img=document.createElement("img")
+			img.src=imgAsDataURL;
+			document.body.appendChild(img);
+		},3000)*/
 	</script>
 </body>
 </html>
