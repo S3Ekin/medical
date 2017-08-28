@@ -528,7 +528,7 @@
                                 $("#show_type_" + i).combobox({
                                     valueField: "id",
                                     textField: "text",
-                                    multiple: true,
+                                    multiple: true,/*d*/
                                     multiline: true,
                                     data: show_combo[show_id].combo,/*维度json数据*/
                                     editable: true,
@@ -616,7 +616,7 @@
                 }
                 break;
             default:/*系统指标状态*/
-                var comboData = $(".textbox-text");/*获取所有下拉框节点*/
+                var comboData = $(".zb .textbox-text");/*获取所有下拉框节点*/
                 var tableArr = [], rightTabH = "", colNum;
                 var leg = comboData.length;
                 for (var i = 0; i < leg; i++) {
