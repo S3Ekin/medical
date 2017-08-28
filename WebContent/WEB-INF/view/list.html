@@ -77,10 +77,10 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<div style="height:auto;text-align: center;font-size: 18px" >
-					<form id="defaultForm" method="post" class="form-horizontal" action="">
-						<div class="form-group">
+				<div style="height:auto;text-align: center;font-size: 16px" >
+						<div class="row">
 								<div  class="col-xs-3" style="font-weight:bolder;" id="reportType">报告类型 </div>
+							<div class="col-xs-9" style="text-align: left">
 								<label style="font-weight: normal;margin-right:48px;">
 									<input class="" type="radio" value="报告模版" name="report" checked="">
 									<span>报告模版</span>
@@ -89,16 +89,15 @@
 									<input class="" type="radio" value="报告"  name="report" checked="checked">
 									<span >报告</span>
 								</label>
-
+							</div>
 						</div>
-						<div class="form-group">
+						<div class="row">
 							<label class="col-xs-3 control-label" for="names">报告名称</label>
 							<div class="col-xs-9">
 								<input type="text" class="form-control" name="names" id="names"/>
 							</div>
 						</div>
-
-						<div class="form-group">
+						<div class="row">
 							<label class="col-xs-3 control-label" for="des">目录样式</label>
 							<div class="col-xs-9">
 								<select  class="form-control" name="des"  />
@@ -107,27 +106,17 @@
 								</select>
 							</div>
 						</div>
-
-						<div class="form-group">
+						<div class="row">
 							<label class="col-xs-3 control-label" for="val">创建人</label>
 							<div class="col-xs-9">
 								<input type="text" class="form-control" name="val" id="val"/>
 							</div>
 						</div>
-
-						<div class="form-group " >
-							<div class="col-xs-8">
-								<button type="submit" class="btn btn-primary " data-dismiss="modal" id="is_add" >确定</button>
-							</div>
-							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary " data-dismiss="modal">取消</button>
-							</div>
-						</div>
-					</form>
-
 				</div>
 			</div>
-			<div class="modal-footer" style="text-align:center;">
+			<div class="modal-footer" style="text-align: right">
+						<button type="submit" class="btn btn-primary " data-dismiss="modal" id="is_add" >确定</button>
+						<button type="button" class="btn btn-default " data-dismiss="modal">取消</button>
 			</div>
 		</div>
 	</div>
@@ -230,7 +219,7 @@
         $alertAdd.modal("toggle");
     });
     $("#is_add").click(function () {
-        var modelBtnArr='<td class="modelOptBtn"> <button class="btn btn-primary "  style="padding:0 8px;height:26px;margin-right:10px;">编辑</button><button class="btn btn-red delModel"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary"  style="padding:0 8px;height:26px;">另存</button><button class="btn btn-primary"  style="margin-left:5px;padding:0 8px;height:26px;">保存为报告</button> </td> ';
+        var modelBtnArr='<td class="optBtn"> <button class="btn btn-primary "  style="padding:0 8px;height:26px;margin-right:10px;">编辑</button><button class="btn btn-red delModel"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary"  style="padding:0 8px;height:26px;">另存</button><button class="btn btn-primary"  style="margin-left:5px;padding:0 8px;height:26px;">保存为报告</button> </td> ';
         var  reportBtnArr='<td style="text-align:center;width: 300px" class="optBtn"> <button class="btn btn-primary browserRe"  style="padding:0 8px;height:26px;margin-right:10px;">浏览</button> <button class="btn btn-red delRe"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary exportRe"  style="padding:0 8px;height:26px;">导出</button> </td>';
 //        var length=$table1.children().length+1,
 		var length = parseInt($table1.children().last().children().first().html()) + 1;
