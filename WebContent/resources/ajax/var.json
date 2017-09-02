@@ -1,0 +1,6 @@
+{"list":[
+  {"name":"currYear","des":"当前年份","val":"2017","id":"1"},
+  {"name":"nextYear","des":"下一年份","val":"2018","id":"2"},
+  {"name":"currentMonth","des":"当前月份","val":"7","id":"3"},
+  {"name":"curentSeason","des":"当前季度","val":"3","id":"4"},
+]}

@@ -4,39 +4,49 @@
     <title>折线图</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
 	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
 	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
 </head>
 <style>
-    div.row { line-height: 40px}
-    .sourceBtn {padding:0 8px;height:26px;}
-    div.content{padding:10px 5px; height:320px;overflow-y: scroll}
-	div.footer button{padding: 5px 10px ;height: 30px;margin-right: 10px}
-	div.footer{text-align: right;padding:5px 50px 5px 0;border-top: 2px solid #95B8E7;}
+	body{}
+	#table1 tr th{padding: 8px 5px;text-align:center;}
+	#table1 tr td{padding: 8px 5px;text-align:center;}
+	.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
+	div.row { line-height: 40px}
+	.sourceBtn {padding:0 8px;height:26px;}
+	/*数据源窗口样式*/
+	#sourceTree{border:2px solid #d3d3d3}
+	div.tree-node{border-bottom: 1px solid #d3d3d3;padding: 5px 0;height:auto;border-bottom: 1px solid #d3d3d3;}
+	div.tree-node-selected{background: #e3e3e3;}
+	span.tree-title{width:215px}
+	div.content{padding: 0px 5px;height:320px; overflow-y:scroll}
+	div.footer button { padding: 5px 10px; height: 30px; margin-right: 10px }
+	div.footer { text-align: right; padding: 5px 10px 5px 0; border-top: 1px solid #95B8E7; }
+	/*数据源窗口样式完*/
 	.zb-name {color:#2081BB;white-space: nowrap;}
 	.upload{display: none}
 	.table{display: none}
 	.zb{display: none}
 	.pre{margin-left:16.7%;padding:20px; border: 1px solid #95B8E7;display: none;width:800px}
-	span.tree-title{font-size: 14px}
+	#organization{height: 30px}
 	.no-padding{padding: 0}
-	div.topic { text-align: right; font-size: 16px; font-weight: 700; }
+	div.topic { text-align: right; font-size: 15px; font-weight: 700; }
 	.add-field{color:#2081BB;}
+	#sourceSelected{display: none}
 	.combo-title{padding-right: 5px}
 	.combo-data>div{display: inline-block}
 </style>
-<body>
-<div class="mr15">
-    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
-       	<span class="tab_title">图表创建编辑</span>
-		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
-    </div>
+<body >
+<div class="mr15" id="body_main">
+	<div class="cl_title">
+		<span class="_title">折线图</span>
+	</div>
 	<div class="container-fluid" style="width:90%;min-width:900px;padding: 20px 0 0 0" >
 		<div class="row">
 			<div  class="col-xs-2 topic">名称:</div>
 			<div class="col-xs-9">
-				<input type="text" class="clo-xs-9" id="name" value="折线图" style="width:100%;max-width: 400px ;height:30px">
+				<input type="text" class="clo-xs-9 txt_inp" id="name" value="折线图" style="width:100%;max-width: 400px ;height:30px">
 			</div>
 		</div>
 		<div class="row">
@@ -75,7 +85,7 @@
 				<div class="col-xs-2 topic">横轴维度:</div>
 				<div class="col-xs-3 ">
 					<div class="wd-combo"></div>
-				 </div>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-2 topic">纵轴维度:</div>
@@ -108,7 +118,8 @@
 			<div class="row">
 				<div class="col-xs-2 topic">图形标题:</div>
 				<div class="col-xs-6">
-					<input type="text" style="height: 30px;width: 100%"  id="title">
+					<input type="text" class="txt_inp" style="height: 30px;width: 100%"  id="title">
+
 				</div>
 			</div>
 			<div class="row ">
@@ -133,7 +144,7 @@
 	</div>
 	<div class="footer">
 		<button type="button" class="btn btn-primary "   id="select">确定</button>
-				<button type="button" class="btn btn-primary" id="cancel">取消</button>
+		<button type="button" class="btn btn-default" id="cancel">取消</button>
 	</div>
 </div>
 <!-- alert共用模态框 -->
@@ -142,7 +153,7 @@
 		<div class="modal-content">
 			<div class="modal-header" id="modal_title">
 				<button type="button" class="close" data-dismiss="modal">
-					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+					<span class="is_true" aria-hidden="true" >&times;</span><span class="sr-only">Close</span>
 				</button>
 
 			</div>
@@ -158,11 +169,16 @@
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
 <script src="../../resources/echarts/echarts.js"></script>
 <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script >
+	/* 设置主体内容最小高度 */
+	var main_h=$('#mainframe', parent.document).height();
+	var min_H=main_h-15;
+	$("#body_main").css("min-height",min_H);
 	var $radio = $("input[name=dataType]"),
 			$sourceSlect=$(".sourceBtn span"),
 			$zbName=$(".zb-name"),

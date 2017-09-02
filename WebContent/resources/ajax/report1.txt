@@ -1,5 +1,5 @@
- <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 25px;font-weight: bolder"><a name="C0">2017年第一季度医疗质控总结</a></p>
-             <ul style=" font-size: 18px; line-height: 30px;">
+ <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 20px;font-weight: bolder"><a name="C0">2017年第一季度医疗质控总结</a></p>
+             <ul style=" font-size: 14px; line-height: 25px;">
                  <li>
                      <p><strong><a name="C1">一、医疗质控信息</a></strong></p>
                      <div style="padding-left: 3rem">
@@ -121,6 +121,7 @@
                  </li>
                  <li>
                        <p><strong><a name="C3">三、整改意见</a></strong></p>
-                       <p  class="indent">各科室要以“二甲” 复审为契机，认真对照评审标准，积极自查自纠，查漏补缺，做好科室医疗质量质控工作，落实好医核心制度，全面提升我院医疗质量，确保医疗安全，力争“二甲”复审成功。</p>
+                       <div><p  class="indent">各科室要以“二甲” 复审为契机，认真对照评审标准，积极自查自纠，查漏补缺，做好科室医疗质量质控工作，落实好医核心制度，全面提升我院医疗质量，确保医疗安全，力争“二甲”复审成功。</p></div>
                    </li>
              </ul>
+             <p style="font-size:20px; font-weight:bolder;text-align: right; margin:50px">二零一七年六月五日</p>
