@@ -1,0 +1,89 @@
+/* 不良事件CSS样式 */
+.rep15{position:relative;}
+.rep15 .rep tr th{
+	height:37px;
+	padding:2px 5px;
+	border:1px solid #ccc;
+	background-color:#F6FBFE;
+	color:#7e7e7e; 
+	font-size:15px;font-weight:600;
+}
+.rep15 .rep tr td{
+	border:1px solid #ccc;height:35px;
+}
+.rep15 .rep tr td>b{
+	display:inline-block;
+	width:18px;height:18px;
+	text-align:center;
+	color:#fff;
+	border-radius:50%;
+	background-color:#3C96CD;
+	vertical-align:middle;
+	margin-left:2px;
+}
+.rep15 .rep tr td .dropdown>a{
+	padding:4px 26px;width:25%;
+	background-color:#f5f5f5;
+	border-color: #ccc;
+}
+.rep15 .rep tr td .no{margin-left:40px;}
+
+tr.details{height:100px;}
+tr.details td>textarea{width:100%;height:90%;border:none;}
+tr td.Txt input{width:100%;height:100%;border:none;}
+tr td.sub{text-align:center;}
+tr td.sub input{padding:6px 20px;}
+.process_txt{margin-top:40px;}
+.process_txt>h5{font-weight:bold}
+.process_txt div{margin-top:20px;}
+.pr .input,.form_datetime .input{
+	background-color:#f5f5f5;
+	text-align:center;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: pointer;
+	cursor:hand;
+}
+
+/*上报管理清单*/
+.sup .tel>td{background-color:#F6FBFE;color:#7e7e7e;font-size:14px;font-weight:600;}
+.sup tr td,.sup tr th{padding-left:10px;padding-right:10px;}
+.sup tr>td>a{text-decoration: underline;color:#448DC0;}
+.sup tr>td>a.active {color:#666;}
+
+/***查看--模态弹框***/
+/* .modal>div{margin:15px;width:950px;} */
+/* .modal form{width:800px;background-color:#FFF; position:relative;top:5em;left:7em;} */
+.cho{
+	background-color:#0A6999;color:#fff;
+	border: 1px solid #ccc;height:36px;
+	font-size: 16px;
+}
+.cho span{float:left; padding:6px 10px;}
+.all_off{font-weight: bold;color:#000;}
+.list_li{overflow-x: hidden;max-height:300px;height:244px;}
+.list_li li{
+	border-top:1px solid #ccc;
+	line-height:35px;
+}
+.list_li>li:first-child{border-top:0;}
+.list_li>li:last-child{border-bottom:1px solid #ccc;}
+.list_li li a{display:inline-block; width:100%; padding-left:15px;}
+.list_li li a:hover{background-color:#FFFFDD;cursor: pointer;cursor: hand}
+.list_cen li,.look_cen{text-align:center;}
+.sec_list li a{padding-left:45px;}
+.opn{color:#3BB4F2}
+
+/***统计报表***/
+.ade_form1{width:1000px;border-left:solid 1px #dfe0e1; border-bottom:solid 1px #dfe0e1;border-collapse: collapse;}
+.ade_form1 tr th{padding:8px 10px; border-top:solid 1px #dfe0e1; border-right:solid 1px #dfe0e1; background-color:#f2f2f2!important;text-align:center;}
+.ade_form1 tr td{padding:8px 10px; border-top:solid 1px #dfe0e1;border-right:solid 1px #dfe0e1; background-color:#fff!important;text-align:center; }
+
+.items li{width:120px;text-align:center;padding:0;}
+.items li a{display:inline-block;width:100%;padding-top:2px;}
+
+.datetimepicker{position:absolute;top:90px;}
+
+
+

@@ -4,28 +4,28 @@
     <title>上传数据管理</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
-    <link rel="stylesheet" type="text/css" href="../../resources/lib/awe/awesome.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
-	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
 	<style>
-		.table tr th{padding: 8px 5px;text-align:center;}
-		.table tr td{padding: 8px 5px;text-align:center;}
-		.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
-		.optBtn a{margin:0 5px;padding:2px 8px;height:26px;}
+		html{height: 100%}
+		td{text-align:center;}
+		th{text-align:center !important ; }
+		.optBtn button{margin-right:10px;}
+		.optBtn a{margin:0 5px;}
 		#search_text{height: 30px; border-radius:6px;}
-		.tabField{width:570px;margin-left: 145px}
+		.tabField{width:570px;margin-left:80px;margin-top:5px;}
 		.edit-content input{width: 100%}
-		.addField{float: right; margin-right: 40px;padding: 2px 10px}
-		span.tree-title{font-size: 12px}
 		#is_modified{display: none}
-		td{text-align: center}
 		.input-rowspan{width:100px;border:1px solid #95B8E7; height: 30px; padding:0 4px;  outline-style: none; resize: none; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;}
-		#modal_add .row>p{text-align: right; line-height: 30px;}
+		#modal_add .row>p{text-align: right; }
 		.updata{margin-top: 10px}
+		.container-fluid>div{margin:10px};
+		.input-dropdown{width:85%;height:16px;text-align:center;}
+		.div-dropdown{display:inline-block;vertical-align: middle;text-align:left;width:150px;}
+		p.col-xs-2{padding:0;width:11%}
+		.row{margin-bottom: 10px}
 	</style>
 </head>
 <body>
@@ -46,111 +46,143 @@
 		</div>
 </div>
 <div class="mr15">
-    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
-       	<span class="tab_title">上传数据管理</span>
-		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
-    </div>
+	<div class="mr15" id="body_main"  >
+		<div class="cl_title">
+			<span class="_title">上传数据管理</span>
+		</div>
 		<div style="margin:50px 10px 10px 0;" class="fr">
 			<input type="text" id="search_text"  value="" />
-			<button id="search" class="btn btn-secondary"><i class="ico-search fa fa-search"></i>查询</button>
-			<button  class="btn btn-green" id="upload" style="margin-left: 50px"><i class="fa fa-upload"></i>上传</button>
+			<button id="search" class="btn btn-secondary">
+				<i class="ico-search fa fa-search"></i>查询</button>
+			<button  class="btn btn-green" id="upload" style="margin-left: 50px">
+				<i class="fa fa-upload"></i>上传</button>
 		</div>
     <div style="margin-left:50px" id="table">
 		<table cellspacing="0" cellpadding="0" class="list1" style="width:100%;min-width: 730px">
 			<tr>
-				<th style="width:4%;text-align:center;">序号</th>
-				<th style="width:18%;text-align:center;">名称</th>
-				<th style="width:auto;text-align:center;">描述</th>
-				<th style="width:7%;text-align:center;">图表引用次数</th>
-				<th style="width:5%;text-align:center;">字段数量</th>
-				<th style="width:5%;text-align:center;">记录数量</th>
-				<th style="width:8%;text-align:center;">上传时间</th>
-				<th style="width:7%;text-align:center;">上传人</th>
-				<th style="width:250px;text-align:center;">操作</th>
+				<th style="width:4%;">序号</th>
+				<th style="width:18%;">名称</th>
+				<th style="width:auto;">描述</th>
+				<th style="width:7%;">图表引用次数</th>
+				<th style="width:5%;">字段数量</th>
+				<th style="width:5%;">记录数量</th>
+				<th style="width:8%;">上传时间</th>
+				<th style="width:7%;">上传人</th>
+				<th style="width:250px;">操作</th>
 			</tr>
 			<tbody id="table1" class="table"></tbody>
 		</table>
-
 	</div>
 </div>
 <!--上传，重传，追加模态框-->
-<div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
-	<div class="modal-dialog" style="width:800px;margin:10px auto;" >
-		<div class="modal-content">
-			<div class="modal-header">
-				<span style="font-size: 20px" class="add-title">上传</span>
-				<button type="button" class="close" data-dismiss="modal">
-					<span  aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
-				</button>
-			</div>
-			<div class="modal-body" style="padding-bottom: 0">
-				<div class="container-fluid" style="height:auto;text-align: center;font-size: 18px" >
-						<div class="row">
-							<p class="col-xs-2 " >名称:</p>
-							<div class="col-xs-10">
-								<input type="text" class="form-control" name="names" id="names"/>
-							</div>
-						</div>
-						<div class="row">
-							<p class="col-xs-2 ">描述:</p>
-							<div class="col-xs-10">
-								<input type="text" class="form-control" name="des" id="des"/>
-							</div>
-						</div>
-						<div class="row">
-								<p class="col-xs-2"> 数据字段:</p>
-							    <p class="col-xs-10"><a class="btn btn-primary  addField">添加</a></p>
-								<table border="1" cellspacing="0" width="100%" class="list1 tabField" >
-									<tr>
-										<th width="10%">顺序</th>
-										<th width="40%">名称</th>
-										<th width="20%">类型</th>
-										<th width="30%">操作</th>
-									</tr>
-									<tbody class="table" id="field-content">
-									</tbody>
-								</table >
-							</div>
-						<div class="row updata" >
-							<p class="col-xs-2">数据上传:</p>
-							<div class="col-xs-10">
-								<div class="col-xs-4" style="border: 1px solid #3c763d"><input type="file" id="files" style="opacity: 0;"></div>
-								<p class="col-xs-2">
-									<button type="button" class="btn btn-primary "><i class="fa fa-upload"></i>上传</button>
-								</p>
-							</div>
-						</div>
+	<div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
+		<div class="modal-dialog" style="width:720px;" >
+			<div class="modal-content">
+				<div class="modal-header">
+					<span style="font-size: 16px" class="add-title">上传</span>
+					<button type="button" class="close" data-dismiss="modal">
+						<span  aria-hidden="true" >&times;</span><span class="sr-only">Close</span>
+					</button>
 				</div>
-			</div>
-			<div class="modal-footer" style="padding-right: 100px;">
-				<a type="button" class="btn btn-primary "   id="is_add">确定</a>
-				<button type="button" class="btn btn-primary "  data-dismiss="modal">取消</button>
+				<div class="modal-body">
+					<div class="row">
+						<p class="col-xs-2 " >名称:</p>
+						<div class="col-xs-6">
+							<input type="text" class="txt_inp" name="names" id="names" style="width:100%"/>
+						</div>
+					</div>
+					<div class="row">
+						<p class="col-xs-2 ">描述:</p>
+						<div class="col-xs-6">
+							<input type="text" class="txt_inp" name="des" id="des" style="width:100%"/>
+						</div>
+					</div>
+					<div class="row updata-Field" >
+						<p class="col-xs-2"> 数据字段:</p>
+						<p class="col-xs-10"><a class="btn btn-primary addField">添加</a></p>
+
+						<div class="col-xs-12">
+							<table border="1" cellspacing="0" width="100%" class="list1 tabField" >
+								<tr>
+									<th width="10%">顺序</th>
+									<th width="40%">名称</th>
+									<th width="20%">类型</th>
+									<th width="30%">操作</th>
+								</tr>
+								<tbody class="table" id="field-content">
+								</tbody>
+							</table >
+						</div>
+					</div>
+					<div class="row updata" >
+						<p class="col-xs-2">数据上传:</p>
+						<div class="col-xs-4" >
+							<input type="file" id="file" >
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer" style="padding-right:30px;">
+					<a type="button" class="btn btn-primary "   id="is_add">确定</a>
+					<button type="button" class="btn btn-default "  data-dismiss="modal">取消</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- Del共用模态框 -->
-<div class="modal fade" id="model_del" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
-	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
-		<div class="modal-content">
-			<div class="modal-header" id="modal_title">
-				<button type="button" class="close" data-dismiss="modal">
-					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
-					<span >确定删除吗?</span>
+
+	<!-- Del共用模态框 -->
+	<div class="modal fade" id="model_del" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+		<div class="modal-dialog" style="width:300px;margin:65px auto;" >
+			<div class="modal-content">
+				<div class="modal-header" id="modal_title">
+					<button type="button" class="close" data-dismiss="modal">
+						<span class="is_true" aria-hidden="true" >&times;</span><span class="sr-only">Close</span>
+					</button>
 				</div>
-			</div>
-			<div class="modal-footer" style="text-align:center;">
-				<button type="button" class="btn btn-primary " data-dismiss="modal" id="Del">确定</button>
-				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
+				<div class="modal-body">
+					<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
+						<span >确定删除吗?</span>
+					</div>
+				</div>
+				<div class="modal-footer" style="text-align:right;">
+					<button type="button" class="btn btn-primary " data-dismiss="modal" id="Del">确定</button>
+					<button type="button" class="btn btn-default is_false" data-dismiss="modal">取消</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- 预览共用模态框 -->
+	<!-- 字段编辑的模态框 -->
+	<div class="modal fade" id="modal_fieldEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+		<div class="modal-dialog" style="width:300px;margin:65px auto;" >
+			<div class="modal-content">
+				<div class="modal-header" >
+					<button type="button" class="close" data-dismiss="modal">
+						<span class="is_true" aria-hidden="true" >&times;</span><span class="sr-only">Close</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div style="text-align: center;font-size: 15px;line-height:32px;"  id="field-pannel">
+						<div>
+							<span>名称:</span>
+							<input type="text" id="fieldName" class="txt_inp" title="请选择" placeholder="请填写字段名称" autocomplete="off" />
+						</div>
+						<div >
+							<span>类型:</span>
+							<div style="position:relative;display: inline-block;">
+								<input type="hidden" id="fieldType" name="fieldType" value=""/>
+								<input type="text" id="_fieldType" class=" inp dd txt_inp" title="请选择" placeholder="请选择字段类型" autocomplete="off" data-to="fieldType" data-type="json" data-src="_json_fieldTypeArr" onkeydown="return false;"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer" style="text-align:right;">
+					<button type="button" class="btn btn-primary edit-field" data-dismiss="modal">确定</button>
+					<button type="button" class="btn btn-default " data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 预览共用模态框 -->
 <div class="modal fade" id="modal_pre" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
 	<div class="modal-dialog" style="width:400px;margin:65px auto;" >
 		<div class="modal-content">
@@ -159,7 +191,7 @@
 				<label for="search-num" style="padding-left: 30px">查看数量(条)：</label>
 				<input type="number" id="search-num" min="5" value="10"  class="input-rowspan" >
 				<button type="button" class="close" data-dismiss="modal">
-					<span class="is_true" aria-hidden="true" style="position:relative;top:-2px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+					<span class="is_true" aria-hidden="true" >&times;</span><span class="sr-only">Close</span>
 				</button>
 
 			</div>
@@ -238,21 +270,26 @@
 		[%j++;}%]
 </script>
 <!--字段模板-->
-<script id="tpl14" type="text/template">
-	[%for(var i in list){%]
-	<tr>
-		<td>[%=parseInt(i)+1%]</td>
-		<td class="edit-content">[%=list[i].name%]</td>
-		<td class="edit-content">[%=list[i].type%]</td>
-		<td class="optBtn panelBtn">
-			<a class="btn btn-primary ">编辑</a>
-			<a class="btn btn-red ">删除</a>
-		</td>
-	</tr>
-	[%}%]
+	<script id="tpl14" type="text/template">
+		[%for(var i in list){%]
+		<tr>
+			<td>[%=parseInt(i)+1%]</td>
+			<td class="edit-content">[%=list[i].name%]</td>
+			<td class="edit-content">[%=list[i].type%]</td>
+			<td class="optBtn panelBtn">
+				<a class="btn btn-primary ">编辑</a>
+				<a class="btn btn-red ">删除</a>
+			</td>
+		</tr>
+		[%}%]
 
-</script>
+	</script>
 <script>
+	/* 设置主体内容最小高度 */
+	var main_h=$('#mainframe', parent.document).height();
+	var min_H=main_h-15;
+	$("#body_main").css("min-height",min_H);
+
     var $name=$("#names"),
 		$table1=$("#table1"),
         $des=$("#des"),
@@ -270,6 +307,7 @@
 		});
 	/*点击上传按钮*/
     $upload.click(function () {
+		$("#field-content").html(null);
     	/*解除按钮禁用*/
     	$(".updata").show();
         $(".panelBtn").children("a").removeAttr("disabled");
@@ -281,20 +319,20 @@
         $alertAdd.modal("toggle");
 		$(".add-title").html(stateFlag);
 		/*获取字段数据*/
-		$.ajax({
+		/*$.ajax({
 			url:"../../resources/ajax/updata_field.json",
 			success:function (data) {
 				T("#field-content").html(baidu.template("tpl14",data));
 			}
-		})
+		})*/
     });
 	/*点击模态框按钮，默认完成字段编辑*/
-    $(".modal-footer").children().click(function () {
+  /*  $(".modal-footer").children().click(function () {
         var $is_edit=$(".is_edit");
         if($is_edit.length){
             finishEdit($(".is_edit"));
         }
-    });
+    });*/
 	/*模态框的确认按钮事件*/
     $("#is_add").click(function () {
         switch (stateFlag){
@@ -371,6 +409,7 @@
 			    break;
             case "删除":
                 $alertModal.modal("toggle");
+				$("#Del").unbind();
                 $("#Del").click(function () {
                     self.parent().parent().remove();
 					/*删去后重新排序*/
@@ -386,10 +425,30 @@
                 $des.val(desVal);
                 $alertAdd.modal("toggle");
 				trID=$table1.children().index($(this).parent().parent());/*找到当前重传的是哪一项*/
+				$("#field-content").html(null);
+				$.ajax({
+					url:"../../resources/ajax/updata_field.json",
+					success:function (data) {
+						T("#field-content").html(baidu.template("tpl14",data));
+						$(".panelBtn").children("a").attr({"disabled":"disabled"});
+					}
+				})
                 break;
             case "追加":
             	stateFlag="追加";
-                $(".panelBtn").children("a").attr({"disabled":"disabled"});
+				var is_new=this.getAttribute("echo-data");
+				if(is_new){
+					$("#field-content").html(null);
+				}else{
+					/*获取字段数据*/
+					$.ajax({
+						url:"../../resources/ajax/updata_field.json",
+						success:function (data) {
+							T("#field-content").html(baidu.template("tpl14",data));
+							 $(".panelBtn").children("a").attr({"disabled":"disabled"});
+						}
+					})
+				}
                 $name.attr({"disabled":"disabled"});
                 $des.attr({"disabled":"disabled"});
                 $(".updata").hide();
@@ -417,56 +476,75 @@
 			$order[i].innerHTML=i+1;
 		}
 	}
-	/*字段编辑*/
-	$("#field-content").on("click","a",function () {
-	    var $is_edit=$(".is_edit");
-        var self=$(this);
-        var editContent=$(this).parent().siblings(".edit-content");
-	    switch (this.innerHTML){
-			case "编辑":
-			    if($is_edit.length){
-                    finishEdit($is_edit);
-				}
-			    self.addClass("is_edit");
-                var filed_name=editContent[0].innerHTML;
-                var filed_type=editContent[1].innerHTML;
-                editContent[0].innerHTML="<input type='text' value='"+filed_name+"'>";
-                editContent[1].innerHTML='<div class="typeTree"></div>';
-                $(".typeTree").combobox({
-                    valueField:"id",
-                    textField:"text",
-                    url:"../../resources/ajax/type.json",
-                    method:"get",
-                    editable:true,
-                    width:80,
-                    height:30,
-                    panelWidth:80,
-                    panelHeight:50,
-                    value:filed_type,
-					formatter:function (row) {
-                        return "<span class='glyphicon glyphicon-check'>&nbsp;"+row.text+"</span>";
-
-                    }
-                });
-                self.html("完成");
-                break;
-            case "删除":
-                    self.parent().parent().remove();
-                break;
-            case "完成":
-                finishEdit(self);
-                break;
-		}
-
-    });
-	/*添加字段*/
+    var orderId="";
+	var is_fieldAdd=true;/* 用于判断是字段添加，还是字段编辑 */
+	var fieldTrID=0;/*用于编辑字段时,储存编辑的是哪一个*/
+	var _json_fieldTypeArr=[{id:1,text:"数字"},{id:2,text:"字符串"}];/*字段类型数组*/
+	T('#_fieldType').dropdown({width:"182px"});
+	/*点击添加字段*/
 	$(".addField").click(function () {
+		is_fieldAdd=true;
+		$("#modal_fieldEdit").modal("toggle");
+		$("#field-pannel input").val(null);
+	})
+	/*点击字段编辑按钮*/
+	$("#field-content").on("click","a",function () {
+		var $is_edit=$(".is_edit");
+		var self=$(this);
+		var editContent=$(this).parent().siblings(".edit-content");
+		fieldTrID=$("#field-content tr").index($(this).parent().parent());/*找到编辑的是那一个  */
+		orderId=$(this).parent().siblings().eq(0).html();
+		switch (this.innerHTML){
+			case "编辑":
+				is_fieldAdd=false;
+				$("#modal_fieldEdit").modal("toggle");
+				var filed_name=editContent[0].innerHTML;
+				var filed_type=editContent[1].innerHTML;
+				$("#field-pannel input").eq(0).val(filed_name);
+				$("#field-pannel input").eq(2).val(filed_type);
+				break;
+			case "删除":
+				$alertModal.modal("toggle");
+				$("#Del").unbind();
+				$("#Del").click(function () {
+					self.parent().parent().remove();
+					for(var i=0; i<rows.length; i++){
+						if(orderId==rows[i].orderId){
+							alert(orderId);
+							rows.splice(i,1);
+						}
+					}
+				});
+				break;
+		}
+	});
+
+	/* 字段编辑机的模态框的确认按钮 */
+	$(".edit-field").click(function(){
+		var fieldName=$("#field-pannel input").eq(0).val();
+		var fieldTypeID=$("#field-pannel input").eq(1).val();
+		var fieldType=$("#field-pannel input").eq(2).val();
 		/*获取添加前最后一位的序号*/
 		var length=$("#field-content").children().last().children().html();
-	    var str='<tr> <td>'+(parseInt(length)+1)+'</td> <td class="edit-content">xxx</td> <td class="edit-content">数字</td> <td class="optBtn panelBtn"> <a class="btn btn-primary ">编辑</a> <a class="btn btn-red ">删除</a> </td> </tr>';
-	    $("#field-content").append(str);
+		length=length==undefined?0:length;
+		if(is_fieldAdd){/* 添加字段 */
+			//定义一个列对象放入列对象数组中
+			var row = {'physicalName':fieldName, 'orderId':(parseInt(length)+1)+"", 'rowType':fieldTypeID};
+			var str='<tr> <td>'+(parseInt(length)+1)+'</td> <td class="edit-content">'+fieldName+'</td> <td class="edit-content">'+fieldType+'</td><td class="optBtn panelBtn"> <a class="btn btn-primary ">编辑</a> <a class="btn btn-red ">删除</a> </td> </tr>';
+			$("#field-content").append(str);
+			rows.push(row);
+		}else{/*编辑字段 */
+			var thisTr=$("#field-content").children().eq(fieldTrID);
+			thisTr.children().eq(1).html(fieldName);
+			thisTr.children().eq(2).html(fieldType);
+			for(var i=0; i<rows.length; i++){
+				if(orderId==rows[i].orderId){
+					rows[i].physicalName = fieldName;
+					rows[i].rowType = fieldTypeID;
+				}
+			}
+		}
 	})
 </script>
-<div class="clr"></div>
 </body>
 </html>

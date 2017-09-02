@@ -1,4 +1,4 @@
-body{ background:#fff; font-family:Arial, "Microsoft YaHei", sans-serif; font-weight:normal; color:#333333; font-size:14px;}
+body{background: #e3e3e3; font-family: Arial, "Microsoft YaHei", sans-serif; font-weight: normal; color: #333333; font-size: 14px;}
 body, ul, li, h1, h2, p,dl, dt, dd { margin:0; padding:0;}
 a { background-color:transparent; text-decoration:none; color:#333333;cursor:pointer; }
 a:focus { outline:0; }
@@ -14,7 +14,7 @@ input::-ms-clear{display:none;}
 ul,li{ list-style:none;}
 *{box-sizing:border-box;}
 
-.mr15 { margin:15px;padding:0px;}
+.mr15 { margin: 6px; margin-right: 10px; background: #fff; border-radius: 10px; min-width: 1000px;}
 .abs { position:absolute;}
 .red { color:red!important;}
 .alc { text-align:center!important;}
@@ -468,9 +468,10 @@ ul,li{ list-style:none;}
     background-color: #bdc3c7;
     border: 1px solid #ecf0f1;
 }
-
+._title { color: #000; font-size: 15px; border-left: 2px solid #00a0e9;  padding-left: 8px; font-weight: 600; }
+.cl_title { line-height: 40px; padding-left: 15px; border-bottom: 2px solid #0081c2/* #ddd */; color: #000; font-size: 14px; font-weight: 600; }
 .in-block{display:inline-block;font-weight:normal;}
-
+.modal button.close { margin-top: -7px; }
 
 
 
