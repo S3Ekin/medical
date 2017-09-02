@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>质控报告</title>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/images/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
+    <style>
+        html,body{height:100%;}
+        .layouts { padding:1%  15px 0 276px; height:99% ;z-index: 3;overflow: hidden;}
+        .layouts > div { float: left;height: 100%;background: white;}
+        .layouts:after { content:"."; display: block; height: 0; clear: both;overflow: hidden}
+        .layout-right {position:relative; width: 100%;min-width: 600px;border-radius: 10px;overflow: hidden}
+        .layout-center{width: 2px;border:1px solid #0081c2;margin-left: -10px; cursor: col-resize;}
+        .layout-left {padding:10px; margin-left: -266px; width:256px;border-radius: 10px 0 0 10px;overflow-y: auto;overflow-x: hidden}
+        /*左侧菜单样式*/
+        #menuTree{border:2px solid #d3d3d3;overflow: hidden}
+        div.tree-node{border-bottom: 1px solid #d3d3d3;padding: 5px 0;height: 34px;border-bottom: 1px solid #d3d3d3;line-height: 22px;}
+        div.tree-node-selected{background: #e3e3e3;}
+        span.tree-title{font-size:14px;white-space: nowrap;}
+        /*左侧菜单样式完*/
+        .reportTitle{width:100%;height:34px;border-bottom: 3px solid #0081c2;line-height: 34px;}
+        .reportTitle>div{float:left;margin-left: 30px}
+        .reportTitle div:last-child{float:right;margin-right: 30px}
+        .font-set{font-weight:600;color:#2081b8;}
+        /*报告的内容样式*/
+        div.box{padding:10px 30px ;position: relative;min-width: 600px;height:90%;overflow-y:scroll;overflow-x: hidden}
+        div.box>ul{font-size:15px;line-height: 25px;}
+        div.box>ul>li>p{padding:10px 0 }
+        div.box table {margin:15px auto;width: 100%;min-width:600px ; border:solid 1px #d3d3d3; color:#000;border-collapse:collapse;}
+        div.box table th { padding:4px 5px; background-color:#f6fbfe; border:solid 1px #d3d3d3; text-align:center; font-weight:600;color:#7e7e7e;}
+        div.box table td { padding:4px 5px; background-color:#fff; border-bottom:solid 1px #d3d3d3;border-right:solid 1px #d3d3d3; text-align: center }
+        div.box table tr:hover>td { background-color:#ffd;}
+        tr{height: 40px }
+        caption{padding:5px;border: solid 1px #d3d3d3; border-bottom: none; color: #7e7e7e;}
+        .indent{text-indent: 3rem}
+        .temp-variate{color:black;;font-weight: bold}
+        /*报告的内容样式完*/
+    </style>
+</head>
+<body >
+<div class="layouts" id="body_main">
+    <div class="layout-left">
+        <p class="font-set" id="tip">*进入编辑器后右键可以编辑目录!</p>
+        <ul id="menuTree"></ul>
+        <!-- 右键菜单内容 -->
+        <div id="_menu" class="easyui-menu" style="width:120px;display:none">
+            <div onclick="_menu.newFile(0)" data-options="iconCls:'icon-save'">新建子节点</div>
+            <!--  <div onclick="_menu.newFile(1)" data-options="iconCls:'icon-save'">新建文件夹</div> -->
+            <div onclick="_menu.rename()">重命名</div>
+            <div onclick="_menu.remove()" data-options="iconCls:'icon-print'">删除</div>
+        </div>
+    </div>
+    <div class="layout-center"></div>
+    <div class="layout-right">
+        <div class="reportTitle clearfix" >
+            <div class="font-set" >
+                <span>XX人民医院</span>
+                <span class="report-type">模版报告1</span>
+                <span class="title"></span>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" style="display: none" id="edit" >编 辑</button>
+                <span class="sub-title font-set" style="display: none">医教部质控科制</span>
+            </div>
+        </div>
+        <iframe id="editTools" frameborder="0" style="padding:0 20px;width:100%;height:95%;display:none"></iframe>
+        <div class="box"></div>
+        <div class="loading" style="position: absolute;top:0">
+            <div class="sk-circle">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--删除模态框-->
+<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+    <div class="modal-dialog" style="width:300px;margin:65px auto;" >
+        <div class="modal-content">
+            <div class="modal-header" id="modal_title">
+                <span id="_title" style="color: red;">新建</span>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span class="is_true" aria-hidden="true" >&times;</span><span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="height:65px;text-align: center;font-size: 18px" id="is_del">
+                    <span >确定删除吗?</span>
+                </div>
+                <div id="is_new">
+                    <span>文件名：</span><input type="text" id="file" class="txt_inp" title="请选择" value="" autocomplete="off" />
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align:right;">
+                <button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+                <button type="button" class="btn btn-default is_false" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
+<script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../resources/js/common.js"></script>
+<script src="../../resources/echarts/echarts.js"></script>
+<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script src="../../resources/js/modal.js"></script>
+<script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
+<script>
+    /*左侧菜单宽度改变事件 */
+    var $layout=$(".layouts"),$layLeft=$(".layout-left"),$layCenter=$(".layout-center"),$doc=$(document);
+    $layCenter.mousedown(function(){
+        $doc.mousemove(function(e){
+            var delX=e.clientX;
+            $layout.css("paddingLeft",delX+10+"px");
+            $layLeft.css({"marginLeft":-delX+"px","width":delX-10+"px"});
+            if(delX>612){
+                $(this).unbind("mousemove");
+                $layout.css("paddingLeft","620px");
+                $layLeft.css({"marginLeft":"-610px","width":"600px"});
+            }else if(delX<208){
+                $(this).unbind("mousemove");
+                $layout.css("paddingLeft","220px");
+                $layLeft.css({"marginLeft":"-210px","width":"200px"});
+            }
+        });
+    })
+    $doc.mouseup(function(){
+        $(this).unbind("mousemove");
+    });
+    $doc[0].ondragstart=$doc[0].onselectstart=function(){
+        return false;
+    };
+    /* 设置主体内容最小高度 */
+    var main_h=$('#mainframe', parent.document).height();
+    var min_H=main_h-15;
+    $("#body_main").css("min-height",min_H);
+    var $edit=$("#edit");
+    var $subTitle=$(".sub-title");
+    var $box=$(".box");
+    var editID=parseInt((location.search).split("=")[1]);
+    var is_edit=location.search.indexOf("report");
+    var _Url;
+    if(is_edit>=0){
+        $edit.hide();
+        $subTitle.show();
+        _Url="report"+editID;
+    }else{
+        $edit.show();
+        $subTitle.hide();
+        _Url="model"+editID;
+    }
+    /*文档树*/
+    var $menuTree=$("#menuTree"),
+        $editTools=$("#editTools");
+    $menuTree.tree({
+        url:"../../resources/ajax/tree"+editID+".json",
+        method:"get",
+        animate:true,
+        onLoadSuccess:function () {
+            localStorage.editState2="false";
+            $.ajax({
+                url:"../../resources/ajax/"+_Url+".txt",
+                success:function (data) {
+                    $(".loading").hide();
+                    var reg=/\[%\w+%]/g;
+                    $box.html(data.replace(reg,"_____"));
+                }
+            })
+        },
+        onClick:function (node) {
+            if(localStorage.editState2=="edit"){
+                var a=$("#editTools")[0].contentDocument.getElementById("ueditor_0");
+                a.contentWindow.location.href="about:blank"+node.id;
+            }else{
+                $(".title").html(node.text);
+                window.location.href=node.id;
+            }
+        },
+        onDragEnter:function (e,source) {
+        },
+        onContextMenu:function (e, node) {/*右键菜单出现 */
+            if(localStorage.editState2=="edit"){/*进入编辑器才可用右键菜单,要是想在其他状态用 ,把==edit去掉就可以*/
+                e.preventDefault();
+                $menuTree.tree('select', node.target);/* 右键的时候也像左键一样选中*/
+                $("#_menu").menu("show", {
+                    left: e.pageX,
+                    top: e.pageY
+                })
+            }
+            return;
+        }
+    });
+    /*编辑器*/
+    $edit.click(function () {
+        var self=$(this);
+        if($(this)[0].innerHTML=="取消"){
+            $menuTree.tree("disableDnd");/*禁止拖拽  */
+            $editTools.hide();
+            $box.show();
+            self[0].innerHTML="编辑";
+            window.localStorage.editState2="false";
+        }else{
+            $menuTree.tree("enableDnd");/*启用拖拽  */
+            $editTools[0].src="ueditor.html?edit="+editID;
+            $editTools.load(function () {
+                $(this).show();
+                $box.hide();
+                self[0].innerHTML="取消";
+            })
+        }
+    })
+    /*右键菜单操作  */
+    var $modalTitle=$("#_title");
+    var _menu = {
+        node: function () {/*获取右键的节点  */
+            return $menuTree.tree("getSelected");/*选中的节点  */
+        },
+        rename: function () {/*重命名  */
+            $modalTitle.html("重命名");
+            $("#modal_alert").modal("toggle");
+            $("#is_del").hide();
+            $("#is_new").show();
+            var fileName=$("#file");
+            var nodes = this.node();
+            fileName.val(nodes.text);
+            $("#is_true").unbind();
+            $("#is_true").click(function () {
+                $menuTree.tree("update",{"target":nodes.target,"text":fileName.val()});
+            });
+        },
+        newFile: function (even) {/*新文件 */
+            $("#modal_alert").modal("toggle");
+            var self = this;
+            var _title=even==1?"新建文件夹":"新建子节点";
+            $modalTitle.html(_title);
+            $("#is_del").hide();
+            $("#is_new").show();
+            $("#is_true").unbind();
+            $("#is_true").click(function () {
+                var fileName=$("#file").val();
+                if(!fileName){return;}
+                var arr=[];
+                switch(even){
+                    case 1:/*文件夹  */
+                        arr=[{"id":"#C1","text":fileName,"children":[{"text":"新文件"}]}];/* 要添加进去的节点数据, */
+                        break;
+                    default:/* 文件 */
+                        arr=[{"id":"#C1","text":fileName,"children":[]}];
+                        break;
+                };
+                if(self.node().children && self.node().children.length!=0){/* 是目录，添加到该目录的最后一个 */
+                    $menuTree.tree("append",{
+                        parent:self.node().target,
+                        data:arr,
+                    })
+                }else{/*是叶子节点 ,添加到该节点的下面 */
+                    /*  $menuTree.tree("insert",{
+                     after:self.node().target,
+                     data:arr,
+                     }) */
+                    var a=$menuTree.tree("append",{
+                        parent:self.node().target,
+                        data:arr,
+                    });
+                }
+            });
+        },
+        remove: function () {/*删除  */
+            $("#modal_alert").modal("toggle");
+            $modalTitle.html("删除文件");
+            var self = this;
+            $("#is_new").hide();
+            $("#is_del").show();
+            $("#is_true").unbind();
+            $("#is_true").click(function () {
+                $menuTree.tree("remove",self.node().target);
+            })
+        }
+    }
+</script>
+</body>
+</html>
