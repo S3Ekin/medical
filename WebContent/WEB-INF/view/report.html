@@ -16,7 +16,7 @@
         div.layouts { padding:1% 0 0 275px; height:99% ;z-index: 3;overflow: hidden;font-size: 15px}
         div.layouts > div { float: left;height: 100%;background: white;border-radius: 20px;}
         div.layouts:after { content:"."; display: block; height: 0; clear: both;overflow: hidden}
-        div.layout-right { width: 100%;min-width: 600px;overflow: hidden}
+        div.layout-right {position:relative; width: 100%;min-width: 600px;overflow: hidden}
         div.layout-left { margin-left: -260px; width:250px;border-right: 3px solid grey;overflow-y: auto;overflow-x: hidden}
         span.tree-title{width:160px;white-space: nowrap;text-overflow:ellipsis;overflow: hidden}
         #menuTree{padding: 10px}
@@ -39,30 +39,32 @@
         .temp-variate{color:black;;font-weight: bold}
         .run-patient>p{text-indent: 3rem}
         .sub-title{position: relative; top: 8px; }
+        div.layout-center{ width:2px; border:1px solid red;margin-left: -20px;cursor:col-resize}
     </style>
 </head>
 <body style="background: #E3E3E3">
-<div class="loading">
-    <div class="sk-circle">
-        <div class="sk-circle1 sk-child"></div>
-        <div class="sk-circle2 sk-child"></div>
-        <div class="sk-circle3 sk-child"></div>
-        <div class="sk-circle4 sk-child"></div>
-        <div class="sk-circle5 sk-child"></div>
-        <div class="sk-circle6 sk-child"></div>
-        <div class="sk-circle7 sk-child"></div>
-        <div class="sk-circle8 sk-child"></div>
-        <div class="sk-circle9 sk-child"></div>
-        <div class="sk-circle10 sk-child"></div>
-        <div class="sk-circle11 sk-child"></div>
-        <div class="sk-circle12 sk-child"></div>
-    </div>
-</div>
 <div class="layouts">
     <div class="layout-left">
         <ul id="menuTree"></ul>
     </div>
-    <div class="layout-right">
+    <div class="layout-center"></div>
+    <div class="layout-right" >
+        <div class="loading" style="position: absolute">
+            <div class="sk-circle" style="left:50%;margin-left: -20px">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+            </div>
+        </div>
         <div class="reportTitle clearfix" >
             <div id="theme" style="font-size: 16px;  padding-top: 13px;">
                 <span>XX人民医院</span>
@@ -86,6 +88,25 @@
 <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script src="../../resources/js/modal.js"></script>
 <script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
+<script>
+    var $doc=$(document),$left=$(".layout-left"),$layout=$(".layouts"),$center=$(".layout-center");
+    $center.mousedown(function () {
+        $doc.mousemove(function (e) {
+            var delX=e.clientX;
+            $layout.css({"paddingLeft":delX+20+"px"});
+            $left.css({"width":(delX-20)+"px","marginLeft":-delX+"px"});
+            if(delX>822){
+                $(this).unbind("mousemove");
+                $layout.css({"paddingLeft":"840px"});
+                $left.css({"width":"800px","marginLeft":"-820px"});
+            }
+        })
+    });
+    $doc.mouseup (function(){
+        $doc.unbind("mousemove");
+    });
+    $doc[0].ondragstart = $doc[0].onselectstart = function () { return false;}
+</script>
 <script>
     var $edit=$("#edit");
     var $subTitle=$(".sub-title");
@@ -133,6 +154,24 @@
              if(localStorage.editState2=="edit"){
                  var a=$("#editTools")[0].contentDocument.getElementById("ueditor_0");
                  a.contentWindow.location.href="about:blank"+node.id;
+                 console.log($("#editTools")[0].contentWindow);
+                  $("#editTools")[0].contentWindow.content(2);
+               /* var UE=$("#editTools")[0].contentWindow.UE;
+                var ue=$("#editTools")[0].contentWindow.ue;
+                 UE.ajax.request( '../../resources/ajax/model2.txt', {
+                     method: 'GET',
+                     timeout: 10000,
+                     async: true,
+                     data: {
+                         name: 'ueditor'
+                     },
+                     onsuccess: function ( xhr ) {
+                         ue.setContent( xhr.responseText );
+                     },
+                     onerror: function ( xhr ) {
+                         alert( 'Ajax请求失败' );
+                     }
+                 } );*/
              }
              $(".title").html(node.text);
                window.location.href=node.id;
