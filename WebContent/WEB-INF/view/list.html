@@ -4,24 +4,23 @@
     <title>质量控制清单</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
     <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="../../resources/lib/awe/awesome.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
-	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
 	<style>
-		#table1 tr th{padding: 8px 5px;text-align:center;}
-		#table1 tr td{padding: 8px 5px;text-align:center;}
-		.optBtn button{padding:0 8px;height:26px;margin-right:10px;}
-		form{width:100%;}
-		.bv-form .help-block{margin-bottom:0}
-		.bv-form .tooltip-inner{text-align:left}
-		.nav-tabs li.bv-tab-success>a{color:#3c763d}
-		.nav-tabs li.bv-tab-error>a{color:#a94442}
-		#search_text{height: 30px; border-radius:6px;}
+		td{text-align:center;}
+		#table th{text-align:center;}
+		td.optBtn {padding-left:10px;padding-right:0;text-align: left;}
+		.optBtn button{margin-right:10px;}
+		.search_inp{height: 22px; border: none;}
+		.new-list{height:auto;text-align:center;font-size:15px;}
+		.new-list>div{line-height:34px;}
+		.new-list label {text-align: right;}
+		.nopadding{padding:0};
 	</style>
-	
 </head>
 <body>
 <div class="loading">
@@ -40,13 +39,12 @@
 		  <div class="sk-circle12 sk-child"></div>
 		</div>
 </div>
-<div class="mr15">
-    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
-       	<span class="tab_title">质控报告清单</span>
-		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
-    </div>
-	<div style="margin:50px 4% 10px 0;" class="fr">
-		<input type="text" id="search_text"  value="" />
+<div class="mr15" id="body_main">
+	<div class="cl_title">
+		<span class="_title">质控报告清单</span>
+	</div>
+	<div style="margin:30px 4% 10px 0;" class="fr">
+		<input type="text" id="search_text" class="txt_inp" value="" />
 		<button id="search" class="btn btn-secondary"><i class="ico-search fa fa-search"></i> 搜索</button>
 		<button  class="btn btn-green" id="addModel" style="margin-left: 50px;"><i class="fa fa-plus" ></i> 新建</button>
 	</div>
@@ -60,85 +58,67 @@
 				<th style="width:15%;text-align:center;">目录样式</th>
 				<th style="width:8%;text-align:center;">创建时间</th>
 				<th style="width:7%;text-align:center;">创建人</th>
-				<th style="width:280px;text-align:center;">操作</th>
+				<th style="width:284px;text-align:center;">操作</th>
 			</tr>
 			<tbody id="table1"></tbody>
 		</table>
 
 	</div>
 </div>
+<!-- 新建模态框 -->
 <div class="modal fade" id="modal_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
 	<div class="modal-dialog" style="width:500px;margin:100px auto;" >
 		<div class="modal-content">
 			<div class="modal-header">
 				<span >新建</span>
 				<button type="button" class="close" data-dismiss="modal">
-					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+					<span class="is_true" aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
 				</button>
 			</div>
-			<div class="modal-body">
-				<div style="height:auto;text-align: center;font-size: 18px" >
-					<form id="defaultForm" method="post" class="form-horizontal" action="">
-						<div class="form-group">
-								<div  class="col-xs-3" style="font-weight:bolder;" id="reportType">报告类型 </div>
-								<label style="font-weight: normal;margin-right:48px;">
-									<input class="" type="radio" value="报告模版" name="report" checked="">
-									<span>报告模版</span>
-								</label>
-								<label style="font-weight: normal;margin-right:48px;">
-									<input class="" type="radio" value="报告"  name="report" checked="checked">
-									<span >报告</span>
-								</label>
-
-						</div>
-						<div class="form-group">
-							<label class="col-xs-3 control-label" for="names">报告名称</label>
-							<div class="col-xs-9">
-								<input type="text" class="form-control" name="names" id="names"/>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-xs-3 control-label" for="des">目录样式</label>
-							<div class="col-xs-9">
-								<select  class="form-control" name="des"  />
-								<option value="目录样式1" selected="selected">目录样式1</option>
-								<option value="目录样式2">目录样式2</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-xs-3 control-label" for="val">创建人</label>
-							<div class="col-xs-9">
-								<input type="text" class="form-control" name="val" id="val"/>
-							</div>
-						</div>
-
-						<div class="form-group " >
-							<div class="col-xs-8">
-								<button type="submit" class="btn btn-primary " data-dismiss="modal" id="is_add" >确定</button>
-							</div>
-							<div class="col-xs-4">
-								<button type="button" class="btn btn-primary " data-dismiss="modal">取消</button>
-							</div>
-						</div>
-					</form>
-
+			<div class="modal-body new-list">
+				<div class="row">
+					<label  class="col-xs-3"  id="reportType">报告类型 </label>
+					<div class="col-xs-9 nopadding" style="text-align: left">
+						<label style="font-weight: normal;margin-right:48px;">
+							<input class="report_type" type="radio" value="0" name="report" checked="checked">
+							<span>报告模版</span>
+						</label>
+						<label style="font-weight: normal">
+							<input class="report_type" type="radio" value="1"  name="report" >
+							<span >报告</span>
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-xs-3 control-label"  for="names">报告名称</label>
+					<div class="col-xs-9 nopadding" style="width:344px">
+						<input type="text" class="txt_inp" style="width:344px" name="names" id="names"/>
+					</div>
+				</div>
+				<div class="row">
+					<label class="col-xs-3 control-label" for="des">目录样式</label>
+					<div class="pr col-xs-9 nopadding" style="width:344px">
+						<input type="hidden" class="ajax_txt" id="catalogs" name="catalogs" value=""/>
+						<input type="text" class="txt_inp" id="catalogs_down" title="请选择目录样式"  autocomplete="off" data-to="catalogs" data-type="json" data-src="_json_catalogs_down" value="--请选择--" onkeydown="return false;" style="width:344px;"/>
+					</div>
 				</div>
 			</div>
-			<div class="modal-footer" style="text-align:center;">
+			<div class="modal-footer" style="text-align: right">
+				<button type="submit" class="btn btn-primary "id="is_add" >确定</button>
+				<button type="button" class="btn btn-default " data-dismiss="modal">取消</button>
 			</div>
 		</div>
 	</div>
 </div>
 <!-- alert_Del共用模态框 -->
-<div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+<div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
 	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
 		<div class="modal-content">
 			<div class="modal-header" id="modal_title">
 				<button type="button" class="close" data-dismiss="modal">
-					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
+					<span class="is_true" aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
 				</button>
 
 			</div>
@@ -147,28 +127,10 @@
 					<span >确定删除吗?</span>
 				</div>
 			</div>
-			<div class="modal-footer" style="text-align:center;">
+			<div class="modal-footer" style="text-align:right;">
 				<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
-				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-default is_false" data-dismiss="modal">取消</button>
 			</div>
-		</div>
-	</div>
-</div>
-<!-- 预览模态框 -->
-<div class="modal fade" id="modal_pre" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
-	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
-		<div class="modal-content">
-			<div class="modal-header" >
-				<span>预览</span>
-				<button type="button" class="close" data-dismiss="modal">
-					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
-				</button>
-			</div>
-			<div class="modal-body">
-
-			</div>
-			</div>
-			<div class="modal-footer" style="text-align:center;"></div>
 		</div>
 	</div>
 </div>
@@ -206,14 +168,17 @@
 		[%j++;}%]
 </script>
 <script>
+	/* 设置主体内容最小高度 */
+	var main_h=$('#mainframe', parent.document).height();
+	var min_H=main_h-15;
+	$("#body_main").css("min-height",min_H);
     var $name=$("#names"),
 		$table1=$("#table1"),
         $des=$("#des"),
         $alertAdd=$("#modal_add"),
-        $alertModal=$("#modal_alert"),
+        $alertModal=$("#modal_delete"),
         $val=$("#val"),
     	$addBtn=$("#addModel");
-    var selecte=document.getElementsByName("des");
 		/*加载质控报告清单*/
 		$.ajax({
 			url:"../../resources/ajax/tree3.json",
@@ -222,6 +187,14 @@
 				$("#table1").html(baidu.template("tpl11",data));
 			}
 		});
+	var _json_catalogs_down=[];
+	$.ajax({
+		url:"../../resources/ajax/catlog.json",
+		success:function (data) {
+			_json_catalogs_down=data;
+			T("#catalogs_down").dropdown({width:"344",height:"260"});
+		}
+	});
 	/*添加*/
     $addBtn.click(function (event) {
         $name.val(null);
@@ -230,8 +203,8 @@
         $alertAdd.modal("toggle");
     });
     $("#is_add").click(function () {
-        var modelBtnArr='<td class="modelOptBtn"> <button class="btn btn-primary "  style="padding:0 8px;height:26px;margin-right:10px;">编辑</button><button class="btn btn-red delModel"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary"  style="padding:0 8px;height:26px;">另存</button><button class="btn btn-primary"  style="margin-left:5px;padding:0 8px;height:26px;">保存为报告</button> </td> ';
-        var  reportBtnArr='<td style="text-align:center;width: 300px" class="optBtn"> <button class="btn btn-primary browserRe"  style="padding:0 8px;height:26px;margin-right:10px;">浏览</button> <button class="btn btn-red delRe"  style="padding:0 8px;height:26px;margin-right:10px;">删除</button> <button class="btn btn-primary exportRe"  style="padding:0 8px;height:26px;">导出</button> </td>';
+        var modelBtnArr='<td class="optBtn"> <button class="btn btn-primary "  >编辑</button><button class="btn btn-red delModel"  >删除</button> <button class="btn btn-primary"  >另存</button><button class="btn btn-primary"  >保存为报告</button> </td> ';
+        var  reportBtnArr='<td class="optBtn"> <button class="btn btn-primary browserRe"  >浏览</button> <button class="btn btn-red delRe"  >删除</button> <button class="btn btn-primary exportRe" >导出</button> </td>';
 //        var length=$table1.children().length+1,
 		var length = parseInt($table1.children().last().children().first().html()) + 1;
 			var docName= $name.val(),
@@ -240,11 +213,12 @@
 			vMon = time.getMonth() + 1,
 			vDay = time.getDate(),
 			saveTime= time.getFullYear() +"-"+ (vMon < 10 ? "0" + vMon : vMon) +"-"+ (vDay < 10 ? "0" + vDay : vDay),
-			catalogueType=$(selecte).val(),
+			catalogueType=$("#catalogs_down").val(),
 			creatTime=saveTime,
-			creatPerson=$("#val").val();
+			creatPerson="王";
         var str='<tr> <td>'+length+'</td> <td>'+saveTime+'</td> <td >'+type+'</td> <td >'+docName+'</td> <td >'+catalogueType+'</td> <td >'+creatTime+'</td> <td>'+creatPerson+'</td>'+(type=="报告"?reportBtnArr:modelBtnArr)+'</tr>';
         $table1.append(str);
+		$alertAdd.modal("hide");
     });
 </script>
 <script>
@@ -258,6 +232,7 @@
             case "删除":
                 var self=$(this);
                 $alertModal.modal("toggle");
+				$("#is_true").unbind();
                 $("#is_true").click(function () {
                     self.parent().parent().remove();
                 });
@@ -275,6 +250,5 @@
 		}
     });
 </script>
-<div class="clr"></div>
 </body>
 </html>

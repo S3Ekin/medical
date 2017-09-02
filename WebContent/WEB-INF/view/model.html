@@ -4,42 +4,19 @@
     <title>模版变量</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
     <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="../../resources/lib/awe/awesome.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/images/style.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css"/>
-    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css"/>
     <style>
-        #table1 tr th {
-            padding: 8px 5px;
-            text-align: center;
-        }
-
-        #table1 tr td {
-            padding: 8px 5px;
-            text-align: center;
-        }
-
-        form {
-            width: 100%;
-        }
-
-        .bv-form .help-block {
-            margin-bottom: 0
-        }
-
-        .bv-form .tooltip-inner {
-            text-align: left
-        }
-
-        .nav-tabs li.bv-tab-success > a {
-            color: #3c763d
-        }
-
-        .nav-tabs li.bv-tab-error > a {
-            color: #a94442
-        }
+        td {text-align: center;}
+        th{text-align: center !important;}
+        .optBtn button{margin-right:10px;}
+        .new-list{height:auto;text-align:center;font-size:16px;}
+        .new-list>div{line-height: 34px;}
+        .new-list label{text-align:right;}
     </style>
 </head>
 <body>
@@ -59,72 +36,42 @@
 		  <div class="sk-circle12 sk-child"></div>
 		</div>
 	</div>-->
-<div class="mr15">
-    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
-        <span class="tab_title">模版变量</span>
-        <hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
+<div class="loading" >
+    <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
     </div>
-    <div style="margin:50px 10% 10px 0;" class="fr">
-        <button class="btn btn-green" id="addModel"><i class="fa fa-plus"></i> 新建</button>
+</div>
+<div class="mr15" id="body_main">
+    <div class="cl_title">
+        <span class="_title">模版变量</span>
     </div>
-    <div style="margin-left:50px" id="table">
-        <table cellspacing="0" cellpadding="0" class="list1" style="width:90%;min-width: 420px">
-            <tr>
-                <th style="width:5%;text-align:center;">序号</th>
-                <th style="width:auto;text-align:center;">名称</th>
-                <th style="width:25%;text-align:center;">描述</th>
-                <th style="width:14%;text-align:center;">值</th>
-                <th style="width:130px;text-align:center;">操作</th>
-            </tr>
-            <tbody id="table1">
-            <tr>
-                <td style="text-align:center;">1</td>
-                <td style="text-align:center;">currYear</td>
-                <td style="text-align:center;">当前年份</td>
-                <td style="text-align:center;">2017</td>
-                <td style="text-align:center;">
-                    <button class="btn btn-primary modification" style="padding:0 8px;height:26px;margin-right:10px;">
-                        修改
-                    </button>
-                    <button class="btn btn-red del" style="padding:0 8px;height:26px;margin-right:10px;">删除</button>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:center;">2</td>
-                <td style="text-align:center;">nextYear</td>
-                <td style="text-align:center;">下一年份</td>
-                <td style="text-align:center;">2018</td>
-                <td style="text-align:center;">
-                    <button class="btn btn-primary modification" style="padding:0 8px;height:26px;margin-right:10px;">
-                        修改
-                    </button>
-                    <button class="btn btn-red del" style="padding:0 8px;height:26px;margin-right:10px;">删除</button>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:center;">3</td>
-                <td style="text-align:center;" class="names">currentMonth</td>
-                <td style="text-align:center;" class="des">当前月份</td>
-                <td style="text-align:center;" class="val">7</td>
-                <td style="text-align:center;">
-                    <button class="btn btn-primary modification" style="padding:0 8px;height:26px;margin-right:10px;">
-                        修改
-                    </button>
-                    <button class="btn btn-red del" style="padding:0 8px;height:26px;margin-right:10px;">删除</button>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:center;">4</td>
-                <td style="text-align:center;" class="names">curentSeason</td>
-                <td style="text-align:center;" class="des">当前季度</td>
-                <td style="text-align:center;" class="val">3</td>
-                <td style="text-align:center;">
-                    <button class="btn btn-primary modification" style="padding:0 8px;height:26px;margin-right:10px;"> 修改</button>
-                    <button class="btn btn-red del" style="padding:0 8px;height:26px;margin-right:10px;">删除</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="pa15">
+        <div style="margin:50px 10% 10px 0;" class="fr">
+            <button class="btn btn-green" id="addModel"><i class="fa fa-plus"></i> 新建</button>
+        </div>
+        <div style="margin-left:50px" id="table">
+            <table  class="list1" style="width:90%;min-width: 420px">
+                <tr>
+                    <th style="width:5%;">序号</th>
+                    <th style="width:auto;">名称</th>
+                    <th style="width:25%;">描述</th>
+                    <th style="width:14%;">值</th>
+                    <th style="width:130px;">操作</th>
+                </tr>
+                <tbody id="table1"></tbody>
+            </table>
+        </div>
     </div>
 </div>
 <!-- alert_Del共用模态框 -->
@@ -134,9 +81,8 @@
         <div class="modal-content">
             <div class="modal-header" id="modal_title">
                 <button type="button" class="close" data-dismiss="modal">
-                    <span class="is_true" aria-hidden="true"
-                          style="position:relative;top:-8px;font-size:25px;">&times;</span><span
-                        class="sr-only">Close</span>
+                    <span class="is_true" aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
                 </button>
 
             </div>
@@ -145,9 +91,9 @@
                     <span>确定删除吗?</span>
                 </div>
             </div>
-            <div class="modal-footer" style="text-align:center;">
+            <div class="modal-footer" style="text-align:right;">
                 <button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
-                <button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-default is_false" data-dismiss="modal">取消</button>
             </div>
         </div>
     </div>
@@ -158,56 +104,50 @@
     <div class="modal-dialog" style="width:400px;margin:100px auto;">
         <div class="modal-content">
             <div class="modal-header">
-                <span>新建</span>
+                <span class="add_title">新建</span>
                 <button type="button" class="close" data-dismiss="modal">
-                    <span class="is_true" aria-hidden="true"
-                          style="position:relative;top:-8px;font-size:25px;">&times;</span><span
-                        class="sr-only">Close</span>
+                    <span class="is_true" aria-hidden="true" >&times;</span>
+                    <span class="sr-only">Close</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div style="height:auto;text-align: center;font-size: 18px">
-                    <form id="defaultForm" method="post" class="form-horizontal" action="">
-                        <div class="form-group">
-                            <label class="col-xs-3 control-label" for="names">名称</label>
-                            <div class="col-xs-9">
-                                <input type="text" class="form-control" name="names" id="names"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-xs-3 control-label" for="des">描述</label>
-                            <div class="col-xs-9">
-                                <input type="text" class="form-control" name="des" id="des"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-xs-3 control-label" for="val">值</label>
-                            <div class="col-xs-9">
-                                <input type="text" class="form-control" name="val" id="val"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group ">
-                            <div class="col-xs-8">
-                                <button type="submit" class="btn btn-primary " data-dismiss="modal" id="is_add" >确定</button>
-                            </div>
-                            <div class="col-xs-8" style="display: none">
-                                <button type="submit" class="btn btn-primary " data-dismiss="modal" id="is_modification">修改
-                                </button>
-                            </div>
-                            <div class="col-xs-4">
-                                <button type="button" class="btn btn-primary " data-dismiss="modal">取消</button>
-                            </div>
-                        </div>
-                    </form>
-
+            <div class="modal-body new-list" style="height:auto;text-align: center;font-size: 16px">
+                <div class="row">
+                    <label class="col-xs-2 " for="names">名称</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" name="names" id="names"/>
+                    </div>
                 </div>
+
+                <div class="row">
+                    <label class="col-xs-2 " for="des">描述</label>
+                    <div class="col-xs-10">
+                        <input type="text"  class="form-control" name="des" id="des"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-xs-2 " for="val">值</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" name="val" id="val"/>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="modal-footer" style="text-align:center;">
-                <!--<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_add" >确定</button>
-                <button type="button" class="btn btn-primary " data-dismiss="modal">取消</button>-->
+            <div class="modal-footer" style="text-align:right;padding-right: 30px">
+                <div class="row ">
+                    <div class="col-xs-10">
+                        <button type="submit" class="btn btn-primary " data-dismiss="modal" id="is_add" >确定</button>
+                    </div>
+                    <div class="col-xs-10" style="display: none">
+                        <button type="submit" class="btn btn-primary " data-dismiss="modal" id="is_modification">修改
+                        </button>
+                    </div>
+                    <div class="col-xs-2">
+                        <button type="button" class="btn btn-default " data-dismiss="modal">取消</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -217,31 +157,59 @@
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
 <script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
-<script>
+<script id="tpl1" type="text/template">
+    [%	var j=1;
+    for(var i in list){%]
+    <tr>
+        <td>[%=j%]</td>
+        <td >[%=list[i].name%]</td>
+        <td >[%=list[i].des%]</td>
+        <td >[%=list[i].val%]</td>
+        <td class="optBtn">
+            <button class="btn btn-primary modification" > 修改</button>
+            <button class="btn btn-red del" >删除</button>
+        </td>
+    </tr>
+    [%j++;}%]
+</script>
+<script type="text/javascript">
+    /* 设置主体内容最小高度 */
+    var main_h=$('#mainframe', parent.document).height();
+    var min_H=main_h-15;
+    $("#body_main").css("min-height",min_H);
+
     var $alertModal = $("#modal_alert"),
             $alertAdd = $("#modal_add"),
             $addBtn = $("#addModel"),
             $table1 = $("#table1"),
-            $form = $("#defaultForm"),
             $name = $("#names"),
             $des = $("#des"),
             $val = $("#val");
+    /* 获取数据 */
+    T.getJson("../../resources/ajax/var.json", function(data) {
+        console.table(data);
+        $(".loading").hide();
+        $("#table1").html(baidu.template("tpl1",data));
+    })
     /*删除*/
     $table1.on("click", ".del", function () {
         var self = $(this);
         $alertModal.modal("toggle");
+        $("#is_true").unbind();
         $("#is_true").click(function () {
             self.parent().parent().remove();
         })
+
     });
     /*添加*/
     $addBtn.click(function (event) {
+        $(".add_title").html("新建");
+        $name.parent().parent().show();
         $("#is_modification").parent().css("display", "none");
         $("#is_add").parent().css("display", "block");
         $name.val(null);
         $des.val(null);
         $val.val(null);
-        $form.children().eq(0).css("display", "block");
         $alertAdd.modal("toggle");
     });
     $("#is_add").click(function () {
@@ -255,7 +223,8 @@
     /*修改*/
     $table1.on("click", ".modification", function (event) {
         var self = $(this);
-        $form.children().eq(0).hide();
+        $(".add_title").html("修改");
+        $name.parent().parent().hide();
         $("#is_modification").parent().css("display", "block");
         $("#is_add").parent().css("display", "none");
         var tdArr = self.parent().siblings(),
@@ -266,6 +235,7 @@
         $des.val(des.html());
         $val.val(val.html());
         $alertAdd.modal("toggle");
+        $("#is_modification").unbind();
         $("#is_modification").click(function () {
             nameVal.html($name.val());
             des.html($des.val());
@@ -273,6 +243,5 @@
         })
     });
 </script>
-<div class="clr"></div>
 </body>
 </html>

@@ -1,13 +1,13 @@
-  <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 25px;font-weight: bolder">xxx人民医院 </p>
-            <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 25px;font-weight: bolder">2017年11月医疗质量管理报告</p>
-            <p class="indent" style="font-size:18px;line-height: 30px">医教部质控科从病历管理、院感管理、药事管理、输血管理、统计 指标、各类清单抽查情况、医疗安全、流动红旗评比情况、满意度调查 等方面对我院2017年11月份的医疗质量情况进行了汇总，现汇报如下:</p>
-             <ul  style=" font-size: 15px; line-height: 30px;" class="box">
+  <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 20px;font-weight: bolder">xxx人民医院 </p>
+            <p style="padding: 0; margin: 10px 0 17px 0; text-align: center;font-size: 20px;font-weight: bolder">2017年11月医疗质量管理报告</p>
+            <p class="indent" style="font-size:15px;line-height: 30px">医教部质控科从病历管理、院感管理、药事管理、输血管理、统计 指标、各类清单抽查情况、医疗安全、流动红旗评比情况、满意度调查 等方面对我院2017年11月份的医疗质量情况进行了汇总，现汇报如下:</p>
+             <ul  style=" font-size: 15px; line-height: 25px;" >
                  <li>
                      <p><strong><a name="C1"> 一、病历管理 </a></strong></p>
                      <div>
                              <div>
                                  <p><a name="C1.1">(一)&nbsp;&nbsp;&nbsp;运行病历检查情况</a></p>
-                                 <div class="run-patient">
+                                 <div style="padding-left:3rem">
                                      <p>2017年11月10日14:00--17: 00，非术科组组长带领各组成员随机抽查我院临床 科室运行病历300份。</p>
                                      <p> 评分标准:运行病历总分85分，甲级病历>77分，乙级病历65分—75分，丙级病 历 &le; 65分。 </p>
                                      <p> 检查结果:经评定，合格病历280份，合格率93%。 </p><span>消化科:</span>

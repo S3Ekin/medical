@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>资源管理器</title>
-    <link rel="stylesheet" href="../../resources/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/icon.css">
     <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/images/style.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
     <style>
-        div.layout { background: #e3e3e3; padding: 1% 15px 1% 315px; width: 100%; height: 100vh; }
-        div.layout:after { content: ""; display: block; clear: both; }
-        div.layout > div { background: white; float: left; height: 100%; border-radius: 10px; }
-        div.layout-right { width: 100%; min-width: 480px; overflow: hidden; overflow-y: auto; padding: 30px }
-        div.layout-left { padding: 10px; margin-left: -300px; width: 280px; overflow-x: hidden }
-        dl { margin-top: 0; margin-bottom: 0; }
-        span.tree-title { width: 210px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden }
-        span.tree-title input { width: 200px !important;; height: 30px !important; }
-        table { border: 1px solid black; border-collapse: collapse; width: 100%; }
-        tr { border: 1px solid black }
-        tr:hover { background: yellowgreen }
-        td { padding: 5px; border: 1px solid black; text-align: center }
+        .layout { background: #e3e3e3; padding: 10px 10px 10px 310px; width: 100%; height: 100vh; }
+        .layout:after { content: ""; display: block; clear: both; }
+        .layout > div { background: white; float: left; height: 100%; }
+        .layout-right {padding: 30px; width: 100%; min-width: 480px; overflow: hidden; overflow-y: auto; ;border-radius: 10px;  }
+        .layout-center{width: 2px;border:1px solid #0081c2;margin-left: -10px; cursor: col-resize;}
+        .layout-left { padding: 10px; margin-left: -300px; width: 290px; overflow-x: hidden;border-radius: 10px 0 0 10px; }
+        /*左侧菜单样式*/
+        #menu_tree{border:2px solid #d3d3d3;overflow: hidden}
+        div.tree-node{border-bottom: 1px solid #d3d3d3;padding: 5px 0;height: 34px;border-bottom: 1px solid #d3d3d3;line-height: 22px;}
+        div.tree-node-selected{background: #e3e3e3;}
+        span.tree-title{font-size:14px;white-space: nowrap;}
+        /*左侧菜单样式完*/
+        table {width: 100%; }
+        td {text-align: center }
         caption { padding: 0; height: 30px; font-weight: bolder }
     </style>
+
 </head>
 <body>
-<div class="layout">
+<div class="layout" >
     <div class="layout-left">
         <ul id="menu_tree">
 
         </ul>
         <!-- 图表右键菜单 -->
         <div id="update_menu" class="easyui-menu" style="width:120px;display:none">
-           <!-- <div onclick="updateitem()" data-options="iconCls:'icon-save'">编辑图形</div>-->
+            <!-- <div onclick="updateitem()" data-options="iconCls:'icon-save'">编辑图形</div>-->
+            <!--  <div onclick="_menu.newFile(0)" data-options="iconCls:'icon-save'">新建子节点</div> -->
             <div onclick="_menu.rename()">重命名</div>
             <div onclick="_menu.remove()" data-options="iconCls:'icon-print'">删除</div>
         </div>
     </div>
+    <div class="layout-center"></div>
     <div class="layout-right">
-        <table>
+        <table class="list1">
             <tr>
                 <td rowspan="2">月份/科室</td>
                 <td colspan="2">C T室</td>
@@ -93,34 +97,69 @@
 </div>
 <!--删除模态框-->
 <div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
-	<div class="modal-dialog" style="width:300px;margin:65px auto;" >
-		<div class="modal-content">
-			<div class="modal-header" id="modal_title">
-				<button type="button" class="close" data-dismiss="modal">
-					<span class="is_true" aria-hidden="true" style="position:relative;top:-8px;font-size:25px;">&times;</span><span class="sr-only">Close</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<div style="height:65px;text-align: center;font-size: 18px" id="txt_insert">
-					<span >确定删除吗?</span>
-				</div>
-			</div>
-			<div class="modal-footer" style="text-align:center;">
-				<button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
-				<button type="button" class="btn btn-primary is_false" data-dismiss="modal">取消</button>
-			</div>
-		</div>
-	</div>
+    <div class="modal-dialog" style="width:300px;margin:65px auto;" >
+        <div class="modal-content">
+            <div class="modal-header" id="modal_title">
+                <span id="_title" style="color: white;">删除</span>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span class="is_true" aria-hidden="true" >&times;</span><span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="height:65px;text-align: center;font-size: 18px" id="is_del">
+                    <span >确定删除吗?</span>
+                </div>
+                <div id="is_new">
+                    <span>文件名：</span><input type="text" id="file" class="txt_inp" title="请选择" value="" autocomplete="off" />
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align:right;">
+                <button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
 </div>
+
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources/echarts/echarts.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script>
+    /* 设置主体内容最小高度 */
+    var main_h=$('#mainframe', parent.document).height();
+    var min_H=main_h-15;
+    $("#body_main").css("min-height",min_H);
+    /*左侧菜单宽度改变事件 */
+    var $layout=$(".layout"),$layLeft=$(".layout-left"),$layCenter=$(".layout-center"),$doc=$(document);
+    $layCenter.mousedown(function(){
+        $doc.mousemove(function(e){
+            var delX=e.clientX;
+            $layout.css("paddingLeft",delX+10+"px");
+            $layLeft.css({"marginLeft":-delX+"px","width":delX-10+"px"});
+            if(delX>612){
+                $(this).unbind("mousemove");
+                $layout.css("paddingLeft","620px");
+                $layLeft.css({"marginLeft":"-610px","width":"600px"});
+            }else if(delX<208){
+                $(this).unbind("mousemove");
+                $layout.css("paddingLeft","220px");
+                $layLeft.css({"marginLeft":"-210px","width":"200px"});
+            }
+
+        });
+    })
+    $doc.mouseup(function(){
+        $(this).unbind("mousemove");
+    });
+    $doc[0].ondragstart=$doc[0].onselectstart=function(){
+        return false;
+    }
     var $layoutRight = $(".layout-right");
     var _chart = 0;
     /*左侧菜单加载*/
-    $("#menu_tree").tree({
+    var $menuTree=$("#menu_tree");
+    $menuTree.tree({
         url: "../../resources/ajax/tree5.json",
         method: "get",
         animate: true,
@@ -142,7 +181,7 @@
                 switch (is_chat) {
                     case "表格":
                         _chart = 0;
-                        var str = '<table> <tr> <td rowspan="2">月份/科室</td> <td colspan="2">C T室</td> <td colspan="2">放 射 科</td> <td colspan="2">B 超 室</td> <td colspan="2">输 血 科</td> </tr> <tr> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>输血数</td> <td>适应症%</td> </tr> <tr> <td>1</td> <td>1195</td> <td>77.4</td> <td>1426</td> <td>39.1</td> <td>1972</td> <td>79.3</td> <td>115</td> <td>100</td> </tr> <tr> <td>2</td> <td>1071</td> <td>79.4</td> <td>1137</td> <td>58.5</td> <td>1416</td> <td>72.3</td> <td>95</td> <td>100</td> </tr> <tr> <td>3</td> <td>1326</td> <td>78.3</td> <td>1802</td> <td>57.9</td> <td>2105</td> <td>73.68</td> <td>160</td> <td>100</td> </tr> </table>';
+                        var str = '<table class="list1"> <tr> <td rowspan="2">月份/科室</td> <td colspan="2">C T室</td> <td colspan="2">放 射 科</td> <td colspan="2">B 超 室</td> <td colspan="2">输 血 科</td> </tr> <tr> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>检查数</td> <td>阳性率%</td> <td>输血数</td> <td>适应症%</td> </tr> <tr> <td>1</td> <td>1195</td> <td>77.4</td> <td>1426</td> <td>39.1</td> <td>1972</td> <td>79.3</td> <td>115</td> <td>100</td> </tr> <tr> <td>2</td> <td>1071</td> <td>79.4</td> <td>1137</td> <td>58.5</td> <td>1416</td> <td>72.3</td> <td>95</td> <td>100</td> </tr> <tr> <td>3</td> <td>1326</td> <td>78.3</td> <td>1802</td> <td>57.9</td> <td>2105</td> <td>73.68</td> <td>160</td> <td>100</td> </tr> </table>';
                         $layoutRight.html(str);
                         break;
                     default:
@@ -212,33 +251,83 @@
         },
         onContextMenu: function (e, node) {
             e.preventDefault();
-            $('#menu_tree').tree('select', node.target);
+            $menuTree.tree('select', node.target);
             $("#update_menu").menu("show", {
                 left: e.pageX,
                 top: e.pageY
             })
         }
     });
+    /*右键菜单操作  */
+    var $modalTitle=$("#_title");
     var _menu = {
-        node: function () {
-            return $("#menu_tree").tree("getSelected");
+        node: function () {/*获取右键的节点  */
+            return $menuTree.tree("getSelected");/*选中的节点  */
         },
-        rename: function () {
-            var self = this;
-            $("#menu_tree").tree("beginEdit", self.node().target);
-        },
-        updata: function () {
-
-        },
-        remove: function () {
-            var self = this;
+        rename: function () {/*重命名  */
+            $modalTitle.html("重命名");
             $("#modal_alert").modal("toggle");
+            $("#is_del").hide();
+            $("#is_new").show();
+            var fileName=$("#file");
+            var nodes = this.node();
+            fileName.val(nodes.text);
+            $("#is_true").unbind();
             $("#is_true").click(function () {
-                $(self.node().target).remove();
+                $menuTree.tree("update",{"target":nodes.target,"text":fileName.val()});
+            });
+        },
+        newFile: function (even) {/*新文件 */
+            $("#modal_alert").modal("toggle");
+            var self = this;
+            var _title=even==1?"新建文件夹":"新建子节点";
+            $modalTitle.html(_title);
+            $("#is_del").hide();
+            $("#is_new").show();
+            $("#is_true").unbind();
+            $("#is_true").click(function () {
+                var fileName=$("#file").val();
+                if(!fileName){return;}
+                var arr=[];
+                switch(even){
+                    case 1:/*文件夹  */
+                        arr=[{"text":fileName,"children":[{"text":"新文件"}]}];/* 要添加进去的节点数据, */
+                        break;
+                    default:/* 文件 */
+                        arr=[{"text":fileName,"children":[]}];
+                        break;
+                };
+                if(self.node().children && self.node().children.length!=0){/* 是目录，添加到该目录的最后一个 */
+                    $menuTree.tree("append",{
+                        parent:self.node().target,
+                        data:arr,
+                    })
+                }else{/*是叶子节点 ,添加到该节点的下面 */
+                    /*  $menuTree.tree("insert",{
+                     after:self.node().target,
+                     data:arr,
+                     }) */
+                    var a=$menuTree.tree("append",{
+                        parent:self.node().target,
+                        data:arr,
+                    });
+                }
+            });
+        },
+        remove: function () {/*删除  */
+            $("#modal_alert").modal("toggle");
+            $modalTitle.html("删除文件");
+            var self = this;
+            $("#is_new").hide();
+            $("#is_del").show();
+            $("#is_true").unbind();
+            $("#is_true").click(function () {
+                $menuTree.tree("remove",self.node().target);
             })
         }
 
     }
 </script>
+
 </body>
 </html>

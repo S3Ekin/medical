@@ -9,15 +9,12 @@
     <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
-    <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
-    <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
-	
 	<style>
+		html{height:100%}
 		#table1 tr th{padding: 8px 5px;}
 		.catalogueStyle { line-height: 25px }
 		.catalogueStyle dt{ margin-left:50px; }
 	</style>
-	
 </head>
 <body>
 <!--<div class="loading">
@@ -36,14 +33,10 @@
 		  <div class="sk-circle12 sk-child"></div>
 		</div>
 	</div>-->
-<div class="mr15">
-    <div style="width:100%;margin-top:5px;height:35px;z-index:9999;">
-       	<span class="tab_title">目录样式</span>
-		<hr style="background-color:#DBDBDB;height:2px;border:none;margin-top:10px;">
-    </div>
-		<!--<div style="margin:50px 10% 10px 0;" class="fr">
-			<button  class="btn btn-green">新建</button>
-		</div>-->
+<div class="mr15" id="body_main">
+	<div class="cl_title">
+		<span class="_title">目录样式</span>
+	</div>
     <div style="margin-left:50px" id="table">
 		<table cellspacing="0" cellpadding="0" class="list1" style="margin: 30px auto;">
 			<tr style="width:500px ">
@@ -81,10 +74,13 @@
 
 	</div>
 </div>
-<script type="text/javascript" src="../../resources/lib/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="../../resources/lib/echarts/macarons.js"></script>
-<script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
-<script type="text/javascript" src="../../resources/js/mchart.js"></script>
-<div class="clr"></div>
+<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script>
+	/* 设置主体内容最小高度 */
+	var main_h=$('#mainframe', parent.document).height();
+	var min_H=main_h-15;
+	$("#body_main").css("min-height",min_H);
+
+</script>
 </body>
 </html>
