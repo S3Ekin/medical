@@ -1,0 +1,76 @@
+{"list":[
+  {"name":"目录样式1",
+    "json":[
+      {
+        "children": [
+          {
+            "children": [
+
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "id": 9,
+                    "par_id": 7,
+                    "paragraph_id": 150,
+                    "text": "1.1.1.1"
+                  }
+                ],
+                "id": 7,
+                "par_id": 4,
+                "paragraph_id": 240,
+                "text": "(一)."
+              }
+            ],
+            "id": 4,
+            "par_id": 1,
+            "paragraph_id": 230,
+            "text": "一."
+          }
+        ],
+        "id": 1,
+        "par_id": 0,
+        "paragraph_id": 240,
+        "text": "目录"
+      }
+    ]
+
+  },
+  {"name":"目录样式2",
+    "json":[
+      {
+        "children": [
+          {
+            "children": [
+
+              {
+                "children": [
+                  {
+                    "children": [],
+                    "id": 9,
+                    "par_id": 7,
+                    "paragraph_id": 150,
+                    "text": "1.1.1.1"
+                  }
+                ],
+                "id": 7,
+                "par_id": 4,
+                "paragraph_id": 240,
+                "text": "第一节."
+              }
+            ],
+            "id": 4,
+            "par_id": 1,
+            "paragraph_id": 230,
+            "text": "第一章."
+          }
+        ],
+        "id": 1,
+        "par_id": 0,
+        "paragraph_id": 240,
+        "text": "目录"
+      }
+    ]
+
+  }
+]}

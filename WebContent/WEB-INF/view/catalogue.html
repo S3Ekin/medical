@@ -9,15 +9,15 @@
     <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
+	<link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
 	<style>
 		html{height:100%}
-		#table1 tr th{padding: 8px 5px;}
-		.catalogueStyle { line-height: 25px }
-		.catalogueStyle dt{ margin-left:50px; }
+		td{text-align: center;}
+		div.tree-node-selected{background-color:transparent;}
 	</style>
 </head>
 <body>
-<!--<div class="loading">
+<div class="loading">
 		<div class="sk-circle">
 		  <div class="sk-circle1 sk-child"></div>
 		  <div class="sk-circle2 sk-child"></div>
@@ -32,7 +32,7 @@
 		  <div class="sk-circle11 sk-child"></div>
 		  <div class="sk-circle12 sk-child"></div>
 		</div>
-	</div>-->
+	</div>
 <div class="mr15" id="body_main">
 	<div class="cl_title">
 		<span class="_title">目录样式</span>
@@ -44,43 +44,54 @@
 				<th style="width:30%;text-align:center;">名称</th>
 				<th style="text-align:center;">样式效果</th>
 			</tr>
-			<tbody id="table1">
-			<tr>
-				<td style="text-align:center;">1</td>
-				<td style="text-align:center;">目录样式1</td>
-				<td >
-					<dl class="catalogueStyle">
-						<dt>标题</dt>
-						<dd>第一章</dd>
-						<dd>第一节</dd>
-						<dd>1.1.1</dd>
-					</dl>
-				</td>
-			</tr>
-			<tr>
-				<td style="text-align:center;">2</td>
-				<td style="text-align:center;">目录样式2</td>
-				<td >
-					<dl class="catalogueStyle">
-						<dt>标题</dt>
-						<dd>一、</dd>
-						<dd>1.1</dd>
-						<dd>1.1.1</dd>
-					</dl>
-				</td>
-			</tr>
-			</tbody>
+			<tbody id="table1"></tbody>
 		</table>
 
 	</div>
+	<!--<div>
+		<ul  class="easyui-tree" style="width: 300px;" data-options='data:[{"children":[ {"text":"一、医疗质控信息","id":"#C1"}, {"text":"二、医疗质控工作小结","id":"#C2","children":[ {"text":"（一）住院病历质控","id":"#C2.1"}, {"text":"（二）门、急诊工作","id":"#C2.2"}, {"text":"（三）医技科室","id":"#C2.3"}, {"text":"（四）科室相关质控工作检查反馈","id":"#C2.4"} ]}, {"text":"整改意见","id":"#C3"} ],"text":"目 录","id":"#C1" }],animate:true,lines:true'></ul> </div>-->
 </div>
+
+<script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
+<script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
+<script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
+<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script type="text/templete" id="catalog">
+ [% var j=1;
+	for(var i in list){%]
+	<tr>
+		<td >[%=j%]</td>
+		<td >[%=list[i].name%]</td>
+		<td style="text-align:left">
+			<ul class="catalogTree" style="width:100%"></ul>
+		</td>
+	</tr>
+[% j++ }%]
+</script>
 <script>
+
 	/* 设置主体内容最小高度 */
 	var main_h=$('#mainframe', parent.document).height();
 	var min_H=main_h-15;
 	$("#body_main").css("min-height",min_H);
+	/* 获取目录 */
+	T.getJson("../../resources/ajax/catalog.json", function(datas) {
+		console.table(datas);
+		$(".loading").hide();
+		$("#table1").html(baidu.template("catalog",datas));
+        var cataTree=$(".catalogTree");
+		var leg=datas.list.length;
+		cataTree.tree({
+			data:datas.list[0].json,
+		});
+		for (var i=0;i<2;i++){
+			(function (j) {
+				cataTree.eq(j).tree("loadData",datas.list[j].json);
+			})(i)
+		}
 
+	})
 </script>
 </body>
 </html>
