@@ -18,12 +18,12 @@
 		.sourceBtn { padding: 0 8px; height: 26px; }
 		/*数据源窗口样式*/
 		#sourceTree{border:2px solid #d3d3d3}
-		div.tree-node{border-bottom: 1px solid #d3d3d3;padding: 5px 0;height: 34px;border-bottom: 1px solid #d3d3d3;line-height: 22px;}
+		div.tree-node{border-bottom: 1px solid #d3d3d3;height:auto;padding: 5px 0;border-bottom: 1px solid #d3d3d3;line-height: 22px;}
 		div.tree-node-selected{background: #e3e3e3;}
-		span.tree-title{width:auto}
-		div.content { padding: 10px 5px; height: 320px; overflow-y: scroll }
-		div.footer button { padding: 5px 10px; height: 30px; margin-right: 10px }
-		div.footer { text-align: right; padding: 5px 10px 5px 0; border-top: 1px solid #95B8E7; }
+		span.tree-title{width:auto;display: inline;}
+		div.content { padding: 10px 5px;}
+		div.footer button {margin-right: 10px }
+		div.footer { text-align: right; }
 		/*数据源窗口样式完*/
 		.zb-name { color: #2081BB; white-space: nowrap; }
 		.upload { display: none }
@@ -153,11 +153,13 @@
 
 </div>
 <!-- 数据源 -->
-<div id="sourceSelected" style="display: none">
+<div id="sourceSelected" style="display: none" data-options="footer:'#ft'">
 	<div class="content">
 		<ul id="sourceTree">
 		</ul>
 	</div>
+</div>
+<div id="ft">
 	<div class="footer">
 		<button type="button" class="btn btn-primary " id="select">确定</button>
 		<button type="button" class="btn btn-default" id="cancel">取消</button>
@@ -521,7 +523,7 @@
 		collapsible: false,
 		top: ($(window).height() - 500) * 0.5,
 		left: ($(window).width() - 400) * 0.5,
-		resizable: false,
+		resizable: true,
 		onOpen: function () {
 			// 加载窗口树
 			$('#sourceTree').tree({

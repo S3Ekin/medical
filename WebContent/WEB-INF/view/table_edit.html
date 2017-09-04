@@ -11,12 +11,12 @@
         .optBtn button { padding: 0 8px; height: 26px; margin-right: 10px; }
         /*数据源窗口样式*/
         #sourceTree{border:2px solid #d3d3d3}
-        div.tree-node{border-bottom: 1px solid #d3d3d3;padding: 5px 0;height:auto;border-bottom: 1px solid #d3d3d3;}
+        div.tree-node{border-bottom: 1px solid #d3d3d3;height:auto;padding: 5px 0;border-bottom: 1px solid #d3d3d3;line-height: 22px;}
         div.tree-node-selected{background: #e3e3e3;}
         span.tree-title{width:auto;display: inline;}
-        .content { padding: 10px 5px; height: 320px; overflow-y: scroll }
-        .footer button { padding: 5px 10px; height: 30px; margin-right: 10px }
-        .footer { text-align: right; padding: 5px 10px 5px 0; border-top: 1px solid #95B8E7; }
+        div.content { padding: 10px 5px;}
+        div.footer button {margin-right: 10px }
+        div.footer { text-align: right; }
         /*数据源窗口样式完*/
         div.row {line-height: 40px }
         .topic { text-align: right; font-size: 15px; font-weight: 700; }
@@ -50,8 +50,7 @@
         <div class="row">
             <div class="col-xs-2 topic">名称:</div>
             <div class="col-xs-9">
-                <input type="text" class="clo-xs-9 txt_inp" id="name" style="width:100%;max-width: 400px ;height:30px"
-                       value="表格1">
+                <input type="text" class="clo-xs-9 txt_inp" id="name" style="width:100%;max-width: 400px ;height:30px" value="表格1">
             </div>
         </div>
         <div class="row">
@@ -158,11 +157,13 @@
 
 </div>
 <!-- 数据源 -->
-<div id="sourceSelected" style="display: none">
+<div id="sourceSelected" style="display: none" data-options="footer:'#ft'">
     <div class="content">
         <ul id="sourceTree">
         </ul>
     </div>
+</div>
+<div id="ft">
     <div class="footer">
         <button type="button" class="btn btn-primary " id="select">确定</button>
         <button type="button" class="btn btn-default" id="cancel">取消</button>
@@ -507,7 +508,7 @@
         width: 385,
         height: 400,
         padding: 10,
-        resizable: false,
+        resizable: true,
         minimizable: false,
         maximizable: false,
         collapsible: false,
