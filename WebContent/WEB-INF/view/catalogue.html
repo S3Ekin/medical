@@ -70,14 +70,12 @@
 [% j++ }%]
 </script>
 <script>
-
 	/* 设置主体内容最小高度 */
 	var main_h=$('#mainframe', parent.document).height();
 	var min_H=main_h-15;
 	$("#body_main").css("min-height",min_H);
 	/* 获取目录 */
 	T.getJson("../../resources/ajax/catalog.json", function(datas) {
-		console.table(datas);
 		$(".loading").hide();
 		$("#table1").html(baidu.template("catalog",datas));
         var cataTree=$(".catalogTree");
