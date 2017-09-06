@@ -687,7 +687,7 @@
                 break;
             default:/* 指标数据，该表分为左右表，左表显示指标名称和维度值，右表显示对应的时间下的值 */
                 var comboData = $(".zb .textbox-text");/* 指标指标数据里的所以下拉框 */
-                var tableArr = [], rightTabH = "", colNum;
+                var tableArr = [], rightTabH ="";
                 var leg = comboData.length;
                 for (var i = 0; i < leg; i++) {
                     var obj = comboData[i];
@@ -699,12 +699,14 @@
                     time[i] = parseInt(time[i]);
                 }
                 var zbName = $(".newAdd").find(".zb-name");/*获取选择的指标*/
-                var vueArr={},zbArr=[],rowNum=0,obj,colNum=1;
+                var vueArr={},zbArr=[],rowNum=0;
                 for (var i = 0; i < zbName.length; i++) {
                     var node=$(zbName[i]).parent().find(".textbox-text");
+                    var obj=[];
                     if(node.length!=0){
+                        if(node)
                         obj = node[0].value.split(",");/* 获取每一个下拉框的值，并且变为数组 */
-                        colNum=2;
+                        console.log(obj,node[0].value);
                     }else{
                         obj=[""];
                     }
@@ -772,14 +774,15 @@
 
                 //左表身体
                 LeftTabB="<tr><td rowspan='" + rowNum + "'>" + tableArr[5] + "</td><td colspan='"+(vueArr[0][0]==""?2:1)+"' rowspan='"+vueArr[0].length+"'><div>" + zbArr[0] + "</div></td><td class='"+(vueArr[0][0]==""?"hide":"show")+"'><div>" +vueArr[0][0] + "</div></td></tr>";/*第一行*/
-                console.log(zbLeg,"leg");
                 for (var i = 0; i < zbLeg; i++) {
-                    if(i==0&&vueArr[0][0]!=""){
-                        for (var j = 1; j < vueArr[i].length; j++) {
-                            LeftTabB+="<tr><td><div>"+vueArr[i][j]+"</div></td></tr>"
-                        }
+                    if(i==0){
+                         if(vueArr[i][0]!="") {
+                             for (var j = 1; j < vueArr[i].length; j++) {
+                                 LeftTabB += "<tr><td><div>" + vueArr[i][j] + "</div></td></tr>"
+                             }
+                         }
                     }else{
-                        LeftTabB+="<tr><td colspan='"+(vueArr[i][0]==""?2:1)+"' r rowspan='"+vueArr[i].length+"'><div>"+zbArr[i]+"</div></td><td class='"+(vueArr[i][0]==""?"hide":"show")+"'><div>"+vueArr[i][0]+"</div></td></tr>";
+                        LeftTabB+="<tr><td colspan='"+(vueArr[i][0]==""?2:1)+"'  rowspan='"+vueArr[i].length+"'><div>"+zbArr[i]+"</div></td><td class='"+(vueArr[i][0]==""?"hide":"show")+"'><div>"+vueArr[i][0]+"</div></td></tr>";
                         if(vueArr[i][0]!="") {
                             for (var j = 1; j < vueArr[i].length; j++) {
                                 LeftTabB += "<tr><td><div>" + vueArr[i][j] + "</div></td></tr>"
