@@ -66,7 +66,7 @@
                 <span class="sub-title font-set" style="display: none">医教部质控科制</span>
             </div>
         </div>
-        <iframe id="editTools" frameborder="0" style="padding:0 20px;width:100%;height:95%;display:none"></iframe>
+        <iframe id="editTools" frameborder="0" style="padding:0 20px;width:100%;height:93%;display:none"></iframe>
         <div class="box"></div>
         <div class="loading" style="position: absolute;top:0">
             <div class="sk-circle">
@@ -139,7 +139,6 @@
                 $layout.css("paddingLeft","220px");
                 $layLeft.css({"marginLeft":"-210px","width":"200px"});
             }
-
         });
     })
     $doc.mouseup(function(){
@@ -147,7 +146,7 @@
     });
     $doc[0].ondragstart=$doc[0].onselectstart=function(){
         return false;
-    }
+    };
     /* 设置主体内容最小高度 */
     var main_h=$('#mainframe', parent.document).height();
     var min_H=main_h-15;
@@ -169,64 +168,64 @@
     }
     /*文档树*/
     var $menuTree=$("#menuTree"),
-     $editTools=$("#editTools");
-     $menuTree.tree({
-         url:"../../resources/ajax/tree"+editID+".json",
-         method:"get",
-         animate:true,
-         onLoadSuccess:function () {
-             localStorage.editState2="false";
-             $.ajax({
-                 url:"../../resources/ajax/"+_Url+".txt",
-                 success:function (data) {
-                     $(".loading").hide();
-                     var reg=/\[%\w+%]/g;
-                     $box.html(data.replace(reg,"_____"));
-                 }
-             })
-         },
-         onClick:function (node) {
-             if(localStorage.editState2=="edit"){
-                 var a=$("#editTools")[0].contentDocument.getElementById("ueditor_0");
-                 a.contentWindow.location.href="about:blank"+node.id;
-             }else{
-                 $(".title").html(node.text);
-                 window.location.href=node.id;
-             }
-         },
-         onDragEnter:function (e,source) {
-     },
-         onContextMenu:function (e, node) {/*右键菜单出现 */
-             if(localStorage.editState2=="edit"){/*进入编辑器才可用右键菜单,要是想在其他状态用 ,把==edit去掉就可以*/
-                 e.preventDefault();
-                 $menuTree.tree('select', node.target);/* 右键的时候也像左键一样选中*/
-                 $("#_menu").menu("show", {
-                     left: e.pageX,
-                     top: e.pageY
-                 })
-             }
-             return;
-         }
-     });
-     /*编辑器*/
+        $editTools=$("#editTools");
+    $menuTree.tree({
+        url:"../../resources/ajax/tree"+editID+".json",
+        method:"get",
+        animate:true,
+        onLoadSuccess:function () {
+            localStorage.editState2="false";
+            $.ajax({
+                url:"../../resources/ajax/"+_Url+".txt",
+                success:function (data) {
+                    $(".loading").hide();
+                    var reg=/\[%\w+%]/g;
+                    $box.html(data.replace(reg,"_____"));
+                }
+            })
+        },
+        onClick:function (node) {
+            if(localStorage.editState2=="edit"){
+                var a=$("#editTools")[0].contentDocument.getElementById("ueditor_0");
+                a.contentWindow.location.href="about:blank"+node.id;
+            }else{
+                $(".title").html(node.text);
+                window.location.href=node.id;
+            }
+        },
+        onDragEnter:function (e,source) {
+        },
+        onContextMenu:function (e, node) {/*右键菜单出现 */
+            if(localStorage.editState2=="edit"){/*进入编辑器才可用右键菜单,要是想在其他状态用 ,把==edit去掉就可以*/
+                e.preventDefault();
+                $menuTree.tree('select', node.target);/* 右键的时候也像左键一样选中*/
+                $("#_menu").menu("show", {
+                    left: e.pageX,
+                    top: e.pageY
+                })
+            }
+            return;
+        }
+    });
+    /*编辑器*/
     $edit.click(function () {
-         var self=$(this);
-         if($(this)[0].innerHTML=="取消"){
-             $menuTree.tree("disableDnd");/*禁止拖拽  */
-             $editTools.hide();
-             $box.show();
-             self[0].innerHTML="编辑";
-             window.localStorage.editState2="false";
-         }else{
-             $menuTree.tree("enableDnd");/*启用拖拽  */
-         $editTools[0].src="ueditor.html?edit="+editID;
-         $editTools.load(function () {
-             $(this).show();
-             $box.hide();
-             self[0].innerHTML="取消";
-         })
-         }
-     })
+        var self=$(this);
+        if($(this)[0].innerHTML=="取消"){
+            $menuTree.tree("disableDnd");/*禁止拖拽  */
+            $editTools.hide();
+            $box.show();
+            self[0].innerHTML="编辑";
+            window.localStorage.editState2="false";
+        }else{
+            $menuTree.tree("enableDnd");/*启用拖拽  */
+            $editTools[0].src="ueditor.html?edit="+editID;
+            $editTools.load(function () {
+                $(this).show();
+                $box.hide();
+                self[0].innerHTML="取消";
+            })
+        }
+    })
     /*右键菜单操作  */
     var $modalTitle=$("#_title");
     var _menu = {
@@ -243,7 +242,7 @@
             fileName.val(nodes.text);
             $("#is_true").unbind();
             $("#is_true").click(function () {
-                        $menuTree.tree("update",{"target":nodes.target,"text":fileName.val()});
+                $menuTree.tree("update",{"target":nodes.target,"text":fileName.val()});
             });
         },
         newFile: function (even) {/*新文件 */
@@ -291,10 +290,9 @@
             $("#is_del").show();
             $("#is_true").unbind();
             $("#is_true").click(function () {
-                    $menuTree.tree("remove",self.node().target);
+                $menuTree.tree("remove",self.node().target);
             })
         }
-
     }
 </script>
 </body>

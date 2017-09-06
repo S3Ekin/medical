@@ -1,6 +1,9 @@
 (function (){
     var browser = baidu.editor.browser,
         domUtils = baidu.editor.dom.domUtils;
+console.log(baidu.editor,"SEkin");
+console.log(UE,"UE");
+console.log(UE.Editor,"UE.Editor");
 
     var magic = '$EDITORUI';
     var root = window[magic] = {};
@@ -40,6 +43,7 @@
             var el = document.createElement('div');
             el.innerHTML = html;
             el = el.firstChild;
+            console.log(el,"移除的是谁！");
             el.parentNode.removeChild(el);
             return el;
         },
@@ -67,6 +71,7 @@
                 bcr = element.getBoundingClientRect();
                 rect.left += bcr.left;
                 rect.top += bcr.top;
+                console.log("循环！")
             }
             rect.bottom = rect.top + rect.height;
             rect.right = rect.left + rect.width;
@@ -119,8 +124,11 @@
             return offset;
         },
         setGlobal: function (id, obj){
+            console.trace();
             root[id] = obj;
+           console.log(id,"rootID");
             return magic + '["' + id  + '"]';
+
         },
         unsetGlobal: function (id){
             delete root[id];
