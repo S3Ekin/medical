@@ -37,6 +37,8 @@
         td div{width: 100%;text-overflow: ellipsis;overflow: hidden;white-space:nowrap;}
         span.combo{line-height: 23px}
         tr{height: 40px }
+        .show{display: block}
+        .hide{display: none}
         .input-rowspan{width:50px;border:1px solid #95B8E7; height: 30px; padding:0 4px;  outline-style: none; resize: none; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px 5px 5px 5px;}
     </style>
 
@@ -200,6 +202,12 @@
 <script src="../../resources/echarts/echarts.js"></script>
 <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script>
+  /*  $.fn.combobox.defaults.filter = function(q, row){
+        var opts = $(this).combobox('options');
+        return row[opts.textField].indexOf(q) >= 0;
+    }*/
+</script>
+<script>
     /* 设置主体内容最小高度 */
     var main_h=$('#mainframe', parent.document).height();
     var min_H=main_h-15;
@@ -265,7 +273,7 @@
         textField: "text",
         data: month,
         value: "1月",
-        editable: true,
+        editable: false,
         width: 80,
         height: 30,
         panelWidth: 80,
@@ -282,7 +290,7 @@
         textField: "text",
         data: month,
         value: "1月",
-        editable: true,
+        editable:false,
         width: 80,
         height: 30,
         panelWidth: 80,
@@ -301,7 +309,7 @@
         textField: "text",
         data: secondYear,
         value: year_f + "年",
-        editable: true,
+        editable: false,
         width: 80,
         height: 30,
         panelWidth: 80,
@@ -319,7 +327,7 @@
         textField: "text",
         data: yearArr,
         value: year_last + "年",
-        editable: true,
+        editable: false,
         width: 80,
         height: 30,
         panelWidth: 80,
@@ -405,7 +413,7 @@
         valueField: "id",
         textField: "text",
         data: roteArr,
-        editable: true,
+        editable: false,
         width: 70,
         height: 30,
         panelWidth: 70,
@@ -428,20 +436,87 @@
             }
         }
     });
+    /*科室下拉框加载*/
+    T.getJson("../../resources/ajax/org.json", function(res){
+        $org.combobox({
+            data:res,
+            missingMessage:"必须填！",
+            required:true,
+            value:"",
+//            val:function (e) {
+//            },
+            rules:{
+                "customer":{
+                    validator:function(_4da,_4db){
+                        console.log(_4da,_4db);
 
-    /*机构树加载*/
-    $org.combobox({
-        url: "../../resources/ajax/org.json",
-        method: "get",
-        valueField: "id",
-        textField: "text",
-        editable: true,
-        width: 120,
-        height: 30,
-        panelWidth: 120,
-        panelHeight: 300,
-        value: "全院"
+                        return true;
+                    }
+                }
+            },
+            inputEvents:{blur:function (e) {
+                console.log($org.combobox("options"));
+                console.log(e.target.value,"有病！");
+                var q=e.target.value;
+                var n=0;
+                res.forEach(function (val,index) {
+                    if(val.text==q){
+                        n=1;
+                       return ;
+                    }
+                })
+                if(!n){
+//                    alert("不存在");
+                   /* $(e.target).addClass("")*/
+                }
+
+            }},
+            validType:"customer",
+            validParams:[1,5],
+//            invalidMessage:"asdf",
+//           novalidate:true,
+            validateOnBlur:true,
+            onValidate:function (df) {
+                console.log(df);
+            },
+            valueField: "id",
+            textField: "text",
+            editable: true,
+            width: 120,
+            height: 30,
+            panelWidth: 120,
+            panelHeight:"auto",
+            panelMaxHeight: 300,
+            missingMessage:"必须填！",
+            onLoadSuccess:function (data) {
+                console.log($(this).combobox("options"));
+            },
+        /*    filter: function(q, row,e){
+                var n=0;
+                var opts = $org.combobox('options');
+                if(q&&row["text"].indexOf(q)>=0){
+//                    $(this).combobox("setValue",row["id"]);
+//                    $(this).siblings("span").find(".textbox-text")[0].placeholder = "请选择";
+                    console.log(n,"过了！");
+                }
+                return row[opts.textField].indexOf(q) >= 0;
+            },*/
+            onSelect:function (da) {
+                console.log($(this).siblings(".combo").children("input"),this);
+//                $(this).siblings(".combo").children("input").focus();
+            }
+            /*  filter:function (q,row) {
+             var options=$(this).combobox("options");
+             /!*if(row["text"].indexOf(q)){
+             console.log("sekin");
+             return true;
+             }*!/
+             //            console.log(q,row);
+
+             }*/
+        });
     });
+
     /*维度框加载*/
     $(".wd-combo").combobox({
         valueField: "id",
@@ -530,7 +605,7 @@
                     data: data.data,
                     animate: true,
                     checkbox: is_checked,
-                    onLoadSuccess:function (node,data) {
+                    onLoadSuccess:function ( ){
                         $(this).tree("collapseAll");
                     }
                 });
@@ -550,8 +625,8 @@
         switch ($(this).html()) {
             case "确定":
                 var htm = "",str = "",state = is_zb ? "getChecked" : "getSelected";
-                 if($(".show_type").length!=0){
-                        $(".show_type").combobox("destroy");/*销毁下拉面板*/
+                if($(".show_type").length!=0){
+                    $(".show_type").combobox("destroy");/*销毁下拉面板*/
                 }
                 $newAdd.html(null);
                 var nodes = $("#sourceTree").tree(state);/*选好的指标数组  */
@@ -573,36 +648,37 @@
                                 }else{
                                     var _combo='';
                                 }
-                              /*  if ( parseInt(obj.id)> 102020000) {
-                                    show_id = 1;/!*重点疾病 *!/
-                                } else if ( parseInt(obj.id)>102010000 ) {
-                                    show_id = 0;/!*重点手术 *!/
-                                }*/
-                                str = '<div class="row"><div style="color:seagreen" class = "col-xs-2  topic" >指标名称:</div><div class ="col-xs-10 no-padding"><div class ="col-xs-1 zb-name" style="width: auto">' + obj.text + '</div>'+_combo+'</div></div >';
+
+                                str = '<div class="row"><div style="color:seagreen" class = "col-xs-2  topic" >指标名称:</div><div class ="col-xs-10 no-padding"><div class ="col-xs-1 zb-name" style="width: auto">' + obj.text + '</div><div>'+_combo+'</div></div >';
                                 $newAdd.append(str);
                                 /*对应的重点疾病或重点手术下拉框加载*/
-                                if(_combo){
+                                if(_combo!=''){
                                     $(".show_type").last().combobox({
                                         valueField: "id",
                                         textField: "text",
                                         multiple: true, /*多选 */
                                         multiline: true, /*多行显示选择的数据*/
                                         data: show_combo[show_id].combo,
+                                        mode:"local",
+                                        missingMessage:"必须填！",
+                                        required:true,
                                         editable: true,
                                         width: 280,
                                         height: 30,
                                         lineHeight: 20,
                                         panelWidth: 280,
-                                        panelHeight: 300,
+                                        panelHeight:"auto",
+                                        panelMaxHeight: 300,
                                         onLoadSuccess: function () {
                                             $(this).siblings("span").find("textarea")[0].placeholder = "请选择（可以多选）";
                                         },
                                         formatter: function (row) {
                                             return "<span class='glyphicon glyphicon-check' >&nbsp;" + row.text + "</span>"
                                         },
-                                        onSelect: function (node) {
-
-                                        }
+                                       /* filter: function (q,row){
+                                            return true;
+                                                   console.log(q,row);
+                                        }*/
                                     });
                                 }
 
@@ -674,7 +750,7 @@
                 break;
             default:/* 指标数据，该表分为左右表，左表显示指标名称和维度值，右表显示对应的时间下的值 */
                 var comboData = $(".zb .textbox-text");/* 指标指标数据里的所以下拉框 */
-                var tableArr = [], rightTabH = "", colNum;
+                var tableArr = [], rightTabH ="";
                 var leg = comboData.length;
                 for (var i = 0; i < leg; i++) {
                     var obj = comboData[i];
@@ -686,11 +762,14 @@
                     time[i] = parseInt(time[i]);
                 }
                 var zbName = $(".newAdd").find(".zb-name");/*获取选择的指标*/
-                var vueArr={},zbArr=[],rowNum=0,obj;
+                var vueArr={},zbArr=[],rowNum=0;
                 for (var i = 0; i < zbName.length; i++) {
-                   var node=$(zbName[i]).parent().find(".textbox-text");
+                    var node=$(zbName[i]).parent().find(".textbox-text");
+                    var obj=[];
                     if(node.length!=0){
-                       obj = node[0].value.split(",");/* 获取每一个下拉框的值，并且变为数组 */
+                        if(node)
+                        obj = node[0].value.split(",");/* 获取每一个下拉框的值，并且变为数组 */
+                        console.log(obj,node[0].value);
                     }else{
                         obj=[""];
                     }
@@ -753,20 +832,24 @@
 
                 //左表头
                 var LeftTabH = '<thead><tr><th >科室</th> <th colspan="2" width="90%">指标</th></tr></thead>';
-                var LeftTabB = "";
+                var LeftTabB ="";
                 var zbLeg = zbArr.length;
 
                 //左表身体
-                LeftTabB="<tr><td rowspan='" + rowNum + "'>" + tableArr[5] + "</td><td rowspan='"+vueArr[0].length+"'><div>" + zbArr[0] + "</div></td><td><div>" +vueArr[0][0] + "</div></td></tr>";
+                LeftTabB="<tr><td rowspan='" + rowNum + "'>" + tableArr[5] + "</td><td colspan='"+(vueArr[0][0]==""?2:1)+"' rowspan='"+vueArr[0].length+"'><div>" + zbArr[0] + "</div></td><td class='"+(vueArr[0][0]==""?"hide":"show")+"'><div>" +vueArr[0][0] + "</div></td></tr>";/*第一行*/
                 for (var i = 0; i < zbLeg; i++) {
                     if(i==0){
-                        for (var j = 1; j < vueArr[i].length; j++) {
-                            LeftTabB+="<tr><td><div>"+vueArr[i][j]+"</div></td></tr>"
-                        }
+                         if(vueArr[i][0]!="") {
+                             for (var j = 1; j < vueArr[i].length; j++) {
+                                 LeftTabB += "<tr><td><div>" + vueArr[i][j] + "</div></td></tr>"
+                             }
+                         }
                     }else{
-                        LeftTabB+="<tr><td rowspan='"+vueArr[i].length+"'><div>"+zbArr[i]+"</div></td><td><div>"+vueArr[i][0]+"</div></td></tr>";
-                        for (var j = 1; j < vueArr[i].length; j++) {
-                            LeftTabB+="<tr><td><div>"+vueArr[i][j]+"</div></td></tr>"
+                        LeftTabB+="<tr><td colspan='"+(vueArr[i][0]==""?2:1)+"'  rowspan='"+vueArr[i].length+"'><div>"+zbArr[i]+"</div></td><td class='"+(vueArr[i][0]==""?"hide":"show")+"'><div>"+vueArr[i][0]+"</div></td></tr>";
+                        if(vueArr[i][0]!="") {
+                            for (var j = 1; j < vueArr[i].length; j++) {
+                                LeftTabB += "<tr><td><div>" + vueArr[i][j] + "</div></td></tr>"
+                            }
                         }
                     }
                 }
