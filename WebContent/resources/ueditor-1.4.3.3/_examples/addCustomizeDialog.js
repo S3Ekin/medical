@@ -72,7 +72,8 @@ UE.registerUI('express',function(editor,uiName){
                     var iframe=document.getElementsByClassName("edui-for-express")[0];
                     iframe=iframe.getElementsByTagName("iframe")[0];
                     var str=iframe.contentDocument.getElementById("express").value;
-                    str=str.split("+");
+                    str=str.replace(/\s/g, "")/*去掉空格*/
+                    str=str.split("+");/*拼接*/
                     var items="";
                     for (var i = 0; i < str.length; i++) {
                         if (!str[i]){
