@@ -202,10 +202,10 @@
 <script src="../../resources/echarts/echarts.js"></script>
 <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
 <script>
-  /*  $.fn.combobox.defaults.filter = function(q, row){
-        var opts = $(this).combobox('options');
-        return row[opts.textField].indexOf(q) >= 0;
-    }*/
+    /*  $.fn.combobox.defaults.filter = function(q, row){
+     var opts = $(this).combobox('options');
+     return row[opts.textField].indexOf(q) >= 0;
+     }*/
 </script>
 <script>
     /* 设置主体内容最小高度 */
@@ -267,6 +267,41 @@
     }
     /*默认第二个年的数组，包含今年和去年*/
     var secondYear = yearArr.slice(0, 2);
+    var laodstart=0;
+    /*频率框加载*/
+    $("#rotate").combobox({
+        valueField: "id",
+        textField: "text",
+        data: roteArr,
+        editable: false,
+        width: 70,
+        height: 30,
+        panelWidth: 70,
+        panelHeight: 'auto',
+//        value:'3',
+        onLoadSuccess:function (data) {
+           $(this).combobox("setValue","3");
+        },
+        formatter: function (row) {
+            return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
+        },
+        onSelect: function (recoder) {
+            if(!laodstart){
+                return ;
+            }
+            if (recoder.id == 1) {/*1:频率为年；2：季节；3：月份*/
+                $dataCombo.parent().hide();
+            } else {
+                var firstArr,defaultVal;
+                firstArr=recoder.id==2?season:month;
+                defaultVal=recoder.id==2?"S1":"01";
+                $dataCombo.combobox("clear");
+                $dataCombo.parent().show();
+                $dataCombo.combobox("loadData", firstArr);
+                $dataCombo.combobox("setValue", defaultVal);
+            }
+        },
+    });
     /*结束-月框加载*/
     $dataCombo.last().combobox({
         valueField:"id",
@@ -282,9 +317,23 @@
             return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
         },
         onSelect:function () {
-        }
+        },
     });
     /*开始-月框加载*/
+    ComboChange.prototype.getRotate=function () {
+        if (this.rotateId == 3) {
+            return month.slice();
+        } else if (this.rotateId == 2) {
+            return season.slice();
+        }
+    }
+    ComboChange.prototype.firstMonChange = function () {
+        var secondMonArr = this.getRotate().slice(this.startMon - 1);/*第二个月或季度显示的数组，从star开始*/
+        $dataCombo.last().combobox("loadData", secondMonArr);/*第二个月*/
+        if (this.startMon > this.endMon) {/*前面的月或季度大于后面的*/
+            $dataCombo.last().combobox("setValue", this.startMon); /*同步两个*/
+        }
+    }
     $dataCombo.first().combobox({
         valueField:"id",
         textField:"text",
@@ -296,22 +345,39 @@
         panelWidth: 80,
         panelHeight: 'auto',
         onLoadSuccess:function () {
-//            $(this).combobox("setValue","01");
+            laodstart=1;
         },
         formatter: function (row) {
             return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
         },
         onSelect: function (node) {
             yearChange(null, node);
+          /*  var combo= new ComboChange(node);
+            console.log(combo);
+                 combo.firstMonChange();*/
         }
 
     });
+
+    ComboChange.prototype.firstYearChange=function (yearNode) {
+        var startYear = parseInt(yearNode.id);
+        var endYear = parseInt($yearCombo.last().combobox("getValue"));
+        var secondYearArr=yearArr.slice(0, (year_f - startYear + 1))/*第二个年要加载的*/
+        if (startYear >= endYear) {
+            $yearCombo.last().combobox("setValue", startYear);
+            this.firstMonChange();
+        } else {
+            $dataCombo.last().combobox("loadData", this.getRotate());
+        }
+        $yearCombo.last().combobox("loadData", secondYearArr);/*保证第二个年永远比第一个大*/
+    }
+
     /*结束年份*/
     $yearCombo.last().combobox({
         valueField: "id",
         textField: "text",
         data: secondYear,
-        value: year_f + "年",
+        value: year_f,
         editable: false,
         width: 80,
         height: 30,
@@ -322,6 +388,8 @@
         },
         onSelect: function (node) {
             yearChange2(node, null);
+          /*  var combo=new ComboChange(null);
+                combo.secondYearChange(node);*/
         }
     });
     /*开始年份*/
@@ -329,7 +397,7 @@
         valueField:"id",
         textField: "text",
         data:yearArr,
-        value:"2016",
+        value:year_last,
         editable: false,
         width: 80,
         height: 30,
@@ -340,35 +408,53 @@
         },
         onSelect: function (node) {
             yearChange(node, null);
+             /*var combo=new ComboChange(null);
+                 combo.firstYearChange(node);*/
         }
     });
     /*第一个年框改变
      * @params yearNode:在年框里调用这个方法的时候，把选择的年份节点传过来，月份节点参数为null,
      * */
+    ComboChange.prototype.secondYearChange=function (yearNode) {
+        var  endYear= parseInt(yearNode.id);
+        var  startYear= parseInt($yearCombo.first().combobox("getValue"));
+        if(endYear==startYear){
+            this.firstMonChange();
+        }else{
+            $dataCombo.last().combobox("loadData", this.getRotate());
+        }
+    }
+    function ComboChange(monNode){
+        this.rotateId=$("#rotate").combobox("getValue");/*获取频率*/
+       // this.getRotate();/*得到要操作的月或季度数组*/
+        this.endMon=parseInt($dataCombo.last().combobox("getValue"));
+        var start = monNode ? monNode.id : ($dataCombo.first().combobox("getValue"));
+        this.startMon = parseInt(start);
+    }
+
     function yearChange(yearNode, monNode) {
-        var rotate = $("#rotate").combobox("getText");/*获取频率*/
+        var rotate = $("#rotate").combobox("getValue");/*获取频率*/
         var flagArr = [], second = [];/*设置中转数组*/
-        if (rotate == "月份") {
+        if (rotate == 3) {
             flagArr = month.slice();
-        } else if (rotate == "季度") {
+        } else if (rotate == 2) {
             flagArr = season.slice();
         }
-        var startYear = yearNode ? yearNode.id : ( $yearCombo.first().combobox("getText"));
+        var startYear = yearNode ? yearNode.id : ( $yearCombo.first().combobox("getValue"));
         startYear = parseInt(startYear);
-        var endYear = parseInt($yearCombo.last().combobox("getText"));
-        var start = monNode ? monNode.id : ($dataCombo.first().combobox("getText"));/*第一个月或季度*/
+        var endYear = parseInt($yearCombo.last().combobox("getValue"));
+        var start = monNode ? monNode.id : ($dataCombo.first().combobox("getText"));    /*第一个月或季度*/
         start = parseInt(start);
         var end = parseInt($dataCombo.last().combobox("getText"));
-        console.log($dataCombo.last().combobox("getText"));
         /*第二个月或季度*/
         console.log(startYear, start, endYear, end, "1");
         secondYear = yearArr.slice(0, (year_f - startYear + 1));
         if (yearNode) {/*如果是月框改变，就不必要重新加载年框的数据*/
-            $yearCombo.last().combobox("loadData", secondYear);
+            $yearCombo.last().combobox("loadData", secondYear);/*保证第二个年永远比第一个大*/
         }
         if (startYear >= endYear) {
             $yearCombo.last().combobox("setValue", startYear);
-            second = flagArr.slice(start - 1);/*第二个月或季度显示的数组*/
+            second = flagArr.slice(start - 1);/*第二个月或季度显示的数组，从star开始*/
             $dataCombo.last().combobox("loadData", second);
             if (start >= end) {
                 $dataCombo.last().combobox("setValue", start);
@@ -383,7 +469,7 @@
     }
     /*第二个年框改变*/
     function yearChange2(yearNode, monNode) {
-        var rotate = $("#rotate").combobox("getText");
+        var rotate = $("#rotate").combobox("getValue");
         var flagArr = [], second = [];
         if (rotate == "月份") {
             flagArr = month.slice();
@@ -411,36 +497,7 @@
             $dataCombo.last().combobox("setValue", end);
         }
     }
-    /*频率框加载*/
-    $("#rotate").combobox({
-        valueField: "id",
-        textField: "text",
-        data: roteArr,
-        editable: false,
-        width: 70,
-        height: 30,
-        panelWidth: 70,
-        panelHeight: 'auto',
-        value: '3',
-        formatter: function (row) {
-            return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
-        },
-        onSelect: function (recoder) {
-            if (recoder.id == 1) {/*1:频率为年；2：季节；3：月份*/
-                $dataCombo.parent().hide();
-            } else {
-                var firstArr,defaultVal;
-                firstArr=recoder.id==2?season:month;
-//                defaultVal=recoder.id==2?"1季度":"1月";
-                defaultVal=recoder.id==2?"$1":"01";
-                $dataCombo.combobox("clear");
-                $dataCombo.parent().show();
-                $dataCombo.combobox("loadData", firstArr);
-//                $dataCombo.combobox("setText", defaultVal);
-                $dataCombo.combobox("setValue", defaultVal);
-            }
-        }
-    });
+
     /*科室下拉框加载*/
     T.getJson("../../resources/ajax/org.json", function(res){
         $org.combobox({
@@ -463,30 +520,30 @@
                     }
                 }
             },
-          /*  inputEvents:{blur:function (e) {
-                console.log($org.combobox("options"));
-                console.log(e.target.value,"有病！");
-                var q=e.target.value;
-                var n=0;
-                res.forEach(function (val,index) {
-                    if(val.text==q){
-                        n=1;
-                       return ;
-                    }
-                });
-                if(!n){
-//                    alert("不存在");
-                }
+            /*  inputEvents:{blur:function (e) {
+             console.log($org.combobox("options"));
+             console.log(e.target.value,"有病！");
+             var q=e.target.value;
+             var n=0;
+             res.forEach(function (val,index) {
+             if(val.text==q){
+             n=1;
+             return ;
+             }
+             });
+             if(!n){
+             //                    alert("不存在");
+             }
 
-            }},*/
+             }},*/
             validType:"customer",
             validParams:res,
 //           invalidMessage:"asdf",
 //           novalidate:true,
-         /*   validateOnBlur:true,*/
-      /*      onValidate:function (df) {
-                console.log(df);
-            },*/
+            /*   validateOnBlur:true,*/
+            /*      onValidate:function (df) {
+             console.log(df);
+             },*/
             required:true,
             valueField: "id",
             textField: "text",
@@ -500,16 +557,16 @@
             onLoadSuccess:function (data) {
 //                console.log($(this).combobox("options"));
             },
-        /*    filter: function(q, row,e){
-                var n=0;
-                var opts = $org.combobox('options');
-                if(q&&row["text"].indexOf(q)>=0){
-//                    $(this).combobox("setValue",row["id"]);
-//                    $(this).siblings("span").find(".textbox-text")[0].placeholder = "请选择";
-                    console.log(n,"过了！");
-                }
-                return row[opts.textField].indexOf(q) >= 0;
-            },*/
+            /*    filter: function(q, row,e){
+             var n=0;
+             var opts = $org.combobox('options');
+             if(q&&row["text"].indexOf(q)>=0){
+             //                    $(this).combobox("setValue",row["id"]);
+             //                    $(this).siblings("span").find(".textbox-text")[0].placeholder = "请选择";
+             console.log(n,"过了！");
+             }
+             return row[opts.textField].indexOf(q) >= 0;
+             },*/
             onSelect:function (da) {
                 console.log($(this).siblings(".combo").children("input"),this);
 //                $(this).siblings(".combo").children("input").focus();
@@ -705,10 +762,10 @@
                                         formatter: function (row) {
                                             return "<span class='glyphicon glyphicon-check' >&nbsp;" + row.text + "</span>"
                                         },
-                                       /* filter: function (q,row){
-                                            return true;
-                                                   console.log(q,row);
-                                        }*/
+                                        /* filter: function (q,row){
+                                         return true;
+                                         console.log(q,row);
+                                         }*/
                                     });
                                 }
 
@@ -798,7 +855,7 @@
                     var obj=[];
                     if(node.length!=0){
                         if(node)
-                        obj = node[0].value.split(",");/* 获取每一个下拉框的值，并且变为数组 */
+                            obj = node[0].value.split(",");/* 获取每一个下拉框的值，并且变为数组 */
                         console.log(obj,node[0].value);
                     }else{
                         obj=[""];
@@ -869,11 +926,11 @@
                 LeftTabB="<tr><td rowspan='" + rowNum + "'>" + tableArr[5] + "</td><td colspan='"+(vueArr[0][0]==""?2:1)+"' rowspan='"+vueArr[0].length+"'><div>" + zbArr[0] + "</div></td><td class='"+(vueArr[0][0]==""?"hide":"show")+"'><div>" +vueArr[0][0] + "</div></td></tr>";/*第一行*/
                 for (var i = 0; i < zbLeg; i++) {
                     if(i==0){
-                         if(vueArr[i][0]!="") {
-                             for (var j = 1; j < vueArr[i].length; j++) {
-                                 LeftTabB += "<tr><td><div>" + vueArr[i][j] + "</div></td></tr>"
-                             }
-                         }
+                        if(vueArr[i][0]!="") {
+                            for (var j = 1; j < vueArr[i].length; j++) {
+                                LeftTabB += "<tr><td><div>" + vueArr[i][j] + "</div></td></tr>"
+                            }
+                        }
                     }else{
                         LeftTabB+="<tr><td colspan='"+(vueArr[i][0]==""?2:1)+"'  rowspan='"+vueArr[i].length+"'><div>"+zbArr[i]+"</div></td><td class='"+(vueArr[i][0]==""?"hide":"show")+"'><div>"+vueArr[i][0]+"</div></td></tr>";
                         if(vueArr[i][0]!="") {
