@@ -440,21 +440,26 @@
     T.getJson("../../resources/ajax/org.json", function(res){
         $org.combobox({
             data:res,
-            missingMessage:"必须填！",
-            required:true,
+
             value:"",
-//            val:function (e) {
-//            },
             rules:{
                 "customer":{
-                    validator:function(_4da,_4db){
-                        console.log(_4da,_4db);
-
-                        return true;
+                    message:"请输入存在的科室！",
+                    validator:function(q,_data){
+                        console.log(q,"输入");
+                        var flag=false;
+                        for (var i = 0,leg=_data.length; i <leg; i++) {
+                            if(_data[i].text==q){
+                                flag=true;
+                                $org.combobox("setValue",_data[i].id);
+                                break;
+                            }
+                        }
+                        return flag;
                     }
                 }
             },
-            inputEvents:{blur:function (e) {
+          /*  inputEvents:{blur:function (e) {
                 console.log($org.combobox("options"));
                 console.log(e.target.value,"有病！");
                 var q=e.target.value;
@@ -464,21 +469,21 @@
                         n=1;
                        return ;
                     }
-                })
+                });
                 if(!n){
 //                    alert("不存在");
-                   /* $(e.target).addClass("")*/
                 }
 
-            }},
+            }},*/
             validType:"customer",
-            validParams:[1,5],
-//            invalidMessage:"asdf",
+            validParams:res,
+//           invalidMessage:"asdf",
 //           novalidate:true,
-            validateOnBlur:true,
-            onValidate:function (df) {
+         /*   validateOnBlur:true,*/
+      /*      onValidate:function (df) {
                 console.log(df);
-            },
+            },*/
+            required:true,
             valueField: "id",
             textField: "text",
             editable: true,
@@ -489,7 +494,7 @@
             panelMaxHeight: 300,
             missingMessage:"必须填！",
             onLoadSuccess:function (data) {
-                console.log($(this).combobox("options"));
+//                console.log($(this).combobox("options"));
             },
         /*    filter: function(q, row,e){
                 var n=0;
@@ -662,6 +667,27 @@
                                         mode:"local",
                                         missingMessage:"必须填！",
                                         required:true,
+                                        rules:{
+                                            "customer":{
+                                                message:"请输入存在的维度！",
+                                                validator:function(q,_data){
+                                                    var flag=false;
+                                                    for (var i = 0,leg=_data.length; i <leg; i++) {
+                                                        if(_data[i].text==q){
+                                                            flag=true;
+                                                            break;
+                                                        }
+                                                    }
+                                                    return flag;
+                                                }
+                                            }
+                                        },
+                                        validType:"customer",
+                                        validParams: show_combo[show_id].combo,
+                                        validateOnBlur:true,
+                                        onValidate:function (df) {
+                                            console.log(df);
+                                        },
                                         editable: true,
                                         width: 280,
                                         height: 30,
@@ -670,7 +696,7 @@
                                         panelHeight:"auto",
                                         panelMaxHeight: 300,
                                         onLoadSuccess: function () {
-                                            $(this).siblings("span").find("textarea")[0].placeholder = "请选择（可以多选）";
+                                            $(this).siblings("span").find("textarea")[0].placeholder = "请选择(可以多选！)";
                                         },
                                         formatter: function (row) {
                                             return "<span class='glyphicon glyphicon-check' >&nbsp;" + row.text + "</span>"
