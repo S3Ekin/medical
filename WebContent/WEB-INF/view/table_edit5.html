@@ -54,13 +54,19 @@
                 <div class="col-xs-2 topic" style="padding-left: 0">指标公共维度:</div>
                 <div class="col-xs-7 combo-data">
                     <span class="combo-title">频率:</span>
-                    <div id="rotate"></div>
-                    <div class="data-combo-year" id="combo-year"></div>
+                    <div>
+                        <div id="rotate"></div>
+                    </div>
+                    <div>
+                        <div class="data-combo-year" id="combo-year"></div>
+                    </div>
                     <div>
                         <div class="data-combo"></div>
                     </div>
                     <span style="color:darkgreen">———</span>
-                    <div class="data-combo-year"></div>
+                    <div>
+                        <div class="data-combo-year"></div>
+                    </div>
                     <div>
                         <div class="data-combo"></div>
                     </div>
@@ -68,9 +74,9 @@
             </div>
         </div>
     </div>
-
-
 </div>
+
+
 <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
 <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
@@ -86,6 +92,7 @@
         var $dataCombo = $(".data-combo"),
             $yearCombo = $(".data-combo-year");
     /*日期选择*/
+
     var year_f, year_last, year_s;
     var yearArr = [];
     var month = [
@@ -98,7 +105,7 @@
         {id: '7', text: '7月'},
         {id: '8', text: '8月'},
         {id: '9', text: '9月'},
-        {id: '1', text: '10月'},
+        {id: '10', text: '10月'},
         {id: '11', text: '11月'},
         {id: '12', text: '12月'}
     ];
@@ -126,6 +133,97 @@
     }
     /*默认第二个年的数组，包含今年和去年*/
     var secondYear = yearArr.slice(0, 2);
+    var is_loadWhole=true,is_firstLoad=1;
+    function ComboChange(monNode,oneYear,twoYear){
+        this.rotateId=$("#rotate").combobox("getValue");/*获取频率*/
+        /*得到要操作的月或季度数组*/
+        //第二个月
+        this.endMon=parseInt($dataCombo.last().combobox("getValue"));
+
+        //开始月
+        this.startMon= monNode ? parseInt(monNode.id) : parseInt($dataCombo.first().combobox("getValue"));
+
+        //开始年
+        this.startYear=oneYear?parseInt(oneYear.id):parseInt($yearCombo.first().combobox("getValue"));
+        this.startYearTxt=oneYear?oneYear.text:($yearCombo.first().combobox("getText"));
+
+
+        // 结束年
+        this.endYear=twoYear?parseInt(twoYear.id):parseInt($yearCombo.last().combobox("getValue"));
+    }
+    ComboChange.prototype.getRotate=function(){
+        if (this.rotateId == 3) {
+            return month.slice();
+        } else if (this.rotateId == 2) {
+            return season.slice();
+        }
+    };
+    ComboChange.prototype.firstMonChange = function () {
+        if(this.startYear==this.endYear){
+            var secondMonArr = this.getRotate().slice(this.startMon - 1);/*第二个月或季度显示的数组，从star开始*/
+            is_loadWhole=this.startMon==1?true:false;/*加载的不是所有月*/
+            $dataCombo.last().combobox("loadData", secondMonArr);
+            if (this.startMon > this.endMon) {/*前面的月或季度大于后面的*/
+                $dataCombo.last().combobox("setValue", this.startMon); /*同步两个*/
+            }
+        }
+    };
+    ComboChange.prototype.secondYearChange=function () {
+        if(this.endYear==this.startYear){
+            if(this.rotateId==2 || this.rotateId==3){
+                var secondMonArr = this.getRotate().slice(this.startMon - 1);/*第二个月或季度显示的数组，从star开始*/
+                is_loadWhole=this.startMon==1?true:false;/*加载的不是所有月*/
+                $dataCombo.last().combobox("loadData", secondMonArr);
+                if(this.startMon>this.endMon){
+                    $dataCombo.last().combobox("setValue", this.startMon); /*同步两个*/
+                }
+            }
+
+        }else{
+            if(this.rotateId==2 || this.rotateId==3){
+                if(! is_loadWhole){
+                    is_loadWhole=true;
+                    $dataCombo.last().combobox("loadData", this.getRotate());
+                }
+            }
+        }
+    };
+    ComboChange.prototype.firstYearChange=function () {
+        var self=this;
+        var secondYearArr=yearArr.slice(0, (year_f - self.startYear + 1));/*第二个年要加载的*/
+
+        if (self.startYear >=self.endYear) {
+            if(self.startYear!=self.endYear){/*同步年份*/
+                $yearCombo.last().siblings("span.combo").find(".textbox-value").val(self.startYear);
+                $yearCombo.last().combobox("setText",this.startYearTxt);
+                !function () {
+                    is_firstLoad=0;/*不让 $yearCombo加载*/
+                    $yearCombo.last().combobox("loadData", secondYearArr);/*保证第二个年永远比第一个大*/
+                }()
+            }
+            if(this.rotateId==2 || this.rotateId==3){
+                var secondMonArr = self.getRotate().slice(self.startMon - 1);/*第二个月或季度显示的数组，从star开始*/
+                is_loadWhole=self.startMon==1?true:false;/*加载的不是所有月*/
+                $dataCombo.last().combobox("loadData", secondMonArr);
+                if(self.startMon>self.endMon){
+                    $dataCombo.last().combobox("setValue", self.startMon); /*同步两个*/
+                }
+            }
+        } else {
+            !function () {
+                is_firstLoad=0;/*不让 $yearCombo加载*/
+                $yearCombo.last().combobox("loadData", secondYearArr);/*保证第二个年永远比第一个大*/
+            }()
+            if(this.rotateId==2 || this.rotateId==3){
+                if (!is_loadWhole){
+                    is_loadWhole=true;
+                    console.log(self,"bug");
+                    console.log(self.getRotate(),"bug2");
+                    $dataCombo.last().combobox("loadData",self.getRotate());
+                }
+            }
+        }
+    };
     /*频率框加载*/
     $("#rotate").combobox({
         valueField: "id",
@@ -144,21 +242,25 @@
             if (recoder.id == 1) {/*1:频率为年；2：季节；3：月份*/
                 $dataCombo.parent().hide();
             } else {
-                var firstArr,defaultVal;
+                var firstArr;
                 firstArr=recoder.id==2?season:month;
-                defaultVal=recoder.id==2?"S1":"01";
-                try {
+                if(aLoadFinish){
                     $dataCombo.combobox("clear");
                     $dataCombo.parent().show();
+                    is_loadWhole=true;
                     $dataCombo.combobox("loadData", firstArr);
-                    $dataCombo.combobox("setValue", defaultVal);
-                }catch (err){
+                    var inp=$dataCombo.first().siblings("span").find(".textbox-value");
+                    inp.val("1");
+                    $dataCombo.first().combobox("setText", firstArr[0].text);
+                    $dataCombo.last().combobox("setValue", "1");
+                }else{
                     alert("firstMon还没加载！");
-                  return ;
+                    return ;
                 }
             }
         }
     });
+
     /*结束-月框加载*/
     $dataCombo.last().combobox({
         valueField:"id",
@@ -170,24 +272,16 @@
         panelWidth: 80,
         panelHeight: 'auto',
         value:"1",
+        onLoadSuccess:function (data) {
+            var text=is_loadWhole?"整年":"不完整";
+            alert(text);
+        },
         formatter: function (row) {
             return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
         }
     });
-    /*开始-月框加载*/
-    ComboChange.prototype.firstMonChange = function () {
-        if(this.startYear==this.endYear){
-            var secondMonArr = this.getRotate().slice(this.startMon - 1);/*第二个月或季度显示的数组，从star开始*/
-            $dataCombo.last().combobox("loadData", secondMonArr);
-            if (this.startMon > this.endMon) {/*前面的月或季度大于后面的*/
-                $dataCombo.last().combobox("setValue", this.startMon); /*同步两个*/
-            }
 
-        }else{
-            var secondMonArr = this.getRotate().slice();
-            $dataCombo.last().combobox("loadData", secondMonArr);/*第二个月*/
-        }
-    };
+    /*开始-月框加载*/
     $dataCombo.first().combobox({
         valueField:"id",
         textField:"text",
@@ -202,30 +296,19 @@
             return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
         },
         onSelect: function (node){
-                try{
+                if(aLoadFinish){
                     var combo= new ComboChange(node,null,null);
                     combo.firstMonChange();
-                }catch(err){
+                }else{
                     alert("year还没加载！");
                     return ;
-                }
+            }
 
         }
 
     });
 
     /*结束年份*/
-    ComboChange.prototype.secondYearChange=function () {
-        if(this.endYear==this.startYear){
-            var secondMonArr = this.getRotate().slice(this.startMon - 1);/*第二个月或季度显示的数组，从star开始*/
-            $dataCombo.last().combobox("loadData", secondMonArr);
-            if(this.startMon>this.endMon){
-                $dataCombo.last().combobox("setValue", this.startMon); /*同步两个*/
-            }
-        }else{
-            $dataCombo.last().combobox("loadData", this.getRotate());
-        }
-    };
     $yearCombo.last().combobox({
         valueField: "id",
         textField: "text",
@@ -239,36 +322,26 @@
         formatter: function (row) {
             return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
         },
+        onLoadSuccess:function () {
+        },
         onSelect: function (node) {
-            try {
-                var combo=new ComboChange(null,null,node);
-                combo.secondYearChange();
-            }catch (err){
+            if(aLoadFinish){
+                if(is_firstLoad) {
+                    alert("secondYeae在加载 ！")
+                    var combo = new ComboChange(null, null, node);
+                    combo.secondYearChange();
+                } else{
+                    alert("secondYeae不能加载！");
+                    is_firstLoad = 1;
+                    return ;
+                }
+            }else{
                 alert("开始年还没加载！");
-                return ;
             }
-
         }
     });
+
     /*开始年份*/
-    ComboChange.prototype.firstYearChange=function () {
-        var secondYearArr=yearArr.slice(0, (year_f - this.startYear + 1));/*第二个年要加载的*/
-        if (this.startYear >=this.endYear) {
-            if(this.startYear!=this.endYear){
-                $yearCombo.last().combobox("setValue", this.startYear);/*同步两个*/
-            }
-            var secondMonArr = this.getRotate().slice(this.startMon - 1);/*第二个月或季度显示的数组，从star开始*/
-            $dataCombo.last().combobox("loadData", secondMonArr);
-            if(this.startMon>this.endMon){
-                $dataCombo.last().combobox("setValue", this.startMon); /*同步两个*/
-            }
-        } else {
-            alert(1);
-            console.log(this.getRotate(),"rota");
-            $dataCombo.last().combobox("loadData", this.getRotate());
-        }
-            $yearCombo.last().combobox("loadData", secondYearArr);/*保证第二个年永远比第一个大*/
-    };
     $yearCombo.first().combobox({
         valueField:"id",
         textField: "text",
@@ -285,39 +358,14 @@
             return "<span class='glyphicon glyphicon-check'>&nbsp;" + row.text + "</span>"
         },
         onSelect: function (node) {
-            console.log( yearloadFinsh,"dgfgdfgd");
-            if(yearloadFinsh){
+            if(aLoadFinish){
                 var combo=new ComboChange(null,node,null);
-                console.log(combo);
                 combo.firstYearChange();
-                alert("finish");
             }
         }
     });
-    var yearloadFinsh=true;
-    function ComboChange(monNode,oneYear,twoYear){
-        this.rotateId=$("#rotate").combobox("getValue");/*获取频率*/
-        /*得到要操作的月或季度数组*/
-        this.getRotate=function(){
-            if (this.rotateId == 3) {
-                return month.slice();
-            } else if (this.rotateId == 2) {
-                return season.slice();
-            }
-        };
-
-        //第二个月
-        this.endMon=parseInt($dataCombo.last().combobox("getValue"));
-
-        //开始月
-        this.startMon= monNode ? parseInt(monNode.id) : parseInt($dataCombo.first().combobox("getValue"));
-
-        //开始年
-        this.startYear=oneYear?parseInt(oneYear.id):parseInt($yearCombo.first().combobox("getValue"));
-
-        // 结束年
-        this.endYear=twoYear?parseInt(twoYear.id):parseInt($yearCombo.last().combobox("getValue"));
-    }
+    var aLoadFinish=true;
+   
 
 
 </script>
