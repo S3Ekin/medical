@@ -193,7 +193,17 @@
                 window.location.href=node.id;
             }
         },
-        onDragEnter:function (e,source) {
+        onDragEnter:function (e,f,r) {
+            console.log(e,f,r,"onDragEnter")
+        },
+        onDrop:function(e,f,r){
+            console.log(e,f,r,"onDrop")
+        },
+        onStopDrag:function(e,f,r){
+            console.log(e,f,r," onStopDrag")
+        },
+        onStartDrag:function(e,f,r){
+            console.log(e,f,r," onStartDrag")
         },
         onContextMenu:function (e, node) {/*右键菜单出现 */
             if(localStorage.editState2=="edit"){/*进入编辑器才可用右键菜单,要是想在其他状态用 ,把==edit去掉就可以*/
