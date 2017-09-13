@@ -517,6 +517,8 @@
             panelMaxHeight: 300,
             missingMessage:"必须填！",
             onLoadSuccess:function (data) {
+                var tr=  $(this).combobox("options");
+                console.log(tr);
 //                console.log($(this).combobox("options"));
             },
             /*    filter: function(q, row,e){
@@ -556,6 +558,10 @@
         height: 30,
         panelWidth: 180,
         panelHeight: 100,
+        onSelect:function () {
+          var tr=  $(this).combobox("options");
+            console.log(tr);
+        },
         onLoadSuccess: function (data) {
 //			var loadData=$(this).combobox("getData");
 //			$(this).combobox("setValue",loadData[3].text);
@@ -690,6 +696,11 @@
                                         mode:"local",
                                         missingMessage:"必须填！",
                                         required:true,
+                                        separator:" & ",
+                                        onSelect:function () {
+                                            var tr=  $(this).combobox("options");
+                                            console.log(tr);
+                                        },
                                         rules:{
                                             "customer":{
                                                 message:"请输入存在的维度！",
