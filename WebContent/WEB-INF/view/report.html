@@ -37,6 +37,7 @@
         caption{padding:5px;border: solid 1px #d3d3d3; border-bottom: none; color: #7e7e7e;}
         .indent{text-indent: 3rem}
         .temp-variate{color:black;;font-weight: bold}
+        .treeOrder{color:red;font-weight:bolder;}
         /*报告的内容样式完*/
     </style>
 </head>
@@ -140,7 +141,7 @@
                 $layLeft.css({"marginLeft":"-210px","width":"200px"});
             }
         });
-    })
+    });
     $doc.mouseup(function(){
         $(this).unbind("mousemove");
     });
@@ -166,6 +167,16 @@
         $subTitle.hide();
         _Url="model"+editID;
     }
+    var arrCN=[["一","二","三","四","五","六","七","八","九"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]];
+
+
+   var limitJson=[
+       {"type":"目录"},
+       {"type":"一"},
+       {"type":"(一)"},
+       {"type":"1"}]
+   ;
+
     /*文档树*/
     var $menuTree=$("#menuTree"),
         $editTools=$("#editTools");
@@ -185,6 +196,10 @@
             })
         },
         onClick:function (node) {
+           var num= findDepth($menuTree,node.target);
+            console.log(num);
+
+
             if(localStorage.editState2=="edit"){
                 var a=$("#editTools")[0].contentDocument.getElementById("ueditor_0");
                 a.contentWindow.location.href="about:blank"+node.id;
@@ -193,17 +208,90 @@
                 window.location.href=node.id;
             }
         },
+        cursor:"hand",
+        handle:".tree-title",
+        formatter:function(node,e,r){
+            //console.log(node,"formatter");
+          return "<span >"+node.text+"</span><span class='treeOrder'>"+node.order+"</span>";
+        },
         onDragEnter:function (e,f,r) {
-            console.log(e,f,r,"onDragEnter")
+           // console.log(e,f,r,"onDragEnter");
         },
-        onDrop:function(e,f,r){
-            console.log(e,f,r,"onDrop")
+        onStartDrag:function (e,f,r) {
+           // console.log(e,f,r,"onStartDrag");
         },
-        onStopDrag:function(e,f,r){
-            console.log(e,f,r," onStopDrag")
+        onDrag:function (e,f,r) {
+           // console.log(e,f,r,"onDrag");
         },
-        onStartDrag:function(e,f,r){
-            console.log(e,f,r," onStartDrag")
+        onDrop:function (e,f,r) {
+            /*获取目标对象的父节点*/
+            var type=0,is_baoWei=true;/*0:汉字，1：小写英文，2：大写英文；3：数字*/
+            if(r!="append"){
+
+                console.log($menuTree.tree("getParent",e),"父节点");
+                var currentOrder=$(e).find(".treeOrder").html();
+                var currentOrderF=$(f.target).find(".treeOrder").html();
+
+                var reg=/^[0-9a-zA-Z\u4e00-\u9fa5]/;
+
+                if(!currentOrder.match(reg)) {/*说明有符号包围*/
+                    var FuhaoStar=currentOrder.charAt(0);
+                    var FuhaoEnd=currentOrder.charAt(currentOrder.length-1);
+                    currentOrder = currentOrder.substring(1);
+                    is_baoWei=true;
+                }else{
+                    is_baoWei=false;
+                }
+
+                if(currentOrder.match(/^[0-9]/)){/*是数子*/
+                    type=3;
+                }else if(currentOrder.match(/^[a-z]/)){/*小写字母*/
+                    type=1;
+                }else if(currentOrder.match(/^[A-Z]/)){/*大写字母*/
+                    type=2;
+                }else{/*中文数字*/
+                    type=0;
+                }
+                var parentNode=$menuTree.tree("getParent",e);
+                var parentNodeLeg=parentNode.children.length;
+                var children=parentNode.children;
+                var orderEl=$(parentNode.target).siblings("ul").children("li").children("div").find(".treeOrder");
+                if(type!=3){/*不是数字*/
+                  var orderArr=arrCN[type].slice(0,parentNodeLeg);
+                }
+                for(var i=0;i<parentNodeLeg;i++){
+                    var str="";
+                    if(type!=3){/*不是数字*/
+                       if(is_baoWei){
+                           str=FuhaoStar+orderArr[i]+FuhaoEnd;
+                       }else{
+                           str=orderArr[i];
+                       }
+                    }else{
+                        if(is_baoWei){
+                          str= FuhaoStar+(i+1)+FuhaoEnd;
+                        }else{
+                           str=i+1;
+                        }
+                    }
+                    console.log(str);
+                    children.order=str;
+                    orderEl.eq(i).html(str);
+                }
+
+                console.log(children,"chilren");
+                console.log(e,f,r,"onDrag");
+            }else{
+                return ;
+            }
+            console.log($menuTree.tree("getRoot"),"getRoot");
+        },
+        onDragEnd:function (e,f,r) {
+        },
+        onStopDrag:function (e,f,r) {
+            /*console.log(e,f,r,"onStopDrag");
+            console.log(this,$menuTree.tree("options"),"getRoots");
+            console.log(this,$menuTree.tree("getRoot"),"getRoot");*/
         },
         onContextMenu:function (e, node) {/*右键菜单出现 */
             if(localStorage.editState2=="edit"){/*进入编辑器才可用右键菜单,要是想在其他状态用 ,把==edit去掉就可以*/
@@ -217,6 +305,22 @@
             return;
         }
     });
+
+
+    function findDepth($tree,target){
+        var depth=1,flag=true,parent=target;
+        while(flag){
+           parent=$tree.tree("getParent",parent);
+           console.log(parent);
+           if(!parent){
+               flag=false;
+               return depth;
+           }else{
+               parent=parent.target;
+               depth++;
+           }
+        }
+    }
     /*编辑器*/
     $edit.click(function () {
         var self=$(this);
