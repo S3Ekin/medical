@@ -167,7 +167,7 @@
         $subTitle.hide();
         _Url="model"+editID;
     }
-    var arrCN=[["一","二","三","四","五","六","七","八","九"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]];
+    var arrCN=[["一","二","三","四","五","六","七","八","九","十","十一","十二","十三"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]];
 
 
    var limitJson=[
@@ -209,6 +209,7 @@
     OrderNode.prototype.order=function (_index) {
         var orderStr="";
         var children= this.parentNode.children;
+        console.log(children,"df");
         var parentNodeLeg=!_index?children.length:children.length-1;
         var orderEl=$( this.parentNode.target).siblings("ul").children("li").children("div").find(".treeOrder");
             console.log(arguments.length,"argument")
@@ -267,11 +268,13 @@
         formatter:function(node,e,r){
           return "<span >"+node.text+"</span><span class='treeOrder'>"+node.order+"</span>";
         },
+
         onDragEnter:function (e,f,r) {
            //console.log(e,f,r,"onDragEnter");
         },
         onStartDrag:function (e,f,r) {
-           // console.log(e,f,r,"onStartDrag");
+            if(e)
+           console.log(e,f,r,"onStartDrag");
         },
         onDrag:function (e,f,r) {
 
@@ -279,7 +282,7 @@
         },
        onDragOver:function (e,f,r) {
 
-            console.log(e,f,r," onDragOver",this);
+          //  console.log(e,f,r," onDragOver",this);
         },
         onBeforeDrop: function(e, f, r){
             if(r=="append"){
@@ -362,7 +365,41 @@
                 }*/
             }
            // console.log(e,f,r,"onDrag");
-           // console.log($menuTree.tree("getRoot"),"getRoot");
+            var root=$menuTree.tree("getRoot");
+            var _data=$menuTree.tree("getData",root.target);
+            var _str=JSON.stringify(_data);
+            var _json=JSON.parse(_str);
+
+            var _arr = [] ,workSpace=[];
+            function recursion(obj, tempObj) {
+                if(obj.children.length>0){
+                for (var i = 0; i < obj.children.length; i++) {
+                    tempObj.push(obj.children[i]);/*添加*/
+                    if (i=obj.children.length) {/*添加完*/
+                        var temp = JSON.stringify(tempObj[0]);
+                        JSON.parse(temp);
+                        var item = {
+                            "text": tempObj.text,
+                            "id": tempObj.id,
+                            "order": tempObj.order,
+                            "children": [],
+                        }
+                        _arr.push(item);
+                        console.log(_arr);
+                        var del=tempObj.shift();/*删掉头部*/
+                        //tempObj.unshift(del.children);/*添加头部的子*/
+                        recursion(del, tempObj)
+                    }
+                }
+                }else{
+                    return ;
+                }
+            }
+            recursion(_json, workSpace);
+            console.log(_arr);
+
+
+
         },
         onDragEnd:function (e,f,r) {
            /* console.log(e,f,r,"onDragEnd");
@@ -391,6 +428,7 @@
             return;
         }
     });
+
 
 
     function findDepth($tree,target){
