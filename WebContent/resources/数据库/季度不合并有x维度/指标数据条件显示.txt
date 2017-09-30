@@ -1,0 +1,1 @@
+{pub_id:'3',data:[{kpi_id:'102010100',kpi_name:'住院重点疾病总例数',kpi_dim_id:''},{kpi_id:'102010200',kpi_name:'住院重点疾病死亡例数',kpi_dim_id:''},{kpi_id:'102010300',kpi_name:'住院重点疾病二周内再住院例数',kpi_dim_id:''},{kpi_id:'102010400',kpi_name:'住院重点疾病一月内再住院例数',kpi_dim_id:''}]}

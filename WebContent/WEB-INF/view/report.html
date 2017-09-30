@@ -7,6 +7,18 @@
     <link rel="stylesheet" type="text/css" href="../../resources/images/style.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
     <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
+    <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
+    <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
+    <!--<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>-->
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/common.js"></script>
+    <script src="../../resources/echarts/echarts.js"></script>
+    <!--<script src="../../resources/jQuery/jquery.easyui.min.js"></script>-->
+    <script src="./jquery.easyui.min.js"></script>
+
+    <script src="../../resources/js/modal.js"></script>
+    <script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
     <style>
         html,body{height:100%;}
         .layouts { padding:1%  15px 0 276px; height:99% ;z-index: 3;overflow: hidden;}
@@ -114,15 +126,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
-<script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
-<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
-<script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../resources/js/common.js"></script>
-<script src="../../resources/echarts/echarts.js"></script>
-<script src="../../resources/jQuery/jquery.easyui.min.js"></script>
-<script src="../../resources/js/modal.js"></script>
-<script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
+
 <script>
     /*左侧菜单宽度改变事件 */
     var $layout=$(".layouts"),$layLeft=$(".layout-left"),$layCenter=$(".layout-center"),$doc=$(document);
@@ -490,6 +494,8 @@
             $modalTitle.html(_title);
             $("#is_del").hide();
             $("#is_new").show();
+            document.getElementById("file").focus();
+           // $("#file")[0].focus();
             $("#is_true").unbind();
             $("#is_true").click(function () {
                 var fileName=$("#file").val();
@@ -501,6 +507,7 @@
                         break;
                     default:/* 文件 */
                         arr=[{"id":"#C1","text":fileName,"children":[],"order":"#@"}];
+
                         break;
                 };
                 if(self.node().children && self.node().children.length!=0){/* 是目录，添加到该目录的最后一个 */
@@ -518,6 +525,9 @@
                         data:arr,
                     });
                 }
+
+
+                console.log("EKINS",$menuTree.tree("getRoots"));
             });
         },
         remove: function () {/*删除  */

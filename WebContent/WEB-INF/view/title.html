@@ -3,41 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <title>资源管理器</title>
-    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../resources/images/style.css"/>
-    <link rel="stylesheet" type="text/css" href="../../resources/css/easyui.css"/>
     <style>
     </style>
 </head>
 <body>
-     <div>
-         <table border="1" cellpadding="0" cellspacing="0">
-             <tr>
-                 <td>1</td>
-                 <td>2</td>
-             </tr>
-         </table>
-     </div>
-     <div>
-         <table border="1" cellpadding="0" cellspacing="0">
-             <tr>
-                 <td>1</td>
-                 <td>2</td>
-             </tr>
-             <tr>
-                 <td>1</td>
-                 <td>2</td>
-             </tr>
-             <tr>
-                 <td>1</td>
-                 <td>2</td>
-             </tr>
-         </table>
-     </div>
-
+<h3 style="padding: 0; margin: 10px 0 17px 0; text-align: center">
+    <pre class="temp-variate">[%currentYear%]</pre>年<span class="temp-variate">[%currentSeason%]</span>月医疗质控总结
+</h3>
+<ul style=" font-size: 14px; line-height: 25px;" class=" list-paddingleft-2">
+    <li>
+        <p>
+            <strong><a name="C1">一、医疗质控信息</a></strong>
+        </p>
+        <p>
+            &nbsp; &nbsp; &nbsp; &nbsp;
+        </p>
+        <div style="padding-left:3rem">
+            <p>
+                1、年初制定了医疗质控计划与目标，并下发到各科室。
+            </p>
+            <p>
+                2、重新调整了医疗质量管理委员会及科室质控小组人员。
+            </p>
+            <p>
+                3、 <span class="temp-variate">[%trainTime%]</span>日在十二楼会议室对全体住院医师进行了《病历书写基本规范》等内容的培训。
+            </p>
+            <p>
+                4、<span class="temp-variate">[%meetingTime%]</span>召开了一季度医疗质控例会，对本季度医疗质控存在的问题及时反馈，提出了整改意见，同时对各科主任、质控医师及相关人员进行了等级评审知识培训。
+            </p>
+        </div>
+    </li>
+    <li>
+        <p>
+            <strong><a name="C2">二、医疗质控工作小结</a></strong>
+        </p>
+        <div>
+            <p>
+                <a name="C2.1">（一）住院病历质控</a>
+            </p>
+            <p class="indent">
+                第<span class="temp-variate">[%currSeason%]</span>季度质控科共对<span class="temp-variate">[%caseCount%]</span>份在院病历进行实时监控，发现不合格病历及质量缺陷及时给与纠正，有效降低了不合格病历的发生。同时做好终末病历的质控，第<span class="temp-variate">[%currSeason%]</span>季度共对<span class="temp-variate">[%checkCase%]</span>份出院病历进行了质控。其中甲级病历<span class="temp-variate">[%aCase%]</span>份，甲级病案率<span class="temp-variate">[%aRate%]</span>；乙级病历<span class="temp-variate">[%bCase%]</span>份，乙级病案率<span class="temp-variate">[%bRate%]</span>；无病等病历。主要存在以下问题：
+            </p>
+            <div style="padding-left:3rem">
+                <p>
+                    1、主诉书写有缺陷，不能导出第一诊断。
+                </p>
+                <p>
+                    2、入院记录中基本信息填写不全。
+                </p>
+                <p>
+                    3、初步诊断、出院诊断书写不全。
+                </p>
+                <p>
+                    4、未按时完成上级医师首次查房记录。
+                </p>
+                <p>
+                    5、日常病程未按时完成。
+                </p>
+                <p>
+                    6、交接班记录未按时完成。
+                </p>
+                <p>
+                    7、住院超30天缺阶段小结。
+                </p>
+                <p>
+                    8、异常辅助检查结果未及时补充诊断。
+                </p>
+                <p>
+                    9、体格检查书写不全。
+                </p>
+                <p>
+                    10、手术分级不明确，个别病历Ⅲ类手术无术前讨论。
+                </p>
+                <p>
+                    11、手术记录、术后病程中手术部位书写错误。
+                </p>
+                <p>
+                    12、死亡病历讨论未按时完成，且内容空洞无分析。
+                </p>
+                <p>
+                    13、现病史、既往史有缺陷。
+                </p>
+                <p>
+                    14、个别病历无出院小结，出院记录中治疗效果书写欠妥当。
+                </p>
+                <p>
+                    15、错字别字较多。
+                </p>
+                <p>
+                    16、其它科室收治的儿科患者应按儿科病历书写要求书写。
+                </p>
+            </div>
+        </div>
+        <div>
+            <p>
+                <a name="C2.2">（二）门、急诊工作</a>
+            </p>
+            <p class="indent">
+                一季度共对门急诊工作进行了质控，共抽查门诊病历<span class="temp-variate">[%spotPat%]</span>份，日誌<span class="temp-variate">[%logs%]</span>本及各种申请书、报告单<span class="temp-variate">[%report%]</span>份进行质量检查。存在问题如下：
+            </p>
+            <div style="padding-left:3rem">
+                <p>
+                    1、处方诊断书写不规范。
+                </p>
+                <p>
+                    2、电子处方无医生签名。
+                </p>
+                <p>
+                    3、诊断与开具的药物不符。
+                </p>
+                <p>
+                    4、审核发药师及调配药师无签名。
+                </p>
+                <p>
+                    5、个别申请单填写项目不全，报告书写欠规范。
+                </p>
+                <p>
+                    6、多数门诊病历未书写就诊科室、病史记录有缺陷。
+                </p>
+                <p>
+                    7、门诊日誌有空项，个别日誌记录无关内容。
+                </p>
+            </div>
+        </div>
+        <div>
+            <p>
+                <a name="C2.3">（三）医技科室</a>
+            </p>
+            <p class="indent">
+                第<span class="temp-variate">[%currSeason%]</span>季度共抽查西药处方<span class="temp-variate">[%checkWMed%]</span>份，中药处方<span class="temp-variate">[%checkCMed%]</span>张，合格率分别为<span class="temp-variate">[%wRate%]</span>、<span class="temp-variate">[%cRate%]</span>。均达到质量标准。同时每月对门诊西药、中药处方进行质量标准日督查，第<span class="temp-variate">[%currSeason%]</span>季度共调剂西药处方<span class="temp-variate">[%adjWMed%]</span>张，合格处方<span class="temp-variate">[%adjWMedPass%]</span>张，合格率<span class="temp-variate">[%adjWMedPaRate%]</span>，中药处方<span class="temp-variate">[%adjCMed%]</span>张，合格处方<span class="temp-variate">[%adjCMedPass%]</span>张，合格率<span class="temp-variate">[%adjCMedPaRate%]</span>。
+            </p>
+            <p>
+                第<span class="temp-variate">[%currSeason%]</span>季度医技科室督查结果如下：
+            </p>
+            <table>
+                <tbody>
+                <tr class="firstRow">
+                    <td rowspan="2">
+                        月份/科室
+                    </td>
+                    <td colspan="2">
+                        C T室
+                    </td>
+                    <td colspan="2">
+                        放 射 科
+                    </td>
+                    <td colspan="2">
+                        B 超 室
+                    </td>
+                    <td colspan="2">
+                        输 血 科
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        检查数
+                    </td>
+                    <td>
+                        阳性率%
+                    </td>
+                    <td>
+                        检查数
+                    </td>
+                    <td>
+                        阳性率%
+                    </td>
+                    <td>
+                        检查数
+                    </td>
+                    <td>
+                        阳性率%
+                    </td>
+                    <td>
+                        输血数
+                    </td>
+                    <td>
+                        适应症%
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        1195
+                    </td>
+                    <td>
+                        77.4
+                    </td>
+                    <td>
+                        1426
+                    </td>
+                    <td>
+                        39.1
+                    </td>
+                    <td>
+                        1972
+                    </td>
+                    <td>
+                        79.3
+                    </td>
+                    <td>
+                        115
+                    </td>
+                    <td>
+                        100
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        1071
+                    </td>
+                    <td>
+                        79.4
+                    </td>
+                    <td>
+                        1137
+                    </td>
+                    <td>
+                        58.5
+                    </td>
+                    <td>
+                        1416
+                    </td>
+                    <td>
+                        72.3
+                    </td>
+                    <td>
+                        95
+                    </td>
+                    <td>
+                        100
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        3
+                    </td>
+                    <td>
+                        1326
+                    </td>
+                    <td>
+                        78.3
+                    </td>
+                    <td>
+                        1802
+                    </td>
+                    <td>
+                        57.9
+                    </td>
+                    <td>
+                        2105
+                    </td>
+                    <td>
+                        73.68
+                    </td>
+                    <td>
+                        160
+                    </td>
+                    <td>
+                        100
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <p>
+                （四）科室相关质控工作检查反馈
+            </p>
+            <p class="indent">
+                第<span class="temp-variate">[%currSeason%]</span>季度按照质控工作计划，我科坚持每周、每月对科室质控工作进行督查检查，现把存在问题反馈如下：
+            </p>
+            <div style="padding-left:3rem">
+                <p>
+                    1、无科质控方案或计划。
+                </p>
+                <p>
+                    2、无科室“三基”培训记录及计划。
+                </p>
+                <p>
+                    3、相关资料不全。
+                </p>
+                <p>
+                    4、交接班记录个别科室存在空白交接，无交接医师签名，甚至无资质独立执业问题。
+                </p>
+                <p>
+                    5、科室医疗安全会议未按时召开或流于形式。
+                </p>
+                <p>
+                    6、核心制度落实较差（术前讨论、疑难病例讨论、死亡讨论。）
+                </p>
+                <p>
+                    7、科室一级质控不到位。
+                </p>
+            </div>
+        </div>
+    </li>
+    <li>
+        <p>
+            <strong><a name="C3">三、整改意见</a></strong>
+        </p>
+        <p class="indent">
+            各科室要以“二甲” 复审为契机，认真对照评审标准，积极自查自纠，查漏补缺，做好科室医疗质量质控工作，落实好医核心制度，全面提升我院医疗质量，确保医疗安全，力争“二甲”复审成功。
+        </p>
+    </li>
+</ul>
+<p style="font-size:20px; font-weight:bolder;text-align: right; margin:50px">
+    <span class="temp-variate">[%writeData%]</span>
+</p>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources/echarts/echarts.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.easyui.min.js"></script>
+<script>
+    var  str = 'function recursion(obj, tempObj,_arr) { & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; if (obj.children.length &gt; 0) { & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; var addArr = []; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; for (var i = 0; i &lt; obj.children.length; i++) { & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; !function (i) { & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; addArr.push(obj.children[i]) & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; }(i) & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; if (i == obj.children.length - 1) {/*添加完*/ & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; tempObj = addArr.concat(tempObj); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; var temp = JSON.stringify(tempObj[0]); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; temp = JSON.parse(temp); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; _arr.push(new Init(temp)); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; var del = tempObj.shift(); /*删掉头部*/ & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; if (del.children.length &gt; 0) { & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; recursion(del, tempObj, _arr) & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; } else { & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; for (var j = 0, leg = tempObj.length; j0) { & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; var & nbsp; _del = tempObj.shift(); /*删掉头部*/ & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; _del = JSON.stringify(_del); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; _del = JSON.parse(_del); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; _arr.push(new Init(_del)); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; recursion(_del, tempObj, _arr); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; break; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; } else { & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; var & nbsp; _del = tempObj.shift(); /*删掉头部*/ & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; _del = JSON.stringify(_del); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; _del = JSON.parse(_del); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; _arr.push(new Init(_del)); & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; } & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; } & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; } & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; } & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; } & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; }else { & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; return; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; & nbsp; } & nbsp; & nbsp; & nbsp; & nbsp; } ';
+
+    str= str.match(/^[& nbsp;]/g);
+
+    console.log(str);
+</script>
 </body>
 </html>
