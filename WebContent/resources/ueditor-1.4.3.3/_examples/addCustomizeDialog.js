@@ -21,7 +21,16 @@ UE.registerUI('dialog',function(editor,uiName){
                     var is_chat = iframe.contentWindow._chart;
                     var str="";
                     if (is_chat == 1) {
-                        str = "<iframe frameborder='0' src='../../resources/resource_chat/demo6.html' style='margin:10px auto;width:85%;height:350px;'></iframe>"
+
+                        var imgCanvas=iframe.contentDocument.getElementsByTagName('canvas')[0];
+                        console.log(imgCanvas);
+                        var mgContext=imgCanvas.getContext('2d');
+                        var imgAsDataURL=imgCanvas.toDataURL("image/png");
+                        console.log(imgAsDataURL);
+                        str="<p>图片：<img src='"+imgAsDataURL+"' /><p>";
+
+
+                        /*str = "<iframe frameborder='0' src='../../resources/resource_chat/demo6.html' style='margin:10px auto;width:85%;height:350px;'></iframe>"*/
                     } else {
                         str = iframe.contentDocument.getElementsByClassName("layout-right")[0].innerHTML;
                     }

@@ -1,0 +1,1 @@
+{pub_id:'-1',data:[{kpi_id:'101010100',kpi_name:'实际开放床位',kpi_dim_id:'-1'},{kpi_id:'101010200',kpi_name:'重症医学科床位数',kpi_dim_id:'-1'},{kpi_id:'101010300',kpi_name:'急诊留观床位数',kpi_dim_id:'-1'},{kpi_id:'102010100',kpi_name:'住院重点疾病总例数',kpi_dim_id:'3'},{kpi_id:'102010200',kpi_name:'住院重点疾病死亡例数',kpi_dim_id:'3'},{kpi_id:'102010300',kpi_name:'住院重点疾病二周内再住院例数',kpi_dim_id:'3'}]}

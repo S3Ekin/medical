@@ -1,0 +1,1 @@
+{data:[{id:0,text:'上传的文件',par_id:-2,data:[0],children:[{id:13800,text:'table1(111)',par_id:0,data:[1],children:[]},{id:13801,text:'table2(123)',par_id:0,data:[1],children:[]},{id:13802,text:'table3(333)',par_id:0,data:[1],children:[]},{id:13904,text:'sdf(sdaf)',par_id:0,data:[1],children:[]},]},]}
