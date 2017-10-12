@@ -15,14 +15,11 @@ UE.registerUI('button',function(editor,uiName){
         cssRules :'background-position: -480px -20px;',
         //点击时执行的命令
         onclick:function () {
-            //这里可以不用执行命令,做你自己的操作也可
-            window.localStorage.editState2="false";
             var box=parent.document.getElementsByClassName("box");
-          parent.document.getElementById("editTools").style.display="none";
-          box[0].style.display="block";
             var reg=/\[%\w+%]/g;
-          box[0].innerHTML=ue.getContent().replace(reg,"_____");
-            parent.document.getElementById("edit").innerText="编辑";
+            box[0].innerHTML=ue.getContent();
+            var variate=$(box[0]).find(".temp-variate");
+            variate.html("_____");
         }
     });
     //当点到编辑内容上时，按钮要做的状态反射
@@ -37,4 +34,4 @@ UE.registerUI('button',function(editor,uiName){
         }
     });
     return btn;
-}/*index 指定添加到工具栏上的那个位置，默认时追加到最后,editorId 指定这个UI是那个编辑器实例上的，默认是页面上所有的编辑器都会添加这个按钮*/);
+});

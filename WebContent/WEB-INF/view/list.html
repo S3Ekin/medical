@@ -5,22 +5,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.min.css" />
-    <link rel="icon" type="image/png" href="../../resources/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="../../resources/lib/awe/awesome.css" />
-    <link rel="stylesheet" type="text/css" href="../../resources/images/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/images/style.css" />
     <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
 	<style>
 		td{text-align:center;}
-		#table th{text-align:center;}
+		th{text-align:center !important;}
 		td.optBtn {padding-left:10px;padding-right:0;text-align: left;}
 		.optBtn button{margin-right:10px;}
 		.search_inp{height: 22px; border: none;}
 		.new-list{height:auto;text-align:center;font-size:15px;}
 		.new-list>div{line-height:34px;}
 		.new-list label {text-align: right;}
-		.nopadding{padding:0};
+		.nopadding{padding:0}
+		#batchSave:hover{background:#5CB85C;color:white;}
+		#batchSReport:hover{background:#F0AD4E ;color:white;}
+		#batchDel:hover{background: #D9534F;color:white;}
 	</style>
+
 </head>
 <body>
 <div class="loading">
@@ -43,26 +45,51 @@
 	<div class="cl_title">
 		<span class="_title">质控报告清单</span>
 	</div>
-	<div style="margin:30px 4% 10px 0;" class="fr">
-		<input type="text" id="search_text" class="txt_inp" value="" />
-		<button id="search" class="btn btn-secondary"><i class="ico-search fa fa-search"></i> 搜索</button>
-		<button  class="btn btn-green" id="addModel" style="margin-left: 50px;"><i class="fa fa-plus" ></i> 新建</button>
-	</div>
-	<div style="margin-left:50px" id="table">
-		<table cellspacing="0" cellpadding="0" class="list1" style="width:96%;min-width: 775px">
-			<tr>
-				<th style="width:6%;text-align:center;">序号</th>
-				<th style="width:8%;text-align:center;">保存时间</th>
-				<th style="width:15%;text-align:center;">报告类型</th>
-				<th style="width:auto;text-align:center;">报告名称</th>
-				<th style="width:15%;text-align:center;">目录样式</th>
-				<th style="width:8%;text-align:center;">创建时间</th>
-				<th style="width:7%;text-align:center;">创建人</th>
-				<th style="width:284px;text-align:center;">操作</th>
-			</tr>
-			<tbody id="table1"></tbody>
-		</table>
+	<div class="pa15">
+		<div class="in-block" style="margin-left: 50px">
+			<!-- 搜索框组件 -->
+			<div class="search-group" >
+				<div class="search-inp">
+					<i class="ico-search fa fa-search"></i>
+					<input type="text" id="seek" class="search_inp"  placeholder="请输入搜索关键字" name="content" />
+					<i id="fa_times" class="refresh sea-refresh fa fa-times"></i>
+				</div>
+				<button type="submit" id="all_search" class="btn btn-search"> 搜索 </button>
+			</div>
+		</div>
+		<div style="margin:20px 4% 10px 0;" class="fr">
+			<div class="btn-group">
+				<button type="button" class="btn btn-info">批量操作</button>
+				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="caret"></span>
+					<span class="sr-only"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#" id="batchSave">另存</a></li>
+					<li><a href="#" id="batchSReport">保存为报告</a></li>
+					<li role="separator" class="divider" style="margin:0"></li>
+					<li><a href="#" id="batchDel">删除</a></li>
+				</ul>
+			</div>
+			<button  class="btn btn-green" id="addModel" style="margin-left: 50px;"><i class="fa fa-plus" ></i> 新建</button>
 
+		</div>
+		<div style="margin-left:50px" id="table">
+			<table class="list1" style="width:96%;min-width:775px">
+				<tr>
+					<th style="width:35px;"><input type="checkbox" value="0" id="check_all"></th>
+					<th style="width:42px;">序号</th>
+					<th style="width:8%;">保存时间</th>
+					<th style="width:15%;">报告类型</th>
+					<th style="width:auto;">报告名称</th>
+					<th style="width:14%;">目录样式</th>
+					<th style="width:8%;">创建时间</th>
+					<th style="width:7%;">创建人</th>
+					<th style="width:282px;">操作</th>
+				</tr>
+				<tbody id="table1"></tbody>
+			</table>
+		</div>
 	</div>
 </div>
 <!-- 新建模态框 -->
@@ -134,18 +161,19 @@
 		</div>
 	</div>
 </div>
+<div id=AlertModal></div>
 <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
 <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
-<script type="text/javascript" src="../../resources/lib/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="../../resources/lib/echarts/macarons.js"></script>
 <script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
-<script type="text/javascript" src="../../resources/js/mchart.js"></script>
 <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="../../resources/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../resources/js/common.js"></script>
+
 <script id="tpl11" type="text/template">
 		[%	var j=1;
 		for(var i in list){%]
 		<tr>
+			<td><input class="re-check" type="checkbox" value="[%=list[i].model_id%]" echo-type="[%=list[i].type%]" ></td>
 			<td>[%=j%]</td>
 			<td >[%=list[i].saveTime%]</td>
 			<td >[%if(list[i].type=="0"){%][%='报告模版'%][%}else{%][%='报告'%][%}%]</td>
@@ -179,14 +207,31 @@
         $alertModal=$("#modal_delete"),
         $val=$("#val"),
     	$addBtn=$("#addModel");
-		/*加载质控报告清单*/
+
+    	/*加载质控报告清单*/
+		var count=0,checkbox_leg=0;
+		var all_data;
 		$.ajax({
 			url:"../../resources/ajax/tree3.json",
 			success:function (data) {
+                all_data=data;
 			    $(".loading").hide();
 				$("#table1").html(baidu.template("tpl11",data));
-			}
+                checkbox_leg=$(".re-check").length;
+                $(".re-check").click(function(){
+                    var is_sure=$(this)[0].checked?1:-1;
+                    count=count+is_sure;
+                    if(count!=checkbox_leg){
+                        $("#check_all")[0].checked="";
+                    }else{
+                        $("#check_all")[0].checked="checked";
+                    }
+
+                });
+		}
 		});
+
+
 	var _json_catalogs_down=[];
 	$.ajax({
 		url:"../../resources/ajax/catlog.json",
@@ -202,6 +247,57 @@
         $val.val(null);
         $alertAdd.modal("toggle");
     });
+
+	/* 搜索方法 */
+    $("#all_search").click(function(){
+        var seek=$("#seek").val();
+        var search_res = {list:[]};
+        if(seek != ""){
+            $(".refresh").show();
+            for(var i=0; i<all_data.list.length; i++){
+                if(all_data.list[i].saveTime.indexOf(seek)>-1 || all_data.list[i].creatPeople.indexOf(seek)>-1 || all_data.list[i].name.indexOf(seek)>-1 || all_data.list[i].creatTime.indexOf(seek)>-1){
+                    search_res.list.push(all_data.list[i]);
+                }
+            }
+            if(search_res.list.length == 0){
+                $("#AlertModal").children().remove();
+                $("#AlertModal").append(AlertModal);
+                $("#TxtInsert p").remove();
+                $("#TxtInsert").append("<p>没有找到相关内容,请核对搜索关键词！</p>");
+                $("#modal_alert").modal("toggle");
+                _get('table1').innerHTML = baidu.template('tpl11', all_data);
+            } else {
+                _get('table1').innerHTML = baidu.template('tpl11', search_res);
+            }
+        } else {
+            $("#AlertModal").children().remove();
+            $("#AlertModal").append(AlertModal);
+            $("#TxtInsert p").remove();
+            $("#TxtInsert").append("<p>请输入要搜索的关键词</p>");
+            $("#modal_alert").modal("toggle");
+
+            _get('table1').innerHTML = baidu.template('tpl11', all_data);
+        }
+    });
+	/* 还原叉叉 */
+    $("#fa_times").click(function(){
+        $("#seek").val("");
+        _get('table1').innerHTML = baidu.template('tpl11', all_data);
+        $("#fa_times").hide();
+    });
+
+    $("#check_all").click(function(){
+        var checkbox= $(".re-check");
+        if($(this)[0].checked){
+            checkbox.prop("checked","checked");
+            count=checkbox_leg;
+        }else{
+            checkbox.prop("checked","");
+            count=0;
+        }
+    });
+
+
     $("#is_add").click(function () {
         var modelBtnArr='<td class="optBtn"> <button class="btn btn-primary "  >编辑</button><button class="btn btn-red delModel"  >删除</button> <button class="btn btn-primary"  >另存</button><button class="btn btn-primary"  >保存为报告</button> </td> ';
         var  reportBtnArr='<td class="optBtn"> <button class="btn btn-primary browserRe"  >浏览</button> <button class="btn btn-red delRe"  >删除</button> <button class="btn btn-primary exportRe" >导出</button> </td>';

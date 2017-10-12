@@ -9,14 +9,11 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/myloading.css" />
     <script type="text/javascript" src="../../resources/js/tangram-min.js"></script>
     <script type="text/javascript" src="../../resources/js/tangram-ext.js"></script>
-    <!--<script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>-->
-    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="../../resources/jQuery/jquery.min.js"></script>
     <script type="text/javascript" src="../../resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../resources/js/common.js"></script>
     <script src="../../resources/echarts/echarts.js"></script>
-    <!--<script src="../../resources/jQuery/jquery.easyui.min.js"></script>-->
-    <script src="./jquery.easyui.min.js"></script>
-
+    <script src="../../resources/jQuery/jquery.easyui.min.js"></script>
     <script src="../../resources/js/modal.js"></script>
     <script type="text/javascript" src="../../resources/js/baiduTemplate.js"></script>
     <style>
@@ -32,6 +29,8 @@
         div.tree-node{border-bottom: 1px solid #d3d3d3;padding: 5px 0;height: 34px;border-bottom: 1px solid #d3d3d3;line-height: 22px;}
         div.tree-node-selected{background: #e3e3e3;}
         span.tree-title{font-size:14px;white-space: nowrap;}
+        .treeOrder{padding-right: 10px}
+        span.tree-icon{display:none}
         /*左侧菜单样式完*/
         .reportTitle{width:100%;height:34px;border-bottom: 3px solid #0081c2;line-height: 34px;}
         .reportTitle>div{float:left;margin-left: 30px}
@@ -60,10 +59,10 @@
         <ul id="menuTree"></ul>
         <!-- 右键菜单内容 -->
         <div id="_menu" class="easyui-menu" style="width:120px;display:none">
-            <div onclick="_menu.newFile(0)" data-options="iconCls:'icon-save'">新建子节点</div>
-            <!--  <div onclick="_menu.newFile(1)" data-options="iconCls:'icon-save'">新建文件夹</div> -->
-            <div onclick="_menu.rename()">重命名</div>
-            <div onclick="_menu.remove()" data-options="iconCls:'icon-print'">删除</div>
+            <div onclick="_menu.newFile(0)" data-options="iconCls:'fa fa-list-alt'" id="new_chapter">新建章节</div>
+            <div onclick="_menu.upLev()" data-options="iconCls:'fa fa-list-alt'" id="up_lev">上一级</div>
+            <div onclick="_menu.rename()" data-options="iconCls:'fa fa-chain '">重命名</div>
+            <div onclick="_menu.remove()" data-options="iconCls:'fa fa-cut '">删除</div>
         </div>
     </div>
     <div class="layout-center"></div>
@@ -75,11 +74,10 @@
                 <span class="title"></span>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary" style="display: none" id="edit" >编 辑</button>
-                <span class="sub-title font-set" style="display: none">医教部质控科制</span>
+                <button type="submit" class="btn btn-primary fa fa-pencil" style="display: none" id="edit" > 编 辑</button>
             </div>
         </div>
-        <iframe id="editTools" frameborder="0" style="padding:0 20px;width:100%;height:93%;display:none"></iframe>
+        <iframe id="editTools" frameborder="0" style="padding:0 10px;width:100%;height:93%;display:none"></iframe>
         <div class="box"></div>
         <div class="loading" style="position: absolute;top:0">
             <div class="sk-circle">
@@ -100,13 +98,12 @@
 
     </div>
 </div>
-
 <!--删除模态框-->
 <div class="modal fade" id="modal_alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
     <div class="modal-dialog" style="width:300px;margin:65px auto;" >
         <div class="modal-content">
             <div class="modal-header" id="modal_title">
-                <span id="_title" style="color: red;">新建</span>
+                <span id="_title" style="color: white;">新建</span>
                 <button type="button" class="close" data-dismiss="modal">
                     <span class="is_true" aria-hidden="true" >&times;</span><span class="sr-only">Close</span>
                 </button>
@@ -116,11 +113,11 @@
                     <span >确定删除吗?</span>
                 </div>
                 <div id="is_new">
-                    <span>文件名：</span><input type="text" id="file" class="txt_inp" title="请选择" value="" autocomplete="off" />
+                    <span>名称：</span><input type="text" id="file" class="txt_inp" title="请选择" value=""  autofocus="autofocus"/>
                 </div>
             </div>
             <div class="modal-footer" style="text-align:right;">
-                <button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true">确定</button>
+                <button type="button" class="btn btn-primary " data-dismiss="modal" id="is_true" >确定</button>
                 <button type="button" class="btn btn-default is_false" data-dismiss="modal">取消</button>
             </div>
         </div>
@@ -144,6 +141,7 @@
                 $layout.css("paddingLeft","220px");
                 $layLeft.css({"marginLeft":"-210px","width":"200px"});
             }
+
         });
     });
     $doc.mouseup(function(){
@@ -171,34 +169,45 @@
         $subTitle.hide();
         _Url="model"+editID;
     }
-    var arrCN=[["一","二","三","四","五","六","七","八","九","十","十一","十二","十三"],["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]];
+    var arrCN=[["一","二","三","四","五","六","七","八","九","十","十一","十二","十三","十四","十五","十六","十七","十八","十九","二十"],
+        ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
+        ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]];
 
+   var CatalogLimit={"depth":6,
+       "tree":[
+       {"catalog_name":"目录"},
+       {"catalog_name":"一、"},
+       {"catalog_name":"(一)、"},
+       {"catalog_name":"1、"},
+       {"catalog_name":"A、"},
+       {"catalog_name":"a、"}
 
-   var limitJson=[
-       {"type":"目录"},
-       {"type":"一"},
-       {"type":"(一)"},
-       {"type":"1"}] ;
+       ] };
 
     /*文档树*/
     var $menuTree=$("#menuTree"),
-        $editTools=$("#editTools");
+        $editTools=$("#editTools"),node_lev=0;
 
     var reg=/^[0-9a-zA-Z\u4e00-\u9fa5]/;
+
     function OrderNode(targetEl){
-        this.str=$(targetEl).find(".treeOrder").html();;
+        this.str=$(targetEl).find(".treeOrder").html();
         this.startCharAt="";
         this.endCharAt="";
+        this.separator=this.str.charAt(this.str.length-1);
         this.type=0;
         this.parentNode= $menuTree.tree("getParent",targetEl);
     }
     OrderNode.prototype.verifySurround=function () {
         if(!this.str.match(reg)) {/*说明有符号包围*/
             this.startCharAt=this.str.charAt(0);
-            this.endCharAt=this.str.charAt(this.str.length-1);
-            this.str = this.str.substring(1);
+            this.endCharAt=this.str.charAt(this.str.length-2);
+            this.str = this.str.substring(1,this.str.length-2);
+        }else{
+            this.str = this.str.substring(0,this.str.length-1);
         }
-    }
+
+    };
     OrderNode.prototype.verType=function () {
         if(this.str.match(/^[0-9]/)){/*是数子*/
             this.type=3;
@@ -209,35 +218,126 @@
         }else{/*中文数字*/
             this.type=0;
         }
-    }
+    };
     OrderNode.prototype.order=function (_index) {
+
         var orderStr="";
         var children= this.parentNode.children;
-        console.log(children,"df");
-        var parentNodeLeg=!_index?children.length:children.length-1;
         var orderEl=$( this.parentNode.target).siblings("ul").children("li").children("div").find(".treeOrder");
-            console.log(arguments.length,"argument")
-        if(arguments.length!=0){
-                orderEl.splice(_index,1);
-                console.log( orderEl,"before");
-            }else{
-                console.log( orderEl,"after");
-            }
 
-       // console.log(parentNodeLeg,children,orderEl,"EL");
+        if(arguments.length!=0){
+
+            var parentNodeLeg=children.length-1;
+
+        }else{
+
+            var parentNodeLeg=children.length;
+
+        }
         if(this.type!=3){
             var orderArr=arrCN[this.type].slice(0,parentNodeLeg);
         }
-        for (var i = 0; i < parentNodeLeg; i++) {
-            if(this.type==3){
-                orderStr=this.startCharAt+(i+1)+ this.endCharAt;
-            }else{
-                orderStr=this.startCharAt+orderArr[i]+this.endCharAt;
+
+        if(arguments.length==0){/*完成拖拽后*/
+            for (var i = 0; i < orderEl.length; i++) {
+                if(this.type==3){
+                    orderStr=this.startCharAt+(i+1)+ this.endCharAt;
+                }else{
+                    orderStr=this.startCharAt+orderArr[i]+this.endCharAt;
+                }
+                children[i].order=orderStr+this.separator;
+                orderEl.eq(i).html(orderStr+this.separator);
             }
-            children.order=orderStr;
-            orderEl.eq(i).html(orderStr);
+
+        }else{/*完成拖拽前*/
+            var count=0;
+            for (var i = 0; i < orderEl.length; i++) {
+                if(i==_index){
+                    continue;
+                }else{
+                    if(this.type==3){
+                        orderStr=this.startCharAt+(count+1)+ this.endCharAt;
+                    }else{
+                        orderStr=this.startCharAt+orderArr[count]+this.endCharAt;
+                    }
+                    count++;
+                    children[i].order=orderStr+this.separator;
+                    orderEl.eq(i).html(orderStr+this.separator);
+                }
+            }
+        }
+    };
+
+
+
+    function Init(obj){
+        this.id=obj.id;
+        this.order=obj.order;
+        this.text=this.order+obj.text;
+        this.children=[];
+        this.par_id=obj.par_id;
+        this.paragraph_id=obj.paragraph_id;
+        this.distance=obj.distance;
+        this.content=obj.content;
+    }
+    function recursion(obj, tempObj,_arr) {
+        if(obj.children.length>0){
+            var addArr=[];
+            for (var i = 0; i < obj.children.length; i++) {
+                !function (i) {
+                    addArr.push(obj.children[i])
+                }(i);
+                if (i==obj.children.length-1) {/*添加完*/
+
+                    tempObj=addArr.concat(tempObj);
+                    var temp = JSON.stringify(tempObj[0]);
+                    temp=JSON.parse(temp);
+                    _arr.push( new Init(temp));
+
+                    var del=tempObj.shift();/*删掉头部*/
+
+                    if(del.children.length>0){
+                        recursion(del, tempObj, _arr)
+                    }else{
+                        for (var j = 0,leg=tempObj.length; j <leg; j++) {
+
+                            if(tempObj[0].children.length>0){
+                                var  _del= tempObj.shift();/*删掉头部*/
+                                _del = JSON.stringify(_del);
+                                _del=JSON.parse(_del);
+                                _arr.push( new Init(_del));
+                                recursion(_del, tempObj,_arr);
+                                break;
+                            }else{
+                                var  _del= tempObj.shift();/*删掉头部*/
+                                _del = JSON.stringify(_del);
+                                _del=JSON.parse(_del);
+                                _arr.push( new Init(_del));
+                            }
+
+                        }
+
+
+                    }
+
+                }
+            }
+        }else{
+            return ;
         }
     }
+    var easyui_tree_options = {
+        length : 0,  //层数
+        getLevel: function(treeObj, node){ //treeObj为tree的dom对象，node为选中的节点
+            while(node != null){
+                node = $(treeObj).tree('getParent', node.target)
+                easyui_tree_options.length++;
+            }
+            var length1 = easyui_tree_options.length;
+            easyui_tree_options.length = 0;     //重置层数
+            return length1;
+        }
+    };
 
     $menuTree.tree({
         url:"../../resources/ajax/tree"+editID+".json",
@@ -255,11 +355,6 @@
             })
         },
         onClick:function (node) {
-           var num= findDepth($menuTree,node.target);
-            console.log($menuTree.tree("options"));
-         //   console.log(num);
-
-
             if(localStorage.editState2=="edit"){
                 var a=$("#editTools")[0].contentDocument.getElementById("ueditor_0");
                 a.contentWindow.location.href="about:blank"+node.id;
@@ -269,186 +364,126 @@
             }
         },
         cursor:"hand",
-        formatter:function(node,e,r){
-          return "<span >"+node.text+"</span><span class='treeOrder'>"+node.order+"</span>";
+        formatter:function(node){
+            var  separator=node.text.match(/[,.、]/);
+            if(separator){
+                var _index=node.text.indexOf(separator[0]);
+                node.order=node.text.substring(0,_index+1);
+                node.text=node.text.substring(_index+1);
+            }
+            return "<b class='treeOrder'>"+node.order+"</b><span >"+node.text+"</span>";
         },
-
         onDragEnter:function (e,f,r) {
            //console.log(e,f,r,"onDragEnter");
         },
         onStartDrag:function (e,f,r) {
-            if(e)
-           console.log(e,f,r,"onStartDrag");
+          // console.log(e,f,r,"onStartDrag");
         },
         onDrag:function (e,f,r) {
-
-           console.log(e,f,r,"onDrag");
+           //console.log(e,f,r,"onDrag");
         },
-       onDragOver:function (e,f,r) {
+        onDragOver:function (e,f,r) {
 
           //  console.log(e,f,r," onDragOver",this);
         },
-        onBeforeDrop: function(e, f, r){
-            if(r=="append"){
-                return false;
+        onBeforeDrag:function (e) {
+            if(e.children.length!=0){/*不让拖拽文件夹 */
+                return false ;
             }
-            var par=$menuTree.tree("getParent",f.target);
-            var oIndex=0;
-            for (var i = 0,leg=par.children.length; i < leg; i++) {
-                 if(par.children[i].order==f.order){
-                     oIndex=i;
-                     break;
-                 }
-            }
-            console.log(oIndex,"oIndex");
 
-            var orderNode_target = new OrderNode(f.target)
-            orderNode_target.verifySurround();
-            orderNode_target.verType();
-          // console.log(orderNode_target, "object2");
-            orderNode_target.order(oIndex);
+
+
 
         },
         onDrop:function (e, f, r) {
-
-          //  console.log($menuTree.tree("getParent",f.target),"par onDrop")
             /*获取目标对象的父节点*/
-            var type=0,is_baoWei=true;/*0:汉字，1：小写英文，2：大写英文；3：数字*/
             if(r!="append"){
-               // console.log($menuTree.tree("getParent",e),"父节点");
-               var orderNode_source=new OrderNode(e);
-                    orderNode_source.verifySurround();
-                    orderNode_source.verType();
-                 //   console.log(orderNode_source,"object1");
-                    orderNode_source.order();
+                var orderNode_source=new OrderNode(e);
+                orderNode_source.verifySurround();
+                orderNode_source.verType();
+                orderNode_source.order();
 
-               /*
-                var currentOrder=$(e).find(".treeOrder").html();
-               if(!currentOrder.match(reg)) {/!*说明有符号包围*!/
-                    var FuhaoStar=currentOrder.charAt(0);
-                    var FuhaoEnd=currentOrder.charAt(currentOrder.length-1);
-                    currentOrder = currentOrder.substring(1);
-                    is_baoWei=true;
-                }else{
-                    is_baoWei=false;
-                }
-                if(currentOrder.match(/^[0-9]/)){/!*是数子*!/
-                    type=3;
-                }else if(currentOrder.match(/^[a-z]/)){/!*小写字母*!/
-                    type=1;
-                }else if(currentOrder.match(/^[A-Z]/)){/!*大写字母*!/
-                    type=2;
-                }else{/!*中文数字*!/
-                    type=0;
-                }
-                var parentNode=$menuTree.tree("getParent",e);
-                var parentNodeLeg=parentNode.children.length;
-                var children=parentNode.children;
-                var orderEl=$(parentNode.target).siblings("ul").children("li").children("div").find(".treeOrder");
-                if(type!=3){/!*不是数字*!/
-                  var orderArr=arrCN[type].slice(0,parentNodeLeg);
-                }
-                for(var i=0;i<parentNodeLeg;i++){
-                    var str="";
-                    if(type!=3){/!*不是数字*!/
-                       if(is_baoWei){
-                           str=FuhaoStar+orderArr[i]+FuhaoEnd;
-                       }else{
-                           str=orderArr[i];
-                       }
-                    }else{
-                        if(is_baoWei){
-                          str= FuhaoStar+(i+1)+FuhaoEnd;
-                        }else{
-                           str=i+1;
-                        }
-                    }
-                    console.log(str);
-                    children.order=str;
-                    orderEl.eq(i).html(str);
-                }*/
+            }else{
+                var drop_node=$(this).tree("getNode", e);
+                var drop_nodeLev=easyui_tree_options.getLevel(this,drop_node);
+                var limitFormat=CatalogLimit.tree[drop_nodeLev].catalog_name;
+                var newParentOrder={
+                    "str":limitFormat,
+                    "startCharAt":"",
+                    "endCharAt":"",
+                    "separator":limitFormat.charAt(limitFormat.length-1),
+                    "type":0,
+                    "parentNode":drop_node
+                };
+                OrderNode.prototype.verifySurround.call(newParentOrder);
+                console.log(newParentOrder,"drop");
+                OrderNode.prototype.verType.call(newParentOrder);
+                OrderNode.prototype.order.call(newParentOrder);
             }
-           // console.log(e,f,r,"onDrag");
+
+
             var root=$menuTree.tree("getRoot");
-            var _data=$menuTree.tree("getData",root.target);
-            var _str=JSON.stringify(_data);
-            var _json=JSON.parse(_str);
+            var _json=JSON.stringify(root);
+            _json=JSON.parse(_json);
 
             var _arr = [] ,workSpace=[];
-            function recursion(obj, tempObj) {
-                if(obj.children.length>0){
-                for (var i = 0; i < obj.children.length; i++) {
-                    tempObj.push(obj.children[i]);/*添加*/
-                    if (i=obj.children.length) {/*添加完*/
-                        var temp = JSON.stringify(tempObj[0]);
-                        JSON.parse(temp);
-                        var item = {
-                            "text": tempObj.text,
-                            "id": tempObj.id,
-                            "order": tempObj.order,
-                            "children": [],
-                        }
-                        _arr.push(item);
-                        console.log(_arr);
-                        var del=tempObj.shift();/*删掉头部*/
-                        //tempObj.unshift(del.children);/*添加头部的子*/
-                        recursion(del, tempObj)
-                    }
-                }
-                }else{
-                    return ;
+            _arr.push( new Init(_json));/* 第一层，放目录 */
+            recursion(_json, workSpace,_arr);
+            },
+        onBeforeDrop: function(e, f, r){
+            if(r=="append"){
+                var drop_node=$(this).tree("getNode", e);
+                var drop_nodeLev=easyui_tree_options.getLevel(this,drop_node);
+                if(drop_nodeLev>=CatalogLimit.depth){
+                    alert("已经是最底层了,不能再加子节点");
+                    return false;
                 }
             }
-            recursion(_json, workSpace);
-            console.log(_arr);
-
-
-
-        },
-        onDragEnd:function (e,f,r) {
-           /* console.log(e,f,r,"onDragEnd");
             var par=$menuTree.tree("getParent",f.target);
-            console.log(par,"onDragEnd");*/
+            var oIndex=0;/*在父节点的索引位置 */
+            for (var i = 0,leg=par.children.length; i < leg; i++) {
+                if(par.children[i].order==f.order){
+                    oIndex=i;
+                    break;
+                }
+            }
+            var orderNode_target = new OrderNode(f.target);
+            orderNode_target.verifySurround();
+            orderNode_target.verType();
+            orderNode_target.order(oIndex);
         },
         onStopDrag:function (e,f,r) {
-            console.log(1234)
-           /* console.log(e,f,r,"onStopDrag");
-            console.log($menuTree.tree("options"),"options");
-            var par=$menuTree.tree("getParent",f.target);
-            console.log(par,"onStopDrag");*/
-            /*console.log(e,f,r,"onStopDrag");
-            console.log(this,$menuTree.tree("options"),"getRoots");
-            console.log(this,$menuTree.tree("getRoot"),"getRoot");*/
+           // console.log(1234)
         },
         onContextMenu:function (e, node) {/*右键菜单出现 */
-            if(localStorage.editState2=="edit"){/*进入编辑器才可用右键菜单,要是想在其他状态用 ,把==edit去掉就可以*/
+            if(localStorage.editState2=="edit"){
                 e.preventDefault();
-                $menuTree.tree('select', node.target);/* 右键的时候也像左键一样选中*/
+                $("#new_chapter").show();
+                $menuTree.tree('select', node.target);// 右键的时候也像左键一样选中
+                node_lev=easyui_tree_options.getLevel(this, node); // 获取节点层级
+                if(node_lev>2 && node.children.length==0){
+                    $("#up_lev").show();
+                }else{
+                    $("#up_lev").hide();
+
+                }
+
+                if(node_lev>=CatalogLimit.depth){// 判断层级是否超出
+                    $("#new_chapter").hide();
+                }
+
+
+                /* 右键菜单显示 */
                 $("#_menu").menu("show", {
                     left: e.pageX,
                     top: e.pageY
                 })
             }
-            return;
+
         }
+
     });
 
-
-
-    function findDepth($tree,target){
-        var depth=1,flag=true,parent=target;
-        while(flag){
-           parent=$tree.tree("getParent",parent);
-           console.log(parent);
-           if(!parent){
-               flag=false;
-               return depth;
-           }else{
-               parent=parent.target;
-               depth++;
-           }
-        }
-    }
     /*编辑器*/
     $edit.click(function () {
         var self=$(this);
@@ -467,80 +502,251 @@
                 self[0].innerHTML="取消";
             })
         }
-    })
+    });
     /*右键菜单操作  */
-    var $modalTitle=$("#_title");
+    var $modalTitle=$("#_title"),
+        $modal=$("#modal_alert"),
+        $del_modal=$("#is_del"),
+        $new_modal=$("#is_new"),
+        $is_ture=$("#is_true"),
+        $file_inp=$("#file");
+
+
     var _menu = {
         node: function () {/*获取右键的节点  */
             return $menuTree.tree("getSelected");/*选中的节点  */
         },
+        upLev:function(){/*上一级*/
+            var nodes=this.node();
+            var parentNode=$menuTree.tree("getParent",this.node().target);
+            var grandfaterNode=$menuTree.tree("getParent",parentNode.target);
+            var siblingsNode=grandfaterNode.children[grandfaterNode.children.length-1];
+            var currentOrder=nodes.order;
+
+            var orderObj={
+                "str":siblingsNode.order,
+                "startCharAt":"",
+                "endCharAt":"",
+                "separator":siblingsNode.order.charAt(siblingsNode.order.length-1),
+                "type":0
+            };
+            OrderNode.prototype.verifySurround.call(orderObj);
+            OrderNode.prototype.verType.call(orderObj);
+            var _order="";
+            if(orderObj.type!=3){
+                _order=arrCN[orderObj.type][(arrCN[orderObj.type].indexOf(orderObj.str)+1)];
+            }else{
+                _order= parseInt(orderObj.str)+1;
+            }
+
+            /*先添加*/
+            $menuTree.tree("append",{
+                parent:grandfaterNode.target,
+                data:[{
+                    "children":nodes.children,
+                    "content":nodes.content,
+                    "distance":nodes.distance,
+                    "id":nodes.id,
+                    "order":orderObj.startCharAt+_order+orderObj.endCharAt+orderObj.separator,
+                    "par_id":grandfaterNode.id,
+                    "paragraph_id":nodes.paragraph_id,
+                    "text":nodes.text
+                }]
+            });
+
+            var oIndex=0;// 在父节点的索引位置
+            for (var i = 0,leg=parentNode.children.length; i < leg; i++) {
+                if(parentNode.children[i].order==nodes.order){
+                    oIndex=i;
+                    break;
+                }
+            }
+
+
+            // 排序
+            var original_parentOrder={
+                "str":currentOrder,
+                "startCharAt":"",
+                "endCharAt":"",
+                "separator":currentOrder.charAt(nodes.order.length-1),
+                "type":0,
+                "parentNode":parentNode
+            };
+            OrderNode.prototype.verifySurround.call(original_parentOrder);
+            OrderNode.prototype.verType.call(original_parentOrder);
+            OrderNode.prototype.order.call(original_parentOrder,oIndex);
+
+            /*删除该节点  */
+            $menuTree.tree("remove",nodes.target);
+
+            var root=$menuTree.tree("getRoot");
+            var _json=JSON.stringify(root);
+            _json=JSON.parse(_json);
+            var _arr = [] ,workSpace=[];
+            _arr.push( new Init(_json));
+            recursion(_json, workSpace,_arr);
+
+            T.ajax({
+                url: '${ctx}/report/modifyCatalog',
+                type: 'post',
+                data: JSON.stringify(_arr),
+                contentType: 'application/json',
+                success:function(rest){
+
+                },
+                error:function(){
+                    alert("操作失败！")
+                }
+            });
+
+        },
         rename: function () {/*重命名  */
-            $modalTitle.html("重命名");
-            $("#modal_alert").modal("toggle");
-            $("#is_del").hide();
-            $("#is_new").show();
-            var fileName=$("#file");
             var nodes = this.node();
-            fileName.val(nodes.text);
-            $("#is_true").unbind();
-            $("#is_true").click(function () {
-                $menuTree.tree("update",{"target":nodes.target,"text":fileName.val()});
+            $modalTitle.html("重命名");
+            $modal.modal("toggle");
+            $del_modal.hide();
+            $new_modal.show();
+            $file_inp.val(nodes.text);
+            $file_inp.focus();
+            $file_inp.unbind("keypress");
+            $is_ture.unbind();
+            $is_ture.click(function () {
+                var inp_txt =nodes.order + $file_inp.val();
+                var formData = new FormData();
+                formData.append("catalog_id", nodes.id);
+                formData.append("catalog_name", inp_txt);
+                $.ajax({
+                    url: '${ctx}/report/renameCatalog',
+                    type: 'post',
+                    cache: false,
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        $menuTree.tree("update", {"target": nodes.target, "text": inp_txt});
+                    }
+                });
             });
         },
         newFile: function (even) {/*新文件 */
-            $("#modal_alert").modal("toggle");
+            $modal.modal("toggle");
             var self = this;
-            var _title=even==1?"新建文件夹":"新建子节点";
-            $modalTitle.html(_title);
-            $("#is_del").hide();
-            $("#is_new").show();
-            document.getElementById("file").focus();
-           // $("#file")[0].focus();
-            $("#is_true").unbind();
-            $("#is_true").click(function () {
-                var fileName=$("#file").val();
-                if(!fileName){return;}
-                var arr=[];
-                switch(even){
-                    case 1:/*文件夹  */
-                        arr=[{"id":"#C1","text":fileName,"children":[{"text":"新文件"}]}];/* 要添加进去的节点数据, */
-                        break;
-                    default:/* 文件 */
-                        arr=[{"id":"#C1","text":fileName,"children":[],"order":"#@"}];
+            $modalTitle.html("新建章节");
+            $del_modal.hide();
+            $new_modal.show();
+            $is_ture.unbind();
+            $file_inp.val(null);
+            // $file_inp[0].focus();
 
-                        break;
+            if(this.node().children.length!=0){// 有子节点
+                var lastChild=this.node().children[this.node().children.length-1];
+                var order="";
+                var last_order=$("#"+lastChild.domId).find(".treeOrder").html();
+                var separator=last_order.charAt(last_order.length-1)
+                var newAdd={
+                    str:last_order,
+                    startCharAt:"",
+                    endCharAt:"",
+                    separator:separator,
+                    type:0
                 };
-                if(self.node().children && self.node().children.length!=0){/* 是目录，添加到该目录的最后一个 */
-                    $menuTree.tree("append",{
-                        parent:self.node().target,
-                        data:arr,
-                    })
-                }else{/*是叶子节点 ,添加到该节点的下面 */
-                    /*  $menuTree.tree("insert",{
-                     after:self.node().target,
-                     data:arr,
-                     }) */
-                    var a=$menuTree.tree("append",{
-                        parent:self.node().target,
-                        data:arr,
-                    });
+                OrderNode.prototype.verifySurround.call(newAdd);
+                order=newAdd.str;
+            }else{
+                order=0;
+            }
+
+            function newFileHandles(){
+                var fileName=$file_inp.val();
+                if(!fileName){return;}
+                var fd = new FormData();
+                fd.append("par_catalog_id",self.node().id);
+                fd.append("catalog_name",fileName);
+                fd.append("order",order);
+                fd.append("catalog_type",catalog_type);
+                fd.append("reportlist_id",report_id);
+                fd.append("level",node_lev);
+                $.ajax({
+                    url: '${ctx}/report/addCatalog',
+                    type: 'post',
+                    cache: false,
+                    data: fd,
+                    processData: false,
+                    contentType: false,
+                    success: function(result) {
+                        console.log(result,"新建");
+                        $menuTree.tree("loadData",JSON.parse(result));
+                        localStorage.editState2="edit";
+                    }
+                });
+
+            }
+
+
+            /*键盘事件*/
+            $file_inp.unbind("keypress");
+            $file_inp.keypress(function(e){
+                if(e.keyCode==13){
+                    newFileHandles();
+                    $modal.modal("toggle");
                 }
-
-
-                console.log("EKINS",$menuTree.tree("getRoots"));
+                return ;
+            });
+            /* 确定按钮事件 */
+            $is_ture.click(function () {
+                newFileHandles();
             });
         },
         remove: function () {/*删除  */
-            $("#modal_alert").modal("toggle");
+            $is_ture.removeAttr("disabled");
+            $modal.modal("toggle");
             $modalTitle.html("删除文件");
             var self = this;
-            $("#is_new").hide();
-            $("#is_del").show();
-            $("#is_true").unbind();
-            $("#is_true").click(function () {
+            $new_modal.hide();
+            $del_modal.show();
+            $is_ture.unbind();
+            var par=$menuTree.tree("getParent",this.node().target);
+            var oIndex=0;/*在父节点的索引位置 */
+            for (var i = 0,leg=par.children.length; i < leg; i++) {
+                if(par.children[i].order==this.node().order){
+                    oIndex=i;
+                    break;
+                }
+            }
+            $is_ture.click(function () {
+                var delNode= new OrderNode(self.node().target);
+                delNode.verifySurround();
+                delNode.verType();
+                delNode.order(oIndex);
+
                 $menuTree.tree("remove",self.node().target);
+                T.getJson("${ctx}/report/removeCatalog?catalog_id="+self.node().id, function(datas) {
+
+                    var root=$menuTree.tree("getRoot");
+                    var _json=JSON.stringify(root);
+                    _json=JSON.parse(_json);
+                    var _arr = [] ,workSpace=[];
+                    _arr.push( new Init(_json));// 第一层，放目录
+                    recursion(_json, workSpace,_arr);
+                    T.ajax({
+                        url: '${ctx}/report/modifyCatalog',
+                        type: 'post',
+                        data: JSON.stringify(_arr),
+                        contentType: 'application/json',
+                        success:function(rest){
+
+                        },
+                        error:function(){
+                            alert("操作失败！")
+                        }
+                    });
+                })
+
+
+
             })
         }
+
     }
 </script>
 </body>
