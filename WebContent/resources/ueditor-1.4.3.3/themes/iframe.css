@@ -1,21 +1,13 @@
 /*可以在这里添加你自己的css*/
 iframe{ width:80% ;min-width:550px;margin: auto}
-/*iframe:hover{
-    border: 1px solid red;
-}*/
-.temp-variate{color:red;font-weight: bold}
-#content{font-size:16px;font-family: 楷体}
 ul{list-style: none !important;line-height:30px}
-#content strong{font-size:18px }
-#content >li>p{padding:10px 0 }
 table{margin:15px auto;border: 1px solid black ;border-collapse:collapse;width: 100%;min-width:600px }
-tr{border: 1px solid black ;height: 40px }
-tr:hover{background:yellowgreen;}
 td{padding:5px;border: 1px solid black;text-align: center }
 th{padding:5px;border: 1px solid black;text-align: center }
 caption{padding:5px;border: 1px solid black; border-bottom: none; color: #777;;}
+table tr:hover>td { background-color:#ffd;}
+
+
 .indent{text-indent: 3rem}
 .temp-variate{color:red;font-weight: bold}
-.run-patient>p{text-indent: 3rem}
 .font-set{font-size: 18px}
-.box{font-family: 楷体}
